@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="da">
+<html lang="da" data-theme="light">
   <head>
 
     <meta charset="utf-8">
@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="./assets/designsystem.css">
 
+    <link rel="icon" href="./assets/logos/logo-small.svg">
 
   </head>
   <body>
@@ -17,6 +18,7 @@
       <div class="ds-container">
 
         <p class="ds-logo-responsive ds-logo-pull-left">
+          <img src="./assets/logos/logo-large.svg" alt="">
           <strong>Dataforsyningen</strong>
           <span>Styrelsen for Dataforsyning og Infrastruktur</span>
         </p>  
@@ -28,13 +30,22 @@
 
     </header>
 
-  <main>
     <nav>
-      <a href="docs/css.html">Formularer, farver og typografi</a>
-      <a href="docs/icons.html">Ikoner</a>
-      <a href="docs/components.html">UI-komponenter</a>
+      <a class="ds-card" href="docs/css.html">Formularer, farver og typografi</a>
+      <a class="ds-card" href="docs/icons.html">Ikoner</a>
+      <a class="ds-card" href="docs/components.html">UI-komponenter</a>
     </nav>
-  </main>
 
-</body>
+    <main>
+      
+      <article>
+        <p>Dette er dokumentationen for, hvordan du bruger elementerne i Design System CSS - en implementation af SDFIs design guide.</p>
+        <p><a href="https://www.figma.com/file/G9g2vp2MOcejoPB3d1xJvU/Dataforsyningen-Design-System">Den komplette designguide kan findes på Figma.</a> (Kræver SDFI login.)</p>
+        <p><a href="https://github.com/SDFIdk/design-system-css">Koden og tilhørende dokumentation findes på Github.</a></p>
+        <p>Design System CSS er baseret på <a href="https://picocss.com/">pico.css.</a> Du kan finde deres <a href="https://picocss.com/docs/">dokumentation her.</a></p>
+      </article>
+
+    </main>
+
+  </body>
 </html>

@@ -13,8 +13,9 @@
     "doc": "docs"
   },
   "scripts": {
+    "build": "npm run build-css && npm run build-docs",
     "build-css": "sass src/index.scss assets/designsystem.css --style compressed",
-    "build-docs": "node src/bin/build-docs-css.js && node src/bin/build-docs-icons.js",
+    "build-docs": "node src/bin/build-docs.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": ["SDFI", "Styrelsen for Dataforsyning og Infrastruktur", "designsystem", "icons", "stylesheets", "logos", "UI components"],

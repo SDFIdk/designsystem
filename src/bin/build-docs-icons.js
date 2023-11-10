@@ -4,7 +4,7 @@ import { filenameToId, writeToFile, readHTML } from './shared.js'
 async function generateCSSContent(svg_dir, spritefilename) {
   let filehandle
   let html = ''
-  let toc = '<nav>'
+  let toc = '<nav id="toc-icons">'
   let index_css = ''
   try {
     const files = await readdir(svg_dir)
@@ -66,7 +66,7 @@ async function buildHTMLsnippet(filename, svg) {
 async function buildTOCsnippet(filename, spritefilename) {
   const shortname = filenameToId(filename)
   const html = `
-    <a href="#${ shortname }"><svg><use href="./img/${ spritefilename }#${ shortname }"></svg></a>
+    <a href="#${ shortname }"><svg><use href=".${ spritefilename }#${ shortname }"></svg></a>
   `
   return html
 }
@@ -140,7 +140,7 @@ async function buildSVGsnippet(svg, filename) {
   return `<symbol id="${ id }" width="100%" height="100%"${ viewBoxAttr ? ' ' + viewBoxAttr[0] : '' }${ classAttr ? ' ' + classAttr[0] : '' }>${ newSvg }</symbol>`
 }
 
-async function buildSVG() {
+export async function buildIconSVG() {
   console.log('Building SVG sprites')
 
   // Build SVG
@@ -153,19 +153,19 @@ async function buildSVG() {
 }
 
 
-async function buildCSS() {
+export async function buildIconCSS() {
   console.log('Building documentation and rebuilding CSS')
 
   // Build HTML
   let markup = ''
   let icon_content = await generateCSSContent('./assets/icons', './assets/designsystem-icons.svg')
 
-  markup += await readHTML('./src/html/_header.html')
+  markup += await readHTML('./src/html/blocks/header.html')
   markup += '<h2>Ikoner</h2>'
   markup += icon_content[1]
-  markup += await readHTML('./src/html/_icon_instructions.html')
+  markup += await readHTML('./src/html/articles/icons/icon_instructions.html')
   markup += icon_content[0]
-  markup += await readHTML('./src/html/_footer.html')
+  markup += await readHTML('./src/html/blocks/footer.html')
 
   // Write HTML file
   await writeToFile(markup, './docs/icons.html')
@@ -176,6 +176,3 @@ async function buildCSS() {
 
   console.log('Done 👍')
 }
-
-buildSVG()
-buildCSS()

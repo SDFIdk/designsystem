@@ -9,7 +9,8 @@
 
 // Define font faces
 
-/* Light */
+/*
+Light
 @font-face {
   font-family: "Roboto";
   src: url("./fonts/Roboto-Light.ttf") format("truetype");
@@ -17,7 +18,7 @@
   font-style: normal;
 }
 
-/* Regular */
+Regular
 @font-face {
   font-family: "Roboto";
   src: url("./fonts/Roboto-Regular.ttf") format("truetype");
@@ -25,7 +26,7 @@
   font-style: normal;
 }
 
-/* Regular Italic */
+Regular Italic
 @font-face {
   font-family: "Roboto";
   src: url("./fonts/Roboto-Italic.ttf") format("truetype");
@@ -33,7 +34,7 @@
   font-style: italic;
 }
 
-/* Medium */
+Medium
 @font-face {
   font-family: "Roboto";
   src: url("./fonts/Roboto-Medium.ttf") format("truetype");
@@ -41,7 +42,7 @@
   font-style: normal;
 }
 
-/* Bold */
+Bold
 @font-face {
   font-family: "Roboto";
   src: url("./fonts/Roboto-Bold.ttf") format("truetype");
@@ -49,13 +50,14 @@
   font-style: normal;
 }
 
-/* Monospaced */
+Monospaced
 @font-face {
   font-family: "Source Code Pro";
   src: url("./fonts/SourceCodePro-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
+*/
 
 // Config
 @import "./scss/variables";
