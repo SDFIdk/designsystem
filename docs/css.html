@@ -1010,6 +1010,44 @@
     <code>/node-modules/@dataforsyningen/css/assets/logos/logo-simple-micro.svg</code>
   </p>
 </section>
+<section id="cards">
+
+  <h2>Produktkort/cards</h2> 
+  
+  <p>Produktkort og cards laves nemt ved at sætte class <code>ds-card</code> på et element. Det første <code>&lt;img></code> element i et ds-card bliver altid vist som hovedbilledet.</p>
+
+  <div class="ds-flexgrid" id="ex-card-1">
+
+    <article class="ds-card" data-theme="dark">
+      <img src="https://raw.githubusercontent.com/iamfrank/semstrap/master/assets/images/bg-img-1.jpg" alt="">
+      <div class="ds-padding">
+        <h3>Produktkort titel</h3>
+        <p>Dette er et produktkort/card.</p>      
+      </div>
+      <footer>
+        <button>Handling</button>
+      </footer>
+    </article>
+
+    <article class="ds-card" data-theme="light">
+      <img src="https://raw.githubusercontent.com/iamfrank/semstrap/master/assets/images/bg-img-1.jpg" alt="">
+      <div class="ds-padding">
+        <h3>Produktkort titel</h3>
+        <p>Dette er et produktkort/card.</p>      
+      </div>
+      <footer>
+        <div class="ds-button-group">
+          <button>Ja</button>
+          <button class="secondary">Nej</button>
+        </div>
+      </footer>
+    </article>
+
+  </div>
+
+  <code-example data-snip="ex-card-1"></code-example>
+
+</section>
 <section id="images">
       
   <h2>Billeder og figurer</h2>
