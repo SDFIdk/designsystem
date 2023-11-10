@@ -1,0 +1,1128 @@
+<!doctype html>
+<html lang="da" data-theme="light">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1,user-scalable=yes">
+    <title>SDFI Designsystem dokumentation</title>
+
+    <link rel="stylesheet" href="../assets/designsystem.css">
+
+    <!-- Highlight.js CSS -->
+    <link rel="stylesheet" href="css/highlight.min.css">
+
+    <link rel="icon" href="../assets/logos/logo-small.svg">
+
+    <style>
+      /* Custom CSS for this page*/
+      code-example {
+        margin: 0 0 var(--space-lg);
+        display: block;
+      }
+      * + section,
+      * + article {
+        margin-top: var(--space-lg);
+      }
+      .colorswatch {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        gap: var(--space);
+        margin: 0;
+      }
+      .colorswatch span:first-child {
+        width: var(--space-xl);
+        height: var(--space-xl);
+        border-radius: 50%;
+        display: inline-block;
+        flex: 0 0 var(--space-xl);
+      }
+      .icon-list li {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        gap: var(--space);
+        word-wrap: break-word;
+      }
+      .icon-list li > span:first-child {
+        flex: 0 0 var(--space-xl);
+        width: var(--space-xl);
+      }
+      .icon-list code {
+        overflow: auto;
+      }
+      .bordered {
+        padding: var(--padding);
+        border: solid 1px var(--vibrant-steel);
+        border-radius: var(--space-xxs);
+      }
+      .theme-switch {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        gap: var(--space);
+      }
+      .theme-switch p {
+        margin: 0;
+      }
+      .theme-switch input {
+        margin-right: var(--space-xxs);
+      }
+      .theme-switch label {
+        margin-right: var(--space-xs);
+      }
+      .body-wrapper {
+        padding-top: var(--space-lg);
+        padding-bottom: var(--space-lg);
+      }
+
+      #toc-icons {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        gap: var(--space);
+      }
+      #toc-icons > a {
+        width: 2rem;
+        height: 2rem;
+      }
+      #toc-icons > a > svg {
+        width: 100%;
+        height: 100%;
+      }
+
+      @media screen and (min-width: 65rem) {
+
+        .index-wrapper {
+          position: sticky; 
+          top: var(--space-lg); 
+          overflow-y: auto; 
+          height: calc(100vh - var(--space-lg)); 
+          padding-bottom: var(--space-xl);
+        }
+      }
+    </style>
+
+  </head>
+  <body>
+
+    <header data-theme="dark" id="header" class="ds-header">
+
+      <div class="ds-container">
+
+        <p class="ds-logo-responsive ds-logo-pull-left">
+          <img src="../assets/logos/logo-large.svg" alt="">
+          <strong>Dataforsyningen</strong>
+          <span>Styrelsen for Dataforsyning og Infrastruktur</span>
+        </p>  
+      
+        <h1>Designguide eksempler</h1>
+        <p class="blockquote">Reference-implementationer af SDFIs designguide med HTML/CSS</p>
+
+      </div>
+
+    </header>
+
+    <nav class="ds-nav-horizontal">
+      <ul>
+        <li><a href="./css.html">Formularer, farver og typografi</a></li>
+        <li><a href="./icons.html">Ikoner</a></li>
+        <li><a href="./components.html">UI-komponenter</a></li>
+      </ul>
+    </nav>
+
+    <hr style="margin: 0;">
+<main><section class="index-wrapper">
+
+  <h2>Indholdsfortegnelse</h2>
+
+  <fieldset class="theme-switch">
+    <span class="ds-icon-sider-icon-lab"></span>
+    <p>
+      <input id="theme-auto" type="radio" name="theme" value="" checked="">
+      <label for="theme-auto">Auto</label>
+    </p>
+    <p>
+      <input id="theme-light" type="radio" name="theme" value="light">
+      <label for="theme-light">Lys</label>
+    </p>
+    <p>
+      <input id="theme-dark" type="radio" name="theme" value="dark">
+      <label for="theme-dark">Mørk</label>
+    </p>
+  </fieldset>
+
+  <hr>
+
+  <h3>Basis</h3>
+  <nav class="ds-nav-vertical">
+    <ul>
+      <li><a href="#typografi">Typografi</a></li>
+      <li><a href="#farver">Farver</a></li>
+      <li><a href="#knapper">Knapper</a></li>
+      <li><a href="#formular">Formularer og inputfelter</a></li>
+      <li><a href="#icons">Ikoner</a></li>
+      <li><a href="#logos">Logo</a></li>
+      <li><a href="#images">Billeder og figurer</a></li>
+      <li><a href="#tabeller">Tabeller</a></li>
+      <li><a href="#lists">Lister</a></li>
+    </ul>
+  </nav>
+
+  <h3>Layout</h3>
+  <nav class="ds-nav-vertical">
+    <ul>
+      <li><a href="#grid">Grid</a></li>
+      <li><a href="#padding">Padding</a></li>
+      <li><a href="#margin">Margin</a></li>
+      <li><a href="#header-layout">Header</a></li>
+      <li><a href="#footer-layout">Footer</a></li>
+      <li><a href="#navs">Navigation</a></li>
+      <li><a href="#cards">Cards</a></li>
+    </ul>
+  </nav>
+  
+</section>
+<section id="typografi">
+
+  <h2>Typografi</h2>
+
+  <article id="ex-typo-1">
+    <h1>Overskrift niveau 1</h1>
+    <h2>Overskrift niveau 2</h2>
+    <h3>Overskrift niveau 3</h3>
+    <h4>Overskrift niveau 4</h4>
+    <h5>Overskrift niveau 5</h5>
+    <blockquote>Manchet/blockquote. Lorem ipsom dolor amet etc.</blockquote>
+    <p>Ovenstående manchet/blockquote laves med <code>&lt;blockquote></code> eller <code>class="blockquote"</code></p>
+    <p>
+      Almindelig brødtekst. <a href="#typografi">Her er et link i teksten.</a> Lorem ipsum dolor etc.<br> Fås osgå som <em>kursiv brødtekst,</em> hvis du bruger <code>&lt;em></code> elementet.
+    </p>
+    <p><em>Bemærk!</em> Lav aldrig om på headings - f.eks. ved at lave en <code>&lt;h1></code> om til en <code>&lt;h3></code> hvis du bare synes overskriften skal have en anden størrelse. Niveau-opdelingen har betydning for tilgængelighed og SEO.</p>
+    <p>Brug i stedet en style class på heading, der matcher din ønskede størrelse.<br> F.eks. <code>&lt;h1 class="h3"></code>.</p>
+    <p>
+      <small>Lille brødtekst. <a href="#typografi">Here is a link.</a> Benyttes i HTML med <code>&lt;small></code> elementet.</small><br>
+      <small><em>Lille kursiv brødtekst. </a> Benyttes i HTML med <code>&lt;small></code> og <code>&lt;em></code> elementerne.</small></em></small>
+    </p>
+    <p>Her er noget kode</code></p>
+  </article>
+
+  <code-example data-snip="ex-typo-1"></code-example>
+
+</section><section id="farver">
+
+  <h2>Farver</h2>
+
+  <div class="ds-grid">
+    <p class="colorswatch">
+      <span style="background-color: #0097A7;"></span>
+      <span>
+      Tyrkis<br>
+      <code>#0097A7</code>
+      <code>hsl(186,100%,33%)</code>
+    </span>
+    </p>
+    <p class="colorswatch">
+      <span style="background-color: hsl(186, 92%, 21%);"></span>
+      <span>
+      Mørk tyrkis<br>
+      <code>#045D67</code>
+      <code>hsl(186, 92%, 21%)</code>
+    </span>
+    </p>
+    <p class="colorswatch">
+      <span style="background-color: hsl(186,100%,12%);"></span>
+      <span>
+      Mørk tyrkis plus<br>
+      <code>#00373D</code>
+      <code>hsl(186,100%,12%)</code>
+    </span>
+    </p>
+    <p class="colorswatch">
+      <span style="background-color: hsla(186,40%,82%,0.7);"></span>
+      <span>
+      Vibrant steel<br>
+      <code>hsla(186,40%,82%,0.7)</code>
+    </span>
+    </p>
+    <p class="colorswatch">
+      <span style="background-color: hsla(186,25%,64%,0.6);"></span>
+      <span>
+      Dark steel<br>
+      <code>hsla(186,25%,64%,0.6)</code>
+    </span>
+    </p>
+    <p class="colorswatch">
+      <span style="background-color: #E1ECED;"></span>
+      <span>
+        Medium steel<br>
+        <code>#E1ECED</code>
+        <code>hsl(186,25%,91%)</code>
+      </span>
+    </p>
+    <p class="colorswatch">
+      <span style="background-color: #F2F7F7;"></span>
+      <span>
+      Lys steel<br>
+      <code>#F2F7F7</code>
+      <code>hsl(186,25%,96%)</code>
+    </span>
+    </p>
+    <p class="colorswatch">
+      <span style="background-color: #000;"></span>
+      <span>
+      Sort<br>
+      <code>#000000</code>
+      <code>hsl(0,0%,0%)</code>
+    </span>
+    </p>
+    <p class="colorswatch">
+      <span style="background-color: hsla(0,0%,0%,0.65);"></span>
+      <span>
+      65% sort<br>
+      <code>hsla(0,0%,0%,0.65)</code>
+    </span>
+    </p>
+    <p class="colorswatch">
+      <span style="background-color: #fff; border: solid 1px #E1ECED;"></span>
+      <span>
+      Hvid<br>
+      <code>#FFFFFF</code>
+      <code>hsl(0,0%,100%)</code>
+    </span>
+    </p>
+    <p class="colorswatch">
+      <span style="background-color: #3EDDC6;"></span>
+      <span>
+      Aktion<br>
+      <code>#3EDDC6</code>
+      <code>hsl(171,70%,55%)</code>
+    </span>
+    </p>
+    <p class="colorswatch">
+      <span style="background-color: #E98436;"></span>
+      <span>
+      Highlight<br>
+      <code>#E98436</code>
+      <code>hsl(26,80%,56%)</code>
+    </span>
+    </p>
+    <p class="colorswatch">
+      <span style="background-color: #FF5252;"></span>
+      <span>
+      Advarsel<br>
+      <code>#FF5252</code>
+      <code>hsl(0,100%,66%)</code>
+    </span>
+    </p>
+  </div>
+
+  <hr>
+
+  <div id="ex-color-3" class="ds-mt">
+    <article class="ds-padding" data-theme="light" style="background-color: var(--lys-steel);">
+      <h3>Indhold med baggrundsfarve</h3>
+      <p>
+        Kan laves vha. CSS custom properties, som i eksemplet nedenfor.<br>
+        Husk at sætte <code>data-theme="light"</code> på elementet, så tekst og andet indhold får farver, der passer til en lys baggrund.
+      </p>
+    </article>
+  </div>
+
+  <code-example data-snip="ex-color-3"></code-example>
+
+  <div id="ex-color-2" class="ds-mt">
+    <article class="ds-padding" data-theme="light" style="background-color: var(--medium-steel);">
+      <h3>Indhold med baggrundsfarve</h3>
+      <p>
+        Benyttes ofte til footer og lign.<br> 
+        Kan laves vha. CSS custom properties, som i eksemplet nedenfor.
+      </p>
+    </article>
+  </div>
+
+  <code-example data-snip="ex-color-2"></code-example>
+
+  <div id="ex-color-1" class="ds-mt">
+    <article class="ds-padding" data-theme="dark">
+      <h3>Indhold med mørk baggrundsfarve</h3>
+      <p>Her har vi blot sat <code>data-theme="dark"</code> på elementet.</p>
+    </article>
+  </div>
+
+  <code-example data-snip="ex-color-1"></code-example>
+
+</section>
+<section id="knapper">
+
+  <article class="light-wrapper">
+
+    <h2>Knapper</h2>
+  
+    <p>Knapper laves ved at bruge <code>&lt;button></code> elementet.</p>
+    <p><button>En knap</button></p>
+    <p>Knapper kan have forskellige udtryk, hvis du sætter class "secondary", "outline" eller "contrast" på dem.</p>
+    <div id="btn-ex-1">
+      <button>Standard knap</button>
+      <button class="secondary">Sekundær knap</button>
+      <button class="outline">Outline knap</button>
+      <button class="contrast">Kontrast knap</button>
+      <button disabled>Knap disabled</button>
+    </div>
+    <code-example data-snip="btn-ex-1"></code-example>
+    
+    <p>Du kan ændre typografi i knapperne ved at bruge <code>.hx</code> classes på knapperne.<br> F.eks. <code>&lt;button class="h4">H4 tekst knap&lt;/button></code></p>
+
+    <span id="btn-ex-3">
+    <button class="h2">H2 tekst</button>
+    </span>
+    <button class="secondary h2">H2 tekst</button>
+    <button class="outline h4">H4 tekst</button>
+    <button class="contrast h5">H5 tekst</button>
+
+    <code-example data-snip="btn-ex-3"></code-example>
+
+    <p>Links kan styles som knapper ved at sætte <code>role="button"</code> på dem.</p>
+    <p id="btn-ex-2">
+      <a href="#knapper" role="button">Link-knap</a>
+      <a href="#knapper" role="button" class="secondary">Link-knap</a>
+      <a href="#knapper" role="button" class="outline">Link-knap</a>
+      <a href="#knapper" role="button" class="contrast">Link-knap</a>
+    </p>
+
+    <code-example data-snip="btn-ex-2"></code-example>
+  
+    <p>Du kan lave knapgrupper ved at pakke <code>&lt;button></code> elementerne ind i et element med <code>class="ds-button-group"</code>.</p>
+    
+    <div id="btn-ex-4">
+      <p class="ds-button-group">
+        <button>Standard knap</button>
+        <button class="secondary">Sekundær knap</button>
+      </p>
+    </div>
+
+    <code-example data-snip="btn-ex-4"></code-example>
+
+    <p>
+      Knapgrupper kan indeholde et vilkårligt antal knapper.<br> 
+      <em>Bemærk:</em> Vær opmærksom på, om der er plads til alle knapperne på små skærme.
+    </p>
+    <p class="ds-button-group">
+      <button>Standard</button>
+      <button class="secondary">Sekundær</button>
+      <button disabled>Disabled</button>
+    </p>
+    
+    <p>Knapper kan udstyres med ikoner.</p>
+    <p><strong>Bemærk! Knapper uden tekst skal altid have en <code>title</code> attribut.</strong><br> Det giver en forklaringstekst ved mouse-over og hjælper skærmlæsere.</p>
+
+    <div id="btn-ex-5">
+      <p>
+        <button title="Kopier" class="ds-icon-icon-clipboard"></button>
+        <a title="Vælg" role="button" href="#buttons" class="ds-icon-hentdata-icon-choose"></a>
+        <button title="Kopier" class="secondary ds-icon-icon-clipboard"></button>
+        <button title="Kopier" class="outline ds-icon-icon-clipboard"></button>
+        <button title="Kopier" class="contrast ds-icon-icon-clipboard"></button>
+      </p>
+    </div>
+
+    <code-example data-snip="btn-ex-5"></code-example>
+
+    <p>Knapper med ikoner kan også kobles sammen i grupper.</p>
+
+    <div id="btn-ex-7">
+      <p class="ds-button-group">
+        <button title="Download" class="outline ds-icon-hentdata-icon-download"></button>
+        <button title="Email" class="outline ds-icon-icon-mail"></button>
+        <button title="Kopier" class="ds-icon-icon-clipboard"></button>
+      </p>
+    </div>
+
+    <code-example data-snip="btn-ex-7"></code-example>
+
+    <p>Tekst og ikoner kan kombineres i knapper.</p>
+
+    <p id="btn-ex-6">
+      <button class="ds-icon-icon-plus">Tilføj</button>
+      <button class="ds-icon-icon-plus secondary">Tilføj</button>
+      <button class="ds-icon-icon-plus outline">Tilføj</button>
+      <button class="ds-icon-icon-plus contrast">Tilføj</button>
+      <a role="button" class="ds-icon-icon-plus secondary" href="#knapper">Link</a>
+    </p>
+
+    <code-example data-snip="btn-ex-6"></code-example>
+  </article>
+
+</section>  <section id="formular">
+  
+  <h2>Formularer og inputfelter</h2>
+  <p>Inputfelter til formularer er allerede stylet for dig. Du skal ikke gøre noget særligt ud over at bruge korrekt HTML.</p>
+
+  <div id="ex-form-1">
+    <form>
+      
+      <fieldset>
+        <label for="myinput">A text input</label>
+        <input type="text" placeholder="Insert some text" id="myinput">
+      </fieldset>
+
+      <fieldset>
+        <label for="mysearch">A search input</label>
+        <input type="search" placeholder="Search for something" id="mysearch">
+      </fieldset>
+
+      <fieldset>
+        <label for="mydateinput">A date input</label>
+        <input type="date" id="mydateinput">
+      </fieldset>
+
+      <fieldset>
+        <label for="myrageinput">A range input</label>
+        <input type="range" id="myrangeinput">
+      </fieldset>
+
+      <fieldset>
+        <label for="myfileinput">A file input</label>
+        <input type="file" id="myfileinput">
+      </fieldset>
+
+      <fieldset>
+        <legend>Some choices</legend> <!-- A title for the contents of a fieldset -->
+
+        <p>
+          <input type="radio" name="myradio" id="myradio1">
+          <label for="myradio1">This option</label>
+        </p>
+        <p>
+          <input type="radio" name="myradio" id="myradio2">
+          <label for="myradio2">The other option</label>
+        </p>
+        
+      </fieldset>
+
+      <fieldset>
+        <input type="checkbox" id="mycheckbox">
+        <label for="mycheckbox">Check this box</label>
+        <input type="checkbox" id="mycheckbox2">
+        <label for="mycheckbox2">Check that box</label>
+      </fieldset>
+
+      <fieldset>
+        <label for="myselect">A select box</label>
+        <select id="myselect">
+          <option>Something to select</option>
+          <optgroup>
+            <option>Something else</option>
+            <option>Something else entirely</option>
+          </optgroup>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <label for="mytext">A textarea</label>
+        <textarea placeholder="Some text in a textarea"></textarea>
+      </fieldset>
+
+      <hr>
+
+      <input type="submit" value="Go!">
+      <input type="button" value="Don't go" class="secondary">
+      <input type="reset" value="Reset">
+
+    </form>
+  </div>
+
+  <code-example data-snip="ex-form-1"></code-example>
+
+</section>
+<article>
+  <h3>Kompakte formularer</h3>
+  <p>Hvis man har behov for at vise formular-elementer på meget lidt plads, kan man anvende class <code>form-mini</code> på et <code>form</code> eller <code>fieldset</code> element.</p>
+  <div id="ex-form-mini">
+    <fieldset class="form-mini">
+
+      <label for="minitext">Text input</label>
+      <input type="text" id="minitext">
+
+      <fieldset>
+        <label for="minisearch">Search input</label>
+        <input type="search" placeholder="Search for something" id="minisearch">
+      </fieldset>
+
+      <label for="minidate">Date input</label>
+      <input type="date" id="minidate">
+
+      <label for="miniselect">Select</label>
+      <select id="miniselect">
+        <option selected>First option</option>
+        <option>Second option</option>
+      </select>
+
+      <label for="minita">Textarea</label>
+      <textarea id="minita">Write something</textarea>
+
+    </fieldset>
+
+    <fieldset class="form-mini">  
+    
+      <input type="checkbox" id="minicheck1">
+      <label for="minicheck1">Check 1</label>
+
+      <input type="checkbox" id="minicheck2">
+      <label for="minicheck2">Check 2</label>
+
+      <input type="radio" id="miniradio1" name="radio-mini">
+      <label for="miniradio1">Radio 1</label>
+      
+      <input type="radio" id="miniradio2" name="radio-mini">
+      <label for="miniradio2">Radio 2</label>
+
+    </fieldset>
+  </div>
+
+  <code-example data-snip="ex-form-mini"></code-example>
+
+</article><section id="grid">
+
+  <style>
+    #ex-grid-1 div,
+    #ex-grid-2 div,
+    #ex-grid-3 div,
+    #ex-grid-4 div {
+      color: var(--background-color);
+      background-color: var(--color);
+      padding: var(--padding);
+    }
+  </style>
+
+  <h2>Layout</h2>
+
+  <p>Herunder kan du finde flere detaljer om, hvordan du nemt laver layouts i SDFI-stil.</p>
+  <p>Vi har lavet nogle eksempler, hvor du kan se forskellige layout-teknikker i praksis.</p>
+  <ul>
+    <li><a href="layout0.html">Se simpelt layout-eksempel</a></li>
+    <li><a href="layout6.html">Se avanceret layout-eksempel (med ikoner, etc.)</a></li>
+  </ul>
+
+  <h3>Kolonner og grids</h3>
+
+  <p>Lav et simpelt kolonne-layout ved at tilføje <code>ds-grid</code> class til det element, der indeholder de elementer, som skal vises i kolonner.</p>
+  <p><a href="layout1.html">Se demo</a></p>
+
+  <div id="ex-grid-1">
+    <section class="ds-grid">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+    </section>
+  </div>
+
+  <code-example data-snip="ex-grid-1"></code-example>
+
+  <h4>Fleksible kolonner</h4>
+
+  <p>Hvis boksene gerne må bruge den plads, der er til rådighed, så kan du bruge <code>ds-flexgrid</code> class i stedet.</p>
+  <p><a href="layout2.html">Se demo</a></p>
+
+  <div id="ex-grid-2">
+    <section class="ds-flexgrid">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+    </section>
+  </div>
+
+  <code-example data-snip="ex-grid-2"></code-example>
+
+  <h4>Primære/sekundære kolonner</h4>
+
+  <p>Brug class <code>.ds-grid-2-1</code> på elementet udenom, når du vil vise to elementer som hhv. primær og sekundær kolonne.</p>
+  
+  <p><a href="layout4.html">Se demo</a></p>
+
+  <div id="ex-grid-3">
+    <section class="ds-grid-2-1">
+      <div>Primær / main</div>
+      <div>Sekundær</div>
+    </section>
+  </div>
+
+  <code-example data-snip="ex-grid-3"></code-example>
+
+  <p>Brug class <code>.ds-grid-1-2</code> hvis rækkefølgen skal være omvendt.</p>
+  
+  <p><a href="layout5.html">Se demo</a></p>
+
+  <div id="ex-grid-4">
+    <section class="ds-grid-1-2">
+      <div>Sekundær</div>
+      <div>Primær / main</div>
+    </section>
+  </div>
+
+  <code-example data-snip="ex-grid-4"></code-example>
+
+  <h3>Indholds-containere</h3>
+  
+  <p class="ds-container">Hvis du skal vise noget indhold i én kolonne midt i skærmen, så sæt <code>ds-container</code> class på elementet. Indholdet i denne tekst er centreret med class <code>ds-container</code></p>
+  <p><a href="layout3.html">Se demo</a></p>
+
+  <h3>Simpel rækkevisning</h3>
+
+  <p>Brug class <code>ds-flex-row</code>, hvis du blot vil vise to elementer ved siden af hinanden, og de skal være centreret i højden.<br> F.eks.:</p>
+  <p class="ds-flex-row">
+    <button>En knap</button>
+    <span>Et tekstelement</span>
+  </p>
+  <pre><code>
+    &lt;p class="ds-flex-row">
+      &lt;button>En knap&lt;/button>
+      &lt;span>Et tekstelement&lt;/span>
+    &lt;/p>
+  </code></pre>
+  
+
+</section>
+<section id="padding">
+  <h2>Indvendig afstand / padding</h2>
+
+  <p>Du kan sætte den korrekte padding ved at bruge class <code>ds-padding</code> i HTML.</p>
+  <pre><code>&lt;div class="ds-padding"> ... &lt;/div></code></pre>
+
+  <p><a href="layout1.html">Se demo</a></p>
+
+  <p class="ds-padding" style="border: var(--border); display: inline-block;">
+    Indhold med ds-padding omkring sig.
+  </p>
+
+  <p>Hvis du skal bruge den officielle padding i CSS, kan du bruge CSS custom property <code>--padding</code>.</p>
+  <pre><code>.my-custom-class {
+    padding: var(--padding);
+  }</code></pre>
+
+  <h3>Specielle paddings</h3>
+
+  <p>Du kan sætte en <code>class</code> med en specifik padding til særlige indrykninger o.l.</p>
+  <p>Du kan bygge en specifik class ved at kombinere:</p>
+  <ol>
+    <li><code>ds-pt</code>, <code>ds-pb</code>, <code>ds-pl</code>, <code>ds-pr</code> for hhv. padding-top, padding-bottom, padding-left og padding-right</li>
+    <li><code>-xxs</code>, <code>-xs</code>, <code>-sm</code>, <code>-md</code>, <code>-lg</code>, <code>-xl</code>, <code>-xxl</code> for den størrelse padding, du ønsker</li>
+  </ol>
+  <p>En class <code>ds-pb-sm</code> vil således give en <code>padding-bottom: 0.5rem</code></p>
+  <p>Det samme resultat kan opnås ved at bruge CSS custom properties: <code>style="padding-bottom: var(--space-sm);"</code></p>
+
+  <h3>Når elementer skal flugte med hinanden</h3>
+
+  <p>Når tekst og elementer med runde kanter (ikoner, knapper, etc.) står sammen, skal teksten og de runde elementer rykkes lidt i forhold til hinanden. Det er for at modvirke et optisk fænomen, hvor det ser ud som om, at de ikke står på linie.</p>
+  <p>Du kan gøre det ved at give teksten lidt ekstra padding med <code>ds-optical-padding</code> class ELLER give ikoner/knapper en justeringsmargin.</p>
+
+  <div class="bordered">
+    <p class="ds-optical-padding">Her er din tekst med optical padding.</p>
+    <button>En knap</button>
+  </div>
+
+  <pre><code>
+    &lt;p class="ds-optical-padding">Her er din tekst&lt;/p>
+    &lt;button>En knap&lt;/button>
+  </code></pre>
+
+  <div class="bordered">
+    <p>Her er din tekst</p>
+    <button class="ds-optical-margin">En knap med optical margin</button>
+  </div>
+
+  <pre><code>
+    &lt;p>Her er din tekst&lt;/p>
+    &lt;button class="ds-optical-margin">En knap&lt;/button>
+  </code></pre>
+
+  <p>Her kan du også bruge CSS custom properties <code>--optical-padding</code> og <code>--optical-margin</code> til mere specialiserede layouts.</p>
+
+</section>
+<section id="margin">
+  <h2>Udvendig afstand / margin</h2>
+
+  <p>Du kan sætte den korrekte margin ved at bruge class <code>ds-margin</code> i HTML.</p>
+  <pre><code>&lt;div class="ds-margin"> ... &lt;/div></code></pre>
+
+  <p><a href="layout2.html">Se demo</a></p>
+
+  <p class="ds-margin" style="border: var(--border); display: inline-block;">
+    Indhold med ds-margin omkring sig
+  </p>
+
+  <p>Hvis du skal bruge den officielle margin i CSS, kan du bruge CSS custom property <code>--margin</code>.</p>
+  <pre><code>.my-custom-class {
+    margin: var(--margin);
+  }</code></pre>
+
+  <h3>Specielle margins</h3>
+
+  <p>Du kan sætte en <code>class</code> med en specifik margin til særlige indrykninger o.l.</p>
+  <p>Du kan bygge en specifik class ved at kombinere:</p>
+  <ol>
+    <li><code>ds-mt</code>, <code>ds-mb</code>, <code>ds-ml</code>, <code>ds-mr</code> for hhv. margin-top, margin-bottom, margin-left og margin-right</li>
+    <li><code>-xxs</code>, <code>-xs</code>, <code>-sm</code>, <code>-md</code>, <code>-lg</code>, <code>-xl</code>, <code>-xxl</code> for den størrelse margin, du ønsker</li>
+  </ol>
+  <p>En class <code>ds-mr-lg</code> vil således give en <code>margin-right: 2rem</code></p>
+  <p>Det samme resultat kan opnås ved at bruge CSS custom properties: <code>style="margin-right: var(--space-lg);"</code></p>
+
+</section>
+<article id="header-layout">
+  <style>
+    #ex-header-1 .ds-header {
+      padding-left: var(--space-xxl);
+      padding-right: var(--space-xxl);
+    }
+  </style>
+  <h2>Header layout</h2>
+  <p>Her er en standard header, som kan placeres i toppen af en webside.</p>
+  <div id="ex-header-1">
+    <header class="ds-header" data-theme="dark">
+      <div class="ds-container">
+        <p class="ds-logo-responsive ds-logo-pull-left">
+          <strong>Dataforsyningen</strong>
+          <span>Styrelsen for Dataforsyning og Infrastruktur</span>
+        </p>  
+        <h1>Designguide eksempler</h1>
+        <p class="blockquote">Reference-implementationer af SDFIs designguide med HTML/CSS</p>
+      </div>
+    </header>
+  </div>
+
+  <code-example data-snip="ex-header-1"></code-example>
+
+</article><article id="footer-layout">
+
+  <style>
+    #ex-footer-1 .ds-footer {
+      padding-left: var(--space-xxl);
+      padding-right: var(--space-xxl);
+    }
+  </style>
+
+  <h2>Footer layout</h2>
+
+  <p>Her er en standard footer, som kan placeres i bunden af en webside.</p>
+
+  <div id="ex-footer-1">
+    <footer class="ds-footer" data-theme="light">
+      <div class="ds-container">
+        <h2 class="ds-logo-responsive ds-logo-pull-left">
+          <strong>Insæt navn her</strong>
+          <span>Styrelsen for Dataforsyning og Infrastruktur</span>
+        </h2>
+        <hr>
+        <p>© 2023 Styrelsen for Dataforsyning og Infrastruktur</p>
+      </div>
+    </footer>
+  </div>
+
+  <code-example data-snip="ex-footer-1"></code-example>
+
+</article>
+<section id="navs">
+  
+  <h2>Navigationselementer</h2>
+
+  <p>Navigationselementer laves med <code>&lt;nav></code> elementet.</p>
+
+  <div>
+    
+    <h3>Basic navigation</h3>
+    <div id="ex-nav-5" class="bordered">
+      <nav>
+        <ul>
+          <li><a href="#navs">Link</a></li>
+          <li><a href="#navs">Link</a></li>
+          <li><a href="#navs">Link</a></li>
+        </ul>
+      </nav>
+    </div>
+    
+    <code-example data-snip="ex-nav-5"></code-example>
+
+    <h3>Lodret navigation</h3>
+    <p>Laves ved at tilføje class <code>ds-nav-vertical</code></p>
+
+    <div id="ex-nav-4" class="bordered">
+      <nav class="ds-nav-vertical">
+        <ul>
+          <li><a href="#navs">Link</a></li>
+          <li><a href="#navs">Link</a></li>
+          <li><a href="#navs">Link</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <code-example data-snip="ex-nav-4"></code-example>
+    
+    <h3>Hovedmenu</h3>
+    <p>Laves ved at tilføje class <code>ds-nav-main</code>. "Produktnavn" kan udelades.</p>
+
+    <div id="ex-nav-3" class="bordered">
+      <nav class="ds-nav-main">
+        <h4>
+            Produktnavn
+        </h4>  
+        <ul>
+          <li>
+            <a href="#navs">Link</a>    
+          </li>
+          <li>
+            <a href="#navs">Link</a>    
+          </li>
+          <li>
+            <a href="#navs">Link</a>    
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <code-example data-snip="ex-nav-3"></code-example>
+    
+    <h3>Værktøjslinie</h3>
+    <p>Er en simpel <a href="#knapper">knapgruppe</a> med et <code>nav</code> element udenom, der har class <code>ds-nav-tools</code></p>
+    <p>Adskillelseslinier kan laves ved at indsætte <code>&lt;hr></code> imellem knapper.</p>
+    <div id="ex-nav-1" style="display: flex; flex-flow: column; align-items: center; gap: var(--space);">
+      <nav class="ds-nav-tools">
+        <div class="ds-button-group">
+          <button class="ds-icon-map-icon-download-listvalg" title="Liste"></button>
+          <hr>
+          <button class="ds-icon-map-icon-download-gridvalg" title="Gridvalg"></button>
+          <a href="#" role="button" class="ds-icon-map-icon-download-polygonareal" title="Værktøj X"></a>
+          <hr>
+          <button class="ds-icon-icon-search" title="Search"></button>
+          <a href="#" role="button" class="ds-icon-icon-minus" title="Zoom out"></a>
+          <button class="ds-icon-icon-plus" title="Zoom in"></button>
+          <button>Hjælp</button>
+        </div>
+      </nav>
+
+      <nav class="ds-nav-tools vertical">
+        <div class="ds-button-group">
+          <button class="ds-icon-icon-search" title="Search"></button>
+          <hr>
+          <a href="#" role="button" class="ds-icon-icon-minus" title="Zoom out"></a>
+          <button class="ds-icon-icon-plus" title="Zoom in"></button>
+        </div>
+      </nav>
+    </div>
+    <code-example data-snip="ex-nav-1"></code-example>
+  </div>
+
+</section>
+<section id="icons">
+
+  <h2>Ikoner</h2>
+  <p>Hvis du vil bruge SDFI-ikoner og logoer, <a href="https://sdfidk.github.io/design-system-icons/">skal du importere og indlejre NPM-pakken <code>@dataforsyningen/icons</code></a></p>
+  <p>Ikoner kan indlejres som SVG eller importeres og indlejres som baggrundsbilleder i CSS, så du bare skal sætte en class <code>ds-icon-*</code> på et element for at bruge dem.</p>
+  <p>F.eks.</p>
+
+  <ul class="ds-grid icon-list" style="padding: 1.5rem 0 2rem; margin: 0;">
+    <li class="icon"><span class="ds-icon-sider-icon-privatliv"></span><code>&lt;span class="ds-icon-sider-icon-privatliv">&lt;/span></code></li>
+    <li class="icon"><span class="ds-icon-sider-icon-terms"></span><code>&lt;span class="ds-icon-sider-icon-terms">&lt;/span></code></li>
+    <li class="icon"><span class="ds-icon-sider-icon-user"></span><code>&lt;span class="ds-icon-sider-icon-user">&lt;/span></code></li>
+    <li class="icon"><span class="ds-icon-some-linkedin"></span><code>&lt;span class="ds-icon-some-linkedin">&lt;/span></code></li>
+  </ul>
+              
+</section><section id="logos">
+
+  <h2>Logo</h2>
+
+  <p><em>Bemærk!</em> SDFIs logo må kun bruges af Styrelsen for Dataforsyning og Infrastruktur.</p>
+
+  <p><a href="https://sdfidk.github.io/design-system-icons/">Logoer skal indlejres på samme måde som ikoner, før du kan bruge dem.</a> Enten som SVG-filer eller via CSS:</p>
+  <pre>
+    <code>
+@import "@dataforsyningen/icons/css/logo-micro.css";
+@import "@dataforsyningen/icons/css/logo-normal.css";
+    </code>
+  </pre>
+  
+  <p>Sæt class <code>ds-logo</code> på et element for at vise SDFIs bomærke. Det kan f.eks. være på et link-element som vist herunder.</p>
+
+  <div>
+    <p id="ex-logo-1">
+      <a class="ds-logo" href="#logos">
+        <strong>Dataforsyningen</strong>
+        <span>Styrelsen for Dataforsyning og Infrastruktur</span>
+      </a>
+    </p>
+    <code-example data-snip="ex-logo-1"></code-example>
+  </div>
+
+  <p>Logo fås i en mindre udgave ved at bruge class <code>ds-logo-micro</code></p>
+
+  <div>
+    <p id="ex-logo-2">
+      <a class="ds-logo-micro" href="#logos">
+        <strong>Dataforsyningen</strong>
+        <span>Styrelsen for Dataforsyning og Infrastruktur</span>
+      </a>
+    </p>
+    <code-example data-snip="ex-logo-2"></code-example>
+  </div>
+
+  <p>Hvis logo skal kunne ændre størrelse ift. skærmstørrelse, så brug <code>ds-logo-responsive</code></p>
+
+  <div>
+    <p id="ex-logo-3">
+      <span class="ds-logo-responsive">
+        <strong>Dataforsyningen</strong>
+        <span>Styrelsen for Dataforsyning og Infrastruktur</span>
+      </span>
+    </p>
+    <code-example data-snip="ex-logo-3"></code-example>
+  </div>
+
+  <p>Nogle gange skal logo trækkes lidt til venstre for at få kronen til at være på linie med venstre kant af indholdet. Det gøres nemt ved at sætte <code>ds-logo-pull-left</code> på logo-elementet.</p>
+
+  <div>
+    <div id="ex-logo-4">
+      <span class="ds-logo ds-logo-pull-left">
+        <strong>Dataforsyningen</strong>
+        <span>Styrelsen for Dataforsyning og Infrastruktur</span>
+      </span>
+      <h2>Eksempel indhold</h2>
+      <p>Indholdet starter her.</p>
+      <span class="ds-logo-micro ds-logo-pull-left">
+        <strong>Dataforsyningen</strong>
+        <span>Styrelsen for Dataforsyning og Infrastruktur</span>
+      </span>
+      <p>Her er lidt mere tekstindhold.</p>
+    </div>
+    <code-example data-snip="ex-logo-4"></code-example>
+  </div>
+
+  <h3>Favicon/bogmærkeikon</h3>
+  <p>Som favicon bruges <code>logo-simple-micro.svg</code> <img src="assets/logos/logo-simple-micro.svg" alt=""></p>
+  <p>For at bruge det skal du indsætte denne linie i HTML <code>&lt;head></code> sektionen. Sørg for at "path" svarer til logofilens placering på serveren.</p>
+  <pre><code>&lt;link rel="shortcut icon" href="path/logo-simple-micro.svg"></code></pre>
+  <p>
+    Denne fil følger med i <em>@dataforsyningen/css</em> pakken under<br>
+    <code>/node-modules/@dataforsyningen/css/assets/logos/logo-simple-micro.svg</code>
+  </p>
+</section>
+<section id="images">
+      
+  <h2>Billeder og figurer</h2>
+
+  <p>Billeder indsættes med <code>img</code>-elementet.</p>
+
+  <div id="ex-img-1">
+    <img src="https://archive.org/download/dsc2894/106061_widescreen.jpg" alt="Billede af et stribet skib">
+  </div>
+
+  <code-example data-snip="ex-img-1"></code-example>
+
+  <p>Man kan vise et billede som figur med beskrivelse ved at bruge <code>figure</code> og <code>figcaption</code> sammen med billeder.</p>
+
+  <div id="ex-img-2">
+    <figure>
+      <img src="https://archive.org/download/dsc2894/106061_widescreen.jpg" alt="">
+      <figcaption>
+        <strong>Figur 8.</strong> Cruz Diez's chromatic compositions on a historic battleship. Made for the First World War centenary commemorations in Liverpool.
+      </figcaption>
+    </figure>
+  </div>
+
+  <code-example data-snip="ex-img-2"></code-example>
+
+</section><section id="tabeller">
+      
+  <h2>Tabeller</h2>
+
+  <p>Tabeller kræver intet særligt, da de allerede er stylet som default. Du skal blot bruge korrekt HTML.</p>
+
+  <div id="ex-table-1">
+    <table>
+      <caption>
+        User Details
+      </caption>
+      <thead>
+        <tr>
+          <th>No.</th>
+          <th>Name</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>John Carter</td>
+          <td>johncarter@mail.com</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Peter Parker</td>
+          <td>peterparker@mail.com</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>John Rambo</td>
+          <td>johnrambo@mail.com</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3"><input type="text" placeholder="Inputfelt i tabel" class="ds-mt-sm"></td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
+  <code-example data-snip="ex-table-1"></code-example>
+
+</section><section id="lists">
+
+  <h2>Lister</h2>
+
+  <h3>Definition list</h3>
+  Her er et eksempel på en definition list:
+
+  <article id="ex-list-1">
+    <dl>
+      <dt>Definition term</dt>
+      <dd>Definition description</dd>
+      <dt>(Eksempel) Design Guide</dt>
+      <dd>En samling af tekst og billeder, der orienterer om korrekt brug af elementer i et designsystem.</dd>
+    </dl>
+  </article>
+
+  <code-example data-snip="ex-list-1"></code-example>
+
+</section></main><footer class="ds-footer" data-theme="light">
+  <div class="ds-container">
+    <h2 class="ds-logo-responsive ds-logo-pull-left">
+      <strong>Designsystem</strong>
+      <span>Styrelsen for Dataforsyning og Infrastruktur</span>
+    </h2>
+    <hr>
+    <p>© 2023 Styrelsen for Dataforsyning og Infrastruktur - <a href="https://github.com/SDFIdk/design-system-css">Find os på Github</a> <span class="ds-icon-icon-github"></span></p>
+  </div>
+</footer>
+
+<script src="../assets/designsystem.js"></script>
+<script src="js/code-example-component.js"></script>
+<script src="js/highlight.min.js"></script>
+<script>
+  hljs.highlightAll()
+</script>
+
+<script>
+  const switcher_el = document.querySelector('.theme-switch')
+  const html_el = document.children[0]
+  switcher_el.addEventListener('change', function(event) {
+    html_el.dataset.theme = event.target.value
+  })
+</script>
+
+</body>
+</html>

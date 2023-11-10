@@ -1,6 +1,6 @@
 {
   "name": "@dataforsyningen/designsystem",
-  "version": "0.1.0",
+  "version": "4.0.1",
   "description": "Common design system for SDFI, containing CSS, icons, UI components, and logo images.",
   "type": "module",
   "author": {
@@ -13,8 +13,9 @@
     "doc": "docs"
   },
   "scripts": {
-    "build": "npm run build-css && npm run build-docs",
+    "build": "npm run build-css && npm run build-js && npm run build-docs",
     "build-css": "sass src/index.scss assets/designsystem.css --style compressed",
+    "build-js": "node_modules/.bin/esbuild ./index.js --bundle --outfile=assets/designsystem.js --format=esm",
     "build-docs": "node src/bin/build-docs.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

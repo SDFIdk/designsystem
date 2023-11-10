@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="da" data-theme="light">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1,user-scalable=yes">
+    <title>SDFI Designsystem dokumentation</title>
+
+    <link rel="stylesheet" href="../assets/designsystem.css">
+
+    <!-- Highlight.js CSS -->
+    <link rel="stylesheet" href="css/highlight.min.css">
+
+    <link rel="icon" href="../assets/logos/logo-small.svg">
+
+    <style>
+      /* Custom CSS for this page*/
+      code-example {
+        margin: 0 0 var(--space-lg);
+        display: block;
+      }
+      * + section,
+      * + article {
+        margin-top: var(--space-lg);
+      }
+      .colorswatch {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        gap: var(--space);
+        margin: 0;
+      }
+      .colorswatch span:first-child {
+        width: var(--space-xl);
+        height: var(--space-xl);
+        border-radius: 50%;
+        display: inline-block;
+        flex: 0 0 var(--space-xl);
+      }
+      .icon-list li {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        gap: var(--space);
+        word-wrap: break-word;
+      }
+      .icon-list li > span:first-child {
+        flex: 0 0 var(--space-xl);
+        width: var(--space-xl);
+      }
+      .icon-list code {
+        overflow: auto;
+      }
+      .bordered {
+        padding: var(--padding);
+        border: solid 1px var(--vibrant-steel);
+        border-radius: var(--space-xxs);
+      }
+      .theme-switch {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        gap: var(--space);
+      }
+      .theme-switch p {
+        margin: 0;
+      }
+      .theme-switch input {
+        margin-right: var(--space-xxs);
+      }
+      .theme-switch label {
+        margin-right: var(--space-xs);
+      }
+      .body-wrapper {
+        padding-top: var(--space-lg);
+        padding-bottom: var(--space-lg);
+      }
+
+      #toc-icons {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        gap: var(--space);
+      }
+      #toc-icons > a {
+        width: 2rem;
+        height: 2rem;
+      }
+      #toc-icons > a > svg {
+        width: 100%;
+        height: 100%;
+      }
+
+      @media screen and (min-width: 65rem) {
+
+        .index-wrapper {
+          position: sticky; 
+          top: var(--space-lg); 
+          overflow-y: auto; 
+          height: calc(100vh - var(--space-lg)); 
+          padding-bottom: var(--space-xl);
+        }
+      }
+    </style>
+
+  </head>
+  <body>
+
+    <header data-theme="dark" id="header" class="ds-header">
+
+      <div class="ds-container">
+
+        <p class="ds-logo-responsive ds-logo-pull-left">
+          <img src="../assets/logos/logo-large.svg" alt="">
+          <strong>Dataforsyningen</strong>
+          <span>Styrelsen for Dataforsyning og Infrastruktur</span>
+        </p>  
+      
+        <h1>Designguide eksempler</h1>
+        <p class="blockquote">Reference-implementationer af SDFIs designguide med HTML/CSS</p>
+
+      </div>
+
+    </header>
+
+    <nav class="ds-nav-horizontal">
+      <ul>
+        <li><a href="./css.html">Formularer, farver og typografi</a></li>
+        <li><a href="./icons.html">Ikoner</a></li>
+        <li><a href="./components.html">UI-komponenter</a></li>
+      </ul>
+    </nav>
+
+    <hr style="margin: 0;">
+<main><section class="index-wrapper">
+
+  <h2>Indholdsfortegnelse</h2>
+
+  <fieldset class="theme-switch">
+    <span class="ds-icon-sider-icon-lab"></span>
+    <p>
+      <input id="theme-auto" type="radio" name="theme" value="" checked="">
+      <label for="theme-auto">Auto</label>
+    </p>
+    <p>
+      <input id="theme-light" type="radio" name="theme" value="light">
+      <label for="theme-light">Lys</label>
+    </p>
+    <p>
+      <input id="theme-dark" type="radio" name="theme" value="dark">
+      <label for="theme-dark">Mørk</label>
+    </p>
+  </fieldset>
+
+  <hr>
+
+  <nav class="ds-nav-vertical">
+    <ul>
+      <li><a href="#tabs">Tabs</a></li>
+      <li><a href="#dialog">Dialogboks</a></li>
+      <li><a href="#togglepanel">Skjult panel</a></li>
+      <li><a href="#spinner">Loading spinner</a></li>
+      <li><a href="#popover">Popover</a></li>
+      <li><a href="#toast">Toast</a></li>
+      <li><a href="#apicheck">API checker (Datafordeler check)</a></li>
+    </ul>
+  </nav>
+  
+</section>
+<section id="tabs">
+
+  <h2>Tabs</h2>
+
+  <p>Laves ved at tilføje class <code>ds-nav-tabs</code></p>
+
+  <div id="ex-nav-2">
+    <nav class="ds-nav-tabs">
+      <ul>
+        <li>
+          <h4>Produktnavn</h4>
+        </li>
+        <li>
+          <a href="#tabs">Link</a>    
+        </li>
+        <li>
+          <a href="#tabs">Link</a>    
+        </li>
+        <li>
+          <a href="#tabs">Link</a>    
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <code-example data-snip="ex-nav-2"></code-example>
+
+  <p>Herunder er tabs i en mere simpel version.</p>
+
+  <div id="ex-nav-6">
+    <nav class="ds-nav-tabs">
+      <a href="#tabs" class="active">Something</a>
+      <a href="#tabs">Something else</a>
+      <a href="#tabs">Another thing</a>    
+      <a href="#tabs">Yet another thing</a>
+    </nav>
+  </div>
+
+  <code-example data-snip="ex-nav-6"></code-example>
+
+  <h3>Tab-komponent</h3>
+
+  <p>Tab-komponenten laver automatisk en række indholdselementer om til tabbed elementer, når du omslutter dem med <code>&lt;ds-tabs>&lt;/ds-tabs></code></code></p>
+
+  <div id="ex-tabs-1">
+
+    <script type="module">
+
+      import { Tabs } from './js/designsystem.js'
+
+    </script>
+
+    <ds-tabs data-selected="2">
+      <article title="Something">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+      </article>
+      <article title="Something else">
+        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </article>
+      <article title="Another thing">
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </article>
+    </ds-tabs>
+
+  </div>
+
+  <code-example data-snip="ex-tabs-1"></code-example>
+
+</section>
+<section id="cards">
+
+  <h2>Produktkort/cards</h2> 
+  
+  <p>Produktkort og cards laves nemt ved at sætte class <code>ds-card</code> på et element. Det første <code>&lt;img></code> element i et ds-card bliver altid vist som hovedbilledet.</p>
+
+  <div class="ds-flexgrid" id="ex-card-1">
+
+    <article class="ds-card" data-theme="dark">
+      <img src="https://raw.githubusercontent.com/iamfrank/semstrap/master/assets/images/bg-img-1.jpg" alt="">
+      <div class="ds-padding">
+        <h3>Produktkort titel</h3>
+        <p>Dette er et produktkort/card.</p>      
+      </div>
+      <footer>
+        <button>Handling</button>
+      </footer>
+    </article>
+
+    <article class="ds-card" data-theme="light">
+      <img src="https://raw.githubusercontent.com/iamfrank/semstrap/master/assets/images/bg-img-1.jpg" alt="">
+      <div class="ds-padding">
+        <h3>Produktkort titel</h3>
+        <p>Dette er et produktkort/card.</p>      
+      </div>
+      <footer>
+        <div class="ds-button-group">
+          <button>Ja</button>
+          <button class="secondary">Nej</button>
+        </div>
+      </footer>
+    </article>
+
+  </div>
+
+  <code-example data-snip="ex-card-1"></code-example>
+
+</section>
+<section id="dialog">
+
+  <h2>Dialogboks</h2>
+
+  <div id="ex-dialog-1">
+
+    <button 
+      aria-controls="example-dialog">
+      Vis dialogboks
+    </button>
+
+    <dialog id="example-dialog">
+      <header>
+        <h3 tabindex="0">Dialogboks overskrift</h3>
+        <button 
+          aria-controls="example-dialog"
+          class="ds-icon-icon-close secondary" 
+          title="Luk dialogboks">
+        </button>
+      </header>
+      <article>
+        <p>Denne dialogbox indeholder en besked til dig.</p>
+      </article>
+      <footer>
+        <button class="btn-toggle-dialog" aria-controls="example-dialog">OK</button>
+        <button class="secondary btn-toggle-dialog" aria-controls="example-dialog">Not OK</button>
+      </footer>
+    </dialog>
+
+    <script type="module">
+
+      // Register the dialog element
+      const dialog_element = document.querySelector('#example-dialog')
+      
+      // Toggles the dialog
+      function toggleDialog() {
+        if (dialog_element.open) {
+          dialog_element.close()
+        } else {
+          dialog_element.showModal()
+        }
+      }
+
+      // Add event listeners
+      document.querySelectorAll('[aria-controls="example-dialog"]').forEach(function(element) {
+        element.addEventListener('click', toggleDialog)
+      })
+
+    </script>
+
+  </div>
+
+  <code-example data-snip="ex-dialog-1"></code-example>
+
+</section>
+<section id="togglepanel">
+
+  <h2>Skjult panel</h2>
+
+  <div id="ex-togglepanel-1">
+
+    <button
+      class="ds-panel-toggle"
+      aria-controls="panel-1"
+      id="btn-1"
+      title="Vis/skjul panel">
+      Toggle a thing
+    </button>
+
+    <ds-toggle-panel id="panel-1" aria-labelledby="btn-1">
+
+      <button 
+        class="ds-panel-toggle ds-icon-icon-close secondary"
+        aria-controls="panel-1" 
+        id="close-btn-1"
+        title="Luk panel"
+        style="float: right;">
+      </button>
+
+      <h2>The thing</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+
+    </ds-toggle-panel>
+
+    <script type="module">
+
+      import { ToggleBtn, TogglePanel } from './js/designsystem.js'
+      
+      customElements.define('ds-toggle-panel', TogglePanel)
+
+      const toggle_button = new ToggleBtn(document.querySelector('#btn-1'))
+      const close_button = new ToggleBtn(document.querySelector('#close-btn-1'))
+
+    </script>
+
+  </div>
+
+  <code-example data-snip="ex-togglepanel-1"></code-example>
+
+</section>
+<section id="spinner">
+
+  <h2 class="ds-flex-row"><ds-spinner style="width: 2rem;"></ds-spinner> Loading spinner</h2>
+
+  <div id="ex-spinner-1">
+
+    <ds-spinner style="height: 30rem;"></ds-spinner>
+
+    <script type="module">
+
+      import { Spinner } from './js/designsystem.js'
+      
+      customElements.define('ds-spinner', Spinner)
+
+    </script>
+
+  </div>
+
+  <code-example data-snip="ex-spinner-1"></code-example>
+
+</section>
+<section id="popover">
+
+  <h2>Popover</h2>
+
+  <div id="ex-popover-1">
+    
+    <button popovertarget="mypopover">Toggle the popover</button>
+    <div id="mypopover" popover>Popover content</div>
+
+    <script type="module">
+      // Polyfill native popover API for Firefox and Safari
+      import { popoverPolyfill } from './js/designsystem.js'
+      popoverPolyfill()
+    </script>
+
+  </div>
+
+  <code-example data-snip="ex-popover-1"></code-example>
+
+</section>
+<section id="toast">
+
+  <h2>Toast</h2>
+
+  <div id="ex-toast-1">
+
+    <button id="toastbutton">Display a toast!</button>
+    
+    <div id="toast-container" class="ds-toast-container"></div>
+
+    <script type="module">
+      import { showToast } from './js/designsystem.js'
+
+      document.getElementById('toastbutton').addEventListener('click', function(ev) {
+        showToast({
+          message: 'This is a toast', 
+          target: '#toast-container',
+          duration: 3000
+        })
+      })
+    </script>
+    
+  </div>
+
+  <code-example data-snip="ex-toast-1"></code-example>
+
+</section>
+<section id="apicheck">
+
+  <h2>API checker (Datafordeler checker)</h2>
+
+  <div id="ex-apicheck-1">
+
+    <script type="module">
+      import { apiCheck } from './js/designsystem.js'
+
+      const urlToCheck = 'https://services.datafordeler.dk/DHMTerraen/DHMKoter/1.0.0/GEOREST/HentKoter?geop=POINT(574763.99 6220953.04)&elevationmodel=dtm'
+
+      apiCheck(urlToCheck)
+      .then((apiSuccess) => { 
+        console.log('Datafordeler service er oppe.', apiSuccess)
+      })
+      .catch((apiError) => {
+        console.log('Datafordeler service er nede.', apiError)
+      })
+    </script>
+    
+  </div>
+
+  <code-example data-snip="ex-apicheck-1"></code-example>
+
+</section>
+</main><footer class="ds-footer" data-theme="light">
+  <div class="ds-container">
+    <h2 class="ds-logo-responsive ds-logo-pull-left">
+      <strong>Designsystem</strong>
+      <span>Styrelsen for Dataforsyning og Infrastruktur</span>
+    </h2>
+    <hr>
+    <p>© 2023 Styrelsen for Dataforsyning og Infrastruktur - <a href="https://github.com/SDFIdk/design-system-css">Find os på Github</a> <span class="ds-icon-icon-github"></span></p>
+  </div>
+</footer>
+
+<script src="../assets/designsystem.js"></script>
+<script src="js/code-example-component.js"></script>
+<script src="js/highlight.min.js"></script>
+<script>
+  hljs.highlightAll()
+</script>
+
+<script>
+  const switcher_el = document.querySelector('.theme-switch')
+  const html_el = document.children[0]
+  switcher_el.addEventListener('change', function(event) {
+    html_el.dataset.theme = event.target.value
+  })
+</script>
+
+</body>
+</html>
