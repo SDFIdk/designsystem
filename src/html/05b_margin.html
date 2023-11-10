@@ -1,0 +1,29 @@
+<section id="margin">
+  <h2>Udvendig afstand / margin</h2>
+
+  <p>Du kan sætte den korrekte margin ved at bruge class <code>ds-margin</code> i HTML.</p>
+  <pre><code>&lt;div class="ds-margin"> ... &lt;/div></code></pre>
+
+  <p><a href="layout2.html">Se demo</a></p>
+
+  <p class="ds-margin" style="border: var(--border); display: inline-block;">
+    Indhold med ds-margin omkring sig
+  </p>
+
+  <p>Hvis du skal bruge den officielle margin i CSS, kan du bruge CSS custom property <code>--margin</code>.</p>
+  <pre><code>.my-custom-class {
+    margin: var(--margin);
+  }</code></pre>
+
+  <h3>Specielle margins</h3>
+
+  <p>Du kan sætte en <code>class</code> med en specifik margin til særlige indrykninger o.l.</p>
+  <p>Du kan bygge en specifik class ved at kombinere:</p>
+  <ol>
+    <li><code>ds-mt</code>, <code>ds-mb</code>, <code>ds-ml</code>, <code>ds-mr</code> for hhv. margin-top, margin-bottom, margin-left og margin-right</li>
+    <li><code>-xxs</code>, <code>-xs</code>, <code>-sm</code>, <code>-md</code>, <code>-lg</code>, <code>-xl</code>, <code>-xxl</code> for den størrelse margin, du ønsker</li>
+  </ol>
+  <p>En class <code>ds-mr-lg</code> vil således give en <code>margin-right: 2rem</code></p>
+  <p>Det samme resultat kan opnås ved at bruge CSS custom properties: <code>style="margin-right: var(--space-lg);"</code></p>
+
+</section>

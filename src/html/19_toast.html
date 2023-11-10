@@ -1,0 +1,27 @@
+<section id="toast">
+
+  <h2>Toast</h2>
+
+  <div id="ex-toast-1">
+
+    <button id="toastbutton">Display a toast!</button>
+    
+    <div id="toast-container" class="ds-toast-container"></div>
+
+    <script type="module">
+      import { showToast } from './js/designsystem.js'
+
+      document.getElementById('toastbutton').addEventListener('click', function(ev) {
+        showToast({
+          message: 'This is a toast', 
+          target: '#toast-container',
+          duration: 3000
+        })
+      })
+    </script>
+    
+  </div>
+
+  <code-example data-snip="ex-toast-1"></code-example>
+
+</section>

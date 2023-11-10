@@ -1,0 +1,45 @@
+<section id="togglepanel">
+
+  <h2>Skjult panel</h2>
+
+  <div id="ex-togglepanel-1">
+
+    <button
+      class="ds-panel-toggle"
+      aria-controls="panel-1"
+      id="btn-1"
+      title="Vis/skjul panel">
+      Toggle a thing
+    </button>
+
+    <ds-toggle-panel id="panel-1" aria-labelledby="btn-1">
+
+      <button 
+        class="ds-panel-toggle ds-icon-icon-close secondary"
+        aria-controls="panel-1" 
+        id="close-btn-1"
+        title="Luk panel"
+        style="float: right;">
+      </button>
+
+      <h2>The thing</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+
+    </ds-toggle-panel>
+
+    <script type="module">
+
+      import { ToggleBtn, TogglePanel } from './js/designsystem.js'
+      
+      customElements.define('ds-toggle-panel', TogglePanel)
+
+      const toggle_button = new ToggleBtn(document.querySelector('#btn-1'))
+      const close_button = new ToggleBtn(document.querySelector('#close-btn-1'))
+
+    </script>
+
+  </div>
+
+  <code-example data-snip="ex-togglepanel-1"></code-example>
+
+</section>

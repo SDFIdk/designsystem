@@ -1,0 +1,25 @@
+<section id="apicheck">
+
+  <h2>API checker (Datafordeler checker)</h2>
+
+  <div id="ex-apicheck-1">
+
+    <script type="module">
+      import { apiCheck } from './js/designsystem.js'
+
+      const urlToCheck = 'https://services.datafordeler.dk/DHMTerraen/DHMKoter/1.0.0/GEOREST/HentKoter?geop=POINT(574763.99 6220953.04)&elevationmodel=dtm'
+
+      apiCheck(urlToCheck)
+      .then((apiSuccess) => { 
+        console.log('Datafordeler service er oppe.', apiSuccess)
+      })
+      .catch((apiError) => {
+        console.log('Datafordeler service er nede.', apiError)
+      })
+    </script>
+    
+  </div>
+
+  <code-example data-snip="ex-apicheck-1"></code-example>
+
+</section>

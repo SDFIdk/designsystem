@@ -1,0 +1,73 @@
+<p style="margin-top: var(--space);">
+  <strong>Bemærk:</strong> SDFIs logoer må kun bruges, hvor Styrelsen for Dataforsyning og Infrastruktur er afsender på indholdet.
+</p>
+
+<article id="instructions">
+
+  <h2>Sådan bruger du <em>Design System Icons</em></h2>
+
+  <h3>Med SVG sprite (anbefalet)</h3>
+
+  <p>Du kan gemme alle ikoner som én fil og blot referere til ikonerne.</p>
+  <p>Download og gem <strong>ds-icon-sprites.svg</strong> et passende sted (<strong>PATH</strong>).</p>
+  <p>Herefter kan du blot indsætte SVG-tags og angive en reference til det ønskede ikon med <strong>use</strong>. F.eks.:</p>
+  <pre>
+    <code>
+&lt;svg>&lt;use href="PATH/logo-sprites.svg#arrow-right">&lt;/svg>
+    </code>
+  </pre>
+
+  <h3>Med embedded SVG</h3>
+
+  <p>Du kan indsætte ikoner direkte som SVG-kode. Det er en fordel, hvis du kun skal bruge enkelte ikoner.</p>
+  <p>Under hvert ikon kan du se SVG-koden, som du blot kan copy/paste ind i din HTML.</p>
+
+  <h3>Via CSS</h3>
+
+  <p>Først skal du have installeret <em>@dataforsyningen/icons</em> med NPM:</p>
+  <pre>
+    <code>
+npm i --save @dataforsyningen/icons
+    </code>
+  </pre>
+  <p>
+    Hvis du bare vil have alle ikonerne tilgængelige via CSS, kan du importere dem ind i dit projekt med <strong>@import</strong> i din CSS-fil:
+  </p>
+  <pre>
+    <code>
+@import "@dataforsyningen/icons";
+    </code>
+  </pre>
+  <p>
+    Du kan dog nøjes med kun at importere de ikoner, du skal bruge, ved at sætte en <strong>@import</strong> linie i din CSS-fil for hvert ikon.<br>
+    Du kan se for hvert enkelt ikon, hvad de hedder, når de skal importeres. F.eks.:
+  </p>
+  <pre>
+    <code>
+@import "@dataforsyningen/icons/css/icon_calendar.css";
+@import "@dataforsyningen/icons/css/icon_print.css";
+@import "@dataforsyningen/icons/css/hentdata_icon_download.css";
+    </code>
+  </pre>
+  <p>Når du har importeret CSS, kan du bruge ikoner i HTML ved at sætte en <strong>class="ds-icon-..."</strong> på et element. F.eks.:</p>
+  <pre>
+    <code>
+&lt;span class="ds-hentdata_icon_download">&lt;/span>
+    </code>
+  </pre>
+  <p>
+    Der findes CSS custom properties (CSS variable) for hvert ikons billede-URL. Det giver nogle flere muligheder, hvis du f.eks. vil anvende ikonet som baggrundsbillede.<br>
+    F.eks.:
+  </p>
+  <pre>
+    <code>
+.my-custom-style {
+  background-image: var(--ds-icon_print);
+}
+    </code>
+  </pre>
+  <p>Du kan se under det enkelte ikon, hvilken class eller custom property det hører til.</p>
+
+  <p><a href="#content-top">Til oversigt</a></p>
+
+</article>

@@ -1,0 +1,31 @@
+</main>
+
+</div>
+
+<footer class="ds-footer" data-theme="light">
+  <div class="ds-container">
+    <h2 class="ds-logo-responsive ds-logo-pull-left">
+      <strong>Designsystem</strong>
+      <span>Styrelsen for Dataforsyning og Infrastruktur</span>
+    </h2>
+    <hr>
+    <p>© 2023 Styrelsen for Dataforsyning og Infrastruktur - <a href="https://github.com/SDFIdk/design-system-css">Find os på Github</a> <span class="ds-icon-icon-github"></span></p>
+  </div>
+</footer>
+
+<script src="js/code-example-component.js"></script>
+<script src="js/highlight.min.js"></script>
+<script>
+  hljs.highlightAll()
+</script>
+
+<script>
+  const switcher_el = document.querySelector('.theme-switch')
+  const html_el = document.children[0]
+  switcher_el.addEventListener('change', function(event) {
+    html_el.dataset.theme = event.target.value
+  })
+</script>
+
+</body>
+</html>

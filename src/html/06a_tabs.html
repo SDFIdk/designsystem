@@ -1,0 +1,69 @@
+<section id="tabs">
+
+  <h2>Tabs</h2>
+
+  <p>Laves ved at tilføje class <code>ds-nav-tabs</code></p>
+
+  <div id="ex-nav-2">
+    <nav class="ds-nav-tabs">
+      <ul>
+        <li>
+          <h4>Produktnavn</h4>
+        </li>
+        <li>
+          <a href="#tabs">Link</a>    
+        </li>
+        <li>
+          <a href="#tabs">Link</a>    
+        </li>
+        <li>
+          <a href="#tabs">Link</a>    
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <code-example data-snip="ex-nav-2"></code-example>
+
+  <p>Herunder er tabs i en mere simpel version.</p>
+
+  <div id="ex-nav-6">
+    <nav class="ds-nav-tabs">
+      <a href="#tabs" class="active">Something</a>
+      <a href="#tabs">Something else</a>
+      <a href="#tabs">Another thing</a>    
+      <a href="#tabs">Yet another thing</a>
+    </nav>
+  </div>
+
+  <code-example data-snip="ex-nav-6"></code-example>
+
+  <h3>Tab-komponent</h3>
+
+  <p>Tab-komponenten laver automatisk en række indholdselementer om til tabbed elementer, når du omslutter dem med <code>&lt;ds-tabs>&lt;/ds-tabs></code></code></p>
+
+  <div id="ex-tabs-1">
+
+    <script type="module">
+
+      import { Tabs } from './js/designsystem.js'
+
+    </script>
+
+    <ds-tabs data-selected="2">
+      <article title="Something">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+      </article>
+      <article title="Something else">
+        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </article>
+      <article title="Another thing">
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </article>
+    </ds-tabs>
+
+  </div>
+
+  <code-example data-snip="ex-tabs-1"></code-example>
+
+</section>

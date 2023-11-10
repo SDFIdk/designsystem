@@ -1,0 +1,56 @@
+<section id="padding">
+  <h2>Indvendig afstand / padding</h2>
+
+  <p>Du kan sætte den korrekte padding ved at bruge class <code>ds-padding</code> i HTML.</p>
+  <pre><code>&lt;div class="ds-padding"> ... &lt;/div></code></pre>
+
+  <p><a href="layout1.html">Se demo</a></p>
+
+  <p class="ds-padding" style="border: var(--border); display: inline-block;">
+    Indhold med ds-padding omkring sig.
+  </p>
+
+  <p>Hvis du skal bruge den officielle padding i CSS, kan du bruge CSS custom property <code>--padding</code>.</p>
+  <pre><code>.my-custom-class {
+    padding: var(--padding);
+  }</code></pre>
+
+  <h3>Specielle paddings</h3>
+
+  <p>Du kan sætte en <code>class</code> med en specifik padding til særlige indrykninger o.l.</p>
+  <p>Du kan bygge en specifik class ved at kombinere:</p>
+  <ol>
+    <li><code>ds-pt</code>, <code>ds-pb</code>, <code>ds-pl</code>, <code>ds-pr</code> for hhv. padding-top, padding-bottom, padding-left og padding-right</li>
+    <li><code>-xxs</code>, <code>-xs</code>, <code>-sm</code>, <code>-md</code>, <code>-lg</code>, <code>-xl</code>, <code>-xxl</code> for den størrelse padding, du ønsker</li>
+  </ol>
+  <p>En class <code>ds-pb-sm</code> vil således give en <code>padding-bottom: 0.5rem</code></p>
+  <p>Det samme resultat kan opnås ved at bruge CSS custom properties: <code>style="padding-bottom: var(--space-sm);"</code></p>
+
+  <h3>Når elementer skal flugte med hinanden</h3>
+
+  <p>Når tekst og elementer med runde kanter (ikoner, knapper, etc.) står sammen, skal teksten og de runde elementer rykkes lidt i forhold til hinanden. Det er for at modvirke et optisk fænomen, hvor det ser ud som om, at de ikke står på linie.</p>
+  <p>Du kan gøre det ved at give teksten lidt ekstra padding med <code>ds-optical-padding</code> class ELLER give ikoner/knapper en justeringsmargin.</p>
+
+  <div class="bordered">
+    <p class="ds-optical-padding">Her er din tekst med optical padding.</p>
+    <button>En knap</button>
+  </div>
+
+  <pre><code>
+    &lt;p class="ds-optical-padding">Her er din tekst&lt;/p>
+    &lt;button>En knap&lt;/button>
+  </code></pre>
+
+  <div class="bordered">
+    <p>Her er din tekst</p>
+    <button class="ds-optical-margin">En knap med optical margin</button>
+  </div>
+
+  <pre><code>
+    &lt;p>Her er din tekst&lt;/p>
+    &lt;button class="ds-optical-margin">En knap&lt;/button>
+  </code></pre>
+
+  <p>Her kan du også bruge CSS custom properties <code>--optical-padding</code> og <code>--optical-margin</code> til mere specialiserede layouts.</p>
+
+</section>

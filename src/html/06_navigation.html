@@ -1,0 +1,91 @@
+<section id="navs">
+  
+  <h2>Navigationselementer</h2>
+
+  <p>Navigationselementer laves med <code>&lt;nav></code> elementet.</p>
+
+  <div>
+    
+    <h3>Basic navigation</h3>
+    <div id="ex-nav-5" class="bordered">
+      <nav>
+        <ul>
+          <li><a href="#navs">Link</a></li>
+          <li><a href="#navs">Link</a></li>
+          <li><a href="#navs">Link</a></li>
+        </ul>
+      </nav>
+    </div>
+    
+    <code-example data-snip="ex-nav-5"></code-example>
+
+    <h3>Lodret navigation</h3>
+    <p>Laves ved at tilføje class <code>ds-nav-vertical</code></p>
+
+    <div id="ex-nav-4" class="bordered">
+      <nav class="ds-nav-vertical">
+        <ul>
+          <li><a href="#navs">Link</a></li>
+          <li><a href="#navs">Link</a></li>
+          <li><a href="#navs">Link</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <code-example data-snip="ex-nav-4"></code-example>
+    
+    <h3>Hovedmenu</h3>
+    <p>Laves ved at tilføje class <code>ds-nav-main</code>. "Produktnavn" kan udelades.</p>
+
+    <div id="ex-nav-3" class="bordered">
+      <nav class="ds-nav-main">
+        <h4>
+            Produktnavn
+        </h4>  
+        <ul>
+          <li>
+            <a href="#navs">Link</a>    
+          </li>
+          <li>
+            <a href="#navs">Link</a>    
+          </li>
+          <li>
+            <a href="#navs">Link</a>    
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <code-example data-snip="ex-nav-3"></code-example>
+    
+    <h3>Værktøjslinie</h3>
+    <p>Er en simpel <a href="#knapper">knapgruppe</a> med et <code>nav</code> element udenom, der har class <code>ds-nav-tools</code></p>
+    <p>Adskillelseslinier kan laves ved at indsætte <code>&lt;hr></code> imellem knapper.</p>
+    <div id="ex-nav-1" style="display: flex; flex-flow: column; align-items: center; gap: var(--space);">
+      <nav class="ds-nav-tools">
+        <div class="ds-button-group">
+          <button class="ds-icon-map-icon-download-listvalg" title="Liste"></button>
+          <hr>
+          <button class="ds-icon-map-icon-download-gridvalg" title="Gridvalg"></button>
+          <a href="#" role="button" class="ds-icon-map-icon-download-polygonareal" title="Værktøj X"></a>
+          <hr>
+          <button class="ds-icon-icon-search" title="Search"></button>
+          <a href="#" role="button" class="ds-icon-icon-minus" title="Zoom out"></a>
+          <button class="ds-icon-icon-plus" title="Zoom in"></button>
+          <button>Hjælp</button>
+        </div>
+      </nav>
+
+      <nav class="ds-nav-tools vertical">
+        <div class="ds-button-group">
+          <button class="ds-icon-icon-search" title="Search"></button>
+          <hr>
+          <a href="#" role="button" class="ds-icon-icon-minus" title="Zoom out"></a>
+          <button class="ds-icon-icon-plus" title="Zoom in"></button>
+        </div>
+      </nav>
+    </div>
+    <code-example data-snip="ex-nav-1"></code-example>
+  </div>
+
+</section>

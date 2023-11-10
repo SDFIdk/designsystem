@@ -1,0 +1,101 @@
+<section id="knapper">
+
+  <article class="light-wrapper">
+
+    <h2>Knapper</h2>
+  
+    <p>Knapper laves ved at bruge <code>&lt;button></code> elementet.</p>
+    <p><button>En knap</button></p>
+    <p>Knapper kan have forskellige udtryk, hvis du sætter class "secondary", "outline" eller "contrast" på dem.</p>
+    <div id="btn-ex-1">
+      <button>Standard knap</button>
+      <button class="secondary">Sekundær knap</button>
+      <button class="outline">Outline knap</button>
+      <button class="contrast">Kontrast knap</button>
+      <button disabled>Knap disabled</button>
+    </div>
+    <code-example data-snip="btn-ex-1"></code-example>
+    
+    <p>Du kan ændre typografi i knapperne ved at bruge <code>.hx</code> classes på knapperne.<br> F.eks. <code>&lt;button class="h4">H4 tekst knap&lt;/button></code></p>
+
+    <span id="btn-ex-3">
+    <button class="h2">H2 tekst</button>
+    </span>
+    <button class="secondary h2">H2 tekst</button>
+    <button class="outline h4">H4 tekst</button>
+    <button class="contrast h5">H5 tekst</button>
+
+    <code-example data-snip="btn-ex-3"></code-example>
+
+    <p>Links kan styles som knapper ved at sætte <code>role="button"</code> på dem.</p>
+    <p id="btn-ex-2">
+      <a href="#knapper" role="button">Link-knap</a>
+      <a href="#knapper" role="button" class="secondary">Link-knap</a>
+      <a href="#knapper" role="button" class="outline">Link-knap</a>
+      <a href="#knapper" role="button" class="contrast">Link-knap</a>
+    </p>
+
+    <code-example data-snip="btn-ex-2"></code-example>
+  
+    <p>Du kan lave knapgrupper ved at pakke <code>&lt;button></code> elementerne ind i et element med <code>class="ds-button-group"</code>.</p>
+    
+    <div id="btn-ex-4">
+      <p class="ds-button-group">
+        <button>Standard knap</button>
+        <button class="secondary">Sekundær knap</button>
+      </p>
+    </div>
+
+    <code-example data-snip="btn-ex-4"></code-example>
+
+    <p>
+      Knapgrupper kan indeholde et vilkårligt antal knapper.<br> 
+      <em>Bemærk:</em> Vær opmærksom på, om der er plads til alle knapperne på små skærme.
+    </p>
+    <p class="ds-button-group">
+      <button>Standard</button>
+      <button class="secondary">Sekundær</button>
+      <button disabled>Disabled</button>
+    </p>
+    
+    <p>Knapper kan udstyres med ikoner.</p>
+    <p><strong>Bemærk! Knapper uden tekst skal altid have en <code>title</code> attribut.</strong><br> Det giver en forklaringstekst ved mouse-over og hjælper skærmlæsere.</p>
+
+    <div id="btn-ex-5">
+      <p>
+        <button title="Kopier" class="ds-icon-icon-clipboard"></button>
+        <a title="Vælg" role="button" href="#buttons" class="ds-icon-hentdata-icon-choose"></a>
+        <button title="Kopier" class="secondary ds-icon-icon-clipboard"></button>
+        <button title="Kopier" class="outline ds-icon-icon-clipboard"></button>
+        <button title="Kopier" class="contrast ds-icon-icon-clipboard"></button>
+      </p>
+    </div>
+
+    <code-example data-snip="btn-ex-5"></code-example>
+
+    <p>Knapper med ikoner kan også kobles sammen i grupper.</p>
+
+    <div id="btn-ex-7">
+      <p class="ds-button-group">
+        <button title="Download" class="outline ds-icon-hentdata-icon-download"></button>
+        <button title="Email" class="outline ds-icon-icon-mail"></button>
+        <button title="Kopier" class="ds-icon-icon-clipboard"></button>
+      </p>
+    </div>
+
+    <code-example data-snip="btn-ex-7"></code-example>
+
+    <p>Tekst og ikoner kan kombineres i knapper.</p>
+
+    <p id="btn-ex-6">
+      <button class="ds-icon-icon-plus">Tilføj</button>
+      <button class="ds-icon-icon-plus secondary">Tilføj</button>
+      <button class="ds-icon-icon-plus outline">Tilføj</button>
+      <button class="ds-icon-icon-plus contrast">Tilføj</button>
+      <a role="button" class="ds-icon-icon-plus secondary" href="#knapper">Link</a>
+    </p>
+
+    <code-example data-snip="btn-ex-6"></code-example>
+  </article>
+
+</section>  

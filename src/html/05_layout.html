@@ -1,0 +1,104 @@
+<section id="grid">
+
+  <style>
+    #ex-grid-1 div,
+    #ex-grid-2 div,
+    #ex-grid-3 div,
+    #ex-grid-4 div {
+      color: var(--background-color);
+      background-color: var(--color);
+      padding: var(--padding);
+    }
+  </style>
+
+  <h2>Layout</h2>
+
+  <p>Herunder kan du finde flere detaljer om, hvordan du nemt laver layouts i SDFI-stil.</p>
+  <p>Vi har lavet nogle eksempler, hvor du kan se forskellige layout-teknikker i praksis.</p>
+  <ul>
+    <li><a href="layout0.html">Se simpelt layout-eksempel</a></li>
+    <li><a href="layout6.html">Se avanceret layout-eksempel (med ikoner, etc.)</a></li>
+  </ul>
+
+  <h3>Kolonner og grids</h3>
+
+  <p>Lav et simpelt kolonne-layout ved at tilføje <code>ds-grid</code> class til det element, der indeholder de elementer, som skal vises i kolonner.</p>
+  <p><a href="layout1.html">Se demo</a></p>
+
+  <div id="ex-grid-1">
+    <section class="ds-grid">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+    </section>
+  </div>
+
+  <code-example data-snip="ex-grid-1"></code-example>
+
+  <h4>Fleksible kolonner</h4>
+
+  <p>Hvis boksene gerne må bruge den plads, der er til rådighed, så kan du bruge <code>ds-flexgrid</code> class i stedet.</p>
+  <p><a href="layout2.html">Se demo</a></p>
+
+  <div id="ex-grid-2">
+    <section class="ds-flexgrid">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+    </section>
+  </div>
+
+  <code-example data-snip="ex-grid-2"></code-example>
+
+  <h4>Primære/sekundære kolonner</h4>
+
+  <p>Brug class <code>.ds-grid-2-1</code> på elementet udenom, når du vil vise to elementer som hhv. primær og sekundær kolonne.</p>
+  
+  <p><a href="layout4.html">Se demo</a></p>
+
+  <div id="ex-grid-3">
+    <section class="ds-grid-2-1">
+      <div>Primær / main</div>
+      <div>Sekundær</div>
+    </section>
+  </div>
+
+  <code-example data-snip="ex-grid-3"></code-example>
+
+  <p>Brug class <code>.ds-grid-1-2</code> hvis rækkefølgen skal være omvendt.</p>
+  
+  <p><a href="layout5.html">Se demo</a></p>
+
+  <div id="ex-grid-4">
+    <section class="ds-grid-1-2">
+      <div>Sekundær</div>
+      <div>Primær / main</div>
+    </section>
+  </div>
+
+  <code-example data-snip="ex-grid-4"></code-example>
+
+  <h3>Indholds-containere</h3>
+  
+  <p class="ds-container">Hvis du skal vise noget indhold i én kolonne midt i skærmen, så sæt <code>ds-container</code> class på elementet. Indholdet i denne tekst er centreret med class <code>ds-container</code></p>
+  <p><a href="layout3.html">Se demo</a></p>
+
+  <h3>Simpel rækkevisning</h3>
+
+  <p>Brug class <code>ds-flex-row</code>, hvis du blot vil vise to elementer ved siden af hinanden, og de skal være centreret i højden.<br> F.eks.:</p>
+  <p class="ds-flex-row">
+    <button>En knap</button>
+    <span>Et tekstelement</span>
+  </p>
+  <pre><code>
+    &lt;p class="ds-flex-row">
+      &lt;button>En knap&lt;/button>
+      &lt;span>Et tekstelement&lt;/span>
+    &lt;/p>
+  </code></pre>
+  
+
+</section>

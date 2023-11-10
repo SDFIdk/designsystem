@@ -1,0 +1,20 @@
+<section id="popover">
+
+  <h2>Popover</h2>
+
+  <div id="ex-popover-1">
+    
+    <button popovertarget="mypopover">Toggle the popover</button>
+    <div id="mypopover" popover>Popover content</div>
+
+    <script type="module">
+      // Polyfill native popover API for Firefox and Safari
+      import { popoverPolyfill } from './js/designsystem.js'
+      popoverPolyfill()
+    </script>
+
+  </div>
+
+  <code-example data-snip="ex-popover-1"></code-example>
+
+</section>
