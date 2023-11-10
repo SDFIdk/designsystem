@@ -1,0 +1,136 @@
+/**
+ * Form elements
+ * Checkboxes & Radios
+ */
+
+[type="checkbox"],
+[type="radio"] {
+  // TODO: This causes missing checkbox icon. A checkmark icon should be included in this package
+  //-webkit-appearance: none;
+  //-moz-appearance: none;
+  //appearance: none;
+  width: var(--space-md);
+  height: var(--space-md);
+  margin-top: -(var(--space-xxs));
+  margin-right: var(--space-xl);
+  margin-left: 0;
+  margin-inline-start: 0;
+  margin-inline-end: var(--space-sm);
+  border-width: var(--border-width);
+  font-size: inherit;
+  vertical-align: middle;
+  cursor: pointer;
+
+  &::-ms-check {
+    display: none; // unstyle IE checkboxes
+  }
+
+  &:checked,
+  &:checked:active,
+  &:checked:focus {
+    --background-color: var(--primary);
+    --border-color: var(--primary);
+    background-image: var(--icon-checkbox);
+    background-position: center;
+    background-size: var(--space-sm) auto;
+    background-repeat: no-repeat;
+  }
+
+  & ~ label {
+    display: inline-block;
+    margin-right: var(--space);
+    margin-bottom: 0;
+    cursor: pointer;
+  }
+}
+
+// Checkboxes
+[type="checkbox"] {
+  &:indeterminate {
+    --background-color: var(--primary);
+    --border-color: var(--primary);
+    background-image: var(--icon-minus);
+    background-position: center;
+    background-size: var(--space-sm) auto;
+    background-repeat: no-repeat;
+  }
+}
+
+// Radios
+[type="radio"] {
+  border-radius: 50%;
+
+  &:checked,
+  &:checked:active,
+  &:checked:focus {
+    --background-color: var(--primary-inverse);
+    border-width: var(--space-sm);
+    background-image: none;
+  }
+}
+
+// Switchs
+[type="checkbox"][role="switch"] {
+  --background-color: var(--switch-background-color);
+  --border-color: var(--switch-background-color);
+  --color: var(--switch-color);
+
+  // Config
+  $switch-height: 1.5rem;
+  $switch-width: 2rem;
+  $switch-transition: 0.1s ease-in-out;
+
+  // Styles
+  width: $switch-width;
+  height: $switch-height;
+  border: var(--border-width) solid var(--border-color);
+  border-radius: $switch-height;
+  background-color: var(--background-color);
+  line-height: $switch-height;
+
+  &:focus {
+    --background-color: var(--switch-background-color);
+    --border-color: var(--switch-background-color);
+  }
+
+  &:checked {
+    --background-color: var(--switch-checked-background-color);
+    --border-color: var(--switch-checked-background-color);
+  }
+
+  &:before {
+    display: block;
+    width: calc(#{$switch-height} - (var(--border-width) * 2));
+    height: 100%;
+    border-radius: 50%;
+    background-color: var(--color);
+    content: "";
+    transition: margin $switch-transition;
+  }
+
+  &:checked {
+    background-image: none;
+
+    &::before {
+      margin-left: calc(#{$switch-width * 0.5} - var(--border-width));
+      margin-inline-start: calc(#{$switch-width * 0.5} - var(--border-width));
+    }
+  }
+}
+
+// Aria-invalid
+[type="checkbox"],
+[type="checkbox"]:checked,
+[type="radio"],
+[type="radio"]:checked,
+[type="checkbox"][role="switch"],
+[type="checkbox"][role="switch"]:checked {
+  
+  &[aria-invalid="false"] {
+    --border-color: var(--form-element-valid-border-color);
+  }
+
+  &[aria-invalid="true"] {
+    --border-color: var(--form-element-invalid-border-color);
+  }
+}

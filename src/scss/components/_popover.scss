@@ -1,0 +1,22 @@
+[popover] {
+  display: none;
+  background-color: var(--background-color);
+  color: var(--color);
+  padding: var(--space-sm) var(--space);
+  border: solid 1px var(--vibrant-steel);
+  border-radius: var(--space-sm);
+}
+
+/* For browsers with native popover support*/
+[popover]:popover-open {
+  display: block;
+}
+
+/* For polyfilled browsers (Firefox, Safari, etc.) */
+.popover-open[popover] {
+  display: block;
+  position: fixed;
+  z-index: 100000;
+  top: 45%;
+  left: 45%;
+}

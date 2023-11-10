@@ -1,0 +1,23 @@
+{
+  "name": "@dataforsyningen/designsystem",
+  "version": "1.0.0",
+  "description": "Common design system for SDFI, containing CSS, icons, UI components, and logo images.",
+  "author": {
+    "name": "Styrelsen for Dataforsyning og Infrastruktur",
+    "email": "support@sdfi.dk",
+    "url": "https://sdfi.dk/"
+  },
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "build-css": "sass src/index.scss assets/designsystem.css --style compressed",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["SDFI", "designsystem", "icons", "stylesheets", "logos", "UI components"],
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.69.0"
+  }
+}

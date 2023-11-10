@@ -1,0 +1,13 @@
+// Footer styles
+
+.ds-footer {
+  background-color: var(--footer-background);
+  font-size: smaller;
+  display: flex;
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-xl);
+}
+
+.ds-footer > * {
+  width: 100%;
+}

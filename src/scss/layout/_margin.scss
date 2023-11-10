@@ -1,0 +1,116 @@
+/**
+ * Utility classes for margins
+ */
+
+.ds-m,
+.ds-margin {
+  margin: var(--margin);
+}
+
+.ds-optical-margin {
+  margin: var(--optical-margin);
+}
+
+/* margin-top */
+.ds-mt {
+  margin-top: var(--space);
+}
+.ds-mt-xxs {
+  margin-top: var(--space-xxs);
+}
+.ds-mt-xs {
+  margin-top: var(--space-xs);
+}
+.ds-mt-sm {
+  margin-top: var(--space-sm);
+}
+.ds-mt-md {
+  margin-top: var(--space-md);
+}
+.ds-mt-lg {
+  margin-top: var(--space-lg);
+}
+.ds-mt-xl {
+  margin-top: var(--space-xl);
+}
+.ds-mt-xxl {
+  margin-top: var(--space-xxl);
+}
+
+/* margin-bottom */
+.ds-mb  {
+  margin-bottom: var(--space);
+}
+.ds-mb-xxs {
+  margin-bottom: var(--space-xxs);
+}
+.ds-mb-xs {
+  margin-bottom: var(--space-xs);
+}
+.ds-mb-sm {
+  margin-bottom: var(--space-sm);
+}
+.ds-mb-md {
+  margin-bottom: var(--space-md);
+}
+.ds-mb-lg {
+  margin-bottom: var(--space-lg);
+}
+.ds-mb-xl {
+  margin-bottom: var(--space-xl);
+}
+.ds-mb-xxl {
+  margin-bottom: var(--space-xxl);
+}
+
+/* margin-left */
+.ds-ml {
+  margin-left: var(--space);
+}
+.ds-ml-xxs {
+  margin-left: var(--space-xxs);
+}
+.ds-ml-xs {
+  margin-left: var(--space-xs);
+}
+.ds-ml-sm {
+  margin-left: var(--space-sm);
+}
+.ds-ml-md {
+  margin-left: var(--space-md);
+}
+.ds-ml-lg {
+  margin-left: var(--space-lg);
+}
+.ds-ml-xl {
+  margin-left: var(--space-xl);
+}
+.ds-ml-xxl {
+  margin-left: var(--space-xxl);
+}
+
+/* margin-right */
+.ds-mr  {
+  margin-right: var(--space);
+}
+.ds-mr-xxs {
+  margin-right: var(--space-xxs);
+}
+.ds-mr-xs {
+  margin-right: var(--space-xs);
+}
+.ds-mr-sm {
+  margin-right: var(--space-sm);
+}
+.ds-mr-md {
+  margin-right: var(--space-md);
+}
+.ds-mr-lg {
+  margin-right: var(--space-lg);
+}
+.ds-mr-xl {
+  margin-right: var(--space-xl);
+}
+.ds-mr-xxl {
+  margin-right: var(--space-xxl);
+}

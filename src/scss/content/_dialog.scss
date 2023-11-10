@@ -1,0 +1,49 @@
+dialog[open] {
+  @include dark;
+  border-radius: var(--space-sm);
+  border-width: 0;
+  box-shadow: 0 var(--space-sm) var(--space-md) hsla(0,0%,0%,0.33);
+  margin: auto;
+  padding: var(--space-md);
+  background-color: var(--mork-tyrkis);
+  margin: var(--margin);
+  width: auto;
+
+    @media (min-width: $breakpoint-md) {
+      
+      & {
+        width: auto;
+        min-width: 15rem;
+        max-width: 44rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+    }
+  }
+
+dialog > header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  gap: var(--space);
+  align-items: center;
+}
+
+dialog > header > *,
+dialog > footer > * {
+  margin: 0;
+}
+
+dialog > footer {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  gap: var(--space);
+  align-items: center;
+  padding-top: var(--space);
+}
+
+dialog > header > button.ds-icon-icon-close {
+  border: none;
+}

@@ -1,0 +1,55 @@
+:root {
+  
+  // Main colors
+  --c1: #fff; // Hvid
+  --c2: hsl(186, 25%, 98%);
+  --c3: hsl(186, 25%, 96%); // Lys steel
+  --c4: hsl(186, 25%, 91%); // Medium steel
+  --c5: hsl(186, 25%, 64%); // Dark steel opacity 100%
+  --c6: hsl(186, 100%, 33%); // Tyrkis
+  
+  --c7: hsl(186, 92%, 21%);// Mørk tyrkis
+  
+  --c8: hsl(186,100%,12%); // Mørk tyrkis plus
+  --c9: hsl(186,100%,7%); // Sort tyrkis
+  --c10: #000; // Sort
+
+  // "Green" colors
+  --g1: hsl(171,85%,98%);
+  --g2: hsl(171,85%,95%);
+  --g3: hsl(171,85%,90%);
+  --g4: hsl(171,85%,80%);
+  --g5: hsl(171,85%,54%); // Aktion
+  --g6: hsl(171,85%,40%);
+
+  // "Red" colors
+  --r1: hsl(0,100%,98%);
+  --r2: hsl(0,100%,94%);
+  --r3: hsl(0,100%,90%);
+  --r4: hsl(0,100%,80%);
+  --r5: hsl(0,100%,66%); // Advarsel
+  --r6: hsl(0,100%,51%);
+
+  // "Orange" colors
+  --o1: hsl(26,80%,98%);
+  --o2: hsl(26,80%,95%);
+  --o3: hsl(26,80%,90%);
+  --o4: hsl(26,80%,80%);
+  --o5: hsl(26,80%,56%); // Highligt
+  --o6: hsl(26,80%,41%);
+
+
+  // Color shorthands
+  --tyrkis: var(--c6);
+  --mork-tyrkis: var(--c8);
+  --vibrant-steel: hsla(186,40%,82%,0.7);
+  --sort: var(--c10);
+  --65-sort: hsla(0,0%,0%,0.65);
+  --hvid: var(--c1);
+  --dark-steel: hsla(186,25%,64%,0.6);
+  --medium-steel: var(--c4);
+  --lys-steel: var(--c3);
+  --aktion: var(--g5);
+  --highlight: var(--o5);
+  --advarsel: var(--r5);
+}

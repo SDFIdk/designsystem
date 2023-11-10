@@ -1,0 +1,24 @@
+.ds-header {
+  display: flex;
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-xl);
+  background-color: var(--header-background);
+
+  & > * {
+    width: 100%;
+  }
+
+  .ds-logo,
+  .ds-logo-responsive {
+    margin-bottom: var(--space-xl);
+  }
+
+  h1 {
+    margin: 0 0 var(--space-md);
+  }
+  
+  blockquote,
+  .blockquote {
+    margin: var(--space-md) 0;
+  }
+}

@@ -1,0 +1,171 @@
+/**
+ * Nav
+ */
+
+// Basic horizontal Nav
+nav,
+nav ul {
+  display: flex;
+}
+
+nav {
+  justify-content: space-between;
+  align-items: center;
+
+  & > * {
+    margin: 0;
+  }
+
+  ol,
+  ul {
+    align-items: center;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+
+    a, 
+    [role="link"],
+    button,
+    [role="button"] {
+      @extend .h4;
+      display: inline-block;
+      color: var(--nav-link-color);
+      padding: var(--space-sm) var(--space-md);
+      margin: 0;
+      border-radius: var(--space-lg);
+
+      &:hover,
+      &:active {
+        background-color: var(--primary);
+        color: var(--primary-inverse);
+        text-decoration: none;
+      }
+
+      &:focus {
+        background-color: var(--link-focus);
+        color: var(--primary-inverse);
+      }
+    }
+  }
+}
+
+// Main nav
+.ds-nav-main {
+  li > * {
+    padding: var(--space-md) var(--space-lg);
+  }
+}
+
+// Vertical Nav
+aside,
+.ds-nav-vertical {
+  nav,
+  ol,
+  ul,
+  li {
+    display: block;
+  }
+
+  li {
+    
+    a {
+      display: block;
+    }
+  }
+  li + li {
+    margin-top: var(--space-sm);
+  }
+}
+
+// Tool bar nav
+nav.ds-nav-tools,
+aside.ds-nav-tools {
+  
+  .ds-button-group {
+    border-radius: var(--space-lg);  
+    border: solid var(--space-xs) var(--card-border-color);
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--hvid);
+  }
+
+  button,
+  [role="button"] {
+    background-color: transparent;
+    border-color: transparent;
+    color: var(--primary) !important;
+    min-height: var(--space-xl);
+    min-width: var(--space-xl);
+
+    &:hover,
+    &:active {
+      background-color: var(--aktion);
+      color: var(--sort) !important;
+      text-decoration: none;
+    }
+
+    &::before {
+      filter: none !important;
+    }
+
+    &:hover::before,
+    &:active::before {
+      filter: brightness(0) !important;
+    }
+  }
+
+  hr {
+    display: block;
+    border: none;
+    background-color: var(--card-border-color);
+    width: 1px;
+    height: var(--space-xl);
+    margin: 0;
+  }
+
+  &.vertical {
+
+    --btn-pos: calc(var(--space) * 0.4);
+
+    .ds-button-group {
+      flex-flow: column nowrap;
+
+      hr {
+        display: block;
+        border: none;
+        background-color: var(--card-border-color);
+        width: var(--space-xl);
+        height: 1px;
+        margin: 0;
+      }
+
+      & > button,
+      & > input,
+      & > a {
+
+        &:first-child {
+          min-height: var(--space-xl);
+          border-radius: var(--space-lg) var(--space-lg) 0 0;
+          &::before {
+            top: var(--btn-pos);
+            left: var(--btn-pos);
+          }
+        }
+
+        &:last-child {
+          min-height: var(--space-xl);
+          border-radius: 0 0 var(--space-lg) var(--space-lg);
+          &::before {
+            top: var(--btn-pos);
+            left: var(--btn-pos);
+          }
+        }
+      }
+    }
+  }
+}

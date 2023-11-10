@@ -1,0 +1,40 @@
+/**
+ * Card
+ */
+
+.ds-card {
+  border-radius: var(--space-lg);
+  background: var(--card-background-color);
+  box-shadow: var(--card-box-shadow);
+  border: solid var(--space-xs) var(--card-border-color);
+  overflow: hidden;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: stretch;
+
+  & > img:first-child {
+    background-color: var(--c5);
+    min-height: 15rem;
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  & > .ds-padding {
+    flex: 1 0 auto;
+  }
+
+  & > footer {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding);
+    padding-bottom: var(--space);
+    flex: 0 1 auto;
+
+    & > * {
+      margin-bottom: 0;
+    }
+  }
+}

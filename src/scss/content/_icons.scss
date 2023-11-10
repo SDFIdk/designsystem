@@ -1,0 +1,105 @@
+/* Icons */
+
+[class*="ds-icon-"] {
+
+  --icon-outer-size: calc(var(--icon-size) * 1.5);
+  --icon-pos: calc(var(--icon-size) * 0.225);
+
+  position: relative;
+  min-width: var(--icon-outer-size);
+  height: var(--icon-outer-size);
+  display: inline-flex;
+  vertical-align: middle;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: var(--icon-pos);
+    left: var(--icon-pos);
+    display: block;
+    height: var(--icon-size);
+    width: var(--icon-size);
+    background-position: center center;
+    background-size: var(--icon-size) var(--icon-size);
+    filter: var(--icon-filter);
+  }
+
+  &.secondary {
+    border-color: transparent;
+  }
+
+  &.secondary::before {
+    filter: var(--icon-filter-secondary);
+  }
+
+  &.secondary:hover::before,
+  &.secondary:active::before {
+    filter: var(--icon-filter-secondary-hover);
+  }
+
+  &.outline::before {
+    filter: var(--icon-filter-outline);
+  }
+
+  &.outline:hover::before,
+  &.outline:active::before {
+    filter: var(--icon-filter-outline-hover);
+  }
+
+  &.contrast::before {
+    filter: brightness(0) invert(100%);
+  }
+}
+
+
+[class*="ds-icon-some"]::before {
+  filter: none;
+}
+
+// Icon buttons
+
+button, 
+input[type="submit"], 
+input[type="button"],
+[role="button"] {
+  
+  &[class*="ds-icon-"] {
+    border-radius: var(--icon-outer-size);
+    padding: var(--space-sm) var(--space-md) var(--space-sm) calc(var(--icon-outer-size) * 0.875);
+    
+    // We assume that a button with `title` attribute only displays the icon
+    &[title] {
+      padding: 0;
+      width: var(--icon-outer-size);
+    }
+
+    &:not(.contrast, .secondary, .outline)::before {
+      filter: brightness(0);
+    }
+  }
+}
+
+.ds-button-group {
+  
+  button, 
+  input[type="submit"], 
+  input[type="button"],
+  [role="button"] {
+
+    &[class*="ds-icon-"] {
+      border-radius: 0;
+    }
+
+    &[class*="ds-icon-"]:first-child {
+      border-radius: 50% 0 0 50%;
+    }
+
+    &[class*="ds-icon-"]:last-child {
+      border-radius: 0 50% 50% 0;
+    }
+  }
+}

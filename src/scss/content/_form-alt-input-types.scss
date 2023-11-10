@@ -1,0 +1,200 @@
+/**
+ * Form elements
+ * Alternatives input types (Not Checkboxes & Radios)
+ */
+
+// Color
+[type="color"] {
+  // Wrapper
+  @mixin color-wrapper {
+    padding: 0;
+  }
+
+  &::-webkit-color-swatch-wrapper {
+    @include color-wrapper;
+  }
+
+  &::-moz-focus-inner {
+    @include color-wrapper;
+  }
+
+  // Swatch
+  @mixin color-swatch {
+    border: 0;
+    border-radius: calc(var(--border-radius) * 0.5);
+  }
+
+  &::-webkit-color-swatch {
+    @include color-swatch;
+  }
+
+  &::-moz-color-swatch {
+    @include color-swatch;
+  }
+}
+
+[dir="rtl"]
+  :is([type="date"], [type="datetime-local"], [type="month"], [type="time"], [type="week"]) {
+  text-align: right;
+}
+
+// File
+[type="file"] {
+  
+  border: 0;
+  border-radius: 0;
+  background: none;
+
+  @mixin file-selector-button {
+    margin-right: var(--space-sm);
+    margin-left: 0;
+    margin-inline-start: 0;
+    margin-inline-end: var(--space-sm);
+    padding: var(--space-sm) var(--space);
+    background-color: transparent;
+    color: var(--secondary-inverse) !important;
+    border: solid 1px var(--dark-steel);
+    border-radius: var(--space-lg);
+    outline: none;
+    font-weight: var(--font-weight);
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+    text-align: center;
+    cursor: pointer;
+
+    transition: background-color var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
+
+    &:hover, 
+    &:active {
+      background-color: var(--c4);
+      color: var(--c9) !important;
+    }
+    &:focus {
+      box-shadow: inset 0 0 0 3px var(--highlight);
+    }
+  }
+
+  &::file-selector-button {
+    @include file-selector-button;
+  }
+
+  &::-webkit-file-upload-button {
+    @include file-selector-button;
+  }
+
+  &::-ms-browse {
+    @include file-selector-button;
+  }
+}
+
+// Range
+input[type="range"] {
+  // Config
+  $height-track: 0.25rem;
+  $border-thumb: 2px;
+
+  // Styles
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  
+  background: none;
+
+  // Slider Track
+  @mixin slider-track {
+    width: 100%;
+    height: $height-track;
+    border-radius: var(--border-radius);
+    background-color: var(--range-border-color);
+    transition: background-color var(--transition), box-shadow var(--transition);
+  }
+
+  &::-webkit-slider-runnable-track {
+    @include slider-track;
+  }
+
+  &::-moz-range-track {
+    @include slider-track;
+  }
+
+  &::-ms-track {
+    @include slider-track;
+  }
+
+  // Slider Thumb
+  @mixin slider-thumb {
+    -webkit-appearance: none;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--aktion);
+    cursor: pointer;
+    transition: background-color var(--transition), transform var(--transition);
+    position: relative;
+    bottom: 0.66rem;
+  }
+  &::-webkit-slider-thumb,
+  &::-webkit-media-slider-thumb {
+    @include slider-thumb;
+  }
+
+  &::-moz-range-thumb {
+    @include slider-thumb;
+  }
+
+  &::-ms-thumb {
+    @include slider-thumb;
+  }
+
+  &:hover,
+  &:focus {
+    --range-border-color: var(--range-active-border-color);
+    --range-thumb-color: var(--range-thumb-hover-color);
+  }
+
+  &:active {
+    --range-thumb-color: var(--range-thumb-active-color);
+
+    // Slider Thumb
+    &::-webkit-slider-thumb {
+      transform: scale(1.25);
+    }
+
+    &::-moz-range-thumb {
+      transform: scale(1.25);
+    }
+
+    &::-ms-thumb {
+      transform: scale(1.25);
+    }
+  }
+}
+
+// Search
+input[type="search"] {
+
+  padding-right: var(--space-lg);
+  background-image: url('data:image/svg+xml;utf8,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M19.5%2019.5L16.5%2016.5M18%2012C18%2015.3137%2015.3137%2018%2012%2018C8.68629%2018%206%2015.3137%206%2012C6%208.68629%208.68629%206%2012%206C15.3137%206%2018%208.68629%2018%2012Z%22%20stroke%3D%22hsl(186%2C100%25%2C33%25)%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%0A%3C%2Fsvg%3E%0A');
+  background-position: right var(--space-sm) center;
+  background-size: var(--space-lg) auto;
+  background-repeat: no-repeat;
+
+  &[aria-invalid="false"] {
+    border: inset 1px var(--advarsel);
+  }
+
+  &[aria-invalid="true"] {
+    border: inset 1px var(--aktion);
+  }
+
+}
+
+// Cancel button
+[type="search"] {
+  &::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    display: none;
+  }
+}
