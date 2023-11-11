@@ -15,13 +15,9 @@
 
     <style>
       /* Custom CSS for this page*/
-      code-example {
+      code-view {
         margin: 0 0 var(--space-lg);
         display: block;
-      }
-      * + section,
-      * + article {
-        margin-top: var(--space-lg);
       }
       .colorswatch {
         display: flex;
@@ -59,6 +55,7 @@
         border: solid 1px var(--vibrant-steel);
         border-radius: var(--space-xxs);
       }
+
       .theme-switch {
         display: flex;
         flex-flow: row nowrap;
@@ -73,10 +70,6 @@
       }
       .theme-switch label {
         margin-right: var(--space-xs);
-      }
-      .body-wrapper {
-        padding-top: var(--space-lg);
-        padding-bottom: var(--space-lg);
       }
 
       #toc-icons {
@@ -93,23 +86,12 @@
         width: 100%;
         height: 100%;
       }
-
-      @media screen and (min-width: 65rem) {
-
-        .index-wrapper {
-          position: sticky; 
-          top: var(--space-lg); 
-          overflow-y: auto; 
-          height: calc(100vh - var(--space-lg)); 
-          padding-bottom: var(--space-xl);
-        }
-      }
     </style>
 
   </head>
   <body>
 
-    <header data-theme="dark" id="header" class="ds-header">
+    <header id="header" class="ds-header">
 
       <div class="ds-container">
 
@@ -128,13 +110,12 @@
 
     <nav class="ds-nav-horizontal">
       <ul>
-        <li><a href="./css.html">Formularer, farver og typografi</a></li>
+        <li><a href="./css.html">Basis</a></li>
         <li><a href="./icons.html">Ikoner</a></li>
         <li><a href="./components.html">UI-komponenter</a></li>
+        <li><a href="./logos.html">Logo</a></li>
       </ul>
     </nav>
-
-    <hr style="margin: 0;">
 <h2>Ikoner</h2><nav id="toc-icons">
     <a href="#hentdata-choose"><svg><use href="../assets/designsystem-icons.svg#hentdata-choose"></svg></a>
   
@@ -3097,7 +3078,7 @@ npm i --save @dataforsyningen/icons
 </footer>
 
 <script src="../assets/designsystem.js"></script>
-<script src="js/code-example-component.js"></script>
+<script src="js/code-view-component.js"></script>
 <script src="js/highlight.min.js"></script>
 <script>
   hljs.highlightAll()

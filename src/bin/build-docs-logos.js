@@ -1,15 +1,13 @@
 import { readdir } from 'node:fs/promises'
-
 import { writeToFile, readHTML } from './shared.js'
 
-// Build HTML
-export async function buildComponentDoc() {
-  const docs_dir = 'src/html/articles/components'
+export async function buildLogoDoc() {
+
+  const docs_dir = 'src/html/articles/logos'
   let markup = ''
 
   markup += await readHTML('src/html/blocks/header.html')
   markup += '<main>'
-  markup += await readHTML('src/html/blocks/toc-components.html')
 
   try {
     const files = await readdir(docs_dir)
@@ -26,7 +24,7 @@ export async function buildComponentDoc() {
 
   markup += await readHTML('src/html/blocks/footer.html')
 
-  await writeToFile(markup, './docs/components.html')
+  await writeToFile(markup, './docs/logos.html')
 
-  console.log('Done building component docs 👍')
+  console.log('Done building logo docs 👍')
 }

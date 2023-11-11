@@ -149,7 +149,7 @@ export async function buildIconSVG() {
   // Write SVG file
   await writeToFile(markup, './assets/designsystem-icons.svg')
 
-  console.log('Done 👍')
+  console.log('Done building SVG sprite 👍')
 }
 
 
@@ -174,5 +174,5 @@ export async function buildIconCSS() {
   const index_css = icon_content[2]
   await writeToFile(index_css, './assets/designsystem-icons.css')
 
-  console.log('Done 👍')
+  console.log('Done building icon docs 👍')
 }

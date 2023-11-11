@@ -15,13 +15,9 @@
 
     <style>
       /* Custom CSS for this page*/
-      code-example {
+      code-view {
         margin: 0 0 var(--space-lg);
         display: block;
-      }
-      * + section,
-      * + article {
-        margin-top: var(--space-lg);
       }
       .colorswatch {
         display: flex;
@@ -59,6 +55,7 @@
         border: solid 1px var(--vibrant-steel);
         border-radius: var(--space-xxs);
       }
+
       .theme-switch {
         display: flex;
         flex-flow: row nowrap;
@@ -73,10 +70,6 @@
       }
       .theme-switch label {
         margin-right: var(--space-xs);
-      }
-      .body-wrapper {
-        padding-top: var(--space-lg);
-        padding-bottom: var(--space-lg);
       }
 
       #toc-icons {
@@ -93,23 +86,12 @@
         width: 100%;
         height: 100%;
       }
-
-      @media screen and (min-width: 65rem) {
-
-        .index-wrapper {
-          position: sticky; 
-          top: var(--space-lg); 
-          overflow-y: auto; 
-          height: calc(100vh - var(--space-lg)); 
-          padding-bottom: var(--space-xl);
-        }
-      }
     </style>
 
   </head>
   <body>
 
-    <header data-theme="dark" id="header" class="ds-header">
+    <header id="header" class="ds-header">
 
       <div class="ds-container">
 
@@ -128,13 +110,12 @@
 
     <nav class="ds-nav-horizontal">
       <ul>
-        <li><a href="./css.html">Formularer, farver og typografi</a></li>
+        <li><a href="./css.html">Basis</a></li>
         <li><a href="./icons.html">Ikoner</a></li>
         <li><a href="./components.html">UI-komponenter</a></li>
+        <li><a href="./logos.html">Logo</a></li>
       </ul>
     </nav>
-
-    <hr style="margin: 0;">
 <main><section class="index-wrapper">
 
   <h2>Indholdsfortegnelse</h2>
@@ -194,7 +175,7 @@
     </nav>
   </div>
 
-  <code-example data-snip="ex-nav-2"></code-example>
+  <code-view data-snip="ex-nav-2"></code-view>
 
   <p>Herunder er tabs i en mere simpel version.</p>
 
@@ -207,7 +188,7 @@
     </nav>
   </div>
 
-  <code-example data-snip="ex-nav-6"></code-example>
+  <code-view data-snip="ex-nav-6"></code-view>
 
   <h3>Tab-komponent</h3>
 
@@ -235,7 +216,7 @@
 
   </div>
 
-  <code-example data-snip="ex-tabs-1"></code-example>
+  <code-view data-snip="ex-tabs-1"></code-view>
 
 </section>
 <section id="cards">
@@ -273,7 +254,7 @@
 
   </div>
 
-  <code-example data-snip="ex-card-1"></code-example>
+  <code-view data-snip="ex-card-1"></code-view>
 
 </section>
 <section id="dialog">
@@ -328,7 +309,7 @@
 
   </div>
 
-  <code-example data-snip="ex-dialog-1"></code-example>
+  <code-view data-snip="ex-dialog-1"></code-view>
 
 </section>
 <section id="togglepanel">
@@ -373,7 +354,7 @@
 
   </div>
 
-  <code-example data-snip="ex-togglepanel-1"></code-example>
+  <code-view data-snip="ex-togglepanel-1"></code-view>
 
 </section>
 <section id="spinner">
@@ -394,7 +375,7 @@
 
   </div>
 
-  <code-example data-snip="ex-spinner-1"></code-example>
+  <code-view data-snip="ex-spinner-1"></code-view>
 
 </section>
 <section id="popover">
@@ -414,7 +395,7 @@
 
   </div>
 
-  <code-example data-snip="ex-popover-1"></code-example>
+  <code-view data-snip="ex-popover-1"></code-view>
 
 </section>
 <section id="toast">
@@ -441,7 +422,7 @@
     
   </div>
 
-  <code-example data-snip="ex-toast-1"></code-example>
+  <code-view data-snip="ex-toast-1"></code-view>
 
 </section>
 </main><footer class="ds-footer" data-theme="light">
@@ -456,7 +437,7 @@
 </footer>
 
 <script src="../assets/designsystem.js"></script>
-<script src="js/code-example-component.js"></script>
+<script src="js/code-view-component.js"></script>
 <script src="js/highlight.min.js"></script>
 <script>
   hljs.highlightAll()

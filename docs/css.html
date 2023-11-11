@@ -15,13 +15,9 @@
 
     <style>
       /* Custom CSS for this page*/
-      code-example {
+      code-view {
         margin: 0 0 var(--space-lg);
         display: block;
-      }
-      * + section,
-      * + article {
-        margin-top: var(--space-lg);
       }
       .colorswatch {
         display: flex;
@@ -59,6 +55,7 @@
         border: solid 1px var(--vibrant-steel);
         border-radius: var(--space-xxs);
       }
+
       .theme-switch {
         display: flex;
         flex-flow: row nowrap;
@@ -73,10 +70,6 @@
       }
       .theme-switch label {
         margin-right: var(--space-xs);
-      }
-      .body-wrapper {
-        padding-top: var(--space-lg);
-        padding-bottom: var(--space-lg);
       }
 
       #toc-icons {
@@ -93,23 +86,12 @@
         width: 100%;
         height: 100%;
       }
-
-      @media screen and (min-width: 65rem) {
-
-        .index-wrapper {
-          position: sticky; 
-          top: var(--space-lg); 
-          overflow-y: auto; 
-          height: calc(100vh - var(--space-lg)); 
-          padding-bottom: var(--space-xl);
-        }
-      }
     </style>
 
   </head>
   <body>
 
-    <header data-theme="dark" id="header" class="ds-header">
+    <header id="header" class="ds-header">
 
       <div class="ds-container">
 
@@ -128,14 +110,13 @@
 
     <nav class="ds-nav-horizontal">
       <ul>
-        <li><a href="./css.html">Formularer, farver og typografi</a></li>
+        <li><a href="./css.html">Basis</a></li>
         <li><a href="./icons.html">Ikoner</a></li>
         <li><a href="./components.html">UI-komponenter</a></li>
+        <li><a href="./logos.html">Logo</a></li>
       </ul>
     </nav>
-
-    <hr style="margin: 0;">
-<main><section class="index-wrapper">
+<main class="ds-padding"><section class="index-wrapper">
 
   <h2>Indholdsfortegnelse</h2>
 
@@ -210,7 +191,7 @@
     <p>Her er noget kode</code></p>
   </article>
 
-  <code-example data-snip="ex-typo-1"></code-example>
+  <code-view data-snip="ex-typo-1"></code-view>
 
 </section><section id="farver">
 
@@ -332,7 +313,7 @@
     </article>
   </div>
 
-  <code-example data-snip="ex-color-3"></code-example>
+  <code-view data-snip="ex-color-3"></code-view>
 
   <div id="ex-color-2" class="ds-mt">
     <article class="ds-padding" data-theme="light" style="background-color: var(--medium-steel);">
@@ -344,7 +325,7 @@
     </article>
   </div>
 
-  <code-example data-snip="ex-color-2"></code-example>
+  <code-view data-snip="ex-color-2"></code-view>
 
   <div id="ex-color-1" class="ds-mt">
     <article class="ds-padding" data-theme="dark">
@@ -353,7 +334,7 @@
     </article>
   </div>
 
-  <code-example data-snip="ex-color-1"></code-example>
+  <code-view data-snip="ex-color-1"></code-view>
 
 </section>
 <section id="knapper">
@@ -372,7 +353,7 @@
       <button class="contrast">Kontrast knap</button>
       <button disabled>Knap disabled</button>
     </div>
-    <code-example data-snip="btn-ex-1"></code-example>
+    <code-view data-snip="btn-ex-1"></code-view>
     
     <p>Du kan ændre typografi i knapperne ved at bruge <code>.hx</code> classes på knapperne.<br> F.eks. <code>&lt;button class="h4">H4 tekst knap&lt;/button></code></p>
 
@@ -383,7 +364,7 @@
     <button class="outline h4">H4 tekst</button>
     <button class="contrast h5">H5 tekst</button>
 
-    <code-example data-snip="btn-ex-3"></code-example>
+    <code-view data-snip="btn-ex-3"></code-view>
 
     <p>Links kan styles som knapper ved at sætte <code>role="button"</code> på dem.</p>
     <p id="btn-ex-2">
@@ -393,7 +374,7 @@
       <a href="#knapper" role="button" class="contrast">Link-knap</a>
     </p>
 
-    <code-example data-snip="btn-ex-2"></code-example>
+    <code-view data-snip="btn-ex-2"></code-view>
   
     <p>Du kan lave knapgrupper ved at pakke <code>&lt;button></code> elementerne ind i et element med <code>class="ds-button-group"</code>.</p>
     
@@ -404,7 +385,7 @@
       </p>
     </div>
 
-    <code-example data-snip="btn-ex-4"></code-example>
+    <code-view data-snip="btn-ex-4"></code-view>
 
     <p>
       Knapgrupper kan indeholde et vilkårligt antal knapper.<br> 
@@ -429,7 +410,7 @@
       </p>
     </div>
 
-    <code-example data-snip="btn-ex-5"></code-example>
+    <code-view data-snip="btn-ex-5"></code-view>
 
     <p>Knapper med ikoner kan også kobles sammen i grupper.</p>
 
@@ -441,7 +422,7 @@
       </p>
     </div>
 
-    <code-example data-snip="btn-ex-7"></code-example>
+    <code-view data-snip="btn-ex-7"></code-view>
 
     <p>Tekst og ikoner kan kombineres i knapper.</p>
 
@@ -453,7 +434,7 @@
       <a role="button" class="ds-icon-icon-plus secondary" href="#knapper">Link</a>
     </p>
 
-    <code-example data-snip="btn-ex-6"></code-example>
+    <code-view data-snip="btn-ex-6"></code-view>
   </article>
 
 </section>  <section id="formular">
@@ -535,7 +516,7 @@
     </form>
   </div>
 
-  <code-example data-snip="ex-form-1"></code-example>
+  <code-view data-snip="ex-form-1"></code-view>
 
 </section>
 <article>
@@ -583,7 +564,7 @@
     </fieldset>
   </div>
 
-  <code-example data-snip="ex-form-mini"></code-example>
+  <code-view data-snip="ex-form-mini"></code-view>
 
 </article><section id="grid">
 
@@ -621,7 +602,7 @@
     </section>
   </div>
 
-  <code-example data-snip="ex-grid-1"></code-example>
+  <code-view data-snip="ex-grid-1"></code-view>
 
   <h4>Fleksible kolonner</h4>
 
@@ -638,7 +619,7 @@
     </section>
   </div>
 
-  <code-example data-snip="ex-grid-2"></code-example>
+  <code-view data-snip="ex-grid-2"></code-view>
 
   <h4>Primære/sekundære kolonner</h4>
 
@@ -653,7 +634,7 @@
     </section>
   </div>
 
-  <code-example data-snip="ex-grid-3"></code-example>
+  <code-view data-snip="ex-grid-3"></code-view>
 
   <p>Brug class <code>.ds-grid-1-2</code> hvis rækkefølgen skal være omvendt.</p>
   
@@ -666,7 +647,7 @@
     </section>
   </div>
 
-  <code-example data-snip="ex-grid-4"></code-example>
+  <code-view data-snip="ex-grid-4"></code-view>
 
   <h3>Indholds-containere</h3>
   
@@ -796,7 +777,7 @@
     </header>
   </div>
 
-  <code-example data-snip="ex-header-1"></code-example>
+  <code-view data-snip="ex-header-1"></code-view>
 
 </article><article id="footer-layout">
 
@@ -824,7 +805,7 @@
     </footer>
   </div>
 
-  <code-example data-snip="ex-footer-1"></code-example>
+  <code-view data-snip="ex-footer-1"></code-view>
 
 </article>
 <section id="navs">
@@ -846,7 +827,7 @@
       </nav>
     </div>
     
-    <code-example data-snip="ex-nav-5"></code-example>
+    <code-view data-snip="ex-nav-5"></code-view>
 
     <h3>Lodret navigation</h3>
     <p>Laves ved at tilføje class <code>ds-nav-vertical</code></p>
@@ -861,7 +842,7 @@
       </nav>
     </div>
 
-    <code-example data-snip="ex-nav-4"></code-example>
+    <code-view data-snip="ex-nav-4"></code-view>
     
     <h3>Hovedmenu</h3>
     <p>Laves ved at tilføje class <code>ds-nav-main</code>. "Produktnavn" kan udelades.</p>
@@ -885,7 +866,7 @@
       </nav>
     </div>
 
-    <code-example data-snip="ex-nav-3"></code-example>
+    <code-view data-snip="ex-nav-3"></code-view>
     
     <h3>Værktøjslinie</h3>
     <p>Er en simpel <a href="#knapper">knapgruppe</a> med et <code>nav</code> element udenom, der har class <code>ds-nav-tools</code></p>
@@ -914,7 +895,7 @@
         </div>
       </nav>
     </div>
-    <code-example data-snip="ex-nav-1"></code-example>
+    <code-view data-snip="ex-nav-1"></code-view>
   </div>
 
 </section>
@@ -955,7 +936,7 @@
         <span>Styrelsen for Dataforsyning og Infrastruktur</span>
       </a>
     </p>
-    <code-example data-snip="ex-logo-1"></code-example>
+    <code-view data-snip="ex-logo-1"></code-view>
   </div>
 
   <p>Logo fås i en mindre udgave ved at bruge class <code>ds-logo-micro</code></p>
@@ -967,7 +948,7 @@
         <span>Styrelsen for Dataforsyning og Infrastruktur</span>
       </a>
     </p>
-    <code-example data-snip="ex-logo-2"></code-example>
+    <code-view data-snip="ex-logo-2"></code-view>
   </div>
 
   <p>Hvis logo skal kunne ændre størrelse ift. skærmstørrelse, så brug <code>ds-logo-responsive</code></p>
@@ -979,7 +960,7 @@
         <span>Styrelsen for Dataforsyning og Infrastruktur</span>
       </span>
     </p>
-    <code-example data-snip="ex-logo-3"></code-example>
+    <code-view data-snip="ex-logo-3"></code-view>
   </div>
 
   <p>Nogle gange skal logo trækkes lidt til venstre for at få kronen til at være på linie med venstre kant af indholdet. Det gøres nemt ved at sætte <code>ds-logo-pull-left</code> på logo-elementet.</p>
@@ -998,7 +979,7 @@
       </span>
       <p>Her er lidt mere tekstindhold.</p>
     </div>
-    <code-example data-snip="ex-logo-4"></code-example>
+    <code-view data-snip="ex-logo-4"></code-view>
   </div>
 
   <h3>Favicon/bogmærkeikon</h3>
@@ -1045,7 +1026,7 @@
 
   </div>
 
-  <code-example data-snip="ex-card-1"></code-example>
+  <code-view data-snip="ex-card-1"></code-view>
 
 </section>
 <section id="images">
@@ -1058,7 +1039,7 @@
     <img src="https://archive.org/download/dsc2894/106061_widescreen.jpg" alt="Billede af et stribet skib">
   </div>
 
-  <code-example data-snip="ex-img-1"></code-example>
+  <code-view data-snip="ex-img-1"></code-view>
 
   <p>Man kan vise et billede som figur med beskrivelse ved at bruge <code>figure</code> og <code>figcaption</code> sammen med billeder.</p>
 
@@ -1071,7 +1052,7 @@
     </figure>
   </div>
 
-  <code-example data-snip="ex-img-2"></code-example>
+  <code-view data-snip="ex-img-2"></code-view>
 
 </section><section id="tabeller">
       
@@ -1116,7 +1097,7 @@
     </table>
   </div>
 
-  <code-example data-snip="ex-table-1"></code-example>
+  <code-view data-snip="ex-table-1"></code-view>
 
 </section><section id="lists">
 
@@ -1134,7 +1115,7 @@
     </dl>
   </article>
 
-  <code-example data-snip="ex-list-1"></code-example>
+  <code-view data-snip="ex-list-1"></code-view>
 
 </section></main><footer class="ds-footer" data-theme="light">
   <div class="ds-container">
@@ -1148,7 +1129,7 @@
 </footer>
 
 <script src="../assets/designsystem.js"></script>
-<script src="js/code-example-component.js"></script>
+<script src="js/code-view-component.js"></script>
 <script src="js/highlight.min.js"></script>
 <script>
   hljs.highlightAll()

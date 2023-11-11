@@ -8,7 +8,7 @@ export async function buildCSSDoc() {
   let markup = ''
 
   markup += await readHTML('src/html/blocks/header.html')
-  markup += '<main>'
+  markup += '<main class="ds-padding">'
   markup += await readHTML('src/html/blocks/toc-css.html')
 
   try {
@@ -28,5 +28,5 @@ export async function buildCSSDoc() {
 
   await writeToFile(markup, './docs/css.html')
 
-  console.log('Done 👍')
+  console.log('Done building basic CSS docs 👍')
 }
