@@ -8,7 +8,7 @@ export async function buildComponentDoc() {
   let markup = ''
 
   markup += await readHTML('src/html/blocks/header.html')
-  markup += '<main>'
+  markup += '<main class="ds-container">'
   markup += await readHTML('src/html/blocks/toc-components.html')
 
   try {

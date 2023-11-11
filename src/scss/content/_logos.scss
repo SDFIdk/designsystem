@@ -35,7 +35,7 @@
   &::before {
     height: var(--space-xxl);
     width: var(--space-xxl);
-    background-image: var(--ds-logo-big);
+    background-image: url('logos/logo-medium.svg');
     background-size: var(--space-xxl) auto;
     filter: var(--logo-filter);
   }
@@ -55,7 +55,7 @@
   min-height: var(--space-md);
 
   &::before {
-    background-image: var(--ds-logo-micro);
+    background-image: url('logos/logo-small.svg');
     background-size: var(--space-md) auto;
     filter: var(--logo-filter);
     height: var(--space-md);
@@ -113,7 +113,7 @@
     &::before {
       height: 3rem;
       width: 3rem;
-      background-image: var(--ds-logo-big);
+      background-image: url('logos/logo-large.svg');
       background-size: 3rem auto;
       filter: var(--logo-filter);
     }

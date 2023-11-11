@@ -161,11 +161,13 @@ export async function buildIconCSS() {
   let icon_content = await generateCSSContent('./assets/icons', './assets/designsystem-icons.svg')
 
   markup += await readHTML('./src/html/blocks/header.html')
+  markup += '<main class="ds-container">'
   markup += '<h2>Ikoner</h2>'
   markup += icon_content[1]
   markup += await readHTML('./src/html/articles/icons/icon_instructions.html')
   markup += icon_content[0]
   markup += await readHTML('./src/html/blocks/footer.html')
+  markup += '</main>'
 
   // Write HTML file
   await writeToFile(markup, './docs/icons.html')

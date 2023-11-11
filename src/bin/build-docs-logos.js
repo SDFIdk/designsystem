@@ -7,7 +7,7 @@ export async function buildLogoDoc() {
   let markup = ''
 
   markup += await readHTML('src/html/blocks/header.html')
-  markup += '<main>'
+  markup += '<main class="ds-container">'
 
   try {
     const files = await readdir(docs_dir)

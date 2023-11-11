@@ -15,6 +15,10 @@
 
     <style>
       /* Custom CSS for this page*/
+      main {
+        margin-top: var(--space-lg);
+        margin-bottom: var(--space-xl);
+      }
       code-view {
         margin: 0 0 var(--space-lg);
         display: block;
@@ -95,8 +99,7 @@
 
       <div class="ds-container">
 
-        <p class="ds-logo-responsive ds-logo-pull-left">
-          <img src="../assets/logos/logo-large.svg" alt="">
+        <p class="ds-logo">
           <strong>Dataforsyningen</strong>
           <span>Styrelsen for Dataforsyning og Infrastruktur</span>
         </p>  
@@ -108,7 +111,7 @@
 
     </header>
 
-    <nav class="ds-nav-horizontal">
+    <nav class="ds-container">
       <ul>
         <li><a href="./css.html">Basis</a></li>
         <li><a href="./icons.html">Ikoner</a></li>
@@ -116,7 +119,7 @@
         <li><a href="./logos.html">Logo</a></li>
       </ul>
     </nav>
-<h2>Ikoner</h2><nav id="toc-icons">
+<main class="ds-container"><h2>Ikoner</h2><nav id="toc-icons">
     <a href="#hentdata-choose"><svg><use href="../assets/designsystem-icons.svg#hentdata-choose"></svg></a>
   
     <a href="#hentdata-download"><svg><use href="../assets/designsystem-icons.svg#hentdata-download"></svg></a>
@@ -226,8 +229,6 @@
     <a href="#trash"><svg><use href="../assets/designsystem-icons.svg#trash"></svg></a>
   
     <a href="#users"><svg><use href="../assets/designsystem-icons.svg#users"></svg></a>
-  
-    <a href="#logo-small"><svg><use href="../assets/designsystem-icons.svg#logo-small"></svg></a>
   
     <a href="#map-adresse"><svg><use href="../assets/designsystem-icons.svg#map-adresse"></svg></a>
   
@@ -1957,60 +1958,6 @@ npm i --save @dataforsyningen/icons
     <p><a href="#content-top">Til oversigt</a></p>
   </article>
   
-  <article id="logo-small" class="icon-details">
-    <h2>
-      <span class="display-svg"><svg width="100%" height="100%" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-
-    <path d="M7.50153 0.144619V1.12288M7.50153 2.42723L7.50214 3.40501M9.13196 1.77505H8.1537M6.84935 1.77505H5.87109" stroke="black"/>
-    <circle cx="7.5017" cy="4.58764" r="0.978261" stroke="black"/>
-    <path d="M2.60547 12.6367H12.3907" stroke="black"/>
-    <path d="M2.60547 14.707H12.3907" stroke="black"/>
-    <mask id="mask0_1974_42590" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="3" width="15" height="9">
-      <rect y="3.58594" width="15" height="7.75862" fill="#D9D9D9"/>
-    </mask>
-    <g mask="url(#mask0_1974_42590)">
-      <path d="M7.50051 11.4338V5.88018M7.50051 5.88018C7.79351 5.52116 8.88778 4.58594 9.93609 4.58594C10.9844 4.58594 11.7531 5.20847 11.7531 6.22825C11.7531 7.24803 11.1942 8.94364 9.20155 11.4338M7.50051 5.88018C7.2075 5.52116 6.12526 4.58594 5.06493 4.58594C4.00461 4.58594 3.24791 5.20847 3.24791 6.22825C3.24791 7.24803 3.82307 8.94364 5.79947 11.4338M11.7918 6.0152C13.0191 6.0152 13.4541 6.57931 13.4541 7.60585C13.4541 8.63238 12.2995 10.3685 11.1861 11.4338M3.24791 6.0152C2.02062 6.0152 1.54688 6.57931 1.54688 7.60585C1.54688 8.63238 2.70152 10.3685 3.81493 11.4338" stroke="black"/>
-    </g> 
-  
-</svg>
-
-
-</span> <span>logo-small</span>
-    </h2> 
-    <div class="icon-container">  
-      <div>
-        <h3 class="h5">SVG sprite</h3>
-        <pre><code>&lt;svg>&lt;use href="PATH/designsystem-icons.svg#logo-small">&lt;/svg></code></pre>
-        <p><em>Husk at ændre PATH til din egen opsætning.</em></p>
-        <h3 class="h5">SVG embed</h3>
-        <pre><code>&lt;svg width="100%" height="100%" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-
-    &lt;path d="M7.50153 0.144619V1.12288M7.50153 2.42723L7.50214 3.40501M9.13196 1.77505H8.1537M6.84935 1.77505H5.87109" stroke="black"/>
-    &lt;circle cx="7.5017" cy="4.58764" r="0.978261" stroke="black"/>
-    &lt;path d="M2.60547 12.6367H12.3907" stroke="black"/>
-    &lt;path d="M2.60547 14.707H12.3907" stroke="black"/>
-    &lt;mask id="mask0_1974_42590" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="3" width="15" height="9">
-      &lt;rect y="3.58594" width="15" height="7.75862" fill="#D9D9D9"/>
-    &lt;/mask>
-    &lt;g mask="url(#mask0_1974_42590)">
-      &lt;path d="M7.50051 11.4338V5.88018M7.50051 5.88018C7.79351 5.52116 8.88778 4.58594 9.93609 4.58594C10.9844 4.58594 11.7531 5.20847 11.7531 6.22825C11.7531 7.24803 11.1942 8.94364 9.20155 11.4338M7.50051 5.88018C7.2075 5.52116 6.12526 4.58594 5.06493 4.58594C4.00461 4.58594 3.24791 5.20847 3.24791 6.22825C3.24791 7.24803 3.82307 8.94364 5.79947 11.4338M11.7918 6.0152C13.0191 6.0152 13.4541 6.57931 13.4541 7.60585C13.4541 8.63238 12.2995 10.3685 11.1861 11.4338M3.24791 6.0152C2.02062 6.0152 1.54688 6.57931 1.54688 7.60585C1.54688 8.63238 2.70152 10.3685 3.81493 11.4338" stroke="black"/>
-    &lt;/g> 
-  
-&lt;/svg>
-
-
-</code></pre>
-        <h3 class="h5">CSS</h3>
-        <pre><code>@import "@dataforsyningen/icons/css/logo-small.css";</code></pre>
-        <p>Brug i HTML:</p>
-        <pre><code>&lt;span class="ds-icon-logo-small">&lt;/span></code></pre>
-        <p>CSS custom property:</p>
-        <pre><code>--ds-icon-logo-small</code></pre>
-      </div>
-    </div>
-    <p><a href="#content-top">Til oversigt</a></p>
-  </article>
-  
   <article id="map-adresse" class="icon-details">
     <h2>
       <span class="display-svg"><svg width="24" height="24" viewBox="0 0 24 24" class="ds-svg-icon" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -3068,7 +3015,7 @@ npm i --save @dataforsyningen/icons
   </article>
   <footer class="ds-footer" data-theme="light">
   <div class="ds-container">
-    <h2 class="ds-logo-responsive ds-logo-pull-left">
+    <h2 class="ds-logo">
       <strong>Designsystem</strong>
       <span>Styrelsen for Dataforsyning og Infrastruktur</span>
     </h2>
@@ -3094,3 +3041,4 @@ npm i --save @dataforsyningen/icons
 
 </body>
 </html>
+</main>

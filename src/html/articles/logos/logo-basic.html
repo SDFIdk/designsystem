@@ -1,5 +1,40 @@
 <article id="logo-basic">
 
-  <h2>Hej igen</h2>
-  
+  <h2>Logo</h2>
+
+  <p><em>Bemærk!</em> SDFIs logo må kun bruges af Styrelsen for Dataforsyning og Infrastruktur.</p>
+
+  <p>Logo/bomærke og logotypografi sættes op sådan her:</p>
+
+  <div>
+    <p id="ex-logo-1">
+      <a class="ds-logo" href="#logos">
+        <strong>Dataforsyningen</strong>
+        <span>Styrelsen for Dataforsyning og Infrastruktur</span>
+      </a>
+    </p>
+    <code-view data-snip="ex-logo-1"></code-view>
+  </div>
+
+  <p>Logo fås i en mindre udgave ved at bruge class <code>ds-logo-micro</code></p>
+
+  <div>
+    <p id="ex-logo-2">
+      <a class="ds-logo-micro" href="#logos">
+        <strong>Dataforsyningen</strong>
+        <span>Styrelsen for Dataforsyning og Infrastruktur</span>
+      </a>
+    </p>
+    <code-view data-snip="ex-logo-2"></code-view>
+  </div>
+
+  <h3>Favicon/bogmærkeikon</h3>
+  <p>Som favicon bruges <code>logo-small.svg</code> ( <img style="width: var(--space-md); height: auto;" src="../assets/logos/logo-small.svg" alt=""> )</p>
+  <p>For at bruge det skal du indsætte denne linie i HTML <code>&lt;head></code> sektionen. Sørg for at <code>PATH</code> svarer til logofilens placering på serveren.</p>
+  <pre><code>&lt;link rel="shortcut icon" href="PATH/logo-simple-micro.svg"></code></pre>
+  <p>
+    Denne fil følger med i <em>@dataforsyningen/designsystem</em> pakken under<br>
+    <code>/node-modules/@dataforsyningen/assets/logos/logo-small.svg</code>
+  </p>
+
 </article>

@@ -15,6 +15,10 @@
 
     <style>
       /* Custom CSS for this page*/
+      main {
+        margin-top: var(--space-lg);
+        margin-bottom: var(--space-xl);
+      }
       code-view {
         margin: 0 0 var(--space-lg);
         display: block;
@@ -95,8 +99,7 @@
 
       <div class="ds-container">
 
-        <p class="ds-logo-responsive ds-logo-pull-left">
-          <img src="../assets/logos/logo-large.svg" alt="">
+        <p class="ds-logo">
           <strong>Dataforsyningen</strong>
           <span>Styrelsen for Dataforsyning og Infrastruktur</span>
         </p>  
@@ -108,7 +111,7 @@
 
     </header>
 
-    <nav class="ds-nav-horizontal">
+    <nav class="ds-container">
       <ul>
         <li><a href="./css.html">Basis</a></li>
         <li><a href="./icons.html">Ikoner</a></li>
@@ -116,17 +119,59 @@
         <li><a href="./logos.html">Logo</a></li>
       </ul>
     </nav>
-<main><article id="logo-basic">
+<main class="ds-container"><article id="logo-basic">
 
-  <h2>Hej igen</h2>
-  
-</article><article id="logo-scalable">
+  <h2>Logo</h2>
 
-  <h2>Hej</h2>
+  <p><em>Bemærk!</em> SDFIs logo må kun bruges af Styrelsen for Dataforsyning og Infrastruktur.</p>
+
+  <p>Logo/bomærke og logotypografi sættes op sådan her:</p>
+
+  <div>
+    <p id="ex-logo-1">
+      <a class="ds-logo" href="#logos">
+        <strong>Dataforsyningen</strong>
+        <span>Styrelsen for Dataforsyning og Infrastruktur</span>
+      </a>
+    </p>
+    <code-view data-snip="ex-logo-1"></code-view>
+  </div>
+
+  <p>Logo fås i en mindre udgave ved at bruge class <code>ds-logo-micro</code></p>
+
+  <div>
+    <p id="ex-logo-2">
+      <a class="ds-logo-micro" href="#logos">
+        <strong>Dataforsyningen</strong>
+        <span>Styrelsen for Dataforsyning og Infrastruktur</span>
+      </a>
+    </p>
+    <code-view data-snip="ex-logo-2"></code-view>
+  </div>
+
+  <h3>Favicon/bogmærkeikon</h3>
+  <p>Som favicon bruges <code>logo-small.svg</code> ( <img style="width: var(--space-md); height: auto;" src="../assets/logos/logo-small.svg" alt=""> )</p>
+  <p>For at bruge det skal du indsætte denne linie i HTML <code>&lt;head></code> sektionen. Sørg for at <code>PATH</code> svarer til logofilens placering på serveren.</p>
+  <pre><code>&lt;link rel="shortcut icon" href="PATH/logo-simple-micro.svg"></code></pre>
+  <p>
+    Denne fil følger med i <em>@dataforsyningen/designsystem</em> pakken under<br>
+    <code>/node-modules/@dataforsyningen/assets/logos/logo-small.svg</code>
+  </p>
+
+</article>
+<article id="logo-scalable">
+
+  <h2>Skalerbart logo (eksperimentelt)</h2>
+
+  <p>SVG-filen under <code>/assets/logos/logo-scalable.svg</code> skalerer sig selv vha. CSS <em>container queries.</em></p>
+
+  <img src="../assets/logos/logo-scalable.svg" alt="" style="width: 1rem; height: auto;">
+  <img src="../assets/logos/logo-scalable.svg" alt="" style="width: 1.5rem; height: auto;">
+  <img src="../assets/logos/logo-scalable.svg" alt="" style="width: 5rem; height: auto;">
 
 </article></main><footer class="ds-footer" data-theme="light">
   <div class="ds-container">
-    <h2 class="ds-logo-responsive ds-logo-pull-left">
+    <h2 class="ds-logo">
       <strong>Designsystem</strong>
       <span>Styrelsen for Dataforsyning og Infrastruktur</span>
     </h2>

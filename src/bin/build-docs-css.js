@@ -8,7 +8,7 @@ export async function buildCSSDoc() {
   let markup = ''
 
   markup += await readHTML('src/html/blocks/header.html')
-  markup += '<main class="ds-padding">'
+  markup += '<main class="ds-container">'
   markup += await readHTML('src/html/blocks/toc-css.html')
 
   try {
