@@ -1,6 +1,6 @@
 <svg width="24" height="24" viewBox="0 0 24 24" class="ds-svg-icon" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M9 5L9 19" stroke="hsl(186,100%,33%)" stroke-linecap="round"/>
-<path d="M15 5L15 19" stroke="hsl(186,100%,33%)" stroke-linecap="round"/>
-<path d="M19 9L5 9" stroke="hsl(186,100%,33%)" stroke-linecap="round"/>
-<path d="M19 15L5 15" stroke="hsl(186,100%,33%)" stroke-linecap="round"/>
+<path d="M9 5L9 19" stroke="var(--ds-icon-color, black)" stroke-linecap="round"/>
+<path d="M15 5L15 19" stroke="var(--ds-icon-color, black)" stroke-linecap="round"/>
+<path d="M19 9L5 9" stroke="var(--ds-icon-color, black)" stroke-linecap="round"/>
+<path d="M19 15L5 15" stroke="var(--ds-icon-color, black)" stroke-linecap="round"/>
 </svg>

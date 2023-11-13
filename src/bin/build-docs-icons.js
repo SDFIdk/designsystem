@@ -1,7 +1,7 @@
 import { open, readdir } from 'node:fs/promises'
 import { filenameToId, writeToFile, readHTML } from './shared.js'
 
-async function generateCSSContent(svg_dir, spritefilename) {
+async function generateDocContent(svg_dir) {
   let filehandle
   let html = ''
   let toc = '<nav id="toc-icons">'
@@ -16,8 +16,7 @@ async function generateCSSContent(svg_dir, spritefilename) {
 
           // This is where the magic happens
           html += await buildHTMLsnippet(file, svg)
-          toc += await buildTOCsnippet(file, spritefilename)
-          await writeCSSsnippet(file, svg)
+          toc += await buildTOCsnippet(file)
         })
       } catch (error) {
         console.error('there was an error:', error.message)
@@ -63,10 +62,10 @@ async function buildHTMLsnippet(filename, svg) {
   return html
 }
 
-async function buildTOCsnippet(filename, spritefilename) {
+async function buildTOCsnippet(filename) {
   const shortname = filenameToId(filename)
   const html = `
-    <a href="#${ shortname }"><svg><use href=".${ spritefilename }#${ shortname }"></svg></a>
+    <a href="#${ shortname }"><svg><use href="../assets/designsystem-icons.svg#${ shortname }"></svg></a>
   `
   return html
 }
@@ -153,15 +152,15 @@ export async function buildIconSVG() {
 }
 
 
-export async function buildIconCSS() {
-  console.log('Building documentation and rebuilding CSS')
+export async function buildIconDoc() {
+  console.log('Building documentation')
 
   // Build HTML
   let markup = ''
-  let icon_content = await generateCSSContent('./assets/icons', './assets/designsystem-icons.svg')
+  let icon_content = await generateDocContent('./assets/icons')
 
   markup += await readHTML('./src/html/blocks/header.html')
-  markup += '<main class="ds-container">'
+  markup += '<main class="ds-container" id="content-top">'
   markup += '<h2>Ikoner</h2>'
   markup += icon_content[1]
   markup += await readHTML('./src/html/articles/icons/icon_instructions.html')

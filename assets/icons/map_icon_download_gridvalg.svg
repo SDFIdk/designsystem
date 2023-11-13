@@ -1,5 +1,5 @@
 <svg fill="none" version="1.1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<g stroke="hsl(186,100%,33%)" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.8">
+<g stroke="var(--ds-icon-color, black)" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.8">
   <g id="grid" stroke-dasharray="1 1.5">
     <path d="m 8 2 v 20"/>
     <path d="m 16 2 v 12"/>
