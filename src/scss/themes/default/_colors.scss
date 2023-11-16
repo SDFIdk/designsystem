@@ -1,22 +1,15 @@
 :root {
   
-  // Main colors
-  
-  --grey1: hsl(60, 15%, 95%);
-  --grey2: hsl(45, 10%, 77%);
-  --grey9: hsl(45, 10%, 33%);
-  
+  // Primary "blue" colors
   --c1: #fff; // Hvid
-  --c2: hsl(198, 25%, 98%);
-  --c3: hsl(198, 25%, 96%); // 
-  --c4: hsl(198, 25%, 91%); // 
-  --c5: hsl(198, 25%, 64%); // 
-  --c6: hsl(198, 92%, 29%); // Lysere blå
-  
-  --c7: hsl(198, 92%, 21%); // Primær blå
-  
-  --c8: hsl(198,92%,12%); // 
-  --c9: hsl(198,92%,7%); // 
+  --c2: hsl(198, 100%, 90%);
+  --c3: hsl(198, 100%, 75%); // 
+  --c4: hsl(198, 100%, 50%); // 
+  --c5: hsl(198, 100%, 29%); // Primær blå
+  --c6: hsl(198, 100%, 20%); // 
+  --c7: hsl(198, 100%, 15%); // 
+  --c8: hsl(197, 100%, 12%); // 
+  --c9: hsl(197, 100%, 10%); // 
   --c10: #000; // Sort
 
   // "Green" colors
@@ -43,18 +36,27 @@
   --o5: hsl(26,80%,56%); // Highligt
   --o6: hsl(26,80%,41%);
 
+  // Grey colors
+  --grey1: hsl(60, 15%, 95%);
+  --grey2: hsl(45, 10%, 77%);
+  --grey9: hsl(45, 10%, 33%);
+
 
   // Color shorthands
-  --tyrkis: var(--c6);
-  --mork-tyrkis: var(--c8);
-  --vibrant-steel: hsla(186,40%,82%,0.7);
+  --blaa: var(--c5); 
   --sort: var(--c10);
-  --65-sort: hsla(0,0%,0%,0.65);
   --hvid: var(--c1);
-  --dark-steel: hsla(186,25%,64%,0.6);
-  --medium-steel: var(--c4);
-  --lys-steel: var(--c3);
   --aktion: var(--g5);
   --highlight: var(--o5);
   --advarsel: var(--r5);
+
+  // Deprecated colors
+  
+  --tyrkis: var(--c6);
+  --mork-tyrkis: var(--c8);
+  --65-sort: hsla(0,0%,0%,0.65);
+  --vibrant-steel: hsla(186,40%,82%,0.7);
+  --dark-steel: hsla(186,25%,64%,0.6);
+  --medium-steel: var(--c4);
+  --lys-steel: var(--c3);
 }

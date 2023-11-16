@@ -48,12 +48,6 @@ async function buildHTMLsnippet(filename, svg) {
         <p><em>Husk at ændre PATH til din egen opsætning.</em></p>
         <h3 class="h5">SVG embed</h3>
         <pre><code>${ svg.replaceAll('<', '&lt;') }</code></pre>
-        <h3 class="h5">CSS</h3>
-        <pre><code>@import "@dataforsyningen/icons/css/${ shortname }.css";</code></pre>
-        <p>Brug i HTML:</p>
-        <pre><code>&lt;span class="ds-icon-${ shortname }">&lt;/span></code></pre>
-        <p>CSS custom property:</p>
-        <pre><code>--ds-icon-${ shortname }</code></pre>
       </div>
     </div>
     <p><a href="#content-top">Til oversigt</a></p>
@@ -165,8 +159,8 @@ export async function buildIconDoc() {
   markup += icon_content[1]
   markup += await readHTML('./src/html/articles/icons/icon_instructions.html')
   markup += icon_content[0]
-  markup += await readHTML('./src/html/blocks/footer.html')
   markup += '</main>'
+  markup += await readHTML('./src/html/blocks/footer.html')
 
   // Write HTML file
   await writeToFile(markup, './docs/icons.html')

@@ -1,7 +1,7 @@
 {
   "name": "@dataforsyningen/designsystem",
   "version": "4.0.1",
-  "description": "Common design system for SDFI, containing CSS, icons, UI components, and logo images.",
+  "description": "Common design system for SDFI with CSS, icons, UI components, and logo images.",
   "type": "module",
   "author": {
     "name": "Styrelsen for Dataforsyning og Infrastruktur",

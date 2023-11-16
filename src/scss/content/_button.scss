@@ -25,29 +25,26 @@ button,
   -webkit-appearance: button;
 }
 
-// Pico
 // ––––––––––––––––––––
-
-[role="button"] {
-  text-decoration: none;
-}
 
 button,
 input[type="submit"],
 input[type="button"],
 input[type="reset"],
 [role="button"] {
-  display: inline-block;
+  display: inline-flex;
+  flex-flow: row nowrap;
+  align-items: center;
   width: auto;
   padding: var(--space-sm) var(--space-md);
-  border: 1px solid var(--aktion);
+  border: 1px solid var(--blaa);
   border-radius: var(--space-lg);
   outline: none;
-  background-color: var(--aktion);
-  color: var(--c9) !important;
+  background-color: var(--blaa);
+  color: var(--hvid);
   font-weight: 400;
   font-size: var(--font-size);
-  line-height: var(--line-height);
+  line-height: 1em;
   text-align: center;
   cursor: pointer;
   word-wrap: normal;
@@ -55,8 +52,8 @@ input[type="reset"],
   transition: background-color var(--transition), border-color var(--transition), color var(--transition);
 
   &:is([aria-current], :hover, :active) {
-    background-color: var(--g4);
-    border-color: var(--g4);
+    background-color: var(--c6);
+    border-color: var(--c6);
   }
 
   &:focus {
@@ -71,48 +68,63 @@ input[type="reset"],
   &.h5,
   &.h6 {
     margin: 0;
+    color: var(--hvid);
+  }
+
+  & > svg {
+    width: calc(var(--space)*2);
+    height: calc(var(--space)*2);
+    --ds-icon-color: var(--hvid);
+
+    &:first-child {
+      margin-left: calc(-0.75 * var(--space));
+    }
   }
 }
 
-// .secondary, .contrast & .outline
-
-// Outline
-:is(button, input[type="submit"], input[type="button"], [role="button"]).outline,
-input[type="reset"] {
-  background-color: transparent;
-  border-color: var(--aktion);
-  color: var(--secondary-inverse) !important;
-  cursor: pointer;
-
-  &:is([aria-current], :hover, :active) {
-    background-color: var(--g4);
-    //border-color: var(--g4);
-    color: var(--c9) !important;
-  }
-}
-
-// Contrast
-:is(button, input[type="submit"], input[type="button"], [role="button"]).contrast {
-  background-color: var(--c7);
-  border-color: var(--c7);
-  color: var(--hvid) !important;
-
-  &:is([aria-current], :hover, :active) {
-    background-color: var(--c6);
-    border-color: var(--c6);
-  }
-}
+// .secondary & .quiet
 
 // Secondary
 :is(button, input[type="submit"], input[type="button"], [role="button"]).secondary,
 input[type="reset"].secondary {
   background-color: transparent;
-  border-color: var(--dark-steel);
-  color: var(--secondary-inverse) !important;
+  border-color: var(--color);
+  color: var(--color);
 
   &:is([aria-current], :hover, :active) {
-    background-color: var(--c4);
-    color: var(--c9) !important;
+    border-color: var(--c2);
+    background-color: var(--c2);
+  }
+
+  & > svg {
+    --ds-icon-color: inherit;
+  }
+}
+
+// Quiet
+:is(button, input[type="submit"], input[type="button"], [role="button"]).quiet,
+input[type="reset"] {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--color);
+  cursor: pointer;
+
+  &:is([aria-current], :hover, :active) {
+    border-color: var(--c2);
+    background-color: var(--c2);
+  }
+
+  & > svg {
+    --ds-icon-color: inherit;
+  }
+}
+
+[role="button"] {
+  text-decoration: none;
+
+  &:hover, &:active {
+    color: var(--hvid);
+    text-decoration: none;
   }
 }
 
