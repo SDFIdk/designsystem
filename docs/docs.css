@@ -80,5 +80,8 @@ code-view {
 .display-svg {
   width: 2rem;
   height: auto;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: var(--space-sm);
 }
