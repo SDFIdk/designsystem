@@ -58,6 +58,7 @@
   --blockquote-footer-color: var(--muted-color);
 
   // Button
+  --button-secondary-hover: var(--c6);
   // To disable box-shadow, remove the var or set to '0 0 0 rgba(0, 0, 0, 0)'
   // Don't use, 'none, 'false, 'null', '0', etc.
   --button-box-shadow: 0 0 0 rgba(0, 0, 0, 0.65);

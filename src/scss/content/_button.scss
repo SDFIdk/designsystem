@@ -2,6 +2,10 @@
  * Button
  */
 
+:root {
+  --icon-base-width: calc(var(--space)*2);
+}
+
 // Reboot based on :
 // - normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
 // - sanitize.css v13.0.0 | CC0 1.0 Universal | github.com/csstools/sanitize.css
@@ -35,6 +39,7 @@ input[type="reset"],
   display: inline-flex;
   flex-flow: row nowrap;
   align-items: center;
+  justify-content: center;
   width: auto;
   padding: var(--space-sm) var(--space-md);
   border: 1px solid var(--blaa);
@@ -72,12 +77,28 @@ input[type="reset"],
   }
 
   & > svg {
-    width: calc(var(--space)*2);
-    height: calc(var(--space)*2);
+    width: var(--icon-base-width);
+    height: var(--icon-base-width);
     --ds-icon-color: var(--hvid);
 
     &:first-child {
-      margin-left: calc(-0.75 * var(--space));
+      margin-left: -0.5rem;
+    }
+  }
+
+  // Icon buttons are identified by having a `title` attribute
+  &[title] {
+    width: calc(var(--space-xl) + 0.125rem);
+    height: var(--space-xl);
+    padding: 0;
+    overflow: hidden;
+
+    & > *:first-child {
+      margin-left: var(--space-sm);
+    }
+  
+    & > *:last-child {
+      margin-right: var(--space-sm);
     }
   }
 }
@@ -92,8 +113,8 @@ input[type="reset"].secondary {
   color: var(--color);
 
   &:is([aria-current], :hover, :active) {
-    border-color: var(--c2);
-    background-color: var(--c2);
+    border-color: var(--button-secondary-hover);
+    background-color: var(--button-secondary-hover);
   }
 
   & > svg {
@@ -110,8 +131,8 @@ input[type="reset"] {
   cursor: pointer;
 
   &:is([aria-current], :hover, :active) {
-    border-color: var(--c2);
-    background-color: var(--c2);
+    border-color: var(--button-secondary-hover);
+    background-color: var(--button-secondary-hover);
   }
 
   & > svg {
