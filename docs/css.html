@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="da" data-theme="light">
+<html lang="da">
   <head>
 
     <meta charset="utf-8">
@@ -1053,7 +1053,7 @@
 
   <code-view data-snip="ex-list-1"></code-view>
 
-</section></main><footer class="ds-footer" data-theme="light">
+</section></main><footer class="ds-footer">
   <div class="ds-container">
     <h2 class="ds-logo">
       <strong>Designsystem</strong>
@@ -1064,14 +1064,12 @@
   </div>
 </footer>
 
-<script src="../assets/designsystem.js"></script>
-<script src="js/code-view-component.js"></script>
 <script src="js/highlight.min.js"></script>
+<script type="module" src="../assets/designsystem.js"></script>
 <script>
+  
   hljs.highlightAll()
-</script>
 
-<script>
   const switcher_el = document.querySelector('.theme-switch')
   const html_el = document.children[0]
   switcher_el.addEventListener('change', function(event) {
