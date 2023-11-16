@@ -2,8 +2,8 @@
 @mixin dark {
 
   // Document
-  color-scheme: light;
-  accent-color: var(--tyrkis);
+  color-scheme: dark;
+  accent-color: var(--highlight);
   --background-color: var(--c9);
 
   // Borders
@@ -28,7 +28,7 @@
   --link-focus: var(--highlight);
 
   // Primary colors
-  --primary: var(--tyrkis);
+  --primary: var(--blaa);
   --primary-inverse: var(--hvid);
   --primary-hover: var(--c7);
   --primary-focus: var(--highlight);
@@ -38,12 +38,6 @@
   --secondary-inverse: var(--c3);
   --secondary-hover: var(--c8);
   --secondary-focus: var(--highlight);
-
-  // Contrast colors
-  --contrast: var(--mork-tyrkis);
-  --contrast-inverse: var(--hvid);
-  --contrast-hover: var(--c9);
-  --contrast-focus: var(--highlight);
 
   // Highlighted text (<mark>)
   --mark-background-color: var(--dark-steel);
@@ -70,7 +64,7 @@
   --form-element-color: var(--color);
   --form-element-placeholder-color: var(--muted-color);
   --form-element-active-background-color: var(--hvid);
-  --form-element-active-border-color: var(--tyrkis);
+  --form-element-active-border-color: var(--blaa);
   --form-element-focus-color: var(--highlight);
   --form-element-disabled-background-color: var(--c2);
   --form-element-disabled-border-color: var(--c3);
@@ -84,13 +78,13 @@
 
   // Navigation
   --nav-link-color: var(--g3);
-  --nav-tab-border: var(--tyrkis);
+  --nav-tab-border: var(--blaa);
   --nav-tab-font-weight: 300;
 
   // Switch (input[type="checkbox"][role="switch"])
   --switch-background-color: var(--c2);
   --switch-color: var(--c8);
-  --switch-checked-background-color: var(--tyrkis);
+  --switch-checked-background-color: var(--blaa);
 
   // Range (input[type="range"])
   --range-border-color: var(--form-element-color);
@@ -105,7 +99,7 @@
   --table-row-stripped-background-color: var(--c2);
 
   // Code
-  --code-background-color: var(--c2);
+  --code-background-color: var(--c6);
   --code-color: var(--muted-color);
   --code-kbd-background-color: var(--contrast);
   --code-kbd-color: var(--contrast-inverse);
@@ -135,7 +129,7 @@
 
   // Progress
   --progress-background-color: var(--vibrant-steel);
-  --progress-color: var(--tyrkis);
+  --progress-color: var(--blaa);
 
   // Loading ([aria-busy=true])
   --loading-spinner-opacity: 0.5;
