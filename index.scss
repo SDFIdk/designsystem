@@ -1,0 +1,102 @@
+/* 
+ * Custom styles for Design System CSS
+ *
+ * Based on a modified version of 
+ * Pico.css v1.5.3 (https://picocss.com)
+ * Copyright 2019-2022 - Licensed under MIT
+ */
+
+
+// Define font faces
+
+/*
+Light
+@font-face {
+  font-family: "Roboto";
+  src: url("./fonts/Roboto-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+Regular
+@font-face {
+  font-family: "Roboto";
+  src: url("./fonts/Roboto-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+Regular Italic
+@font-face {
+  font-family: "Roboto";
+  src: url("./fonts/Roboto-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+Medium
+@font-face {
+  font-family: "Roboto";
+  src: url("./fonts/Roboto-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+Bold
+@font-face {
+  font-family: "Roboto";
+  src: url("./fonts/Roboto-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+Monospaced
+@font-face {
+  font-family: "Source Code Pro";
+  src: url("./fonts/SourceCodePro-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+*/
+
+// Config
+@import "./src/scss/variables";
+
+// Theming
+@import "./src/scss/themes/default";
+
+// Layout
+@import "./src/scss/layout/document"; // html
+@import "./src/scss/layout/sectioning"; // body, header, main, footer, section
+@import "./src/scss/layout/container"; // .container, .container-fluid
+//@import "layout/section"; // section
+@import "./src/scss/layout/grid"; // .grid
+@import "./src/scss/layout/margin"; // .ds-margin
+@import "./src/scss/layout/padding"; // .ds-padding
+
+// Content
+@import "./src/scss/content/typography"; // a, headings, p, ul, blockquote, ...
+//@import "content/embedded"; // audio, canvas, iframe, img, svg, video
+@import "./src/scss/content/button"; // button, a[role=button], type=button, type=submit ...
+@import "./src/scss/content/form"; // input, select, textarea, label, fieldset, legend
+@import "./src/scss/content/form-checkbox-radio";
+@import "./src/scss/content/form-alt-input-types";
+@import "./src/scss/content/form-mini";
+@import "./src/scss/content/table"; // table, tr, td, ...
+@import "./src/scss/content/miscs"; // hr
+@import "./src/scss/content/icons"; // icon styles
+@import "./src/scss/content/logos"; // logo styles
+@import "./src/scss/content/dialog"; // dialog styles
+@import "./src/scss/content/header"; // header styles
+@import "./src/scss/content/footer"; // footer styles
+
+// Components
+@import "./src/scss/components/card"; // produktkort
+@import "./src/scss/components/nav"; // navigationselementer
+@import "./src/scss/components/tabs"; // tabs
+@import "./src/scss/components/popover"; // popover
+@import "./src/scss/components/toast"; // toast
+
+// Utilities
+@import "./src/scss/utilities/a11y";
+//@import "utilities/reduce-motion"; // prefers-reduced-motion
