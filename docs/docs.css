@@ -1,3 +1,7 @@
+body {
+  display: flex;
+  flex-flow: column nowrap;
+}
 #header nav {
   width: auto;
   position: absolute;
@@ -7,6 +11,7 @@
 main {
   margin-top: var(--space-lg);
   margin-bottom: var(--space-xl);
+  flex-grow: 1;
 }
 article {
   margin-top: var(--space-lg);
