@@ -7,94 +7,12 @@
     <title>SDFI Designsystem dokumentation</title>
 
     <link rel="stylesheet" href="../assets/designsystem.css">
+    <link rel="stylesheet" href="./docs.css">
 
     <!-- Highlight.js CSS -->
     <link rel="stylesheet" href="css/highlight.min.css">
 
     <link rel="icon" href="../assets/logos/logo-small.svg">
-
-    <style>
-      /* Custom CSS for this page*/
-      main {
-        margin-top: var(--space-lg);
-        margin-bottom: var(--space-xl);
-      }
-      article {
-        margin-top: var(--space-lg);
-        margin-bottom: var(--space-lg);
-      }
-      code-view {
-        margin: 0 0 var(--space-lg);
-        display: block;
-      }
-      .colorswatch {
-        display: flex;
-        flex-flow: row nowrap;
-        align-items: center;
-        gap: var(--space);
-        margin: 0;
-      }
-      .colorswatch span:first-child {
-        width: var(--space-xl);
-        height: var(--space-xl);
-        border-radius: 50%;
-        display: inline-block;
-        flex: 0 0 var(--space-xl);
-      }
-      .icon-list li {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        flex-flow: row nowrap;
-        align-items: center;
-        gap: var(--space);
-        word-wrap: break-word;
-      }
-      .icon-list li > span:first-child {
-        flex: 0 0 var(--space-xl);
-        width: var(--space-xl);
-      }
-      .icon-list code {
-        overflow: auto;
-      }
-      .bordered {
-        padding: var(--padding);
-        border: solid 1px var(--vibrant-steel);
-        border-radius: var(--space-xxs);
-      }
-
-      .theme-switch {
-        display: flex;
-        flex-flow: row nowrap;
-        align-items: center;
-        gap: var(--space);
-      }
-      .theme-switch p {
-        margin: 0;
-      }
-      .theme-switch input {
-        margin-right: var(--space-xxs);
-      }
-      .theme-switch label {
-        margin-right: var(--space-xs);
-      }
-
-      #toc-icons {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: flex-start;
-        gap: var(--space);
-      }
-      #toc-icons > a {
-        width: 2rem;
-        height: 2rem;
-      }
-      #toc-icons > a > svg {
-        width: 100%;
-        height: 100%;
-      }
-    </style>
 
   </head>
   <body>
@@ -113,17 +31,17 @@
 
       </div>
 
-    </header>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Introduktion</a></li>
+          <li><a href="./css.html">Basis</a></li>
+          <li><a href="./icons.html">Ikoner</a></li>
+          <li><a href="./components.html">UI-komponenter</a></li>
+          <li><a href="./logos.html">Logo</a></li>
+        </ul>
+      </nav>
 
-    <nav class="ds-container">
-      <ul>
-        <li><a href="../index.html">Introduktion</a></li>
-        <li><a href="./css.html">Basis</a></li>
-        <li><a href="./icons.html">Ikoner</a></li>
-        <li><a href="./components.html">UI-komponenter</a></li>
-        <li><a href="./logos.html">Logo</a></li>
-      </ul>
-    </nav>
+    </header>
 <main class="ds-container" id="content-top"><h2>Ikoner</h2><nav id="toc-icons">
     <a href="#hentdata-choose"><svg><use href="../assets/designsystem-icons.svg#hentdata-choose"></svg></a>
   

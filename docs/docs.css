@@ -1,0 +1,69 @@
+#header nav {
+  width: auto;
+  position: absolute;
+  top: var(--space);
+  right: var(--space);
+}
+main {
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-xl);
+}
+article {
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-lg);
+}
+code-view {
+  margin: 0 0 var(--space-lg);
+  display: block;
+}
+.colorswatch {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: var(--space);
+  margin: 0;
+}
+.colorswatch span:first-child {
+  width: var(--space-xl);
+  height: var(--space-xl);
+  border-radius: 50%;
+  display: inline-block;
+  flex: 0 0 var(--space-xl);
+}
+.icon-list li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: var(--space);
+  word-wrap: break-word;
+}
+.icon-list li > span:first-child {
+  flex: 0 0 var(--space-xl);
+  width: var(--space-xl);
+}
+.icon-list code {
+  overflow: auto;
+}
+.bordered {
+  padding: var(--padding);
+  border: solid 1px var(--vibrant-steel);
+  border-radius: var(--space-xxs);
+}
+
+#toc-icons {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  gap: var(--space);
+}
+#toc-icons > a {
+  width: 2rem;
+  height: 2rem;
+}
+#toc-icons > a > svg {
+  width: 100%;
+  height: 100%;
+}
