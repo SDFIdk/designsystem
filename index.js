@@ -1,4 +1,5 @@
 import { CodeView } from './src/js/codeview.js'
+import { ThemeToggle } from './src/js/themeToggle.js'
 import { ToggleBtn, TogglePanel } from './src/js/toggle.js'
 import { Spinner } from './src/js/spinner.js'
 import { Tabs } from './src/js/tabs.js'
@@ -11,6 +12,7 @@ export {
   TogglePanel,
   Spinner,
   CodeView,
+  ThemeToggle,
   popoverPolyfill,
   showToast
 }

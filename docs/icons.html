@@ -38,6 +38,7 @@
           <li><a href="./icons.html">Ikoner</a></li>
           <li><a href="./components.html">UI-komponenter</a></li>
           <li><a href="./logos.html">Logo</a></li>
+          <li><ds-theme-toggle></ds-theme-toggle></li>
         </ul>
       </nav>
 
@@ -2381,14 +2382,7 @@
 <script src="js/highlight.min.js"></script>
 <script type="module" src="../assets/designsystem.js"></script>
 <script>
-  
   hljs.highlightAll()
-
-  const switcher_el = document.querySelector('.theme-switch')
-  const html_el = document.children[0]
-  switcher_el.addEventListener('change', function(event) {
-    html_el.dataset.theme = event.target.value
-  })
 </script>
 
 </body>

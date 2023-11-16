@@ -38,6 +38,7 @@
           <li><a href="./icons.html">Ikoner</a></li>
           <li><a href="./components.html">UI-komponenter</a></li>
           <li><a href="./logos.html">Logo</a></li>
+          <li><ds-theme-toggle></ds-theme-toggle></li>
         </ul>
       </nav>
 
@@ -46,26 +47,9 @@
 
   <h2>Indholdsfortegnelse</h2>
 
-  <fieldset class="theme-switch">
-    <span class="ds-icon-sider-icon-lab"></span>
-    <p>
-      <input id="theme-auto" type="radio" name="theme" value="" checked="">
-      <label for="theme-auto">Auto</label>
-    </p>
-    <p>
-      <input id="theme-light" type="radio" name="theme" value="light">
-      <label for="theme-light">Lys</label>
-    </p>
-    <p>
-      <input id="theme-dark" type="radio" name="theme" value="dark">
-      <label for="theme-dark">Mørk</label>
-    </p>
-  </fieldset>
-
-  <hr>
-
   <nav class="ds-nav-vertical">
     <ul>
+      <li><a href="#themetoggle">Theme toggle</a></li>
       <li><a href="#tabs">Tabs</a></li>
       <li><a href="#dialog">Dialogboks</a></li>
       <li><a href="#togglepanel">Skjult panel</a></li>
@@ -75,6 +59,27 @@
     </ul>
   </nav>
   
+</section>
+<section id="themetoggle">
+
+  <h2>Theme toggle</h2>
+
+  <p>Der er en theme-toggle komponent, som brugeren kan bruge til at skifte mellem dark og light mode.</p>
+
+  <div id="ex-theme-toggle-1">
+
+    <script type="module">
+
+      import { ThemeToggle } from './js/designsystem.js'
+
+    </script>
+
+    <ds-theme-toggle></ds-theme-toggle>
+
+  </div>
+
+  <code-view data-snip="ex-theme-toggle-1"></code-view>
+
 </section>
 <section id="tabs">
 
@@ -365,14 +370,7 @@
 <script src="js/highlight.min.js"></script>
 <script type="module" src="../assets/designsystem.js"></script>
 <script>
-  
   hljs.highlightAll()
-
-  const switcher_el = document.querySelector('.theme-switch')
-  const html_el = document.children[0]
-  switcher_el.addEventListener('change', function(event) {
-    html_el.dataset.theme = event.target.value
-  })
 </script>
 
 </body>
