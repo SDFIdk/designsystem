@@ -19,7 +19,15 @@
     "build-docs": "node src/bin/build-docs.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["SDFI", "Styrelsen for Dataforsyning og Infrastruktur", "designsystem", "icons", "stylesheets", "logos", "UI components"],
+  "keywords": [
+    "SDFI",
+    "Styrelsen for Dataforsyning og Infrastruktur",
+    "designsystem",
+    "icons",
+    "stylesheets",
+    "logos",
+    "UI components"
+  ],
   "license": "MIT",
   "devDependencies": {
     "esbuild": "^0.19.0",

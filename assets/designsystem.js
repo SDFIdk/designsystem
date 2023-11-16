@@ -18,7 +18,7 @@ var CodeView = class extends HTMLElement {
   template = `
     <div class="ds-code-view">
       <label>Kode</label>
-      <pre><code class="language-html" style="border-radius: 0 0.25rem 0.25rem 0.25rem;"></code></pre>
+      <pre><code></code></pre>
     </div>
   `;
   constructor() {
@@ -31,9 +31,8 @@ var CodeView = class extends HTMLElement {
     this.innerHTML = this.template;
   }
   connectedCallback() {
-    let snippet = document.getElementById(this.dataset.snip).cloneNode(true).innerHTML;
     this.render();
-    this.querySelector("code").textContent = snippet;
+    this.querySelector("code").textContent = document.getElementById(this.dataset.snip).cloneNode(true).innerHTML;
   }
 };
 customElements.define("code-view", CodeView);

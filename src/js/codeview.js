@@ -1,5 +1,4 @@
 export class CodeView extends HTMLElement {
-
   
   styles = `
     .ds-code-view label {
@@ -19,7 +18,7 @@ export class CodeView extends HTMLElement {
   template = `
     <div class="ds-code-view">
       <label>Kode</label>
-      <pre><code class="language-html" style="border-radius: 0 0.25rem 0.25rem 0.25rem;"></code></pre>
+      <pre><code></code></pre>
     </div>
   `
 
@@ -35,9 +34,8 @@ export class CodeView extends HTMLElement {
   }
 
   connectedCallback() {
-    let snippet = document.getElementById(this.dataset.snip).cloneNode(true).innerHTML
     this.render()
-    this.querySelector('code').textContent = snippet//.replaceAll(regex, '')
+    this.querySelector('code').textContent = document.getElementById(this.dataset.snip).cloneNode(true).innerHTML
   }
 }
 
