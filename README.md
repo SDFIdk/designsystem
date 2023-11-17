@@ -2,7 +2,30 @@
 
 Common design system for SDFI with CSS, icons, UI components, and logo images.
 
-## Import into your Node project
+## Read the documentation
+
+1. Clone this repo or import as noted above.
+2. Navigate to folder `designsystem` or `node_modules/@dataforsyningen/designsystem`
+3. Open file `index.html` in a browser.
+
+## Build the project yourself
+
+Assuming you have **Node.js** and NPM installed:
+
+First, install dependencies:
+```
+npm install
+```
+
+Then, run this script to build the project:
+```
+npm run build
+```
+New files will appear in the `assets` folder.
+
+## How to use in your JS project
+
+### With NPM
 
 Add `@dataforsyningen/designsystem` to your package.json:
 ```
@@ -13,25 +36,47 @@ Add `@dataforsyningen/designsystem` to your package.json:
 ```
 (Will publish an NPM package later)
 
+### With esbuild (Javascript/NPM)
 
-## Read the documentation
+Assuming you installed **@dataforsyningen/designsystem** with NPM, you can import various parts of designsystem into your esbuild-project.
 
-1. Clone this repo or import as noted above.
-2. Navigate to folder `designsystem` or `node_modules/@dataforsyningen/designsystem`
-3. Open file `index.html` in a browser.
+#### Stylesheets
 
-
-## Build the project yourself
-
-Assuming you have **Node.js** and NPM installed:
-
-First, install dependencies:
+Include and build stylesheets in your esbuild script like this:
 ```
-npm install
-``
+require('esbuild').buildSync({
+  entryPoints: ['@dataforsyningen/designsystem/designsystem.css'],
+  bundle: true,
+  outfile: 'mystyles.css',
+})
+```
 
-Then, run this script to build the project:
+#### Javascript
+
+Import designsystem Javascript like you would import any other script. Example with ShowToast:
 ```
-npm run build
+import { showToast } from '@dataforsyningen/designsystem'
+
+showToast('Hello! I am a toast.')
 ```
-New files will appear in the `assets` folder.
+
+#### SVG icons
+
+Esbuild needs to support loading SVG files. You can setup the `file` loader in your esbuild script like this:
+```
+require('esbuild').buildSync({
+  ...
+  loader: { '.svg': 'file' },
+  ...
+})
+```
+
+Then you can import a reference to the svg sprites file and use them in your .js files.
+```
+import svgIcon from '@dataforsyningen/designsystem/designsystem-icons.svg'
+
+// Using the **notification** icon
+const templateString = `
+  <svg><use href="${ svgIcon }#notification" /></svg>
+`
+```
