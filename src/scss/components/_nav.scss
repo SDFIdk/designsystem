@@ -94,30 +94,7 @@ aside.ds-nav-tools {
     background-color: var(--hvid);
   }
 
-  button,
-  [role="button"] {
-    background-color: transparent;
-    border-color: transparent;
-    color: var(--primary) !important;
-    min-height: var(--space-xl);
-    min-width: var(--space-xl);
-
-    &:hover,
-    &:active {
-      background-color: var(--aktion);
-      color: var(--sort) !important;
-      text-decoration: none;
-    }
-
-    &::before {
-      filter: none !important;
-    }
-
-    &:hover::before,
-    &:active::before {
-      filter: brightness(0) !important;
-    }
-  }
+  
 
   hr {
     display: block;
