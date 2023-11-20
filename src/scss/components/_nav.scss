@@ -85,16 +85,15 @@ aside,
 // Tool bar nav
 nav.ds-nav-tools,
 aside.ds-nav-tools {
+  height: var(--button-base-height);
   
   .ds-button-group {
     border-radius: var(--space-lg);  
     border: solid var(--space-xs) var(--card-border-color);
     justify-content: flex-start;
     align-items: center;
-    background-color: var(--hvid);
+    height: auto;
   }
-
-  
 
   hr {
     display: block;
@@ -126,7 +125,6 @@ aside.ds-nav-tools {
       & > a {
 
         &:first-child {
-          min-height: var(--space-xl);
           border-radius: var(--space-lg) var(--space-lg) 0 0;
           &::before {
             top: var(--btn-pos);
@@ -135,7 +133,6 @@ aside.ds-nav-tools {
         }
 
         &:last-child {
-          min-height: var(--space-xl);
           border-radius: 0 0 var(--space-lg) var(--space-lg);
           &::before {
             top: var(--btn-pos);

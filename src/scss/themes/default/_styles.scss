@@ -32,6 +32,10 @@
   --map-element-spacing: var(--space-md) var(--space) var(--space-lg);
   --modal-margin: 3.5vw 5vw;
 
+  // Buttons
+  --button-icon-base-width: calc(var(--space)*2);
+  --button-base-height: calc(var(--space)*2.25);
+
   // Icons
   --icon-size: calc(var(--space) * 2.5);
 

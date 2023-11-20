@@ -2,10 +2,6 @@
  * Button
  */
 
-:root {
-  --button-icon-base-width: calc(var(--space)*2);
-}
-
 // Reboot based on :
 // - normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
 // - sanitize.css v13.0.0 | CC0 1.0 Universal | github.com/csstools/sanitize.css
@@ -41,8 +37,8 @@ input[type="reset"],
   align-items: center;
   justify-content: center;
   width: auto;
-  height: 3rem;
-  padding: var(--space-sm) var(--space-md);
+  height: var(--button-base-height);
+  padding: var(--space-xs) var(--space);
   border: 1px solid var(--blaa);
   border-radius: var(--space-lg);
   outline: none;
@@ -83,23 +79,23 @@ input[type="reset"],
     --ds-icon-color: var(--hvid);
 
     &:first-child {
-      margin: 0 0.33rem 0 -0.75rem;
+      margin: 0 0 0 -0.5rem;
     }
   }
 
   // Icon buttons are identified by having a `title` attribute
   &[title] {
-    width: calc(var(--space-xl) + 0.125rem);
-    height: var(--space-xl);
+    width: calc(var(--button-base-height) + 0.125rem);
+    height: var(--button-base-height);
     padding: 0;
     overflow: hidden;
 
     & > *:first-child {
-      margin-left: var(--space-sm);
+      margin-left: var(--space-xs);
     }
   
     & > *:last-child {
-      margin-right: var(--space-sm);
+      margin-right: var(--space-xs);
     }
   }
 }
@@ -166,25 +162,28 @@ a[role="button"]:not([href]) {
   & > input,
   & > a {
     border-radius: 0;
-    display: block;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
     margin: 0;
 
     &:first-child {
-      min-width: var(--space-xl);
       border-radius: var(--space-lg) 0 0 var(--space-lg);
-      &::before {
-        left: auto;
-        right: var(--space-xs);
-      }
+      width: auto;
     }
 
     &:last-child {
-      min-width: var(--space-xl);
       border-radius: 0 var(--space-lg) var(--space-lg) 0;
-      &::before {
-        right: auto;
-        left: var(--space-xs);
-      }
+      width: auto;
+    }
+
+    &[title]:first-child {
+      padding-left: var(--space-xs);
+    }
+
+    &[title]:last-child {
+      padding-right: var(--space-xs);
     }
   }
 }
