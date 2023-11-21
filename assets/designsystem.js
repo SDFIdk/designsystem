@@ -44,7 +44,7 @@ var ThemeToggle = class extends HTMLElement {
   buttonLight;
   style = `
     .ds-theme-toggle {
-      display: inline-flex;
+      display: flex;
       flex-flow: row nowrap;
       align-items: center;
       width: auto;

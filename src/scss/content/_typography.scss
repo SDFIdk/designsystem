@@ -70,6 +70,7 @@ a,
   text-decoration: none;
   font-weight: var(--font-weight);
   transition: background-color var(--transition);
+  text-underline-offset: var(--space-xs);
 
   &:is([aria-current], :hover, :active) {
     color: var(--link-hover);

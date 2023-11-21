@@ -32,12 +32,13 @@ nav {
     [role="link"],
     button,
     [role="button"] {
-      @extend .h4;
+      text-transform: uppercase;
       display: inline-block;
-      color: var(--nav-link-color);
-      padding: var(--space-sm) var(--space-md);
+      font-weight: 600;
+      padding: var(--space-sm) var(--space);
       margin: 0;
-      border-radius: var(--space-lg);
+      border-radius: var(--space);
+      height: var(--button-base-height);
 
       &:hover,
       &:active {
@@ -51,13 +52,6 @@ nav {
         color: var(--primary-inverse);
       }
     }
-  }
-}
-
-// Main nav
-.ds-nav-main {
-  li > * {
-    padding: var(--space-md) var(--space-lg);
   }
 }
 

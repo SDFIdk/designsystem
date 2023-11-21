@@ -9,9 +9,7 @@ ds-tabs .ds-tabs-header {
   justify-content: flex-start;
 
   li > * {
-    margin: 0 0 -1px;
-    padding: var(--space) var(--space-md);
-    border-bottom: solid var(--space-xs) transparent !important;
+    margin: 0 0 -1px;    
   }
 
   a, 
@@ -21,6 +19,7 @@ ds-tabs .ds-tabs-header {
     background-color: transparent;
     --font-weight: var(--nav-tab-font-weight);
     border-radius: 0;
+    border-bottom: solid var(--space-xs) transparent !important;
 
     &:hover,
     &:active {
@@ -41,8 +40,8 @@ ds-tabs .ds-tabs-header {
 .ds-nav-tabs > a,
 .ds-nav-tabs > [role="link"],
 ds-tabs .ds-tabs-header button {
-  @extend .h4;
-  padding: var(--space) var(--space-md);
+  text-transform: uppercase;
+  padding: var(--space-xs) var(--space);
   margin: 0;
   border-style: solid;
   border-width: 0 0 var(--space-xs) 0;
