@@ -85,14 +85,10 @@ aside,
 // Tool bar nav
 nav.ds-nav-tools,
 aside.ds-nav-tools {
-  height: var(--button-base-height);
   
   .ds-button-group {
-    border-radius: var(--space-lg);  
+    border-radius: var(--space-lg);
     border: solid var(--space-xs) var(--card-border-color);
-    justify-content: flex-start;
-    align-items: center;
-    height: auto;
   }
 
   hr {
@@ -100,44 +96,42 @@ aside.ds-nav-tools {
     border: none;
     background-color: var(--card-border-color);
     width: 1px;
-    height: var(--space-xl);
+    height: var(--button-base-height);
     margin: 0;
   }
 
   &.vertical {
 
-    --btn-pos: calc(var(--space) * 0.4);
-
     .ds-button-group {
       flex-flow: column nowrap;
 
       hr {
-        display: block;
-        border: none;
-        background-color: var(--card-border-color);
-        width: var(--space-xl);
+        width: var(--button-base-height);
         height: 1px;
-        margin: 0;
       }
 
       & > button,
       & > input,
       & > a {
 
+        width: auto;
+
         &:first-child {
-          border-radius: var(--space-lg) var(--space-lg) 0 0;
-          &::before {
-            top: var(--btn-pos);
-            left: var(--btn-pos);
-          }
+          border-radius: var(--space-lg) var(--space-lg) 0 0;  
         }
 
         &:last-child {
           border-radius: 0 0 var(--space-lg) var(--space-lg);
-          &::before {
-            top: var(--btn-pos);
-            left: var(--btn-pos);
-          }
+        }
+
+        &[title]:first-child {
+          padding-top: var(--space-xs);
+          padding-left: 0;
+        }
+    
+        &[title]:last-child {
+          padding-bottom: var(--space-xs);
+          padding-right: 0;
         }
       }
     }
