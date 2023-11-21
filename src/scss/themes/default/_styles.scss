@@ -36,6 +36,9 @@
   --button-base-height: calc(var(--space)*2.25);
   --button-icon-base-width: calc(var(--space)*2);
 
+  // Forms 
+  --input-base-height: var(--button-base-height);
+
   // Icons
   --icon-size: calc(var(--space) * 2.5);
 
@@ -54,7 +57,6 @@
   --border: solid var(--space-xxs) var(--border-color);
   --border-radius: (--space-xs);
   --border-width: 1px;
-  --outline-width: 3px;
 
   // Transitions
   --transition: 0.2s ease-in-out;

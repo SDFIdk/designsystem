@@ -107,7 +107,7 @@ textarea {
 
 // Fieldset
 fieldset {
-  margin: var(--space-md) 0;
+  margin: var(--space) 0;
   padding: 0;
   border: 0;
 }
@@ -160,39 +160,30 @@ textarea {
 select,
 textarea {
   appearance: none;
-  border: solid 1px var(--vibrant-steel);
-  border-radius: var(--space-lg);
+  border: solid 1px var(--grey2);
+  border-radius: var(--space);
   outline: none;
   background-color: var(--c1);
-  box-shadow: 0 0 0 3px var(--vibrant-steel);
-  color: var(--c9);
+  color: var(--sort);
   font-weight: var(--font-weight);
   transition: background-color var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
-  padding: var(--space-sm) var(--space);
+  padding: var(--space-xs) var(--space);
 
   &::placeholder {
-    color: var(--c7);
+    opacity: 0.5;
   }
 }
 
 // Textarea
 textarea {
-  border-radius: var(--space-sm);
-}
-
-// Active & Focus
-input:not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="checkbox"]):not([type="radio"]):not([readonly]),
-:where(select, textarea) {
-  &:is(:active, :focus) {
-    --background-color: var(--form-element-active-background-color);
-  }
+  padding: var(--space-sm) var(--space);
 }
 
 // Active & Focus
 input:not([type="submit"]):not([type="button"]):not([type="reset"]):not([role="switch"]):not([readonly]),
 :where(select, textarea) {
   &:is(:active, :focus) {
-    --border-color: var(--form-element-active-border-color);
+    border-color: var(--blaa);
   }
 }
 
@@ -201,7 +192,7 @@ input:not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="r
 select,
 textarea {
   &:focus {
-    --box-shadow: 0 0 0 var(--outline-width) var(--form-element-focus-color);
+    --box-shadow: 0 0 0 var(--space-xs) var(--highlight);
   }
 }
 
@@ -210,9 +201,9 @@ input:not([type="submit"]):not([type="button"]):not([type="reset"])[disabled],
 select[disabled],
 textarea[disabled],
 :where(fieldset[disabled]) :is(input:not([type="submit"]):not([type="button"]):not([type="reset"]), select, textarea) {
-  --background-color: var(--form-element-disabled-background-color);
-  --border-color: var(--form-element-disabled-border-color);
-  opacity: var(--form-element-disabled-opacity);
+  background-color: var(--grey1);
+  border-color: var(--grey1);
+  opacity: 0.5;
   pointer-events: none;
 }
 
@@ -243,7 +234,7 @@ textarea[disabled],
 
     &:is(:active, :focus) {
       --border-color: var(--form-element-valid-active-border-color);
-      --box-shadow: 0 0 0 var(--outline-width) var(--form-element-valid-focus-color);
+      --box-shadow: 0 0 0 var(--space-xs) var(--form-element-valid-focus-color);
     }
   }
 
@@ -252,7 +243,7 @@ textarea[disabled],
 
     &:is(:active, :focus) {
       --border-color: var(--form-element-invalid-active-border-color);
-      --box-shadow: 0 0 0 var(--outline-width) var(--form-element-invalid-focus-color);
+      --box-shadow: 0 0 0 var(--space-xs) var(--form-element-invalid-focus-color);
     }
   }
 }

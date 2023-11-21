@@ -59,16 +59,6 @@
   --button-hover-box-shadow: 0 0 0 rgba(0, 0, 0, 0.65);
 
   // Form elements
-  --form-element-background-color: var(--hvid);
-  --form-element-border-color: var(--vibrant-steel);
-  --form-element-color: var(--color);
-  --form-element-placeholder-color: var(--muted-color);
-  --form-element-active-background-color: var(--hvid);
-  --form-element-active-border-color: var(--blaa);
-  --form-element-focus-color: var(--highlight);
-  --form-element-disabled-background-color: var(--c2);
-  --form-element-disabled-border-color: var(--c3);
-  --form-element-disabled-opacity: 0.5;
   --form-element-invalid-border-color: var(--r4);
   --form-element-invalid-active-border-color: var(--r5);
   --form-element-invalid-focus-color: var(--r6);
@@ -87,7 +77,7 @@
   --switch-checked-background-color: var(--blaa);
 
   // Range (input[type="range"])
-  --range-border-color: var(--form-element-color);
+  --range-border-color: var(--color);
   --range-active-border-color: var(--highlight);
   --range-thumb-border-color: var(--background-color);
   --range-thumb-color: var(--secondary);
