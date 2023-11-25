@@ -6,24 +6,32 @@
 
   <p>Logo/bomærke og logotypografi kan sættes op sådan her:</p>
 
-  <div>
-    
-    <p id="ex-logo-1">
-      <a class="ds-logo" href="#logos">
-        <strong>Dataforsyningen</strong>
-        <span>Styrelsen for Dataforsyning og Infrastruktur</span>
-      </a>
+  <p id="ex-logo-1">
+    <a class="ds-logo" href="#logos">
+      <ds-logo></ds-logo>
+      <strong>Dataforsyningen</strong>
+      <span>Styrelsen for Dataforsyning og Infrastruktur</span>
+    </a>
+  </p>
+
+  <div style="padding-top: var(--space);">
+    <p class="ds-logo" href="#logos" style="width: 12rem;">
+      <ds-logo></ds-logo>
+      <strong>Dataforsyningen</strong>
+      <span>SDFI</span>
     </p>
+  </div> 
 
-    <div>
-      <p class="ds-logo" href="#logos" style="width: 12rem;">
-        <strong>Dataforsyningen</strong>
-        <span>SDFI</span>
-      </p>
-    </div> 
+  <code-view data-snip="ex-logo-1"></code-view>
 
-    <code-view data-snip="ex-logo-1"></code-view>
-  </div>
+  <p style="vertical-align: bottom;">
+    <ds-logo style="width: 12rem;"></ds-logo>
+    <ds-logo style="width: 8rem;" data-color="transparent"></ds-logo>
+    <ds-logo style="width: 5rem;" data-color="black"></ds-logo>
+    <ds-logo style="width: 3rem;" data-color="white"></ds-logo>
+    <ds-logo style="width: 2rem;" data-color="white"></ds-logo>
+    <ds-logo style="width: 1.5rem;" data-color="white"></ds-logo>
+  </p>
 
   <h3>Favicon/bogmærkeikon</h3>
   <p>Som favicon bruges <code>logo-small.svg</code> ( <img style="width: var(--space-md); height: auto;" src="../assets/logos/logo-small.svg" alt=""> )</p>

@@ -1,0 +1,56 @@
+<svg width="100%" height="100%" viewBox="0 0 63 63" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .dsl-path {stroke: var(--ds-logo-color, black);}
+    .dsl-fill {fill: var(--ds-logo-background-color, white)}
+    #large .dsl-path {stroke-with: 1.5px;}
+    #medium .dsl-path {stroke-with: 1.3px;}
+    #small .dsl-path {stroke-with: 0.8px;}
+  </style>
+  <symbol id="large" width="100%" height="100%" viewBox="0 0 63 63">
+    <circle class="dsl-path dsl-fill" cx="31.5" cy="31.5" r="30.5"/>
+    <g transform="translate(10,8)">
+      <path class="dsl-path" d="M21.4996 1.03271V3.48274M21.4996 7.93102V9.41378M26.1735 5.70663H23.724M19.2757 5.70663H16.8257" stroke-linecap="round"/>
+      <path class="dsl-path" d="M7.41357 41.2932H35.586"/>
+      <path class="dsl-path" d="M7.41357 38.3276H35.586"/>
+      <path class="dsl-path" d="M7.41357 35.3621H35.586"/>
+      <ellipse class="dsl-path" cx="21.5012" cy="13.1208" rx="2.52069" ry="2.52069"/>
+      <mask id="mask0_2142_223" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="9" width="43" height="23">
+        <path d="M0 9.41382H43V31.9158H0V9.41382Z" fill="#D9D9D9"/>
+      </mask>
+      <g mask="url(#mask0_2142_223)">
+        <path class="dsl-path" d="M21.5001 35.2291V16.3537M21.5001 16.3537C22.9819 15.3449 24.4647 13.1208 28.9139 13.1382C32.6198 13.1527 34.8449 14.6036 34.8449 18.3105C34.8449 24.2415 31.2496 27.8344 25.207 36.1036M21.5001 16.3537C20.0164 15.3449 18.5336 13.159 14.0863 13.1382C10.3785 13.1208 8.15525 14.6036 8.15525 18.3105C8.15525 24.2415 11.8 27.8344 17.7932 36.1036M34.7748 17.2353C38.0723 17.2353 39.5897 19.0518 39.5897 22.0174C39.5897 25.7243 34.5143 32.5662 31.138 36.1036M8.22516 17.2353C4.81035 17.2353 3.41064 19.0369 3.41064 22.0024C3.41064 25.7243 8.48586 32.5662 11.8621 36.1036"/>
+      </g>
+    </g>
+  </symbol>
+  <symbol id="medium" width="100%" height="100%" viewBox="0 0 45 45">
+    <circle class="dsl-path dsl-fill" cx="22.5" cy="22.5" r="21.7"/>
+    <g transform="translate(8,6)">
+      <path class="dsl-path" d="M14.4998 1.34766V3M14.4998 6V7M17.652 4.49983H16M13 4.49983H11.3477" stroke-linecap="round"/>
+      <path class="dsl-path" d="M5 28.5H24"/>
+      <path class="dsl-path" d="M5 26.5H24"/>
+      <path class="dsl-path" d="M5 24.5H24"/>
+      <circle class="dsl-path" cx="14.5008" cy="9.50005" r="1.7"/>
+      <mask id="mask0_2142_35" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="7" width="29" height="16">
+        <path d="M0 7H29V22.1758H0V7Z" fill="#D9D9D9"/>
+      </mask>
+      <g mask="url(#mask0_2142_35)">
+        <path class="dsl-path" d="M14.5001 24.4103V11.6803M14.5001 11.6803C15.4995 11 16.4995 9.5 19.5001 9.51172C21.9995 9.52148 23.5001 10.5 23.5001 13C23.5001 17 21.0754 19.4231 17.0001 25M14.5001 11.6803C13.4995 11 12.4995 9.52577 9.50014 9.51172C6.99951 9.5 5.50014 10.5 5.50014 13C5.50014 17 7.9582 19.4231 12.0001 25M23.4529 12.2749C25.6768 12.2749 26.7001 13.5 26.7001 15.5C26.7001 18 23.2772 22.6143 21.0001 25M5.5473 12.2749C3.24428 12.2749 2.30029 13.4899 2.30029 15.4899C2.30029 18 5.72311 22.6143 8.00014 25"/>
+      </g>
+    </g>
+  </symbol>
+  <symbol id="small" width="100%" height="100%" viewBox="0 0 25 25">
+    <circle class="dsl-path dsl-fill" cx="12.5" cy="12.5" r="12"/>
+    <g transform="translate(5,4)">
+      <path class="dsl-path" d="M7.50006 0.662598V1.51726M7.50006 3.06898V3.58622M9.1305 2.29303H8.27601M6.72429 2.29303H5.86963" stroke-linecap="round"/>
+      <path class="dsl-path" d="M2.58643 14.7068H12.414"/>
+      <path class="dsl-path" d="M2.58643 12.6379H12.414"/>
+      <ellipse class="dsl-path" cx="7.5004" cy="4.87931" rx="0.879311" ry="0.87931"/>
+      <mask id="mask0_2142_115" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="3" width="15" height="9">
+        <path d="M0 3.58618H15V11.4357H0V3.58618Z" fill="#D9D9D9"/>
+      </mask>
+      <g mask="url(#mask0_2142_115)">
+        <path class="dsl-path" d="M7.50021 12.5914V6.00693M7.50021 6.00693C8.01712 5.65505 8.53436 4.87919 10.0864 4.88525C11.3792 4.8903 12.1554 5.39643 12.1554 6.68954C12.1554 8.7585 10.9012 10.0118 8.79331 12.8964M7.50021 6.00693C6.98264 5.65505 6.46538 4.89252 4.914 4.88525C3.62057 4.87919 2.84504 5.39643 2.84504 6.68954C2.84504 8.7585 4.11645 10.0118 6.20711 12.8964M12.1309 6.31448C13.2812 6.31448 13.8106 6.94816 13.8106 7.98264C13.8106 9.27574 12.04 11.6625 10.8623 12.8964M2.86943 6.31448C1.67821 6.31448 1.18994 6.94295 1.18994 7.97743C1.18994 9.27574 2.96037 11.6625 4.13814 12.8964"/>
+      </g> 
+    </g>
+  </symbol>
+</svg>

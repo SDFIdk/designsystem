@@ -1,13 +1,17 @@
-<svg width="100%" height="100%" viewBox="0 0 29 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M14.4998 0.347826V2.23913M14.4998 4.76087L14.501 6.65125M17.652 3.5H15.7607M13.239 3.5H11.3477" stroke="black"/>
-  <circle cx="14.5007" cy="8.93427" r="1.8913" stroke="black"/>
-  <path d="M5.03516 26.5H23.9532" stroke="black"/>
-  <path d="M5.03516 24.5H23.9532" stroke="black"/>
-  <path d="M5.03516 28.5H23.9532" stroke="black"/>
-  <mask id="mask0_1974_42574" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="7" width="29" height="15">
-    <rect y="7" width="29" height="15" fill="#D9D9D9"/>
-  </mask>
-  <g mask="url(#mask0_1974_42574)">
-    <path d="M14.4986 22.1727V11.4358M14.4986 11.4358C15.0651 10.7417 17.1807 8.93359 19.2074 8.93359C21.2342 8.93359 22.7203 10.1372 22.7203 12.1087C22.7203 14.0803 21.6398 17.3585 17.7873 22.1727M14.4986 11.4358C13.9322 10.7417 11.8398 8.93359 9.78986 8.93359C7.7399 8.93359 6.27696 10.1372 6.27696 12.1087C6.27696 14.0803 7.38892 17.3585 11.21 22.1727M22.7951 11.6968C25.1679 11.6968 26.009 12.7874 26.009 14.7721C26.009 16.7567 23.7767 20.1133 21.6241 22.1727M6.27696 11.6968C3.90419 11.6968 2.98828 12.7874 2.98828 14.7721C2.98828 16.7567 5.22059 20.1133 7.37318 22.1727" stroke="black"/>
+<svg class="ds-logo" width="100%" height="100%" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>.dsl-path {stroke: var(--ds-logo-color, black); stroke-width: 1.3px;} .dsl-fill {fill: var(--ds-logo-background-color, white)}</style>
+  <circle class="dsl-path dsl-fill" cx="22.5" cy="22.5" r="21.7"/>
+  <g transform="translate(8,6)">
+    <path class="dsl-path" d="M14.4998 1.34766V3M14.4998 6V7M17.652 4.49983H16M13 4.49983H11.3477" stroke-linecap="round"/>
+    <path class="dsl-path" d="M5 28.5H24"/>
+    <path class="dsl-path" d="M5 26.5H24"/>
+    <path class="dsl-path" d="M5 24.5H24"/>
+    <circle class="dsl-path" cx="14.5008" cy="9.50005" r="1.7"/>
+    <mask id="mask0_2142_35" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="7" width="29" height="16">
+      <path d="M0 7H29V22.1758H0V7Z" fill="#D9D9D9"/>
+    </mask>
+    <g mask="url(#mask0_2142_35)">
+      <path class="dsl-path" d="M14.5001 24.4103V11.6803M14.5001 11.6803C15.4995 11 16.4995 9.5 19.5001 9.51172C21.9995 9.52148 23.5001 10.5 23.5001 13C23.5001 17 21.0754 19.4231 17.0001 25M14.5001 11.6803C13.4995 11 12.4995 9.52577 9.50014 9.51172C6.99951 9.5 5.50014 10.5 5.50014 13C5.50014 17 7.9582 19.4231 12.0001 25M23.4529 12.2749C25.6768 12.2749 26.7001 13.5 26.7001 15.5C26.7001 18 23.2772 22.6143 21.0001 25M5.5473 12.2749C3.24428 12.2749 2.30029 13.4899 2.30029 15.4899C2.30029 18 5.72311 22.6143 8.00014 25"/>
+    </g>
   </g>
 </svg>
