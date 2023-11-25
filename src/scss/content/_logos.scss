@@ -14,14 +14,19 @@
   }
 
   & > strong {
+    padding-top: 1.33rem;
     font-weight: 600;
-    padding-top: 2.5rem;
+    font-size: 1rem;
+  }
+
+  & > span:last-child {
+    font-size: 0.9rem;
   }
 
   & > strong,
   & > span:last-child {
     display: block;
-    margin-left: 6.75rem;
+    margin-left: 4.75rem;
   }
 }
 
@@ -48,10 +53,10 @@ ds-logo.transparent {
     width: 3rem;
   }
   .ds-logo > strong {
-    padding-top: 0.5rem;
+    padding-top: 0.33rem;
   }
   .ds-logo > strong,
   .ds-logo > span:last-child {
-    margin-left: 3.75rem;
+    margin-left: 3.5rem;
   }
 }

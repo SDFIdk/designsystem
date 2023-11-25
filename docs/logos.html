@@ -93,7 +93,7 @@
 
   <p><code>&lt;ds-logo></code>-elementet skalerer selv i forhold til hvor meget plads, der er.</p>
 
-  <p style="display: flex; gap: var(--space); align-items: center;">
+  <p style="display: flex; gap: var(--space); align-items: center;" id="ex-logo-scale">
     <ds-logo style="width: 12rem;"></ds-logo>
     <ds-logo style="width: 8rem;"></ds-logo>
     <ds-logo style="width: 5rem;"></ds-logo>
@@ -102,6 +102,8 @@
     <ds-logo style="width: 1.5rem;"></ds-logo>
     <ds-logo style="width: 1.125rem;"></ds-logo>
   </p>
+
+  <code-view data-snip="ex-logo-scale"></code-view>
 
   <p>Du kan bruge classes <code>black</code>/<code>white</code>/<code>transparent</code> til at vise forskellige varianter af logoet.</p>
 
@@ -128,7 +130,7 @@
 
   <h3>Favicon/bogmærkeikon</h3>
 
-  <p>Som favicon bruges <code>logo-small.svg</code> ( <img style="width: var(--space-md); height: auto;" src="../assets/logos/logo-small.svg" alt=""> )</p>
+  <p>Som favicon bruges <code>logo-small.svg</code> <img style="width: var(--space-md); height: auto;" src="../assets/logos/logo-small.svg" alt=""></p>
   <p>For at bruge det skal du indsætte denne linie i HTML <code>&lt;head></code> sektionen. Sørg for at <code>PATH</code> svarer til logofilens placering på serveren.</p>
   <pre>
   <code>&lt;link rel="icon" href="PATH/logo-small.svg"></code>
@@ -137,6 +139,25 @@
     Denne fil følger med i <em>@dataforsyningen/designsystem</em> pakken under<br>
     <code>/assets/logos/logo-small.svg</code>
   </p>
+
+  <h3>Custom logo</h3>
+
+  <p>Logo kan styles med andre farver, hvis der er behov for det.</p>
+
+  <p id="ex-logo-4">
+    <style>
+      #custom-logo {
+        --ds-logo-color: hsl(300,100%,90%);
+        --ds-logo-background-color: hsl(300,100%,29%);
+        --ds-logo-outline-color: hsl(300,100%,50%);
+      }
+    </style>
+    <ds-logo id="custom-logo"></ds-logo>
+  </p>
+
+  <code-view data-snip="ex-logo-4"></code-view>
+
+
 
 </article>
 </main><footer class="ds-footer">

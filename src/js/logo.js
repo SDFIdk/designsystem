@@ -14,7 +14,7 @@ export class DsLogo extends HTMLElement {
           --ds-logo-background-color: hsl(198,100%,29%);
           --ds-logo-stroke-width: 1.5;
           display: inline-block;
-          width: 6rem;
+          width: 4rem;
           height: auto;
           aspect-ratio: 1/1;
           line-height: 1;
@@ -43,9 +43,12 @@ export class DsLogo extends HTMLElement {
             display: none;
           }
         }
-        @container (min-width: 2.5rem) and (max-width: 4rem) {
+        @container (min-width: 2.5rem) and (max-width: 3.9rem) {
           svg {
             --ds-logo-stroke-width: 1.7;
+          }
+          svg .dsl-group {
+            transform: translate(10.5px,7px);
           }
         }
       </style>
