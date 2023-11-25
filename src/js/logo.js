@@ -16,7 +16,12 @@ export class DsLogo extends HTMLElement {
           display: inline-block;
           width: 6rem;
           height: auto;
-          container-type: inline-size; 
+          aspect-ratio: 1/1;
+          line-height: 1;
+          container-type: size;
+        }
+        svg .dsl-group {
+          transform: translate(10px,7px);
         }
         svg .dsl-path {
           stroke-width: var(--ds-logo-stroke-width);
@@ -27,45 +32,36 @@ export class DsLogo extends HTMLElement {
           stroke-width: var(--ds-logo-stroke-width);
           fill: var(--ds-logo-background-color);
         }
-        @container (max-width: 2.5rem) {
+        @container (max-width: 2rem) {
           svg {
-            --ds-logo-stroke-width: 1;
+            --ds-logo-stroke-width: 2.25;
           }
-          svg .dsl-path:nth-child(4) {
-            transform: translate(0,0.6px);
+          svg .dsl-group {
+            transform: translate(12px,9px) scale(0.9);
           }
           svg .dsl-path:nth-child(3) {
             display: none;
           }
-          svg .dsl-path:nth-child(4) {
-            transform: translate(0,0.4px);
-          }
         }
-        @container (max-width: 6rem) {
+        @container (min-width: 2rem and max-width: 4rem) {
           svg {
             --ds-logo-stroke-width: 1.3;
           }
         }
       </style>
       <svg width="100%" height="100%" viewBox="0 0 63 63" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <style>
-          #large .dsl-path {stroke-with: 1.5px;}
-          #medium .dsl-path {stroke-with: 1.3px;}
-          #small .dsl-path {stroke-with: 0.8px;}
-        </style>
-
-        <circle class="dsl-circle" cx="31.5" cy="31.5" r="30.5"/>
-        <g transform="translate(10,7)">
-          <path class="dsl-path" d="M21.4996 1.03271V3.48274M21.4996 7.93102V9.41378M26.1735 5.70663H23.724M19.2757 5.70663H16.8257" stroke-linecap="round"/>
-          <path class="dsl-path" d="M7.4 35.4H35.6"/>
-          <path class="dsl-path" d="M7.4 38.3H35.6"/>
-          <path class="dsl-path" d="M7.4 41.2H35.6"/>
-          <ellipse class="dsl-path" cx="21.5012" cy="13.1208" rx="2.52069" ry="2.52069"/>
+        <circle class="dsl-circle" cx="31.5" cy="31.5" r="30"/>
+        <g class="dsl-group">
+          <path class="dsl-path" d="M21.50 1.03V3.48M21.50 7.93V9.41M26.17 5.71H23.72M19.28 5.71H16.83" stroke-linecap="round"/>
+          <path class="dsl-path" d="M7.40 35.40H35.60"/>
+          <path class="dsl-path" d="M7.40 38.30H35.60"/>
+          <path class="dsl-path" d="M7.40 41.20H35.60"/>
+          <ellipse class="dsl-path" cx="21.50" cy="13.12" rx="2.52" ry="2.52"/>
           <mask id="mask0_2142_223" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="9" width="43" height="23">
-            <path d="M0 9.4H43V31.9H0V9.4Z" fill="#D9D9D9"/>
+            <path d="M0 9.40H43V31.90H0V9.40Z" fill="#D9D9D9"/>
           </mask>
           <g mask="url(#mask0_2142_223)">
-            <path class="dsl-path" d="M21.5001 35.2291V16.3537M21.5001 16.3537C22.9819 15.3449 24.4647 13.1208 28.9139 13.1382C32.6198 13.1527 34.8449 14.6036 34.8449 18.3105C34.8449 24.2415 31.2496 27.8344 25.207 36.1036M21.5001 16.3537C20.0164 15.3449 18.5336 13.159 14.0863 13.1382C10.3785 13.1208 8.15525 14.6036 8.15525 18.3105C8.15525 24.2415 11.8 27.8344 17.7932 36.1036M34.7748 17.2353C38.0723 17.2353 39.5897 19.0518 39.5897 22.0174C39.5897 25.7243 34.5143 32.5662 31.138 36.1036M8.22516 17.2353C4.81035 17.2353 3.41064 19.0369 3.41064 22.0024C3.41064 25.7243 8.48586 32.5662 11.8621 36.1036"/>
+            <path class="dsl-path" d="M21.50 35.23V16.35M21.50 16.35C22.98 15.34 24.46 13.12 28.91 13.14C32.62 13.15 34.84 14.60 34.84 18.31C34.84 24.24 31.25 27.83 25.21 36.10M21.50 16.35C20.02 15.34 18.53 13.16 14.09 13.14C10.38 13.12 8.16 14.60 8.16 18.31C8.16 24.24 11.80 27.83 17.79 36.10M34.77 17.24C38.07 17.24 39.59 19.05 39.59 22.02C39.59 25.72 34.51 32.57 31.14 36.10M8.23 17.24C4.81 17.24 3.41 19.04 3.41 22.00C3.41 25.72 8.49 32.57 11.86 36.10"/>
           </g>
         </g> 
       </svg>

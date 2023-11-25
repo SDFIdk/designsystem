@@ -8,6 +8,14 @@
 
   <p>Du kan finde SVG-logofiler under ../assets/logos</p>
 
+  <p id="ex-logo-0">
+    <img width="63" src="../assets/logos/logo-large.svg" alt="">
+    <img width="45" src="../assets/logos/logo-medium.svg" alt="">
+    <img width="25" src="../assets/logos/logo-small.svg" alt="">
+  </p>
+
+  <code-view data-snip="ex-logo-0"></code-view>
+
   <h3>Web component</h3>
   
   <p>Du kan bruge <code>&lt;ds-logo></code> elementet til at vise et logo. Det giver dig adgang til at style og skalere logoet.</p>
@@ -42,7 +50,7 @@
 
   <p><code>&lt;ds-logo></code>-elementet skalerer selv i forhold til hvor meget plads, der er.</p>
 
-  <p style="vertical-align: bottom;">
+  <p style="display: flex; gap: var(--space); align-items: center;">
     <ds-logo style="width: 12rem;"></ds-logo>
     <ds-logo style="width: 8rem;"></ds-logo>
     <ds-logo style="width: 5rem;"></ds-logo>
@@ -52,12 +60,34 @@
     <ds-logo style="width: 1.125rem;"></ds-logo>
   </p>
 
-  <p>Du kan bruge classes til at vise forskellige varianter af logoet.</p>
+  <p style="display: flex; gap: var(--space); align-items: center;">
+    <ds-logo style="width: 63px;"></ds-logo>
+    <img width="63" src="../assets/logos/logo-large.svg" alt="">
+    <ds-logo style="width: 45px;"></ds-logo>
+    <img width="45" src="../assets/logos/logo-medium.svg" alt="">
+    <ds-logo style="width: 25px;"></ds-logo>
+    <img width="25" src="../assets/logos/logo-small.svg" alt="">
+  </p>
 
-  <p style="vertical-align: bottom;" id="ex-logo-2">
-    <ds-logo class="black"></ds-logo>
-    <ds-logo class="white"></ds-logo>
-    <ds-logo class="transparent"></ds-logo>
+  <p>Du kan bruge classes <code>black</code>/<code>white</code>/<code>transparent</code> til at vise forskellige varianter af logoet.</p>
+
+  <style>
+    #ex-logo-2 [data-theme] {
+      padding: var(--space-md);
+      display: inline-flex;
+      gap: var(--space-md);
+    }
+  </style>
+
+  <p id="ex-logo-2">
+    <span data-theme="light">
+      <ds-logo class="black"></ds-logo>
+      <ds-logo class="transparent"></ds-logo>
+    </span>
+    <span data-theme="dark">
+      <ds-logo class="white"></ds-logo>
+      <ds-logo class="transparent"></ds-logo>
+    </span>
   </p>
 
   <code-view data-snip="ex-logo-2"></code-view>

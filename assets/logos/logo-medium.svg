@@ -1,17 +1,20 @@
-<svg class="ds-logo" width="100%" height="100%" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <style>.dsl-path {stroke: var(--ds-logo-color, black); stroke-width: 1.3px;} .dsl-fill {fill: var(--ds-logo-background-color, white)}</style>
-  <circle class="dsl-path dsl-fill" cx="22.5" cy="22.5" r="21.7"/>
-  <g transform="translate(8,6)">
-    <path class="dsl-path" d="M14.4998 1.34766V3M14.4998 6V7M17.652 4.49983H16M13 4.49983H11.3477" stroke-linecap="round"/>
-    <path class="dsl-path" d="M5 28.5H24"/>
-    <path class="dsl-path" d="M5 26.5H24"/>
+<svg class="ds-logo" width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .dsl-path {stroke: #fff; stroke-width: 1.3px;}
+    .dsl-circle {fill: hsl(198,100%,29%); stroke: hsl(198,100%,29%);}
+  </style>
+  <circle class="dsl-circle" cx="22.5" cy="22.5" r="21.7"/>
+  <g transform="translate(8,5.5)">
+    <path class="dsl-path" d="M14.49 1.34V3M14.49 6V7M17.65 4.49H16M13 4.49H11.34" stroke-linecap="round"/>
     <path class="dsl-path" d="M5 24.5H24"/>
-    <circle class="dsl-path" cx="14.5008" cy="9.50005" r="1.7"/>
+    <path class="dsl-path" d="M5 26.5H24"/>
+    <path class="dsl-path" d="M5 28.5H24"/>
+    <circle class="dsl-path" cx="14.50" cy="9.50" r="1.7"/>
     <mask id="mask0_2142_35" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="7" width="29" height="16">
-      <path d="M0 7H29V22.1758H0V7Z" fill="#D9D9D9"/>
+      <path d="M0 7H29V22.17H0V7Z" fill="#D9D9D9"/>
     </mask>
     <g mask="url(#mask0_2142_35)">
-      <path class="dsl-path" d="M14.5001 24.4103V11.6803M14.5001 11.6803C15.4995 11 16.4995 9.5 19.5001 9.51172C21.9995 9.52148 23.5001 10.5 23.5001 13C23.5001 17 21.0754 19.4231 17.0001 25M14.5001 11.6803C13.4995 11 12.4995 9.52577 9.50014 9.51172C6.99951 9.5 5.50014 10.5 5.50014 13C5.50014 17 7.9582 19.4231 12.0001 25M23.4529 12.2749C25.6768 12.2749 26.7001 13.5 26.7001 15.5C26.7001 18 23.2772 22.6143 21.0001 25M5.5473 12.2749C3.24428 12.2749 2.30029 13.4899 2.30029 15.4899C2.30029 18 5.72311 22.6143 8.00014 25"/>
+      <path class="dsl-path" d="M14.50 24.41V11.68M14.50 11.68C15.49 11 16.49 9.5 19.50 9.51C21.99 9.52 23.50 10.5 23.50 13C23.50 17 21.07 19.42 17.00 25M14.50 11.68C13.49 11 12.49 9.52 9.50 9.51C6.99 9.5 5.50 10.5 5.50 13C5.50 17 7.95 19.42 12.00 25M23.45 12.27C25.67 12.27 26.70 13.5 26.70 15.5C26.70 18 23.27 22.61 21.00 25M5.54 12.27C3.24 12.27 2.30 13.48 2.30 15.48C2.30 18 5.72 22.61 8.00 25"/>
     </g>
   </g>
 </svg>
