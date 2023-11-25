@@ -6,7 +6,7 @@
   margin: 0;
   height: auto;
   width: 100%;
-  position: relative; 
+  position: relative;
 
   & > ds-logo {
     float: left;
@@ -23,6 +23,24 @@
     display: block;
     margin-left: 6.75rem;
   }
+}
+
+ds-logo.black {
+  --ds-logo-color: var(--hvid);
+  --ds-logo-outline-color: var(--sort);
+  --ds-logo-background-color: var(--sort);
+}
+
+ds-logo.white {
+  --ds-logo-color: var(--sort);
+  --ds-logo-outline-color: var(--hvid);
+  --ds-logo-background-color: var(--hvid);
+}
+
+ds-logo.transparent {
+  --ds-logo-color: var(--ds-logo-theme-color);
+  --ds-logo-outline-color: var(--ds-logo-theme-color);
+  --ds-logo-background-color: transparent;
 }
 
 @container (max-width: 15rem) {

@@ -2,11 +2,25 @@
 
   <h2>Logo</h2>
 
-  <p><em>Bemærk!</em> SDFIs logo må kun bruges af Styrelsen for Dataforsyning og Infrastruktur.</p>
+  <p><em>Bemærk! SDFIs logo må kun bruges af Styrelsen for Dataforsyning og Infrastruktur.</em></p>
 
-  <p>Logo/bomærke og logotypografi kan sættes op sådan her:</p>
+  <h3>SVG-filer</h3>
 
+  <p>Du kan finde SVG-logofiler under ../assets/logos</p>
+
+  <h3>Web component</h3>
+  
+  <p>Du kan bruge <code>&lt;ds-logo></code> elementet til at vise et logo. Det giver dig adgang til at style og skalere logoet.</p>
+  
   <p id="ex-logo-1">
+    <script type="module">
+      // Sådan ville du importere fra designsystem NPM-pakken, som du har installeret
+      // import { DsLogo } from '@dataforsyningen/designsystem'
+
+      // Sådan ville du importere fra en lokal mappe PATH
+      // import { DsLogo } from 'PATH/assets/designsystem.js'
+    </script>
+
     <a class="ds-logo" href="#logos">
       <ds-logo></ds-logo>
       <strong>Dataforsyningen</strong>
@@ -17,29 +31,47 @@
   <div style="padding-top: var(--space);">
     <p class="ds-logo" href="#logos" style="width: 12rem;">
       <ds-logo></ds-logo>
-      <strong>Dataforsyningen</strong>
+      <strong>Produktnavn</strong>
       <span>SDFI</span>
     </p>
   </div> 
 
+  <p>Det kræver, at du importerer <strong>designsystem.js</strong> <br>Derefter kan logo/bomærke og logotypografi kan sættes op sådan her:</p>
+
   <code-view data-snip="ex-logo-1"></code-view>
+
+  <p><code>&lt;ds-logo></code>-elementet skalerer selv i forhold til hvor meget plads, der er.</p>
 
   <p style="vertical-align: bottom;">
     <ds-logo style="width: 12rem;"></ds-logo>
-    <ds-logo style="width: 8rem;" data-color="transparent"></ds-logo>
-    <ds-logo style="width: 5rem;" data-color="black"></ds-logo>
-    <ds-logo style="width: 3rem;" data-color="white"></ds-logo>
-    <ds-logo style="width: 2rem;" data-color="white"></ds-logo>
-    <ds-logo style="width: 1.5rem;" data-color="white"></ds-logo>
+    <ds-logo style="width: 8rem;"></ds-logo>
+    <ds-logo style="width: 5rem;"></ds-logo>
+    <ds-logo style="width: 3rem;"></ds-logo>
+    <ds-logo style="width: 2rem;"></ds-logo>
+    <ds-logo style="width: 1.5rem;"></ds-logo>
+    <ds-logo style="width: 1.125rem;"></ds-logo>
   </p>
 
+  <p>Du kan bruge classes til at vise forskellige varianter af logoet.</p>
+
+  <p style="vertical-align: bottom;" id="ex-logo-2">
+    <ds-logo class="black"></ds-logo>
+    <ds-logo class="white"></ds-logo>
+    <ds-logo class="transparent"></ds-logo>
+  </p>
+
+  <code-view data-snip="ex-logo-2"></code-view>
+
   <h3>Favicon/bogmærkeikon</h3>
+
   <p>Som favicon bruges <code>logo-small.svg</code> ( <img style="width: var(--space-md); height: auto;" src="../assets/logos/logo-small.svg" alt=""> )</p>
   <p>For at bruge det skal du indsætte denne linie i HTML <code>&lt;head></code> sektionen. Sørg for at <code>PATH</code> svarer til logofilens placering på serveren.</p>
-  <pre><code>&lt;link rel="shortcut icon" href="PATH/logo-simple-micro.svg"></code></pre>
+  <pre>
+  <code>&lt;link rel="icon" href="PATH/logo-small.svg"></code>
+  </pre>
   <p>
     Denne fil følger med i <em>@dataforsyningen/designsystem</em> pakken under<br>
-    <code>/node-modules/@dataforsyningen/assets/logos/logo-small.svg</code>
+    <code>/assets/logos/logo-small.svg</code>
   </p>
 
 </article>

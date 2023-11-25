@@ -370,9 +370,6 @@ var DsLogo = class extends HTMLElement {
           height: auto;
           container-type: inline-size; 
         }
-        svg {
-
-        }
         svg .dsl-path {
           stroke-width: var(--ds-logo-stroke-width);
           stroke: var(--ds-logo-color);
@@ -382,15 +379,18 @@ var DsLogo = class extends HTMLElement {
           stroke-width: var(--ds-logo-stroke-width);
           fill: var(--ds-logo-background-color);
         }
-        @container (max-width: 3rem) {
+        @container (max-width: 2.5rem) {
           svg {
             --ds-logo-stroke-width: 1;
           }
-          svg .dsl-path:nth-child(2) {
-            transform: translate(0,1.5px);
+          svg .dsl-path:nth-child(4) {
+            transform: translate(0,0.6px);
           }
           svg .dsl-path:nth-child(3) {
             display: none;
+          }
+          svg .dsl-path:nth-child(4) {
+            transform: translate(0,0.4px);
           }
         }
         @container (max-width: 6rem) {
