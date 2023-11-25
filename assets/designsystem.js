@@ -384,26 +384,20 @@ var DsLogo = class extends HTMLElement {
           stroke-width: var(--ds-logo-stroke-width);
           fill: var(--ds-logo-background-color);
         }
-        @container (max-width: 2rem) {
+        @container (max-width: 2.49rem) {
           svg {
             --ds-logo-stroke-width: 2.25;
           }
           svg .dsl-group {
             transform: translate(12px,9px) scale(0.9);
           }
-          svg .dsl-path:nth-child(2) {
-            
-          }
           svg .dsl-path:nth-child(3) {
             display: none;
           }
-          svg .dsl-path:nth-child(4) {
-            
-          }
         }
-        @container (min-width: 2rem and max-width: 4rem) {
+        @container (min-width: 2.5rem) and (max-width: 4rem) {
           svg {
-            --ds-logo-stroke-width: 1.3;
+            --ds-logo-stroke-width: 1.7;
           }
         }
       </style>

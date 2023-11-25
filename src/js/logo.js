@@ -32,7 +32,7 @@ export class DsLogo extends HTMLElement {
           stroke-width: var(--ds-logo-stroke-width);
           fill: var(--ds-logo-background-color);
         }
-        @container (max-width: 2rem) {
+        @container (max-width: 2.49rem) {
           svg {
             --ds-logo-stroke-width: 2.25;
           }
@@ -43,9 +43,9 @@ export class DsLogo extends HTMLElement {
             display: none;
           }
         }
-        @container (min-width: 2rem and max-width: 4rem) {
+        @container (min-width: 2.5rem) and (max-width: 4rem) {
           svg {
-            --ds-logo-stroke-width: 1.3;
+            --ds-logo-stroke-width: 1.7;
           }
         }
       </style>
