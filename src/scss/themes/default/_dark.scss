@@ -7,7 +7,7 @@
   --background-color: var(--c9);
 
   // Borders
-  --border-color: var(--vibrant-steel);
+  --border-color: var(--grey3);
 
   // Texts colors
   --color: var(--c2);
@@ -18,9 +18,13 @@
   --h5-color: var(--c3);
   --h6-color: var(--c3);
 
+  // Background colors 
+  --bg1: var(--c8);
+  --bg2: var(--c7);
+
   // Muted colors
-  --muted-color: var(--dark-steel);
-  --muted-border-color: var(--dark-steel);
+  --muted-color: var(--grey5);
+  --muted-border-color: var(--grey5);
 
   // Link colors
   --link: var(--c3);
@@ -34,13 +38,13 @@
   --primary-focus: var(--highlight);
 
   // Secondary colors
-  --secondary: var(--vibrant-steel);
+  --secondary: var(--grey3);
   --secondary-inverse: var(--c3);
   --secondary-hover: var(--c8);
   --secondary-focus: var(--highlight);
 
   // Highlighted text (<mark>)
-  --mark-background-color: var(--dark-steel);
+  --mark-background-color: var(--grey5);
   --mark-color: var(--sort);
 
   // Inserted (<ins>) & Deleted (<ins>)
@@ -88,7 +92,7 @@
   --range-thumb-active-color: var(--primary);
 
   // Table
-  --table-border-color: var(--vibrant-steel);
+  --table-border-color: var(--grey3);
   --table-row-stripped-background-color: var(--c2);
 
   // Code
@@ -99,7 +103,7 @@
   --code-tag-color: var(--o4);
   --code-property-color: var(--g4);
   --code-value-color: var(--r4);
-  --code-comment-color: var(--65-sort);
+  --code-comment-color: var(--grey6);
 
   // Accordion (<details>)
   --accordion-border-color: var(--muted-border-color);
@@ -111,17 +115,17 @@
   --card-border-color: var(--c7);
   
   // Dropdown (<details role="list">)
-  --dropdown-background-color: var(--lys-steel);
+  --dropdown-background-color: var(--grey1);
   --dropdown-border-color: var(--hvid);
   --dropdown-box-shadow: var(--card-box-shadow);
   --dropdown-color: var(--color);
-  --dropdown-hover-background-color: var(--medium-steel);
+  --dropdown-hover-background-color: var(--grey2);
 
   // Modal (<dialog>)
-  --modal-overlay-background-color: var(--65-sort);
+  --modal-overlay-background-color: var(--grey6);
 
   // Progress
-  --progress-background-color: var(--vibrant-steel);
+  --progress-background-color: var(--grey3);
   --progress-color: var(--blaa);
 
   // Loading ([aria-busy=true])
@@ -148,9 +152,4 @@
     font-weight: 400;
   }
 
-  // Header
-  --header-background: var(--c8);
-
-  // Footer
-  --footer-background: var(--c7);
 }

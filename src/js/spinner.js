@@ -27,7 +27,7 @@ export class Spinner extends HTMLElement {
             fill: var(--color);
           }
           .ds-spinner-dot {
-            fill: var(--dark-steel);
+            fill: var(--grey5);
             
           }
           .ds-spinner-dots {
