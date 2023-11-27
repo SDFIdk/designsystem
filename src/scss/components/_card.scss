@@ -5,19 +5,17 @@
 .ds-card {
   border-radius: var(--space-lg);
   background: var(--card-background-color);
-  box-shadow: var(--card-box-shadow);
-  border: solid var(--space-xs) var(--card-border-color);
+  outline: solid var(--space-xs) var(--card-border-color);
   overflow: hidden;
   display: flex;
   flex-flow: column nowrap;
   align-items: stretch;
 
   & > img:first-child {
-    background-color: var(--c5);
-    min-height: 15rem;
     width: 100%;
     height: auto;
     display: block;
+    aspect-ratio: 16/9;
   }
 
   & > .ds-padding {

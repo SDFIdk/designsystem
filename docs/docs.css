@@ -13,7 +13,8 @@ main {
   margin-bottom: var(--space-xl);
   flex-grow: 1;
 }
-article {
+article,
+section {
   margin-top: var(--space-lg);
   margin-bottom: var(--space-lg);
 }

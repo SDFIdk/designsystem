@@ -4,115 +4,139 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1,user-scalable=yes">
-    <title>SDFI Designsystem dokumentation</title>
+    <title>Layout eksempel</title>
 
     <link rel="stylesheet" href="../../assets/designsystem.css">
-    <link rel="stylesheet" href="../docs.css">
-
     <link rel="icon" href="../../assets/logos/logo-small.svg">
+
+    <style>
+
+    </style>
 
   </head>
   <body>
+  <body>
 
-    <header id="header" class="ds-header">
-
+    <header class="ds-header">
       <div class="ds-container">
 
+        <ds-theme-toggle style="position: fixed; top: var(--space-md); right: var(--space-md);"></ds-theme-toggle>
+
         <p class="ds-logo">
+          <ds-logo></ds-logo>
           <strong>Dataforsyningen</strong>
           <span>Styrelsen for Dataforsyning og Infrastruktur</span>
         </p>
       
-        <h1>Designguide eksempler</h1>
-        <p class="blockquote">Reference-implementationer af SDFIs designguide med HTML/CSS</p>
+        <h1>Layout eksempel: Frie offentlige geodata og kort</h1>
+        <p class="blockquote">Dataforsyningen giver dig direkte adgang til frie offentlige geografiske data via kortvisning, webservices, web applikationer, API'er og download. Du vil også finde viden om, hvordan data skaber nye muligheder og værdi for både offentlige og private.</p>
 
       </div>
     </header>
 
-    <main class="ds-container">
+    <main>
 
-      <section class="ds-flexgrid">
-        <article class="ds-padding">
-          <h2>Flexgrid box 1</h2>
-          <p>Dette grid er sat med <code>class="ds-flexgrid"</code></p>
-          <p><em>Flexgrid kan bruges til at placere et vilkårligt antal kasser ved siden af hinanden.</em></p> 
-          <p>De bliver aldrig smallere end 15rem og ombryder til ny linie, hvis der der ikke er plads nok på en række.</p>
-          <p>En boks i et flexgrid vil altid udfylde den plads, der er til rådighed.</p>
-        </article>
-        <article class="ds-padding">
-          <h2>Flexgrid box 2</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </article>
-        <article class="ds-padding">
-          <h2>Flexgrid box 3</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </article>
-        <article class="ds-padding">
-          <h2>Flexgrid box 4</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </article>
+      <section class="ds-container ds-grid">
+        <div class="ds-card ds-padding">
+          <h2 class="h3">
+            <ds-logo style="width: 3rem; --ds-logo-background-color: hsl(300,100%,29%); --ds-logo-outline-color: hsl(300,100%,29%);"></ds-logo>
+            Se og hent data
+          </h2>
+          <p>Har du brug for et baggrundskort, højdekurver, bygninger eller veje. Find informationer om data, se data på kort, hent webservices og download data.</p>
+        </div>
+        <div class="ds-card ds-padding">
+          <h2 class="h3">
+            <svg class="ds-icon"><use href="../../assets/designsystem-icons.svg#notification"/></svg>
+            Nyheder
+          </h2>
+          <p>Her finder du nyheder og meddelelser om data, aktiviteter og ændringer på Dataforsyningen.</p>
+        </div>
+        <div class="ds-card ds-padding">
+          <h2 class="h3">
+            <svg class="ds-icon"><use href="../../assets/designsystem-icons.svg#sider-cases"/></svg>
+            Er du IT-udvikler?
+          </h2>
+          <p>Bliv fortrolig med kald til SDFE's API'er. Find dokumentation med snitfladebeskrivelser, parametre, datafelter og kode snippets. Se også vores code repository på GitHub.</p>
+        </div>
+        <div class="ds-card ds-padding">
+          <h2 class="h3">
+            <svg class="ds-icon"><use href="../../assets/designsystem-icons.svg#mail"/></svg>
+            Læs vores cases
+          </h2>
+          <p>Hvordan kan geografiske data skabe værdi i din forretning? Få viden og inspiration til hvordan frie offentlige kort og data skaber nye muligheder og værdi for både offentlige og private.</p>
+        </div>
       </section>
 
-      <section class="ds-grid">
-        <article class="ds-padding ds-grid-item-large">
-          <h2>Grid box 1</h2>
-          <p>Dette grid er sat med <code>class="ds-grid"</code></p>
-          <p><em>Grid kan bruges til at placere et vilkårligt antal bokse i rækkefølge. Boksene udfylder ikke nødvendigvis den plads, der er til rådighed.</em></p>
-          <p>Denne boks er sat med <code>class="ds-grid-item-large"</code> for at give den mere bredde end de andre - forudsat skærmen er bred nok.</p>
-        </article>
-        <article class="ds-padding">
-          <h2>Grid box 2</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </article>
-        <article class="ds-padding">
-          <h2>Grid box 3</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </article>
-        <article class="ds-padding">
-          <h2>Grid box 4</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </article>
-        <article class="ds-padding">
-          <h2>Grid box 5</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </article>
-        <article class="ds-padding">
-          <h2>Grid box 6</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </article>
-        <article class="ds-padding ds-grid-item-large">
-          <h2>Grid box 7</h2>
-          <p>Denne boks er sat med <code>class="ds-grid-item-large"</code> for at give den mere bredde end de andre - forudsat skærmen er bred nok.</p>
-        </article>
-      </section>
+      <div style="background-color: var(--grey1); padding: var(--space-lg) 0;">
 
-      <article class="ds-padding">
-        <h2>Boks uden for grid</h2>
-        <p><em>Denne boks er ikke del af noget grid. Den fylder blot 100% af bredden.</em></p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      </article>
+        <section class="ds-container ds-grid-2-1">
+          
+          <article>
+            <h2>Forvaltning og Sagsbehandling</h2>
+            <p>Forvaltning og Sagsbehandling er en nem og samlet adgang til aktuelle grunddata målrettet kommunal sagsbehandling og offentlig forvaltning. Udover sagsbehandlingskortet inkluderer tjenesten lag med information om matrikelskel (både gældende og foreløbige), kommune- og regionsgrænser, stednavne og vejnavne og adresser.</p>
+            <p>Den primære skala for visualisering og anvendelse ligger i området 1:1.000 -> 1:25.000, men kortet kan også benyttes i både større og mindre skala.</p>
+          </article>
+
+          <article>
+            <h2>Forvaltningstjenesten 2.0</h2>
+            <p>Forvaltningstjeneste (WMTS). Tjenesten har en høj performance. Tjenesten indeholder udvalgte lag i EPSG:25832: Basis_kort, Stednavne_basiskort, Vejnavne_basiskort, Husnummer WMTS tjenesten opdateres hver anden måned.</p>
+          </article>
+
+        </section>
+        
+      </div>
 
     </main>
 
-    <footer class="ds-footer" data-theme="light">
+    <footer class="ds-footer">
       <div class="ds-container">
-        <h2 class="ds-logo-responsive ds-logo-pull-left">
+        <p><strong>Dataforsyningen</strong><br><em>er en del af</em></p>
+        <p class="ds-logo">
+          <ds-logo></ds-logo>
           <strong>Insæt navn her</strong>
           <span>Styrelsen for Dataforsyning og Infrastruktur</span>
-        </h2>
+        </p>
+        <hr>
+        <p>Rentemestervej 8, 2400 København NV<br>EAN-nummer: 5798009813640<br>CVR-nummer: 37 28 41 14</p>
+        <hr>
+        <p>
+          <a href="tel:+4572545500" class="ds-icon">
+            <svg><use href="../../assets/designsystem-icons.svg#phone"/></svg>
+            7254 5500
+          </a>
+          <a href="mailto:sdfi@sdfi.dk" class="ds-icon">
+            <svg><use href="../../assets/designsystem-icons.svg#mail"/></svg>
+            sdfi@sdfi.dk
+          </a>
+        </p>
+        <p>Bemærk: Sender du os en e-mail, vil oplysningerne blive registreret i vores centrale, digitale system til videre sagsbehandling. </p>
+        <hr>
+        <p>
+          <a href="#" class="ds-icon">
+            <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right"/></svg>
+            Om løsningens navn
+          </a>
+          <a href="#" class="ds-icon">
+            <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right"/></svg>
+            Privatlivspolitik
+          </a>
+          <a href="#" class="ds-icon">
+            <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right"/></svg>
+            Cookiepolitik
+          </a>
+          <a href="/was" class="ds-icon">
+            <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right"/></svg>
+            Tilgængelighedserklæring
+          </a>
+        </p>
         <hr>
         <p>© 2023 Styrelsen for Dataforsyning og Infrastruktur</p>
       </div>
     </footer>
 
-    <aside class="ds-container" style="margin-top: 5rem;">
-      <code-example data-snip="ex-layout"></code-example>
-    </aside>
-
-    <script src="js/code-example-component.js"></script>
-    <script src="js/highlight.min.js"></script>
-    <script>
-      hljs.highlightAll()
+    <script type="module">
+      import { DsLogo } from '../../assets/designsystem.js'
+      import { ThemeToggle } from '../../assets/designsystem.js'
     </script>
 
   </body>

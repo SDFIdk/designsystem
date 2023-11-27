@@ -10,9 +10,9 @@
 // 1. Correct the inheritance of border color in Firefox
 // 2. Add the correct box sizing in Firefox
 hr {
-  height: 0; // 2
+  height: 1px; // 2
   border: 0;
-  border-top: 1px solid var(--muted-border-color);
+  background-color: var(--grey3);
   color: inherit; // 1
   margin: var(--space-md) 0;
 }

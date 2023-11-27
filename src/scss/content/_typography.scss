@@ -85,12 +85,7 @@ a,
 // Paragraphs
 p {
   max-width: 44rem;
-  margin-top: var(--space);
-  margin-bottom: var(--space);
-}
-
-p:first-child {
-  margin-top: 0;
+  margin: 0 0 var(--space);
 }
 
 p:last-child {
@@ -116,6 +111,10 @@ h6,
   line-height: var(--line-height);
   color: var(--color);
   max-width: 44rem;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: var(--space);
 
   &:first-child {
     margin-top: 0;

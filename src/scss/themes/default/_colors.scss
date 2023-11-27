@@ -37,9 +37,13 @@
   --o6: hsl(26,80%,41%);
 
   // Grey colors
+  --grey0: var(--c1);
   --grey1: hsl(60, 15%, 95%);
-  --grey2: hsl(45, 10%, 77%);
+  --grey2: hsl(55, 15%, 90%);
+  --grey3: hsl(45, 10%, 77%);
   --grey9: hsl(45, 10%, 33%);
+
+  --grey10: var(--c10);
 
 
   // Color shorthands

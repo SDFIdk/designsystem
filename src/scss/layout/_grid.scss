@@ -8,6 +8,8 @@
   display: grid;
   gap: var(--space-md);
   grid-template-columns: minmax(15rem, 1fr);
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-md);
 
   @media (min-width: $breakpoint-sm) {
     grid-template-columns: 1fr 1fr;
@@ -52,34 +54,19 @@
 
 .ds-grid-2-1,
 .ds-grid-1-2 {
-
-  @media (max-width: $breakpoint-lg) {
-    & > * {
-      margin-bottom: var(--space-md);
-    }
-  }
-
-  @media (min-width: $breakpoint-lg) {
-    display: grid;
-    gap: var(--space-md);
-    margin-bottom: var(--space-md);
-  }
-
+  display: grid;
+  gap: var(--space-lg);
+  grid-template-columns: 1fr;
 }
 
-.ds-grid-2-1 {
+@media (min-width: $breakpoint-lg) {
 
-  @media (min-width: $breakpoint-lg) {
+  .ds-grid-2-1 {
     grid-template-columns: 2fr 1fr;
-    }
-}
+  }
 
-.ds-grid-1-2 {
-
-  @media (min-width: $breakpoint-lg) {
-    display: grid;
+  .ds-grid-1-2 {
     grid-template-columns: 1fr 2fr;
-    gap: var(--space-md);
   }
 
 }
