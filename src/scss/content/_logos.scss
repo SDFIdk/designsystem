@@ -23,8 +23,7 @@
     font-size: 0.9rem;
   }
 
-  & > strong,
-  & > span:last-child {
+  & > :is(strong, span:last-child) {
     display: block;
     margin-left: 4.75rem;
   }
@@ -48,6 +47,14 @@ ds-logo.transparent {
   --ds-logo-background-color: transparent;
 }
 
+/* Contextual position adjustment */
+:is(.ds-container) .ds-logo > :is(strong, span:last-child) {
+  margin-left: 4rem;
+}
+:is(.ds-container) .ds-logo > ds-logo {
+  margin-left: -0.9rem;
+}
+
 @container (max-width: 15rem) {
   .ds-logo > ds-logo {
     width: 3rem;
@@ -55,8 +62,15 @@ ds-logo.transparent {
   .ds-logo > strong {
     padding-top: 0.33rem;
   }
-  .ds-logo > strong,
-  .ds-logo > span:last-child {
+  .ds-logo > :is(strong, span:last-child) {
     margin-left: 3.5rem;
+  }
+
+  /* Contextual position adjustment */
+  :is(.ds-container) .ds-logo > :is(strong, span:last-child) {
+    margin-left: 3rem;
+  }
+  :is(.ds-container) .ds-logo > ds-logo {
+    margin-left: -0.66rem;
   }
 }

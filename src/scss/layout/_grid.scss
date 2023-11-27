@@ -54,6 +54,7 @@
 
 .ds-grid-2-1,
 .ds-grid-1-2 {
+  position: relative;
   display: grid;
   gap: var(--space-lg);
   grid-template-columns: 1fr;
