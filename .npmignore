@@ -1,2 +1,3 @@
 .github/
-src/
+src/bin/
+src/html/
