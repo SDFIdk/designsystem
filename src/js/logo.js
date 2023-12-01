@@ -1,4 +1,4 @@
-export class DsLogo extends HTMLElement {
+export class DSLogo extends HTMLElement {
 
   constructor() {
     super()
@@ -73,4 +73,4 @@ export class DsLogo extends HTMLElement {
 
 }
 
-customElements.define('ds-logo', DsLogo)
+customElements.define('ds-logo', DSLogo)

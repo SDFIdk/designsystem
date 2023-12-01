@@ -352,7 +352,7 @@ var Tabs = class extends HTMLElement {
 customElements.define("ds-tabs", Tabs);
 
 // src/js/logo.js
-var DsLogo = class extends HTMLElement {
+var DSLogo = class extends HTMLElement {
   constructor() {
     super();
   }
@@ -423,7 +423,77 @@ var DsLogo = class extends HTMLElement {
     `;
   }
 };
-customElements.define("ds-logo", DsLogo);
+customElements.define("ds-logo", DSLogo);
+
+// src/js/responsiveNav.js
+var DSNav = class extends HTMLElement {
+  toggled = false;
+  navElements;
+  constructor() {
+    super();
+  }
+  connectedCallback() {
+    this.navElements = this.innerHTML;
+    this.render();
+    window.addEventListener("resize", this.render.bind(this));
+  }
+  disconnectedCallback() {
+    window.removeEventListener("resize", this.render);
+  }
+  render() {
+    this.innerHTML = `
+      <nav class="ds-nav-wrapper">
+        ${this.navElements}
+      </nav>
+    `;
+    if (this.navIsContained()) {
+      this.renderToggleButton();
+    }
+  }
+  renderToggleButton() {
+    const toggle = document.createElement("button");
+    toggle.title = "Vis flere";
+    toggle.className = "ds-nav-toggle secondary";
+    toggle.innerHTML = '<svg><use href="../assets/designsystem-icons.svg#hentdata-choose" /></svg>';
+    this.append(toggle);
+    toggle.addEventListener("click", this.navToggleHandler.bind(this));
+  }
+  navToggleHandler() {
+    this.toggled = !this.toggled;
+    this.classList.toggle("expanded");
+  }
+  navIsContained() {
+    let elementsWidth = 0;
+    const navElements = this.querySelectorAll(".ds-nav-wrapper > *");
+    navElements.forEach((element) => {
+      elementsWidth += element.offsetWidth + 16;
+    });
+    if (elementsWidth < this.clientWidth) {
+      this.classList.add("fully");
+      return false;
+    } else {
+      this.classList.remove("fully");
+      return true;
+    }
+  }
+};
+customElements.define("ds-nav", DSNav);
+
+// assets/designsystem-icons.svg
+var designsystem_icons_default = "./designsystem-icons-TKPIXPP4.svg";
+
+// src/js/icon.js
+var DSIcon = class extends HTMLElement {
+  constructor() {
+    super();
+  }
+  connectedCallback() {
+    console.log(designsystem_icons_default);
+    this.style = "--ds-icon-width: 3rem; width: var(--ds-icon-width); height: var(--ds-icon-width); display: inline-block;";
+    this.innerHTML = `<svg style="width: 100%; height: 100%;"><use href="../../assets/designsystem-icons.svg#${this.className}"/></svg>`;
+  }
+};
+customElements.define("ds-icon", DSIcon);
 
 // src/js/popover.js
 var ToggleEvent = class extends Event {
@@ -981,7 +1051,9 @@ function showToast({ message, target = "body", duration = 5e3 }) {
 }
 export {
   CodeView,
-  DsLogo,
+  DSIcon,
+  DSLogo,
+  DSNav,
   Spinner,
   Tabs,
   ThemeToggle,
