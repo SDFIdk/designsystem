@@ -70,7 +70,7 @@
 
     <script type="module">
 
-      import { ThemeToggle } from './js/designsystem.js'
+      import { ThemeToggle } from '../assets/designsystem.js'
 
     </script>
 
@@ -129,7 +129,7 @@
 
     <script type="module">
 
-      import { Tabs } from './js/designsystem.js'
+      import { Tabs } from '../assets/designsystem.js'
 
     </script>
 
@@ -258,13 +258,13 @@
 
   <hr>
 
-  <ds-nav style="width: 30rem;">
-    <a href="#" role="button"><svg><use href="../assets/designsystem-icons.svg#hentdata-download"/></svg>Hjælp</a>
-    <a href="#" role="button"><svg><use href="../assets/designsystem-icons.svg#arrow-left"/></svg>Mere hjælp</a>
-    <button><svg><use href="../assets/designsystem-icons.svg#besked"/></svg>Information</button>
-    <button><svg><use href="../assets/designsystem-icons.svg#copy"/></svg>Snedkeri</button>
-    <button><svg><use href="../assets/designsystem-icons.svg#calendar"/></svg>Alt om heste</button>
-    <button><svg><use href="../assets/designsystem-icons.svg#search"/></svg>Søg</button>
+  <ds-nav style="width: 20rem;">
+    <a href="#" role="button" class="quiet"><svg><use href="../assets/designsystem-icons.svg#hentdata-download"/></svg>Hjælp</a>
+    <a href="#" role="button" class="quiet"><svg><use href="../assets/designsystem-icons.svg#arrow-left"/></svg>Mere hjælp</a>
+    <button class="quiet"><svg><use href="../assets/designsystem-icons.svg#besked"/></svg>Information</button>
+    <button class="quiet"><svg><use href="../assets/designsystem-icons.svg#copy"/></svg>Snedkeri</button>
+    <button class="quiet"><svg><use href="../assets/designsystem-icons.svg#calendar"/></svg>Alt om heste</button>
+    <button class="quiet"><svg><use href="../assets/designsystem-icons.svg#search"/></svg>Søg</button>
   </ds-nav>
 
   <hr>
@@ -309,7 +309,7 @@
 
     <script type="module">
 
-      import { ToggleBtn, TogglePanel } from './js/designsystem.js'
+      import { ToggleBtn, TogglePanel } from '../assets/designsystem.js'
       
       customElements.define('ds-toggle-panel', TogglePanel)
 
@@ -329,11 +329,11 @@
 
   <div id="ex-spinner-1">
 
-    <ds-spinner style="height: 30rem;"></ds-spinner>
+    <ds-spinner style="width: 20rem;"></ds-spinner>
 
     <script type="module">
 
-      import { Spinner } from './js/designsystem.js'
+      import { Spinner } from '../assets/designsystem.js'
       
       customElements.define('ds-spinner', Spinner)
 
@@ -355,7 +355,7 @@
 
     <script type="module">
       // Polyfill native popover API for Firefox and Safari
-      import { popoverPolyfill } from './js/designsystem.js'
+      import { popoverPolyfill } from '../assets/designsystem.js'
       popoverPolyfill()
     </script>
 
@@ -375,7 +375,7 @@
     <div id="toast-container" class="ds-toast-container"></div>
 
     <script type="module">
-      import { showToast } from './js/designsystem.js'
+      import { showToast } from '../assets/designsystem.js'
 
       document.getElementById('toastbutton').addEventListener('click', function(ev) {
         showToast({

@@ -31,7 +31,7 @@ export class DSNav extends HTMLElement {
   renderToggleButton() {
     const toggle = document.createElement('button')
     toggle.title = 'Vis flere'
-    toggle.className = 'ds-nav-toggle secondary'
+    toggle.className = 'ds-nav-toggle quiet'
     toggle.innerHTML = '<svg><use href="../assets/designsystem-icons.svg#hentdata-choose" /></svg>'
     this.append(toggle)
     toggle.addEventListener('click', this.navToggleHandler.bind(this))
