@@ -134,16 +134,75 @@ var ThemeToggle = class extends HTMLElement {
 };
 customElements.define("ds-theme-toggle", ThemeToggle);
 
-// src/js/toggle.js
-var ToggleBtn = class {
-  constructor(element) {
-    const event = new Event(`toggle-${element.getAttribute("aria-controls")}`, { bubbles: true, composed: true });
-    element.addEventListener("click", () => {
-      element.dispatchEvent(event);
-    });
+// src/js/togglePanel.js
+var DSTogglePanel = class extends HTMLElement {
+  toggleButton;
+  togglePanel;
+  componentId = Math.floor(Math.random() * 1e3);
+  componentTitle;
+  styles = `
+    ds-toggle-panel {
+      display: block;
+    }
+    ds-toggle-panel.slide .ds-toggle-panel {
+      display: block;
+      position: fixed;
+      z-index: 100;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      transform: translate(0,0);
+      background-color: var(--bg1);
+      padding: var(--padding);
+      box-shadow: 0 0 0.25rem 0 hsla(0,0%,50%,0.5);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    ds-toggle-panel.slide .ds-toggle-panel[hidden] {
+      box-shadow: none;
+      display: block;
+      transform: translate(-100%,0);
+    }
+  `;
+  constructor() {
+    super();
+  }
+  connectedCallback() {
+    this.componentTitle = this.title ? this.title : "Vis mere";
+    this.innerHTML = `
+      <style>
+        ${this.styles}
+      </style>
+      ${this.renderToggleButton()}
+      <div id="ds-toggle-panel-${this.componentId}" class="ds-toggle-panel" hidden aria-labelledby="ds-toggle-button-${this.componentId}">
+        ${this.innerHTML}
+      </div>
+    `;
+    this.toggleButton = document.querySelector(`#ds-toggle-button-${this.componentId}`);
+    this.togglePanel = this.querySelector(".ds-toggle-panel");
+    this.toggleButton.addEventListener("click", this.toggleHandler.bind(this));
+  }
+  renderToggleButton() {
+    const externalToggleButton = document.querySelector(`button[for="${this.id}"]`);
+    if (externalToggleButton) {
+      externalToggleButton.id = `ds-toggle-button-${this.componentId}`;
+      externalToggleButton.setAttribute("aria-controls", `ds-toggle-panel-${this.componentId}`);
+      return "";
+    } else {
+      return `
+        <button id="ds-toggle-button-${this.componentId}" aria-controls="ds-toggle-panel-${this.componentId}" class="ds-toggle-button" title="${this.componentTitle}">
+          <svg><use href="../assets/designsystem-icons.svg#hentdata-choose" /></svg>
+        </button>
+      `;
+    }
+  }
+  toggleHandler() {
+    this.togglePanel.hidden = !this.togglePanel.hidden;
   }
 };
-var TogglePanel = class extends HTMLElement {
+customElements.define("ds-toggle-panel", DSTogglePanel);
+
+// src/js/toggle.js
+var DSSlide = class extends HTMLElement {
   // Properties
   style = `
     :host([hidden]) {
@@ -162,36 +221,96 @@ var TogglePanel = class extends HTMLElement {
       transform: translate(0);
     }
   `;
-  template = `
-    <style>${this.style}</style>
-    <slot>
-      <p>This is the default content to toggle</p>
-    </slot>
-  `;
-  // Getters
-  static get observedAttributes() {
-    return [
-      "hidden"
-    ];
-  }
-  // Constructor
   constructor() {
     super();
   }
-  // Methods
-  createShadowDOM() {
-    this.attachShadow({ mode: "open" });
-    this.shadowRoot.innerHTML = this.template;
-  }
-  // Lifecycle events
   connectedCallback() {
-    this.createShadowDOM();
-    this.hidden = true;
-    document.body.addEventListener(`toggle-${this.id}`, () => {
-      this.hidden = !this.hidden;
-    });
+    this.render();
+  }
+  render() {
+    this.innerHTML = `
+      <style>${this.style}</style>
+      <ds-toggle-panel>
+        ${this.innerHTML}
+      </ds-toggle-panel>
+    `;
   }
 };
+customElements.define("ds-slide", DSSlide);
+
+// src/js/logo.js
+var DSLogo = class extends HTMLElement {
+  constructor() {
+    super();
+  }
+  connectedCallback() {
+    this.shadow = this.attachShadow({ mode: "open" });
+    this.shadow.innerHTML = `
+      <style>
+        :host {
+          --ds-logo-color: #fff;
+          --ds-logo-outline-color: hsl(198,100%,29%);
+          --ds-logo-background-color: hsl(198,100%,29%);
+          --ds-logo-stroke-width: 1.5;
+          display: inline-block;
+          width: 4rem;
+          height: auto;
+          aspect-ratio: 1/1;
+          line-height: 1;
+          container-type: size;
+        }
+        svg .dsl-group {
+          transform: translate(10px,7px);
+        }
+        svg .dsl-path {
+          stroke-width: var(--ds-logo-stroke-width);
+          stroke: var(--ds-logo-color);
+        }
+        svg .dsl-circle {
+          stroke: var(--ds-logo-outline-color);
+          stroke-width: var(--ds-logo-stroke-width);
+          fill: var(--ds-logo-background-color);
+        }
+        @container (max-width: 2.49rem) {
+          svg {
+            --ds-logo-stroke-width: 2.25;
+          }
+          svg .dsl-group {
+            transform: translate(12px,9px) scale(0.9);
+          }
+          svg .dsl-path:nth-child(3) {
+            display: none;
+          }
+        }
+        @container (min-width: 2.5rem) and (max-width: 3.9rem) {
+          svg {
+            --ds-logo-stroke-width: 1.7;
+          }
+          svg .dsl-group {
+            transform: translate(10.5px,7px);
+          }
+        }
+      </style>
+      <svg width="100%" height="100%" viewBox="0 0 63 63" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle class="dsl-circle" cx="31.5" cy="31.5" r="30"/>
+        <g class="dsl-group">
+          <path class="dsl-path" d="M21.50 1.03V3.48M21.50 7.93V9.41M26.17 5.71H23.72M19.28 5.71H16.83" stroke-linecap="round"/>
+          <path class="dsl-path" d="M7.40 35.40H35.60"/>
+          <path class="dsl-path" d="M7.40 38.30H35.60"/>
+          <path class="dsl-path" d="M7.40 41.20H35.60"/>
+          <ellipse class="dsl-path" cx="21.50" cy="13.12" rx="2.52" ry="2.52"/>
+          <mask id="mask0_2142_223" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="9" width="43" height="23">
+            <path d="M0 9.40H43V31.90H0V9.40Z" fill="#D9D9D9"/>
+          </mask>
+          <g mask="url(#mask0_2142_223)">
+            <path class="dsl-path" d="M21.50 35.23V16.35M21.50 16.35C22.98 15.34 24.46 13.12 28.91 13.14C32.62 13.15 34.84 14.60 34.84 18.31C34.84 24.24 31.25 27.83 25.21 36.10M21.50 16.35C20.02 15.34 18.53 13.16 14.09 13.14C10.38 13.12 8.16 14.60 8.16 18.31C8.16 24.24 11.80 27.83 17.79 36.10M34.77 17.24C38.07 17.24 39.59 19.05 39.59 22.02C39.59 25.72 34.51 32.57 31.14 36.10M8.23 17.24C4.81 17.24 3.41 19.04 3.41 22.00C3.41 25.72 8.49 32.57 11.86 36.10"/>
+          </g>
+        </g> 
+      </svg>
+    `;
+  }
+};
+customElements.define("ds-logo", DSLogo);
 
 // src/js/spinner.js
 var Spinner = class extends HTMLElement {
@@ -327,89 +446,12 @@ var Tabs = class extends HTMLElement {
 };
 customElements.define("ds-tabs", Tabs);
 
-// src/js/logo.js
-var DSLogo = class extends HTMLElement {
-  constructor() {
-    super();
-  }
-  connectedCallback() {
-    this.shadow = this.attachShadow({ mode: "open" });
-    this.shadow.innerHTML = `
-      <style>
-        :host {
-          --ds-logo-color: #fff;
-          --ds-logo-outline-color: hsl(198,100%,29%);
-          --ds-logo-background-color: hsl(198,100%,29%);
-          --ds-logo-stroke-width: 1.5;
-          display: inline-block;
-          width: 4rem;
-          height: auto;
-          aspect-ratio: 1/1;
-          line-height: 1;
-          container-type: size;
-        }
-        svg .dsl-group {
-          transform: translate(10px,7px);
-        }
-        svg .dsl-path {
-          stroke-width: var(--ds-logo-stroke-width);
-          stroke: var(--ds-logo-color);
-        }
-        svg .dsl-circle {
-          stroke: var(--ds-logo-outline-color);
-          stroke-width: var(--ds-logo-stroke-width);
-          fill: var(--ds-logo-background-color);
-        }
-        @container (max-width: 2.49rem) {
-          svg {
-            --ds-logo-stroke-width: 2.25;
-          }
-          svg .dsl-group {
-            transform: translate(12px,9px) scale(0.9);
-          }
-          svg .dsl-path:nth-child(3) {
-            display: none;
-          }
-        }
-        @container (min-width: 2.5rem) and (max-width: 3.9rem) {
-          svg {
-            --ds-logo-stroke-width: 1.7;
-          }
-          svg .dsl-group {
-            transform: translate(10.5px,7px);
-          }
-        }
-      </style>
-      <svg width="100%" height="100%" viewBox="0 0 63 63" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle class="dsl-circle" cx="31.5" cy="31.5" r="30"/>
-        <g class="dsl-group">
-          <path class="dsl-path" d="M21.50 1.03V3.48M21.50 7.93V9.41M26.17 5.71H23.72M19.28 5.71H16.83" stroke-linecap="round"/>
-          <path class="dsl-path" d="M7.40 35.40H35.60"/>
-          <path class="dsl-path" d="M7.40 38.30H35.60"/>
-          <path class="dsl-path" d="M7.40 41.20H35.60"/>
-          <ellipse class="dsl-path" cx="21.50" cy="13.12" rx="2.52" ry="2.52"/>
-          <mask id="mask0_2142_223" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="9" width="43" height="23">
-            <path d="M0 9.40H43V31.90H0V9.40Z" fill="#D9D9D9"/>
-          </mask>
-          <g mask="url(#mask0_2142_223)">
-            <path class="dsl-path" d="M21.50 35.23V16.35M21.50 16.35C22.98 15.34 24.46 13.12 28.91 13.14C32.62 13.15 34.84 14.60 34.84 18.31C34.84 24.24 31.25 27.83 25.21 36.10M21.50 16.35C20.02 15.34 18.53 13.16 14.09 13.14C10.38 13.12 8.16 14.60 8.16 18.31C8.16 24.24 11.80 27.83 17.79 36.10M34.77 17.24C38.07 17.24 39.59 19.05 39.59 22.02C39.59 25.72 34.51 32.57 31.14 36.10M8.23 17.24C4.81 17.24 3.41 19.04 3.41 22.00C3.41 25.72 8.49 32.57 11.86 36.10"/>
-          </g>
-        </g> 
-      </svg>
-    `;
-  }
-};
-customElements.define("ds-logo", DSLogo);
-
 // src/js/responsiveNav.js
 var DSNav = class extends HTMLElement {
-  toggled = false;
-  navElements;
   constructor() {
     super();
   }
   connectedCallback() {
-    this.navElements = this.innerHTML;
     this.render();
     window.addEventListener("resize", this.render.bind(this));
   }
@@ -418,27 +460,14 @@ var DSNav = class extends HTMLElement {
   }
   render() {
     this.innerHTML = `
-      <nav class="ds-nav-wrapper">
-        ${this.navElements}
-      </nav>
+      <ds-toggle-panel>
+        ${this.innerHTML}
+      </ds-toggle-panel>
     `;
-    if (this.navIsContained()) {
-      this.renderToggleButton();
+    if (this.navSizeCheck()) {
     }
   }
-  renderToggleButton() {
-    const toggle = document.createElement("button");
-    toggle.title = "Vis flere";
-    toggle.className = "ds-nav-toggle quiet";
-    toggle.innerHTML = '<svg><use href="../assets/designsystem-icons.svg#hentdata-choose" /></svg>';
-    this.append(toggle);
-    toggle.addEventListener("click", this.navToggleHandler.bind(this));
-  }
-  navToggleHandler() {
-    this.toggled = !this.toggled;
-    this.classList.toggle("expanded");
-  }
-  navIsContained() {
+  navSizeCheck() {
     let elementsWidth = 0;
     const navElements = this.querySelectorAll(".ds-nav-wrapper > *");
     navElements.forEach((element) => {
@@ -1030,11 +1059,11 @@ export {
   DSIcon,
   DSLogo,
   DSNav,
+  DSSlide,
+  DSTogglePanel,
   Spinner,
   Tabs,
   ThemeToggle,
-  ToggleBtn,
-  TogglePanel,
   popoverPolyfill,
   showToast
 };

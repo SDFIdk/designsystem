@@ -1,17 +1,7 @@
-/** A class for buttons that toggle a togglePanel */
-class ToggleBtn {
-
-  constructor(element) {
-    const event = new Event(`toggle-${ element.getAttribute('aria-controls') }`, {bubbles: true, composed: true})
-    element.addEventListener('click', () => {
-      element.dispatchEvent(event)
-    })
-  }
-}
-
+import { DSTogglePanel } from "./togglePanel.js"
 
 /** A content panel that can be hidden/displayed by a toggle */
-class TogglePanel extends HTMLElement {
+export class DSSlide extends HTMLElement {
 
   // Properties
   style = `
@@ -31,48 +21,24 @@ class TogglePanel extends HTMLElement {
       transform: translate(0);
     }
   `
-  template = `
-    <style>${ this.style }</style>
-    <slot>
-      <p>This is the default content to toggle</p>
-    </slot>
-  `
 
-  // Getters
-  static get observedAttributes() { 
-    return [
-      'hidden'
-    ]
-  }
-
-  // Constructor
   constructor() {
     super()
   }
 
-  // Methods
-  createShadowDOM() {
-    // Create a shadow root
-    this.attachShadow({mode: 'open'}) // sets and returns 'this.shadowRoot'
-    
-    // Attach the elements to the shadow DOM
-    this.shadowRoot.innerHTML = this.template
-  }
-
-  // Lifecycle events
   connectedCallback() {
+    this.render()
+  }
 
-    this.createShadowDOM()
-    this.hidden = true
-
-    document.body.addEventListener(`toggle-${ this.id }`, () => {
-      this.hidden = !this.hidden
-    })
+  render() {
+    this.innerHTML = `
+      <style>${ this.style }</style>
+      <ds-toggle-panel>
+        ${ this.innerHTML }
+      </ds-toggle-panel>
+    `
   }
 
 }
 
-export {
-  ToggleBtn,
-  TogglePanel
-}
+customElements.define('ds-slide', DSSlide)

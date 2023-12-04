@@ -1,57 +1,35 @@
 ds-nav {
   --ds-nav-item-size: 2.5rem;
-  max-width: 100%;
   position: relative;
-  display: inline-block;
-  height: var(--ds-nav-item-size);
-  overflow: hidden;
+  display: block;
 }
 
-ds-nav.expanded {
-  overflow: visible;
-}
-
-ds-nav .ds-nav-toggle {
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 3;
-}
-
-ds-nav .ds-nav-wrapper {
-  height: 100%;
-  width: auto;
-  top: 0;
-  right: var(--ds-nav-item-size);
-  left: 0;
-  position: absolute;
-  z-index: 1;
+ds-nav .ds-toggle-panel {
+  background-color: var(--bg1);
+  padding: var(--space-sm);
+  border-radius: var(--space-sm);
   display: flex;
   flex-flow: row wrap;
-  justify-content: flex-end;
   align-items: center;
-  gap: var(--space-sm);
-  transition: all 0.3s;
-}
-
-ds-nav.expanded .ds-nav-wrapper {
-  min-width: 320px;
-  max-width: 100vw;
-  max-height: 100vh;
-  right: auto;
-  left: auto;
-  z-index: 2;
-  height: auto;
-  width: auto;
-  background-color: var(--bg2);
-  padding: var(--space);
-  border-radius: var(--space-sm);
-}
-
-ds-nav.fully .ds-nav-toggle {
-  display: none;
-}
-
-ds-nav.fully .ds-nav-wrapper {
+  gap: var(--space);
+  position: absolute;
+  top: 0;
   right: 0;
+  left: auto;
+  width: auto;
+  height: auto;
+}
+
+ds-nav[data-align="right"] {
+  left: auto;
+  right: 0;
+}
+
+ds-nav[data-align="left"] {
+  left: 0;
+  right: auto;
+}
+
+ds-nav .ds-toggle-panel[hidden] {
+  display: none;
 }

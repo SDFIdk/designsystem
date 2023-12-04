@@ -1,14 +1,12 @@
-export class DSNav extends HTMLElement {
+import { DSTogglePanel } from "./togglePanel.js"
 
-  toggled = false
-  navElements
+export class DSNav extends HTMLElement {
 
   constructor() {
     super()
   }
 
   connectedCallback() {
-    this.navElements = this.innerHTML
     this.render()
     window.addEventListener("resize", this.render.bind(this))
   }
@@ -19,30 +17,16 @@ export class DSNav extends HTMLElement {
 
   render() {
     this.innerHTML = `
-      <nav class="ds-nav-wrapper">
-        ${ this.navElements }
-      </nav>
+      <ds-toggle-panel>
+        ${ this.innerHTML }
+      </ds-toggle-panel>
     `
-    if (this.navIsContained()) {
-      this.renderToggleButton()
+    if (this.navSizeCheck()) {
+      //this.renderToggleButton()
     }
   }
 
-  renderToggleButton() {
-    const toggle = document.createElement('button')
-    toggle.title = 'Vis flere'
-    toggle.className = 'ds-nav-toggle quiet'
-    toggle.innerHTML = '<svg><use href="../assets/designsystem-icons.svg#hentdata-choose" /></svg>'
-    this.append(toggle)
-    toggle.addEventListener('click', this.navToggleHandler.bind(this))
-  }
-
-  navToggleHandler() {
-    this.toggled = !this.toggled
-    this.classList.toggle('expanded')
-  }
-
-  navIsContained() {
+  navSizeCheck() {
     let elementsWidth = 0
     const navElements = this.querySelectorAll('.ds-nav-wrapper > *')
     navElements.forEach((element) => {

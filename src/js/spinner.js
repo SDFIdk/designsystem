@@ -1,3 +1,5 @@
+import { DSLogo } from './logo.js'
+
 /** Displays a loading animation */
 export class Spinner extends HTMLElement {
 

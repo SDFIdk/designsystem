@@ -1,6 +1,7 @@
 import { CodeView } from './src/js/codeview.js'
 import { ThemeToggle } from './src/js/themeToggle.js'
-import { ToggleBtn, TogglePanel } from './src/js/toggle.js'
+import { DSSlide } from './src/js/toggle.js'
+import { DSTogglePanel } from './src/js/togglePanel.js'
 import { Spinner } from './src/js/spinner.js'
 import { Tabs } from './src/js/tabs.js'
 import { DSLogo } from './src/js/logo.js'
@@ -11,8 +12,8 @@ import { showToast } from './src/js/toast.js'
 
 export {
   Tabs,
-  ToggleBtn, 
-  TogglePanel,
+  DSSlide,
+  DSTogglePanel,
   Spinner,
   CodeView,
   ThemeToggle,

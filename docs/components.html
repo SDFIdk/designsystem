@@ -247,7 +247,7 @@
 
   <h2>Responsiv navigation</h2>
 
-  <ds-nav style="width: 10rem;">
+  <ds-nav style="width: 10rem;" data-align="left">
     <a href="#" title="Something" role="button"><svg><use href="../assets/designsystem-icons.svg#hentdata-download"/></svg></a>
     <button title="Something else"><svg><use href="../assets/designsystem-icons.svg#arrow-right"/></svg></button>
     <button title="A life well lived"><svg><use href="../assets/designsystem-icons.svg#besked"/></svg></button>
@@ -258,7 +258,7 @@
 
   <hr>
 
-  <ds-nav style="width: 20rem;">
+  <ds-nav style="width: 20rem;" data-align="right">
     <a href="#" role="button" class="quiet"><svg><use href="../assets/designsystem-icons.svg#hentdata-download"/></svg>Hjælp</a>
     <a href="#" role="button" class="quiet"><svg><use href="../assets/designsystem-icons.svg#arrow-left"/></svg>Mere hjælp</a>
     <button class="quiet"><svg><use href="../assets/designsystem-icons.svg#besked"/></svg>Information</button>
@@ -269,7 +269,7 @@
 
   <hr>
 
-  <ds-nav style="width: 100%;">
+  <ds-nav style="width: 100%;" data-align="right">
     <a href="#" role="button"><svg><use href="../assets/designsystem-icons.svg#hentdata-download"/></svg>Hjælp</a>
     <a href="#" role="button"><svg><use href="../assets/designsystem-icons.svg#arrow-left"/></svg>Mere hjælp</a>
     <button><svg><use href="../assets/designsystem-icons.svg#besked"/></svg>Information</button>
@@ -284,22 +284,20 @@
 
   <div id="ex-togglepanel-1">
 
-    <button
-      class="ds-panel-toggle"
-      aria-controls="panel-1"
-      id="btn-1"
-      title="Vis/skjul panel">
-      Toggle a thing
-    </button>
+    <ds-toggle-panel title="Vis hemmeligt indhold">
+      <h2>Her er det hemmelige indhold</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </ds-toggle-panel>
 
-    <ds-toggle-panel id="panel-1" aria-labelledby="btn-1">
+    <button for="myToggle" class="secondary">Åben panel</button>
+    <ds-toggle-panel title="Vis det usete indhold" class="slide" id="myToggle">
 
       <button 
-        class="ds-panel-toggle ds-icon-icon-close secondary"
-        aria-controls="panel-1" 
-        id="close-btn-1"
+        class="quiet"
         title="Luk panel"
-        style="float: right;">
+        style="float: right;"
+        onclick="this.parentNode.hidden = true">
+        <svg><use href="../assets/designsystem-icons.svg#close" /></svg>
       </button>
 
       <h2>The thing</h2>
@@ -309,12 +307,7 @@
 
     <script type="module">
 
-      import { ToggleBtn, TogglePanel } from '../assets/designsystem.js'
-      
-      customElements.define('ds-toggle-panel', TogglePanel)
-
-      const toggle_button = new ToggleBtn(document.querySelector('#btn-1'))
-      const close_button = new ToggleBtn(document.querySelector('#close-btn-1'))
+      import { DSTogglePanel } from '../assets/designsystem.js'
 
     </script>
 
