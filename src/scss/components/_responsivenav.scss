@@ -1,35 +1,55 @@
 ds-nav {
-  --ds-nav-item-size: 2.5rem;
   position: relative;
-  display: block;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+ds-nav[data-align="right"] {
+  justify-content: flex-end;
+}
+
+ds-nav > nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-flow: row nowrap; 
+  justify-content: flex-start;
+}
+
+ds-nav[data-align="right"] > nav {
+  justify-content: flex-end;
+}
+
+ds-nav > nav > * {
+  flex: 0 0 auto;
+  display: flex !important;
 }
 
 ds-nav .ds-toggle-panel {
   background-color: var(--bg1);
   padding: var(--space-sm);
   border-radius: var(--space-sm);
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-  gap: var(--space);
   position: absolute;
+  z-index: 1;
   top: 0;
-  right: 0;
-  left: auto;
+  left: 0;
   width: auto;
   height: auto;
-}
-
-ds-nav[data-align="right"] {
-  left: auto;
-  right: 0;
-}
-
-ds-nav[data-align="left"] {
-  left: 0;
-  right: auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  gap: var(--space-sm);
 }
 
 ds-nav .ds-toggle-panel[hidden] {
   display: none;
+}
+
+ds-nav[data-align="right"] .ds-toggle-panel {
+  left: auto;
+  right: 0;
+  justify-content: flex-end;
 }

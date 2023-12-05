@@ -1,0 +1,24 @@
+ds-toggle-panel {
+  display: block;
+}
+ds-toggle-panel button.ds-toggle-button {
+  display: flex;
+}
+ds-toggle-panel.slide .ds-toggle-panel {
+  display: block;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  transform: translate(0,0);
+  background-color: var(--bg1);
+  padding: var(--padding);
+  box-shadow: 0 0 0.25rem 0 hsla(0,0%,50%,0.5);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+ds-toggle-panel.slide .ds-toggle-panel[hidden] {
+  box-shadow: none;
+  display: block;
+  transform: translate(-100%,0);
+}

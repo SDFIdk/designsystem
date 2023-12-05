@@ -140,38 +140,12 @@ var DSTogglePanel = class extends HTMLElement {
   togglePanel;
   componentId = Math.floor(Math.random() * 1e3);
   componentTitle;
-  styles = `
-    ds-toggle-panel {
-      display: block;
-    }
-    ds-toggle-panel.slide .ds-toggle-panel {
-      display: block;
-      position: fixed;
-      z-index: 100;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      transform: translate(0,0);
-      background-color: var(--bg1);
-      padding: var(--padding);
-      box-shadow: 0 0 0.25rem 0 hsla(0,0%,50%,0.5);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    ds-toggle-panel.slide .ds-toggle-panel[hidden] {
-      box-shadow: none;
-      display: block;
-      transform: translate(-100%,0);
-    }
-  `;
   constructor() {
     super();
   }
   connectedCallback() {
     this.componentTitle = this.title ? this.title : "Vis mere";
     this.innerHTML = `
-      <style>
-        ${this.styles}
-      </style>
       ${this.renderToggleButton()}
       <div id="ds-toggle-panel-${this.componentId}" class="ds-toggle-panel" hidden aria-labelledby="ds-toggle-button-${this.componentId}">
         ${this.innerHTML}
@@ -179,7 +153,7 @@ var DSTogglePanel = class extends HTMLElement {
     `;
     this.toggleButton = document.querySelector(`#ds-toggle-button-${this.componentId}`);
     this.togglePanel = this.querySelector(".ds-toggle-panel");
-    this.toggleButton.addEventListener("click", this.toggleHandler.bind(this));
+    this.toggleButton.addEventListener("click", this.toggle.bind(this));
   }
   renderToggleButton() {
     const externalToggleButton = document.querySelector(`button[for="${this.id}"]`);
@@ -195,8 +169,15 @@ var DSTogglePanel = class extends HTMLElement {
       `;
     }
   }
-  toggleHandler() {
+  toggle(event) {
+    event.stopPropagation();
     this.togglePanel.hidden = !this.togglePanel.hidden;
+  }
+  open() {
+    this.togglePanel.hidden = false;
+  }
+  close() {
+    this.togglePanel.hidden = true;
   }
 };
 customElements.define("ds-toggle-panel", DSTogglePanel);
@@ -448,38 +429,60 @@ customElements.define("ds-tabs", Tabs);
 
 // src/js/responsiveNav.js
 var DSNav = class extends HTMLElement {
+  navElement;
+  toggleElement;
+  hiddenNavElements;
   constructor() {
     super();
   }
   connectedCallback() {
+    this.hiddenNavElements = this.cloneNodes(this.querySelectorAll("ds-nav > *"));
     this.render();
     window.addEventListener("resize", this.render.bind(this));
   }
   disconnectedCallback() {
     window.removeEventListener("resize", this.render);
+    window.removeEventListener("click", this.closeToggle);
+  }
+  cloneNodes(nodeList) {
+    let nodes = [];
+    nodeList.forEach((node) => {
+      nodes.push(node.cloneNode(true));
+    });
+    return nodes;
   }
   render() {
-    this.innerHTML = `
-      <ds-toggle-panel>
-        ${this.innerHTML}
-      </ds-toggle-panel>
-    `;
-    if (this.navSizeCheck()) {
+    this.innerHTML = "";
+    this.renderNav();
+    this.renderToggle();
+  }
+  renderNav() {
+    this.navElement = document.createElement("nav");
+    this.append(this.navElement);
+    for (const e in this.hiddenNavElements) {
+      this.navElement.append(this.hiddenNavElements[e].cloneNode(true));
+      const navWidth = this.navElement.offsetWidth + 43;
+      if (navWidth > this.clientWidth) {
+        this.navElement.childNodes[this.navElement.childNodes.length - 1].remove();
+        break;
+      }
     }
   }
-  navSizeCheck() {
-    let elementsWidth = 0;
-    const navElements = this.querySelectorAll(".ds-nav-wrapper > *");
-    navElements.forEach((element) => {
-      elementsWidth += element.offsetWidth + 16;
-    });
-    if (elementsWidth < this.clientWidth) {
-      this.classList.add("fully");
-      return false;
+  renderToggle() {
+    if (this.navElement.childNodes.length === this.hiddenNavElements.length) {
+      this.classList.remove("toggle");
     } else {
-      this.classList.remove("fully");
-      return true;
+      this.classList.add("toggle");
+      this.toggleElement = document.createElement("ds-toggle-panel");
+      this.hiddenNavElements.forEach((node) => {
+        this.toggleElement.append(node);
+      });
+      this.append(this.toggleElement);
+      window.addEventListener("click", this.closeToggle.bind(this));
     }
+  }
+  closeToggle() {
+    this.toggleElement.close();
   }
 };
 customElements.define("ds-nav", DSNav);
