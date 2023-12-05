@@ -45,9 +45,14 @@ async function buildHTMLsnippet(filename, svg) {
       <div>
         <h3 class="h5">SVG sprite</h3>
         <pre><code>&lt;svg>&lt;use href="PATH/designsystem-icons.svg#${ shortname }">&lt;/svg></code></pre>
+        <br>
         <p><em>Husk at ændre PATH til din egen opsætning.</em></p>
         <h3 class="h5">SVG embed</h3>
         <pre><code>${ svg.replaceAll('<', '&lt;') }</code></pre>
+        <h3>ds-icon web component</h3>
+        <ds-icon class="${ shortname }"></ds-icon>
+        <pre><code>&lt;ds-icon class="${ shortname }">&lt;/ds-icon></code></pre>
+        <br>
       </div>
     </div>
     <p><a href="#content-top">Til oversigt</a></p>
