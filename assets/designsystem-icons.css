@@ -1,4 +1,10 @@
 
+@import "assets/css/frame-dual.css";
+  
+@import "assets/css/frame-multi.css";
+  
+@import "assets/css/frame-single.css";
+  
 @import "assets/css/hentdata-choose.css";
   
 @import "assets/css/hentdata-download.css";
