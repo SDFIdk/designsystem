@@ -488,7 +488,7 @@ var DSNav = class extends HTMLElement {
 customElements.define("ds-nav", DSNav);
 
 // assets/designsystem-icons.svg
-var designsystem_icons_default = "./designsystem-icons-TKPIXPP4.svg";
+var designsystem_icons_default = "./designsystem-icons-SYWXQMZJ.svg";
 
 // src/js/icon.js
 var DSIcon = class extends HTMLElement {
