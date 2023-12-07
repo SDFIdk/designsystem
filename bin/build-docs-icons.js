@@ -49,9 +49,11 @@ async function buildHTMLsnippet(filename, svg) {
         <p><em>Husk at ændre PATH til din egen opsætning.</em></p>
         <h3 class="h5">SVG embed</h3>
         <pre><code>${ svg.replaceAll('<', '&lt;') }</code></pre>
+        <!--
         <h3>ds-icon web component</h3>
         <ds-icon class="${ shortname }"></ds-icon>
         <pre><code>&lt;ds-icon class="${ shortname }">&lt;/ds-icon></code></pre>
+        -->
         <br>
       </div>
     </div>
