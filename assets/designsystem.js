@@ -487,16 +487,12 @@ var DSNav = class extends HTMLElement {
 };
 customElements.define("ds-nav", DSNav);
 
-// assets/designsystem-icons.svg
-var designsystem_icons_default = "./designsystem-icons-SYWXQMZJ.svg";
-
 // src/js/icon.js
 var DSIcon = class extends HTMLElement {
   constructor() {
     super();
   }
   connectedCallback() {
-    console.log(designsystem_icons_default);
     this.style = "--ds-icon-width: 3rem; width: var(--ds-icon-width); height: var(--ds-icon-width); display: inline-block;";
     this.innerHTML = `<svg style="width: 100%; height: 100%;"><use href="../../assets/designsystem-icons.svg#${this.className}"/></svg>`;
   }
