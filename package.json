@@ -1,6 +1,6 @@
 {
   "name": "@dataforsyningen/designsystem",
-  "version": "4.2.0",
+  "version": "4.3.0",
   "description": "Common design system for SDFI with CSS, icons, UI components, and logo images.",
   "type": "module",
   "author": {
