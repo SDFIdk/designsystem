@@ -39,10 +39,10 @@ input[type="reset"],
   width: auto;
   height: var(--button-base-height);
   padding: var(--space-xs) var(--space);
-  border: 1px solid var(--blaa);
+  border: 1px solid var(--button-primary);
   border-radius: var(--space-lg);
   outline: none;
-  background-color: var(--blaa);
+  background-color: var(--button-primary);
   color: var(--hvid);
   font-weight: 400;
   font-size: var(--font-size);
@@ -54,8 +54,8 @@ input[type="reset"],
   transition: background-color var(--transition), border-color var(--transition), color var(--transition);
 
   &:is([aria-current], :hover, :active) {
-    background-color: var(--c6);
-    border-color: var(--c6);
+    background-color: var(--button-primary-hover);
+    border-color: var(--button-primary-hover);
   }
 
   &:focus {
@@ -105,16 +105,21 @@ input[type="reset"],
 :is(button, input[type="submit"], input[type="button"], [role="button"]).secondary,
 input[type="reset"].secondary {
   background-color: transparent;
-  border-color: var(--color);
+  border-color: var(--button-primary);
   color: var(--color);
-
-  &:is([aria-current], :hover, :active) {
-    border-color: var(--button-secondary-hover);
-    background-color: var(--button-secondary-hover);
-  }
 
   & > svg {
     --ds-icon-color: inherit;
+  }
+
+  &:is([aria-current], :hover, :active) {
+    border-color: var(--button-primary-hover);
+    background-color: var(--button-primary-hover);
+    color: var(--c1);
+
+    & > svg {
+      --ds-icon-color: var(--c1);
+    }
   }
 }
 
@@ -126,13 +131,18 @@ input[type="reset"] {
   color: var(--color);
   cursor: pointer;
 
-  &:is([aria-current], :hover, :active) {
-    border-color: var(--button-secondary-hover);
-    background-color: var(--button-secondary-hover);
-  }
-
   & > svg {
     --ds-icon-color: inherit;
+  }
+
+  &:is([aria-current], :hover, :active) {
+    border-color: var(--button-primary-hover);
+    background-color: var(--button-primary-hover);
+    color: var(--c1);
+
+    & > svg {
+      --ds-icon-color: var(--c1);
+    }
   }
 }
 
