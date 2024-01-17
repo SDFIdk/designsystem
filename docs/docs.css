@@ -86,3 +86,7 @@ code-view {
   justify-content: center;
   margin-right: var(--space-sm);
 }
+pre {
+  max-width: 100%;
+  overflow: auto;
+}

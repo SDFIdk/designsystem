@@ -1,6 +1,28 @@
+// src/js/toast.js
+function showToast({ message, duration = 5e3 }) {
+  const newToast = document.createElement("div");
+  newToast.className = "ds-toast-item";
+  newToast.innerText = message;
+  const targetElement = document.querySelector(".ds-toast-container");
+  if (!targetElement) {
+    const toastcontainer = document.createElement("div");
+    toastcontainer.className = "ds-toast-container";
+    document.body.append(toastcontainer);
+    toastcontainer.append(newToast);
+  } else {
+    targetElement.append(newToast);
+  }
+  setTimeout(function() {
+    newToast.remove();
+  }, duration);
+}
+
 // src/js/codeview.js
 var CodeView = class extends HTMLElement {
   styles = `
+    .ds-code-view {
+      position: relative;
+    }
     .ds-code-view label {
       background-color: var(--code-background-color);
       display: inline-block; 
@@ -13,29 +35,60 @@ var CodeView = class extends HTMLElement {
       max-width: 100%;
       overflow: auto;
       background-color: var(--code-background-color);
+      padding: var(--space-sm) var(--space);
+    }
+    .ds-code-view-copy {
+      position: absolute;
+      top: var(--space);
+      right: 0;
     }
   `;
-  template = `
-    <div class="ds-code-view">
-      <label>Kode</label>
-      <pre><code></code></pre>
-    </div>
-  `;
+  _content;
+  _label;
   constructor() {
     super();
   }
   render() {
+    this.innerHTML = `
+      <div class="ds-code-view">
+        <label>${this._label}</label>
+        <pre><code></code></pre>
+        <button class="ds-code-view-copy quiet" title="Kopi\xE9r">
+          <svg><use href="/assets/designsystem-icons.svg#copy"></use></svg>
+        </button>
+      </div>
+    `;
+    this.querySelector("code").textContent = this._content;
+  }
+  connectedCallback() {
     if (!document.head.querySelector(".ds-code-view-style")) {
       const styleTag = document.createElement("style");
       styleTag.className = "ds-code-view-style";
       styleTag.innerHTML = this.styles;
       document.head.append(styleTag);
     }
-    this.innerHTML = this.template;
-  }
-  connectedCallback() {
+    if (this.dataset.snip) {
+      this._content = document.getElementById(this.dataset.snip).cloneNode(true).innerHTML;
+    } else {
+      this._content = this.innerHTML;
+    }
+    if (this.title) {
+      this._label = this.title;
+    } else {
+      this._label = "Kode";
+    }
     this.render();
-    this.querySelector("code").textContent = document.getElementById(this.dataset.snip).cloneNode(true).innerHTML;
+    this.querySelector(".ds-code-view-copy").addEventListener("click", this._copyHandler.bind(this));
+  }
+  _copyHandler(event) {
+    navigator.clipboard.writeText(this._content.trim()).then((success) => {
+      showToast({
+        message: "Kode kopieret",
+        duration: 2e3
+      });
+    }).catch((err) => {
+      console.error(err.message);
+    });
   }
 };
 customElements.define("code-view", CodeView);
@@ -1050,25 +1103,6 @@ function popoverPolyfill() {
   } else {
     console.log("not polyfilling popover");
   }
-}
-
-// src/js/toast.js
-function showToast({ message, duration = 5e3 }) {
-  const newToast = document.createElement("div");
-  newToast.className = "ds-toast-item";
-  newToast.innerText = message;
-  const targetElement = document.querySelector(".ds-toast-container");
-  if (!targetElement) {
-    const toastcontainer = document.createElement("div");
-    toastcontainer.className = "ds-toast-container";
-    document.body.append(toastcontainer);
-    toastcontainer.append(newToast);
-  } else {
-    targetElement.append(newToast);
-  }
-  setTimeout(function() {
-    newToast.remove();
-  }, duration);
 }
 export {
   CodeView,
