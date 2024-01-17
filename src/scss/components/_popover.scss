@@ -1,10 +1,11 @@
 [popover] {
   display: none;
-  background-color: var(--background-color);
+  background-color: var(--bg3);
   color: var(--color);
   padding: var(--space-sm) var(--space);
-  border: solid 1px var(--grey3);
+  border: solid 1px var(--primary);
   border-radius: var(--space-sm);
+  box-shadow: 0 var(--space-xs) var(--space) var(--sort);
 }
 
 /* For browsers with native popover support*/

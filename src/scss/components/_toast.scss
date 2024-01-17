@@ -13,11 +13,12 @@
 
 .ds-toast-item {
   padding: var(--space) var(--space-md);
-  background-color: var(--background-color);
+  background-color: var(--bg2);
   color: var(--color);
-  border: solid 1px var(--grey3);
+  border: solid 1px var(--primary);
   font-size: larger;
   min-width: 20rem;
   border-radius: var(--space-sm);
   margin-top: var(--space-sm);
+  box-shadow: 0 var(--space-xs) var(--space) var(--sort);
 }

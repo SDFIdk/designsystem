@@ -5,16 +5,13 @@
   <div id="ex-toast-1">
 
     <button id="toastbutton">Display a toast!</button>
-    
-    <div id="toast-container" class="ds-toast-container"></div>
 
     <script type="module">
       import { showToast } from '../assets/designsystem.js'
 
       document.getElementById('toastbutton').addEventListener('click', function(ev) {
         showToast({
-          message: 'This is a toast', 
-          target: '#toast-container',
+          message: 'This is a toast',
           duration: 3000
         })
       })

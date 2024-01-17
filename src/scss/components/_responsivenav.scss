@@ -46,6 +46,10 @@ ds-nav .ds-toggle-panel {
   gap: var(--space-sm);
 }
 
+ds-nav ds-toggle-panel button.ds-toggle-button {
+  margin: 0;
+}
+
 ds-nav .ds-toggle-panel[hidden] {
   display: none;
 }

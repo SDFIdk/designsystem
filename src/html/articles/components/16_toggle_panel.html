@@ -2,12 +2,7 @@
 
   <h2>Skjult panel</h2>
 
-  <div id="ex-togglepanel-1">
-
-    <ds-toggle-panel title="Vis hemmeligt indhold">
-      <h2>Her er det hemmelige indhold</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </ds-toggle-panel>
+  <div id="ex-togglepanel-1" style="display: flex; flex-flow: row nowrap;">
 
     <button for="myToggle" class="secondary">Åben panel</button>
     <ds-toggle-panel title="Vis det usete indhold" class="slide" id="myToggle">
@@ -22,7 +17,12 @@
 
       <h2>The thing</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+      
+    </ds-toggle-panel>
 
+    <ds-toggle-panel title="Vis hemmeligt indhold">
+      <h2>Her er det hemmelige indhold</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     </ds-toggle-panel>
 
     <script type="module">

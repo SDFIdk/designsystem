@@ -3,6 +3,7 @@ ds-toggle-panel {
 }
 ds-toggle-panel button.ds-toggle-button {
   display: flex;
+  margin-bottom: var(--space);
 }
 ds-toggle-panel.slide .ds-toggle-panel {
   display: block;
