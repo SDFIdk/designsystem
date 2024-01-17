@@ -44,7 +44,7 @@ async function buildHTMLsnippet(filename, svg) {
     <div class="icon-container">  
       <div>
         <h3 class="h5">SVG sprite</h3>
-        <pre><code>&lt;svg>&lt;use href="PATH/designsystem-icons.svg#${ shortname }">&lt;/svg></code></pre>
+        <pre><code>&lt;svg>&lt;use href="PATH/designsystem-icons.svg#${ shortname }" />&lt;/svg></code></pre>
         <br>
         <p><em>Husk at ændre PATH til din egen opsætning.</em></p>
         <h3 class="h5">SVG embed</h3>
@@ -66,7 +66,7 @@ async function buildHTMLsnippet(filename, svg) {
 async function buildTOCsnippet(filename) {
   const shortname = filenameToId(filename)
   const html = `
-    <a href="#${ shortname }"><svg></svg></a>
+    <a href="#${ shortname }"><svg><use href="/assets/designsystem-icons.svg#${ shortname }" /></svg></a>
   `
   return html
 }
