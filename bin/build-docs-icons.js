@@ -66,7 +66,7 @@ async function buildHTMLsnippet(filename, svg) {
 async function buildTOCsnippet(filename) {
   const shortname = filenameToId(filename)
   const html = `
-    <a href="#${ shortname }"><svg><use href="/assets/designsystem-icons.svg#${ shortname }" /></svg></a>
+    <a href="#${ shortname }" title="Icon ${ shortname }"><svg><title>Icon ${ shortname }</title><use href="/assets/designsystem-icons.svg#${ shortname }" /></svg></a>
   `
   return html
 }

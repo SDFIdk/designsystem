@@ -1,3 +1,4 @@
 <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<title>Icon</title>
 <path d="M13.5 5V9H17.5M15 13H9M15 16H9M10.5 10H9M13.6364 5H7.5C7.10218 5 6.72064 5.1475 6.43934 5.41005C6.15804 5.6726 6 6.0287 6 6.4V17.6C6 17.9713 6.15804 18.3274 6.43934 18.5899C6.72064 18.8525 7.10218 19 7.5 19H16.5C16.8978 19 17.2794 18.8525 17.5607 18.5899C17.842 18.3274 18 17.9713 18 17.6V9L13.6364 5Z" stroke="var(--ds-icon-color, black)" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
 </svg>

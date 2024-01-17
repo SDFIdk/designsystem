@@ -47,6 +47,7 @@ export class ThemeToggle extends HTMLElement {
       <div class="ds-theme-toggle ds-button-group">
         <button title="Lys" data-toggle="light">
           <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <title>Lyst tema</title>
             <circle cx="12" cy="12" r="5" stroke="var(--ds-icon-color, black)" fill="none"/>
             <path d="M3 12L5 12M19 12L21 12" stroke="var(--ds-icon-color, black)" stroke-linecap="round"/>
             <path d="M12 3L12 5M12 19L12 21" stroke="var(--ds-icon-color, black)" stroke-linecap="round"/>
@@ -57,6 +58,7 @@ export class ThemeToggle extends HTMLElement {
         
         <button title="Mørk" data-toggle="dark">
           <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <title>Mørkt tema</title>
             <circle cx="12" cy="12" r="5" stroke="var(--ds-icon-color, black)" fill="none"/>
             <path d="M3 12L5 12M19 12L21 12" stroke="var(--ds-icon-color, black)" stroke-linecap="round"/>
             <path d="M12 3L12 5M12 19L12 21" stroke="var(--ds-icon-color, black)" stroke-linecap="round"/>

@@ -1,4 +1,5 @@
 <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<title>Icon</title>
 <path d="M8.36029 7.25L15.8162 8.82258L17.25 14.1694L7.5 17L8.36029 7.25Z" stroke="var(--ds-icon-color, black)" stroke-dasharray="1 1" fill="none"/>
 <path d="M15.7499 8.75002L20.9999 4.25002M17.9999 15.0923L20.9999 19.5001M6.21952 1.91333L8.35932 5.86677M6.49994 18L3.41113 20.0623" stroke="#8FB1B5" stroke-opacity="0.6" stroke-dasharray="1 1" fill="none"/>
 <path d="M7.5 6.5H9V8H7.5V6.5Z" fill="var(--ds-icon-color, black)"/>

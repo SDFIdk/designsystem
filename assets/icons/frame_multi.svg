@@ -1,4 +1,5 @@
 <svg width="40" height="40" viewBox="0 0 40 40" class="ds-svg-icon" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>Icon</title>
   <rect x="6.66" y="10" width="26.66" height="20" rx="1.5" stroke="var(--ds-icon-color, black)" stroke-width="1.5"/>
   <path d="M20 10L20 30" stroke="var(--ds-icon-color, black)" stroke-width="1.5"/>
   <path d="M26.66 10L26.66 30" stroke="var(--ds-icon-color, black)" stroke-width="1.5"/>

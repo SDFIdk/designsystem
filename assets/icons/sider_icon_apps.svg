@@ -1,4 +1,5 @@
 <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<title>Icon</title>
 <g fill="none" stroke="var(--ds-icon-color, black)" stroke-linecap="round" stroke-linejoin="round">
 <path d="M17 6H14C13.4477 6 13 6.44772 13 7V10C13 10.5523 13.4477 11 14 11H17C17.5523 11 18 10.5523 18 10V7C18 6.44772 17.5523 6 17 6Z"/>
 <path d="M17 13H14C13.4477 13 13 13.4477 13 14V17C13 17.5523 13.4477 18 14 18H17C17.5523 18 18 17.5523 18 17V14C18 13.4477 17.5523 13 17 13Z"/>
