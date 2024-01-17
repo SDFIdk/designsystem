@@ -53,6 +53,7 @@ export class DSLogo extends HTMLElement {
         }
       </style>
       <svg width="100%" height="100%" viewBox="0 0 63 63" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <title>SDFI</title>
         <circle class="dsl-circle" cx="31.5" cy="31.5" r="30"/>
         <g class="dsl-group">
           <path class="dsl-path" d="M21.50 1.03V3.48M21.50 7.93V9.41M26.17 5.71H23.72M19.28 5.71H16.83" stroke-linecap="round"/>
