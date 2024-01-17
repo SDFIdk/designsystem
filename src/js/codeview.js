@@ -27,9 +27,14 @@ export class CodeView extends HTMLElement {
   }
 
   render() {
-    const styleTag = document.createElement('style')
-    styleTag.innerText = this.styles
-    document.head.append(styleTag)
+
+    if (!document.head.querySelector('.ds-code-view-style')) {
+      const styleTag = document.createElement('style')
+      styleTag.className = "ds-code-view-style"
+      styleTag.innerHTML = this.styles
+      document.head.append(styleTag)
+    }
+
     this.innerHTML = this.template
   }
 

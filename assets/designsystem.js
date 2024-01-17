@@ -25,9 +25,12 @@ var CodeView = class extends HTMLElement {
     super();
   }
   render() {
-    const styleTag = document.createElement("style");
-    styleTag.innerText = this.styles;
-    document.head.append(styleTag);
+    if (!document.head.querySelector(".ds-code-view-style")) {
+      const styleTag = document.createElement("style");
+      styleTag.className = "ds-code-view-style";
+      styleTag.innerHTML = this.styles;
+      document.head.append(styleTag);
+    }
     this.innerHTML = this.template;
   }
   connectedCallback() {
@@ -76,9 +79,12 @@ var ThemeToggle = class extends HTMLElement {
     super();
   }
   render() {
-    const styleTag = document.createElement("style");
-    styleTag.innerText = this.style;
-    document.head.append(styleTag);
+    if (!document.head.querySelector(".ds-theme-toggle-style")) {
+      const styleTag = document.createElement("style");
+      styleTag.className = "ds-theme-toggle-style";
+      styleTag.innerHTML = this.style;
+      document.head.append(styleTag);
+    }
     this.innerHTML = `
       <div class="ds-theme-toggle ds-button-group">
         <button title="Lys" data-toggle="light">
