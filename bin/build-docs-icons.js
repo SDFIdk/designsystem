@@ -5,7 +5,6 @@ async function generateDocContent(svg_dir) {
   let filehandle
   let html = ''
   let toc = '<nav id="toc-icons">'
-  let index_css = ''
   try {
     const files = await readdir(svg_dir)
     for (const file of files) {
@@ -23,14 +22,12 @@ async function generateDocContent(svg_dir) {
       } finally {
         await filehandle?.close()
       }
-      // Update index CSS
-      index_css += addCSStoIndex(file)
     }
   } catch (err) {
     console.error(err)
   } finally {
     toc += '</nav>'
-    return [html, toc, index_css]
+    return [html, toc]
   }
 }
 
@@ -71,34 +68,6 @@ async function buildTOCsnippet(filename) {
   return html
 }
 
-async function writeCSSsnippet(filename, svg) {
-  const shortname = filenameToId(filename)
-  const escaped_svg = encodeURIComponent(svg.replace(/(\r\n)+/gi, ''))
-  const css = `
-    :root {
-      --ds-icon-${ shortname }: url('data:image/svg+xml;utf8,${ escaped_svg }');
-    }
-    .ds-icon-${ shortname }::before {
-      background-image: var(--ds-icon-${ shortname });
-    }
-  `
-  let filehandle
-  try {
-    filehandle = await open(`./assets/css/${ filenameToId(filename) }.css`, 'w')
-    filehandle.writeFile(css, 'utf8')
-  } catch (error) {
-    console.error('there was an error:', error.message)
-  } finally {
-    await filehandle?.close()
-  }
-}
-
-function addCSStoIndex(filename) {
-  return `
-@import "assets/css/${ filenameToId(filename) }.css";
-  `
-}
-
 async function generateSVGContent(svg_dir) {
   let filehandle
   let symbols = ''
@@ -133,9 +102,7 @@ async function buildSVGsnippet(svg, filename) {
   const id = filenameToId(filename)
   const svgRegex = /<svg.*?>|<\/svg>|\t|\n|\r/g
   const viewBoxRegex = /viewBox="[\d\s]+"/
-  const classRegex = /class="[\w-]+"/g
   const viewBoxAttr = svg.match(viewBoxRegex)
-  const classAttr = svg.match(classRegex)
   const newSvg = svg.replaceAll(svgRegex, '')
   return `<symbol id="${ id }" height="100%" width="100%" ${ viewBoxAttr ? ' ' + viewBoxAttr[0] : '' } fill="none">${ newSvg }</symbol>`
 }
@@ -171,10 +138,6 @@ export async function buildIconDoc() {
 
   // Write HTML file
   await writeToFile(markup, './docs/icons.html')
-
-  // Write new index CSS file
-  const index_css = icon_content[2]
-  await writeToFile(index_css, './assets/designsystem-icons.css')
 
   console.log('Done building icon docs 👍')
 }
