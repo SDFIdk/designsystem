@@ -66,7 +66,7 @@ ${ svg }
 async function buildTOCsnippet(filename) {
   const shortname = filenameToId(filename)
   const html = `
-    <a href="#${ shortname }" title="Icon ${ shortname }"><svg><title>Icon ${ shortname }</title><use href="/assets/designsystem-icons.svg#${ shortname }" /></svg></a>
+    <a href="#${ shortname }" title="Icon ${ shortname }"><svg><title>Icon ${ shortname }</title><use href="../assets/designsystem-icons.svg#${ shortname }" /></svg></a>
   `
   return html
 }
@@ -133,11 +133,11 @@ async function buildSVGsnippet(svg, filename) {
   const id = filenameToId(filename)
   const svgRegex = /<svg.*?>|<\/svg>|\t|\n|\r/g
   const viewBoxRegex = /viewBox="[\d\s]+"/
-  const classRegex = /class=".+"/g
+  const classRegex = /class="[\w-]+"/g
   const viewBoxAttr = svg.match(viewBoxRegex)
   const classAttr = svg.match(classRegex)
   const newSvg = svg.replaceAll(svgRegex, '')
-  return `<symbol id="${ id }" width="100%" height="100%"${ viewBoxAttr ? ' ' + viewBoxAttr[0] : '' }${ classAttr ? ' ' + classAttr[0] : '' }>${ newSvg }</symbol>`
+  return `<symbol id="${ id }" height="100%" width="100%" ${ viewBoxAttr ? ' ' + viewBoxAttr[0] : '' } fill="none">${ newSvg }</symbol>`
 }
 
 export async function buildIconSVG() {
