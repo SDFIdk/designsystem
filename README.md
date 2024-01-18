@@ -4,7 +4,11 @@ Common design system for SDFI with CSS, icons, UI components, and logo images.
 
 ## Read the documentation
 
-1. Clone this repo or import as noted above.
+Documentation is available at [sdfidk.github.io/designsystem/](https://sdfidk.github.io/designsystem/)
+
+You can also build and read the docs locally.
+
+1. Clone this repo.
 2. Navigate to folder `designsystem` or `node_modules/@dataforsyningen/designsystem`
 3. Open file `index.html` in a browser.
 
