@@ -2,6 +2,7 @@ export function showToast({message, duration = 5000}) {
   const newToast = document.createElement('div')
   newToast.className = 'ds-toast-item'
   newToast.innerText = message
+  newToast.dataset.theme = 'dark'
 
   const targetElement = document.querySelector('.ds-toast-container')
   if (!targetElement) {
