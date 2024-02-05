@@ -907,7 +907,25 @@
   </div>
 </footer>
 
-<script type="module" src="../assets/designsystem.js"></script>
+<script type="module">
+  import { 
+    CodeView, 
+    ThemeToggle, 
+    Tabs,
+    DSNav,
+    DSTogglePanel,
+    Spinner
+  } from '../assets/designsystem.js'
+  customElements.define('code-view', CodeView)
+  customElements.define('ds-theme-toggle', ThemeToggle)
+  customElements.define('ds-tabs', Tabs)
+  customElements.define('ds-nav', DSNav)
+  customElements.define('ds-spinner', Spinner)
+  if (!customElements.get('ds-toggle-panel')) {
+    customElements.define('ds-toggle-panel', DSTogglePanel)
+  }
+  
+</script>
 
 </body>
 </html>

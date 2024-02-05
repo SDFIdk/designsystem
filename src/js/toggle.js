@@ -24,6 +24,9 @@ export class DSSlide extends HTMLElement {
 
   constructor() {
     super()
+    if (!customElements.get('ds-toggle-panel')) {
+      customElements.define('ds-toggle-panel', DSTogglePanel)
+    }
   }
 
   connectedCallback() {
@@ -40,5 +43,3 @@ export class DSSlide extends HTMLElement {
   }
 
 }
-
-customElements.define('ds-slide', DSSlide)

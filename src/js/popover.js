@@ -539,7 +539,5 @@ export function popoverPolyfill() {
   if (!isSupported()) {
     console.log('polyfilling popover')
     apply()
-  } else {
-    console.log('not polyfilling popover')
   }
 }

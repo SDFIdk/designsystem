@@ -3,15 +3,41 @@ import { DSLogo } from './logo.js'
 /** Displays a loading animation */
 export class Spinner extends HTMLElement {
 
-
   // Properties
   style = `
     @keyframes logoanimation {
       0% {
-        transform: rotate(0deg);
+        transform: scaleX(0%);
+        filter: brightness(1);
+      }
+      25% {
+        transform: scaleX(105%);
+        filter: brightness(1);
+      }
+      50% {
+        transform: scaleX(0%);
+        filter: brightness(1);
+      }
+      51% {
+        transform: scaleX(0%);
+        filter: brightness(0.6);
+      }
+      75% {
+        transform: scaleX(105%);
+        filter: brightness(0.6);
       }
       100% {
-        transform: rotate(360deg);
+        transform: scaleX(0%);
+        filter: brightness(0.6);
+      }
+    }
+
+    @keyframes logosled {
+      from {
+        rotate: 0deg;
+      }
+      to {
+        rotate: 359deg;
       }
     }
 
@@ -28,7 +54,22 @@ export class Spinner extends HTMLElement {
       display: flex;
       align-items: center;
       justify-content: center;
-      animation: logoanimation 2s ease-in-out infinite; 
+      position: relative;
+      /* animation: logoanimation 3s ease-in-out infinite; */
+    }
+
+    ds-spinner ds-logo::before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-top: solid medium var(--color);
+      transform-origin: 50% 50%;
+      animation: logosled 2s ease-out infinite;
+      border-radius: 50%;
     }
   `
   template = `
@@ -46,6 +87,9 @@ export class Spinner extends HTMLElement {
   // Constructor
   constructor() {
     super()
+    if (!customElements.get('ds-logo')) {
+      customElements.define('ds-logo', DSLogo)
+    }
   }
 
   // Methods

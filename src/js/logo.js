@@ -73,5 +73,3 @@ export class DSLogo extends HTMLElement {
   }
 
 }
-
-customElements.define('ds-logo', DSLogo)

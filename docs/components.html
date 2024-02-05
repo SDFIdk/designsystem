@@ -66,20 +66,17 @@
 
   <p>Der er en theme-toggle komponent, som brugeren kan bruge til at skifte mellem dark og light mode.</p>
 
-  <div id="ex-theme-toggle-1">
+  <ds-theme-toggle></ds-theme-toggle>
 
-    <script type="module">
+  <code-view title="Javascript">
+import { ThemeToggle } from '@dataforsyningen/designsystem/assets/designsystem.js'
+customElements.define('ds-theme-toggle', ThemeToggle)
+  </code-view>
 
-      import { ThemeToggle } from '../assets/designsystem.js'
-
-    </script>
-
-    <ds-theme-toggle></ds-theme-toggle>
-
-  </div>
-
-  <code-view data-snip="ex-theme-toggle-1"></code-view>
-
+  <code-view title="HTML">
+<ds-theme-toggle></ds-theme-toggle>
+  </code-view>
+  
 </section>
 <section id="tabs">
 
@@ -125,29 +122,36 @@
 
   <p>Tab-komponenten laver automatisk en række indholdselementer om til tabbed elementer, når du omslutter dem med <code>&lt;ds-tabs>&lt;/ds-tabs></code></code></p>
 
-  <div id="ex-tabs-1">
+  <ds-tabs data-selected="2">
+    <article title="Something">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+    </article>
+    <article title="Something else">
+      <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </article>
+    <article title="Another thing">
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </article>
+  </ds-tabs>
 
-    <script type="module">
-
-      import { Tabs } from '../assets/designsystem.js'
-
-    </script>
-
-    <ds-tabs data-selected="2">
-      <article title="Something">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-      </article>
-      <article title="Something else">
-        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      </article>
-      <article title="Another thing">
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      </article>
-    </ds-tabs>
-
-  </div>
-
-  <code-view data-snip="ex-tabs-1"></code-view>
+  <code-view title="Javascript">
+import { Tabs } from '@dataforsyningen/designsystem/assets/designsystem.js'
+customElements.define('ds-tabs', Tabs)
+  </code-view>
+    
+  <code-view title="HTML">
+<ds-tabs data-selected="2">
+  <article title="Something">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+  </article>
+  <article title="Something else">
+    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </article>
+  <article title="Another thing">
+    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  </article>
+</ds-tabs>
+  </code-view>
 
 </section>
 <section id="cards">
@@ -216,31 +220,42 @@
         <button class="secondary btn-toggle-dialog" aria-controls="example-dialog">Not OK</button>
       </footer>
     </dialog>
-
-    <script type="module">
-
-      // Register the dialog element
-      const dialog_element = document.querySelector('#example-dialog')
-      
-      // Toggles the dialog
-      function toggleDialog() {
-        if (dialog_element.open) {
-          dialog_element.close()
-        } else {
-          dialog_element.showModal()
-        }
-      }
-
-      // Add event listeners
-      document.querySelectorAll('[aria-controls="example-dialog"]').forEach(function(element) {
-        element.addEventListener('click', toggleDialog)
-      })
-
-    </script>
-
   </div>
 
-  <code-view data-snip="ex-dialog-1"></code-view>
+  <script>
+    const dialog_element = document.querySelector('#example-dialog')
+    function toggleDialog() {
+      if (dialog_element.open) {
+        dialog_element.close()
+      } else {
+        dialog_element.showModal()
+      }
+    }
+    document.querySelectorAll('[aria-controls="example-dialog"]').forEach(function(element) {
+      element.addEventListener('click', toggleDialog)
+    })
+  </script>
+
+  <code-view data-snip="ex-dialog-1" title="HTML"></code-view>
+
+  <code-view title="Javascript">
+// Register the dialog element
+const dialog_element = document.querySelector('#example-dialog')
+
+// Toggles the dialog
+function toggleDialog() {
+  if (dialog_element.open) {
+    dialog_element.close()
+  } else {
+    dialog_element.showModal()
+  }
+}
+
+// Add event listeners
+document.querySelectorAll('[aria-controls="example-dialog"]').forEach(function(element) {
+  element.addEventListener('click', toggleDialog)
+})
+  </code-view>
 
 </section>
 <article id="responsivenav">
@@ -293,14 +308,18 @@
 
   </div>
 
-  <code-view data-snip="ex-resp-nav-1"></code-view>
+  <code-view title="Javascript">
+import { DSNav } from '@dataforsyningen/designsystem/assets/designsystem.js'
+customElements.define('ds-nav', DSNav)
+  </code-view>
+
+  <code-view data-snip="ex-resp-nav-1" title="HTML"></code-view>
 
 </article><section id="togglepanel">
 
   <h2>Skjult panel</h2>
 
   <div id="ex-togglepanel-1" style="display: flex; flex-flow: row nowrap;">
-
     <button for="myToggle" class="secondary">Åben panel</button>
     <ds-toggle-panel title="Vis det usete indhold" class="slide" id="myToggle">
 
@@ -321,14 +340,12 @@
       <h2>Her er det hemmelige indhold</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     </ds-toggle-panel>
-
-    <script type="module">
-
-      import { DSTogglePanel } from '../assets/designsystem.js'
-
-    </script>
-
   </div>
+
+  <code-view title="Javascript">
+import { DSTogglePanel } from '@dataforsyningen/designsystem/assets/designsystem.js'
+customElements.define('ds-toggle-panel', DSTogglePanel)
+  </code-view>
 
   <code-view data-snip="ex-togglepanel-1"></code-view>
 
@@ -338,20 +355,15 @@
   <h2 class="ds-flex-row"><ds-spinner style="width: 2rem;"></ds-spinner> Loading spinner</h2>
 
   <div id="ex-spinner-1">
-
     <ds-spinner style="width: 20rem;"></ds-spinner>
-
-    <script type="module">
-
-      import { Spinner } from '../assets/designsystem.js'
-      
-      customElements.define('ds-spinner', Spinner)
-
-    </script>
-
   </div>
 
-  <code-view data-snip="ex-spinner-1"></code-view>
+  <code-view title="Javascript">
+import { Spinner } from '@dataforsyningen/designsystem/assets/designsystem.js'    
+customElements.define('ds-spinner', Spinner)
+  </code-view>
+
+  <code-view data-snip="ex-spinner-1" title="HTML"></code-view>
 
 </section>
 <section id="popover">
@@ -410,7 +422,25 @@
   </div>
 </footer>
 
-<script type="module" src="../assets/designsystem.js"></script>
+<script type="module">
+  import { 
+    CodeView, 
+    ThemeToggle, 
+    Tabs,
+    DSNav,
+    DSTogglePanel,
+    Spinner
+  } from '../assets/designsystem.js'
+  customElements.define('code-view', CodeView)
+  customElements.define('ds-theme-toggle', ThemeToggle)
+  customElements.define('ds-tabs', Tabs)
+  customElements.define('ds-nav', DSNav)
+  customElements.define('ds-spinner', Spinner)
+  if (!customElements.get('ds-toggle-panel')) {
+    customElements.define('ds-toggle-panel', DSTogglePanel)
+  }
+  
+</script>
 
 </body>
 </html>

@@ -107,5 +107,3 @@ export class ThemeToggle extends HTMLElement {
     this.buttonLight.removeEventListener('click', this.goLightHandler)
   }
 }
-
-customElements.define('ds-theme-toggle', ThemeToggle)

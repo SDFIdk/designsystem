@@ -11,5 +11,3 @@ export class DSIcon extends HTMLElement {
     this.innerHTML = `<svg style="width: 100%; height: 100%;"><use href="../../assets/designsystem-icons.svg#${ this.className }"/></svg>`
   }
 }
-
-customElements.define('ds-icon', DSIcon)

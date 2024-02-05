@@ -55,5 +55,3 @@ export class DSTogglePanel extends HTMLElement {
   }
 
 }
-
-customElements.define('ds-toggle-panel', DSTogglePanel)

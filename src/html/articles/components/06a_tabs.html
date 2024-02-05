@@ -42,28 +42,35 @@
 
   <p>Tab-komponenten laver automatisk en række indholdselementer om til tabbed elementer, når du omslutter dem med <code>&lt;ds-tabs>&lt;/ds-tabs></code></code></p>
 
-  <div id="ex-tabs-1">
+  <ds-tabs data-selected="2">
+    <article title="Something">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+    </article>
+    <article title="Something else">
+      <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </article>
+    <article title="Another thing">
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </article>
+  </ds-tabs>
 
-    <script type="module">
-
-      import { Tabs } from '../assets/designsystem.js'
-
-    </script>
-
-    <ds-tabs data-selected="2">
-      <article title="Something">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-      </article>
-      <article title="Something else">
-        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      </article>
-      <article title="Another thing">
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      </article>
-    </ds-tabs>
-
-  </div>
-
-  <code-view data-snip="ex-tabs-1"></code-view>
+  <code-view title="Javascript">
+import { Tabs } from '@dataforsyningen/designsystem/assets/designsystem.js'
+customElements.define('ds-tabs', Tabs)
+  </code-view>
+    
+  <code-view title="HTML">
+<ds-tabs data-selected="2">
+  <article title="Something">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+  </article>
+  <article title="Something else">
+    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </article>
+  <article title="Another thing">
+    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  </article>
+</ds-tabs>
+  </code-view>
 
 </section>

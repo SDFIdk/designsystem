@@ -8,6 +8,9 @@ export class DSNav extends HTMLElement {
 
   constructor() {
     super()
+    if (!customElements.get('ds-toggle-panel')) {
+      customElements.define('ds-toggle-panel', DSTogglePanel)
+    }
   }
 
   connectedCallback() {
@@ -67,5 +70,3 @@ export class DSNav extends HTMLElement {
   }
 
 }
-
-customElements.define('ds-nav', DSNav)

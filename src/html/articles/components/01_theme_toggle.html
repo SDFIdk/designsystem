@@ -4,18 +4,15 @@
 
   <p>Der er en theme-toggle komponent, som brugeren kan bruge til at skifte mellem dark og light mode.</p>
 
-  <div id="ex-theme-toggle-1">
+  <ds-theme-toggle></ds-theme-toggle>
 
-    <script type="module">
+  <code-view title="Javascript">
+import { ThemeToggle } from '@dataforsyningen/designsystem/assets/designsystem.js'
+customElements.define('ds-theme-toggle', ThemeToggle)
+  </code-view>
 
-      import { ThemeToggle } from '../assets/designsystem.js'
-
-    </script>
-
-    <ds-theme-toggle></ds-theme-toggle>
-
-  </div>
-
-  <code-view data-snip="ex-theme-toggle-1"></code-view>
-
+  <code-view title="HTML">
+<ds-theme-toggle></ds-theme-toggle>
+  </code-view>
+  
 </section>

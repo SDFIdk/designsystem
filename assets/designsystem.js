@@ -95,7 +95,6 @@ var CodeView = class extends HTMLElement {
     });
   }
 };
-customElements.define("code-view", CodeView);
 
 // src/js/themeToggle.js
 var ThemeToggle = class extends HTMLElement {
@@ -197,7 +196,6 @@ var ThemeToggle = class extends HTMLElement {
     this.buttonLight.removeEventListener("click", this.goLightHandler);
   }
 };
-customElements.define("ds-theme-toggle", ThemeToggle);
 
 // src/js/togglePanel.js
 var DSTogglePanel = class extends HTMLElement {
@@ -245,7 +243,6 @@ var DSTogglePanel = class extends HTMLElement {
     this.togglePanel.hidden = true;
   }
 };
-customElements.define("ds-toggle-panel", DSTogglePanel);
 
 // src/js/toggle.js
 var DSSlide = class extends HTMLElement {
@@ -269,6 +266,9 @@ var DSSlide = class extends HTMLElement {
   `;
   constructor() {
     super();
+    if (!customElements.get("ds-toggle-panel")) {
+      customElements.define("ds-toggle-panel", DSTogglePanel);
+    }
   }
   connectedCallback() {
     this.render();
@@ -282,7 +282,6 @@ var DSSlide = class extends HTMLElement {
     `;
   }
 };
-customElements.define("ds-slide", DSSlide);
 
 // src/js/logo.js
 var DSLogo = class extends HTMLElement {
@@ -357,7 +356,6 @@ var DSLogo = class extends HTMLElement {
     `;
   }
 };
-customElements.define("ds-logo", DSLogo);
 
 // src/js/spinner.js
 var Spinner = class extends HTMLElement {
@@ -365,10 +363,37 @@ var Spinner = class extends HTMLElement {
   style = `
     @keyframes logoanimation {
       0% {
-        transform: rotate(0deg);
+        transform: scaleX(0%);
+        filter: brightness(1);
+      }
+      25% {
+        transform: scaleX(105%);
+        filter: brightness(1);
+      }
+      50% {
+        transform: scaleX(0%);
+        filter: brightness(1);
+      }
+      51% {
+        transform: scaleX(0%);
+        filter: brightness(0.6);
+      }
+      75% {
+        transform: scaleX(105%);
+        filter: brightness(0.6);
       }
       100% {
-        transform: rotate(360deg);
+        transform: scaleX(0%);
+        filter: brightness(0.6);
+      }
+    }
+
+    @keyframes logosled {
+      from {
+        rotate: 0deg;
+      }
+      to {
+        rotate: 359deg;
       }
     }
 
@@ -385,7 +410,22 @@ var Spinner = class extends HTMLElement {
       display: flex;
       align-items: center;
       justify-content: center;
-      animation: logoanimation 2s ease-in-out infinite; 
+      position: relative;
+      /* animation: logoanimation 3s ease-in-out infinite; */
+    }
+
+    ds-spinner ds-logo::before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-top: solid medium var(--color);
+      transform-origin: 50% 50%;
+      animation: logosled 2s ease-out infinite;
+      border-radius: 50%;
     }
   `;
   template = `
@@ -401,6 +441,9 @@ var Spinner = class extends HTMLElement {
   // Constructor
   constructor() {
     super();
+    if (!customElements.get("ds-logo")) {
+      customElements.define("ds-logo", DSLogo);
+    }
   }
   // Methods
   createDOM() {
@@ -491,7 +534,6 @@ var Tabs = class extends HTMLElement {
     this.appendChild(tabContentContainer);
   }
 };
-customElements.define("ds-tabs", Tabs);
 
 // src/js/responsiveNav.js
 var DSNav = class extends HTMLElement {
@@ -500,6 +542,9 @@ var DSNav = class extends HTMLElement {
   hiddenNavElements;
   constructor() {
     super();
+    if (!customElements.get("ds-toggle-panel")) {
+      customElements.define("ds-toggle-panel", DSTogglePanel);
+    }
   }
   connectedCallback() {
     this.hiddenNavElements = this.cloneNodes(this.querySelectorAll("ds-nav > *"));
@@ -551,7 +596,6 @@ var DSNav = class extends HTMLElement {
     this.toggleElement.close();
   }
 };
-customElements.define("ds-nav", DSNav);
 
 // src/js/icon.js
 var DSIcon = class extends HTMLElement {
@@ -563,7 +607,6 @@ var DSIcon = class extends HTMLElement {
     this.innerHTML = `<svg style="width: 100%; height: 100%;"><use href="../../assets/designsystem-icons.svg#${this.className}"/></svg>`;
   }
 };
-customElements.define("ds-icon", DSIcon);
 
 // src/js/popover.js
 var ToggleEvent = class extends Event {
@@ -1104,8 +1147,6 @@ function popoverPolyfill() {
   if (!isSupported()) {
     console.log("polyfilling popover");
     apply();
-  } else {
-    console.log("not polyfilling popover");
   }
 }
 export {

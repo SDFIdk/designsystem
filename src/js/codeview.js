@@ -87,5 +87,3 @@ export class CodeView extends HTMLElement {
     })
   }
 }
-
-customElements.define('code-view', CodeView)

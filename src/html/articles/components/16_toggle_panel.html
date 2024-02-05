@@ -3,7 +3,6 @@
   <h2>Skjult panel</h2>
 
   <div id="ex-togglepanel-1" style="display: flex; flex-flow: row nowrap;">
-
     <button for="myToggle" class="secondary">Åben panel</button>
     <ds-toggle-panel title="Vis det usete indhold" class="slide" id="myToggle">
 
@@ -24,14 +23,12 @@
       <h2>Her er det hemmelige indhold</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     </ds-toggle-panel>
-
-    <script type="module">
-
-      import { DSTogglePanel } from '../assets/designsystem.js'
-
-    </script>
-
   </div>
+
+  <code-view title="Javascript">
+import { DSTogglePanel } from '@dataforsyningen/designsystem/assets/designsystem.js'
+customElements.define('ds-toggle-panel', DSTogglePanel)
+  </code-view>
 
   <code-view data-snip="ex-togglepanel-1"></code-view>
 

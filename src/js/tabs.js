@@ -108,5 +108,3 @@ export class Tabs extends HTMLElement {
     this.appendChild(tabContentContainer)
   }
 }
-
-customElements.define("ds-tabs", Tabs)
