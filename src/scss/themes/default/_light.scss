@@ -1,6 +1,6 @@
 // Default: Light theme
 [data-theme="light"],
-:root:not([data-theme="ret"]) {
+:root:not([data-theme="dark"]) {
   // Document
   color-scheme: light;
   accent-color: var(--blaa);
