@@ -219,7 +219,8 @@ var DSTogglePanel = class extends HTMLElement {
     this.toggleButton.addEventListener("click", this.toggle.bind(this));
   }
   renderToggleButton() {
-    const externalToggleButton = document.querySelector(`button[for="${this.id}"]`);
+    console.log("the this", this);
+    const externalToggleButton = this.parentElement.querySelector(`button[for="${this.id}"]`);
     if (externalToggleButton) {
       externalToggleButton.id = `ds-toggle-button-${this.componentId}`;
       externalToggleButton.setAttribute("aria-controls", `ds-toggle-panel-${this.componentId}`);

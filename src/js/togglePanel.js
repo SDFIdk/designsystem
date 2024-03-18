@@ -25,7 +25,7 @@ export class DSTogglePanel extends HTMLElement {
   }
 
   renderToggleButton() {
-    const externalToggleButton = document.querySelector(`button[for="${ this.id }"]`)
+    const externalToggleButton = this.parentElement.querySelector(`button[for="${ this.id }"]`)
     if (externalToggleButton) {
       // If a button was designed with the `for` attribute, use it
       externalToggleButton.id = `ds-toggle-button-${ this.componentId }`
