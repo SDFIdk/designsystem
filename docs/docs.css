@@ -2,6 +2,9 @@ body {
   display: flex;
   flex-flow: column nowrap;
 }
+#header ds-logo-title {
+  margin: var(--space-xl) 0;
+}
 #header nav {
   width: auto;
   position: absolute;

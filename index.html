@@ -18,11 +18,7 @@
 
       <div class="ds-container">
 
-        <p class="ds-logo">
-          <ds-logo></ds-logo>
-          <strong>Dataforsyningen</strong>
-          <span>Styrelsen for Dataforsyning og Infrastruktur</span>
-        </p>
+        <ds-logo-title title="Designsystem"></ds-logo-title>
 
         <h1>Designguide eksempler</h1>
         <p class="blockquote">Reference-implementationer af SDFIs designguide med HTML/CSS</p>
@@ -56,19 +52,16 @@
 
     <footer class="ds-footer">
       <div class="ds-container">
-        <p class="ds-logo">
-          <ds-logo></ds-logo>
-          <strong>Designsystem</strong>
-          <span>Styrelsen for Dataforsyning og Infrastruktur</span>
-        </p>
+        <ds-logo-title title="SDFI"></ds-logo-title>
         <hr>
         <p>© 2023 Styrelsen for Dataforsyning og Infrastruktur - <a href="https://github.com/SDFIdk/designsystem">Find os på Github</a></p>
       </div>
     </footer>
 
     <script type="module">
-      import { DSLogo } from './assets/designsystem.js'
-      customElements.define('ds-logo', DSLogo)
+      import { DSLogoTitle, ThemeToggle } from './assets/designsystem.js'
+      customElements.define('ds-logo-title', DSLogoTitle)
+      customElements.define('ds-theme-toggle', ThemeToggle)
     </script>
 
   </body>
