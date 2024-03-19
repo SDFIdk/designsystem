@@ -4,6 +4,41 @@
 
   <p><em>Bemærk! SDFIs logo må kun bruges af Styrelsen for Dataforsyning og Infrastruktur.</em></p>
 
+  <h3>Web component</h3>
+  
+  <p>Du kan bruge <code>&lt;ds-logo></code> elementet til at vise et logo. Det giver dig adgang til at style og skalere logoet.</p>
+
+  <p>Det kræver, at du importerer <strong>designsystem.js</strong> <br>Derefter kan logo/bomærke og logotypografi kan sættes op som vist herunder.</p>
+
+  <div id="ex-logo-1">
+    <script type="module">
+      // Sådan ville du importere fra designsystem NPM-pakken, som du har installeret
+      // import { DSLogo } from '@dataforsyningen/designsystem'
+
+      // Sådan ville du importere fra en lokal mappe PATH
+      // import { DSLogo } from 'PATH/assets/designsystem.js'
+
+      import { DSLogo } from '../assets/designsystem.js'
+      customElements.define('ds-logo', DSLogo)
+    </script>
+
+    <a class="ds-logo" href="#">
+      <ds-logo></ds-logo>
+      <strong>Dataforsyningen</strong>
+      <span>Styrelsen for Dataforsyning og Infrastruktur</span>
+    </a>
+
+    <br><br>
+
+    <p class="ds-logo small">
+      <ds-logo></ds-logo>
+      <strong>Produktnavn</strong>
+      <span>SDFI</span>
+    </p>
+  </div>
+
+  <code-view data-snip="ex-logo-1"></code-view>
+
   <h3>SVG-filer</h3>
 
   <p>Du kan finde SVG-logofiler under ../assets/logos</p>
@@ -16,40 +51,7 @@
 
   <code-view data-snip="ex-logo-0"></code-view>
 
-  <h3>Web component</h3>
-  
-  <p>Du kan bruge <code>&lt;ds-logo></code> elementet til at vise et logo. Det giver dig adgang til at style og skalere logoet.</p>
-  
-  <p id="ex-logo-1">
-    <script type="module">
-      // Sådan ville du importere fra designsystem NPM-pakken, som du har installeret
-      // import { DSLogo } from '@dataforsyningen/designsystem'
-
-      // Sådan ville du importere fra en lokal mappe PATH
-      // import { DSLogo } from 'PATH/assets/designsystem.js'
-
-      import { DSLogo } from '../assets/designsystem.js'
-      customElements.define('ds-logo', DSLogo)
-    </script>
-
-    <a class="ds-logo" href="#logos">
-      <ds-logo></ds-logo>
-      <strong>Dataforsyningen</strong>
-      <span>Styrelsen for Dataforsyning og Infrastruktur</span>
-    </a>
-  </p>
-
-  <div style="padding-top: var(--space);">
-    <p class="ds-logo" href="#logos" style="width: 12rem;">
-      <ds-logo></ds-logo>
-      <strong>Produktnavn</strong>
-      <span>SDFI</span>
-    </p>
-  </div> 
-
-  <p>Det kræver, at du importerer <strong>designsystem.js</strong> <br>Derefter kan logo/bomærke og logotypografi kan sættes op sådan her:</p>
-
-  <code-view data-snip="ex-logo-1"></code-view>
+  <h3>Logo i forskellige størrelser</h3>
 
   <p><code>&lt;ds-logo></code>-elementet skalerer selv i forhold til hvor meget plads, der er.</p>
 

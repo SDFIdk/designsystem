@@ -219,7 +219,6 @@ var DSTogglePanel = class extends HTMLElement {
     this.toggleButton.addEventListener("click", this.toggle.bind(this));
   }
   renderToggleButton() {
-    console.log("the this", this);
     const externalToggleButton = this.parentElement.querySelector(`button[for="${this.id}"]`);
     if (externalToggleButton) {
       externalToggleButton.id = `ds-toggle-button-${this.componentId}`;
