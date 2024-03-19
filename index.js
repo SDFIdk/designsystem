@@ -5,6 +5,7 @@ import { DSTogglePanel } from './src/js/togglePanel.js'
 import { Spinner } from './src/js/spinner.js'
 import { Tabs } from './src/js/tabs.js'
 import { DSLogo } from './src/js/logo.js'
+import { DSLogoTitle } from './src/js/logoTitle.js'
 import { DSNav } from './src/js/responsiveNav.js'
 import { DSIcon } from './src/js/icon.js'
 import { popoverPolyfill } from './src/js/popover.js'
@@ -18,6 +19,7 @@ export {
   CodeView,
   ThemeToggle,
   DSLogo,
+  DSLogoTitle,
   DSNav,
   DSIcon,
   popoverPolyfill,

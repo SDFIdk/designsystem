@@ -70,7 +70,6 @@ ds-logo.transparent {
 }
 
 /* Styles for smaller logo */
-
 .ds-logo.small > ds-logo {
   width: 3rem;
   height: 3rem;
@@ -87,4 +86,14 @@ ds-logo.transparent {
 }
 :is(.ds-container) .ds-logo.small > ds-logo {
   margin-left: -0.66rem;
+}
+
+/* Link styles for DSLogoTitle */
+a > ds-logo-title {
+  color: var(--color);
+}
+a:hover > ds-logo-title,
+a:active > ds-logo-title {
+  background-color: var(--bg3);
+  border-radius: var(--space) var(--space-lg) var(--space-lg) var(--space);
 }

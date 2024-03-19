@@ -18,11 +18,7 @@
 
       <div class="ds-container">
 
-        <p class="ds-logo">
-          <ds-logo></ds-logo>
-          <strong>Dataforsyningen</strong>
-          <span>Styrelsen for Dataforsyning og Infrastruktur</span>
-        </p>
+        <ds-logo-type title="Dataforsyningen"></ds-logo-type>  
       
         <h1>Designguide eksempler</h1>
         <p class="blockquote">Reference-implementationer af SDFIs designguide med HTML/CSS</p>
@@ -54,18 +50,41 @@
 
   <p>Det kræver, at du importerer <strong>designsystem.js</strong> <br>Derefter kan logo/bomærke og logotypografi kan sættes op som vist herunder.</p>
 
-  <div id="ex-logo-1">
+  <code-view>
     <script type="module">
       // Sådan ville du importere fra designsystem NPM-pakken, som du har installeret
-      // import { DSLogo } from '@dataforsyningen/designsystem'
+      import { DSLogoTitle, DSLogo } from '@dataforsyningen/designsystem'
 
       // Sådan ville du importere fra en lokal mappe PATH
-      // import { DSLogo } from 'PATH/assets/designsystem.js'
+      import { DSLogoTitle, DSLogo } from 'PATH/assets/designsystem.js'
 
-      import { DSLogo } from '../assets/designsystem.js'
       customElements.define('ds-logo', DSLogo)
+      customElements.define('ds-logo-title', DSLogoTitle)
     </script>
+  </code-view>
 
+  <div id="ex-logo-5">
+    <ds-logo-title title="Dataforsyningen" byline="Styrelsen for Dataforsyning og Infrastruktur"></ds-logo-title>
+
+    <br>
+
+    <a href="#">
+      <ds-logo-title title="Skråfoto" byline="SDFI"></ds-logo-title>
+    </a>
+
+    <br>
+
+    <ds-logo-title title="Produktnavn" style="width: 15rem; height: 3rem;"></ds-logo-title>
+    
+  </div>
+
+  <br>
+
+  <code-view data-snip="ex-logo-5"></code-view>
+
+  <p>Alternativt kan logo og logotype sættes op som herunder for at få lidt mere fleksibilitet:</p>
+
+  <div id="ex-logo-1">
     <a class="ds-logo" href="#">
       <ds-logo></ds-logo>
       <strong>Dataforsyningen</strong>
@@ -186,13 +205,15 @@
     DSNav,
     DSTogglePanel,
     Spinner,
-    DSLogo
+    DSLogo,
+    DSLogoTitle
   } from '../assets/designsystem.js'
   customElements.define('code-view', CodeView)
   customElements.define('ds-theme-toggle', ThemeToggle)
   customElements.define('ds-tabs', Tabs)
   customElements.define('ds-nav', DSNav)
   customElements.define('ds-logo', DSLogo)
+  customElements.define('ds-logo-title', DSLogoTitle)
   customElements.define('ds-spinner', Spinner)
   if (!customElements.get('ds-toggle-panel')) {
     customElements.define('ds-toggle-panel', DSTogglePanel)

@@ -18,11 +18,7 @@
 
       <div class="ds-container">
 
-        <p class="ds-logo">
-          <ds-logo></ds-logo>
-          <strong>Dataforsyningen</strong>
-          <span>Styrelsen for Dataforsyning og Infrastruktur</span>
-        </p>
+        <ds-logo-type title="Dataforsyningen"></ds-logo-type>  
       
         <h1>Designguide eksempler</h1>
         <p class="blockquote">Reference-implementationer af SDFIs designguide med HTML/CSS</p>
@@ -915,13 +911,15 @@
     DSNav,
     DSTogglePanel,
     Spinner,
-    DSLogo
+    DSLogo,
+    DSLogoTitle
   } from '../assets/designsystem.js'
   customElements.define('code-view', CodeView)
   customElements.define('ds-theme-toggle', ThemeToggle)
   customElements.define('ds-tabs', Tabs)
   customElements.define('ds-nav', DSNav)
   customElements.define('ds-logo', DSLogo)
+  customElements.define('ds-logo-title', DSLogoTitle)
   customElements.define('ds-spinner', Spinner)
   if (!customElements.get('ds-toggle-panel')) {
     customElements.define('ds-toggle-panel', DSTogglePanel)
