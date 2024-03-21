@@ -270,7 +270,7 @@ select {
   background-size: var(--space-md) auto;
   background-position: center right calc(var(--space) * 0.75);
   background-repeat: no-repeat;
-  padding-right: var(--space-lg);
+  padding-right: calc(var(--space) * 2.5);
 }
 
 // Helper
