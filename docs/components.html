@@ -52,6 +52,7 @@
       <li><a href="#spinner">Loading spinner</a></li>
       <li><a href="#popover">Popover</a></li>
       <li><a href="#toast">Toast</a></li>
+      <li><a href="#datatable">Data table</a></li>
     </ul>
   </nav>
   
@@ -406,7 +407,38 @@ customElements.define('ds-spinner', Spinner)
   <code-view data-snip="ex-toast-1"></code-view>
 
 </section>
-</main><footer class="ds-footer">
+<article id="datatable">
+
+  <h2>Data table</h2>
+
+  <p>Data table er en avanceret tabel, hvor indhold kan filtreres og sorteres.</p>
+
+  <div id="ex-datatable-1">
+<ds-data-table></ds-data-table>
+
+<script>
+  window.addEventListener('load', () => {
+
+    document.querySelector('ds-data-table').data = {
+      headers: [
+        'Titel', 'Anden titel', 'Trejde titel'
+      ],
+      body: [
+        ['Noget tekst', 124522, 87665552],
+        ['Anden tekst', 124, 5552],
+        [7466, 522, 'Tekst tekst'],
+        ['Helt anden tekst', 14522, 876552],
+        ['Noget tekst', 124522, 87665552235]
+      ]
+    }
+
+  })
+</script>
+  </div>
+
+  <code-view data-snip="ex-datatable-1"></code-view>
+
+</article></main><footer class="ds-footer">
   <div class="ds-container">
     <ds-logo-title title="SDFI"></ds-logo-title>  
     <hr>
@@ -423,7 +455,8 @@ customElements.define('ds-spinner', Spinner)
     DSTogglePanel,
     Spinner,
     DSLogo,
-    DSLogoTitle
+    DSLogoTitle,
+    DSDataTable
   } from '../assets/designsystem.js'
   customElements.define('code-view', CodeView)
   customElements.define('ds-theme-toggle', ThemeToggle)
@@ -432,6 +465,7 @@ customElements.define('ds-spinner', Spinner)
   customElements.define('ds-logo', DSLogo)
   customElements.define('ds-logo-title', DSLogoTitle)
   customElements.define('ds-spinner', Spinner)
+  customElements.define('ds-data-table', DSDataTable)
   if (!customElements.get('ds-toggle-panel')) {
     customElements.define('ds-toggle-panel', DSTogglePanel)
   }
