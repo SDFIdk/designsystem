@@ -701,6 +701,7 @@ var DSDataTable = class extends HTMLElement {
     this.innerHTML = "";
     const filterElement = document.createElement("input");
     filterElement.type = "search";
+    filterElement.style.width = "10rem";
     const tableElement = document.createElement("table");
     tableElement.innerHTML = "<thead></thead><tbody></tbody>";
     tableElement.querySelector("thead").append(this.#renderHeader());
@@ -721,14 +722,17 @@ var DSDataTable = class extends HTMLElement {
     const tableBody = this.querySelector("tbody");
     tableBody.innerHTML = "";
     this.#tableBodyFiltered.forEach((rowData) => {
-      const tableBodyRow = document.createElement("tr");
-      rowData.forEach((cellData) => {
-        const tableBodyCell = document.createElement("td");
-        tableBodyCell.innerText = cellData;
-        tableBodyRow.append(tableBodyCell);
-      });
-      tableBody.append(tableBodyRow);
+      tableBody.append(this.#renderCells(rowData));
     });
+  }
+  #renderCells(rowData) {
+    const rowElement = document.createElement("tr");
+    rowData.forEach((cellData) => {
+      const tableBodyCell = document.createElement("td");
+      tableBodyCell.innerText = cellData;
+      rowElement.append(tableBodyCell);
+    });
+    return rowElement;
   }
   #setupListeners() {
     this.addEventListener("input", (event) => {
