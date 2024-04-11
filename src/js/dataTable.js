@@ -8,7 +8,7 @@ export class DSDataTable extends HTMLElement {
     this.#tableHeaders = payload.headers
     this.#tableBody = payload.body  
     this.#tableBodyFiltered = payload.body
-    this.#render()
+    this.render()
   }
 
   constructor() {
@@ -16,78 +16,174 @@ export class DSDataTable extends HTMLElement {
   }
 
   connectedCallback() {
-    this.#setupListeners()
+    this.className = 'ds-data-table'
   }
 
-  #render() {
-
+  render() {
     this.innerHTML = ''
 
-    const filterElement = document.createElement('input')
-    filterElement.type = 'search'
-    filterElement.style.width = '10rem'
+    this.append(this.renderFilterInput())
 
     const tableElement = document.createElement('table')
     tableElement.innerHTML = '<thead></thead><tbody></tbody>' 
-    
-    tableElement.querySelector('thead').append(this.#renderHeader())
-    
-    this.append(filterElement)
     this.append(tableElement)
 
-    this.#renderBody()
+    this.renderHeader()
+    this.renderBody()
   }
 
-  #renderHeader() {
+  renderFilterInput() {
+    const filterElement = document.createElement('input')
+    filterElement.type = 'search'
+    filterElement.style.width = 'auto'
+    filterElement.addEventListener('input', this.filterDataHandler.bind(this))
+    return filterElement
+  }
+
+  renderHeader() {
+    const tableHead = this.querySelector('thead')
     const tableHeaderRow = document.createElement('tr')
-    this.#tableHeaders.forEach((header) => {
-      const tableHeaderCell = document.createElement('th')
-      tableHeaderCell.innerText = header
-      tableHeaderRow.append(tableHeaderCell)
+    this.#tableHeaders.forEach((header, index) => {
+      tableHeaderRow.append(this.renderHeaderCell(header, index))
     })
-    return tableHeaderRow
+    tableHead.append(tableHeaderRow)
   }
 
-  #renderBody() {
+  renderHeaderCell(data, index) {
+    const headerElement = document.createElement('th')
+    headerElement.dataset.index = index
+    if (typeof data === 'object') {
+
+      if (data.type === 'number') {
+        headerElement.style.textAlign = 'right'
+      }
+
+      if (data.sortable) {
+        headerElement.innerHTML = `
+          <button class="quiet button-sort">
+            <svg class="icon-sort-ascend" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <title>Sortér stigende</title>
+              <path d="M6 14L12 8L18 14" stroke="var(--ds-icon-color, black)" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+            </svg>
+            <svg class="icon-sort-descend" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <title>Sortér faldende</title>
+              <path d="M6 10L12 16L18 10" stroke="var(--ds-icon-color, black)" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+            </svg>
+            ${ data.value}
+          </button>
+        `
+        headerElement.querySelector('button').addEventListener('click', this.sortHandler.bind(this))
+      } else {
+        headerElement.innerText = data.value
+      }
+
+    } else {
+
+      headerElement.innerText = data
+
+    }
+    return headerElement
+  }
+
+  renderBody() {
     const tableBody = this.querySelector('tbody')
     tableBody.innerHTML = ''
     this.#tableBodyFiltered.forEach((rowData) => {
-      tableBody.append(this.#renderCells(rowData))  
+      tableBody.append(this.renderCells(rowData))  
     })
   }
 
-  #renderCells(rowData) {
+  renderCells(rowData) {
     const rowElement = document.createElement('tr')
     rowData.forEach((cellData) => {
-      const tableBodyCell = document.createElement('td')
-      tableBodyCell.innerText = cellData
-      rowElement.append(tableBodyCell)
+      rowElement.append(this.renderCell(cellData))
     })
     return rowElement
   }
 
-  #setupListeners() {
-    this.addEventListener('input', (event) => {
-      console.log('changed search', event.target.value)
-      if (event.target.value === '' || !event.target.value) {
-        this.#tableBodyFiltered = this.#tableBody  
-      } else {
-        this.#tableBodyFiltered = this.#filterData(this.#tableBody, event.target.value)
+  renderCell(data) {
+    const cellElement = document.createElement('td')
+    if (typeof data === 'string') {
+
+      cellElement.innerText = data
+    
+    } else if (typeof data === 'number') {
+      
+      cellElement.innerText = data
+      cellElement.style.textAlign = 'right'
+
+    } else if (typeof data === 'object') {
+
+      if (data.type === 'number') {
+        cellElement.style.textAlign = 'right'
       }
-      this.#renderBody()
+
+      if (data.editable && data.type === 'number') {
+        cellElement.innerHTML = `<input type="number" value="${ data.value }" style="text-align: right; width: 100%;">`
+      } else if (data.editable && data.type === 'string') {
+        cellElement.innerHTML = `<input type="text" value="${ data.value }">`
+      } else {
+        cellElement.innerText = data.value
+      }
+
+      if (data.editCallback) {
+        cellElement.querySelector('input').addEventListener('input', data.editCallback)
+      }
+      
+    }
+    return cellElement
+  }
+
+  filterDataHandler(event) {
+    if (event.target.value === '' || !event.target.value) {
+      this.#tableBodyFiltered = this.#tableBody  
+    } else {
+      this.#tableBodyFiltered = this.filterData(this.#tableBody, event.target.value)
+    }
+    this.renderBody()
+  }
+
+  filterData(data, query) {    
+    return data.filter((dataRow) => {
+      let match = false
+      dataRow.forEach((cell) => {
+        if (cell.toString().includes(query)) {
+          match = true
+        }
+      })
+      return match
     })
   }
 
-  #filterData(data, query) {
-    return data.filter((dataRow) => {
-      console.log('check row')
-      let gotHit = false
-      dataRow.forEach((cell) => {
-        if (cell.toString().includes(query)) {
-          gotHit = true
-        }
-      })
-      return gotHit
+  sortHandler(event) {
+    let target = event.target
+    if (event.target.tagName === 'SVG') {
+      target = event.target.parentElement
+    }
+    target.classList.toggle('asc')
+    const sortMode = target.className.includes('asc')
+    const targetIndex = target.parentElement.dataset.index
+    this.#tableBodyFiltered = this.sortData(this.#tableBodyFiltered, targetIndex, sortMode)
+    this.renderBody()
+  }
+
+  sortData(data, columnIndex, direction) {
+    return data.sort((a,b) => {
+      let xVal, yVal
+      if (direction) {
+        xVal = a[columnIndex].value ? a[columnIndex].value : a[columnIndex]
+        yVal = b[columnIndex].value ? b[columnIndex].value : b[columnIndex]
+      } else {
+        yVal = a[columnIndex].value ? a[columnIndex].value : a[columnIndex]
+        xVal = b[columnIndex].value ? b[columnIndex].value : b[columnIndex] 
+      }
+      if (xVal > yVal) {
+        return 1
+      } else if (xVal > yVal) {
+        return -1
+      } else {
+        return 0
+      }
     })
   }
 

@@ -1,0 +1,20 @@
+.ds-data-table .button-sort {
+  position: relative;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  padding-right: var(--space-lg);
+  font-weight: 600;
+}
+.ds-data-table .icon-sort-ascend,
+.ds-data-table .icon-sort-descend {
+  position: absolute;
+  right: var(--space-sm);
+  width: 1rem;
+  height: 1rem;
+}
+.ds-data-table .icon-sort-ascend {
+  top: 0;
+}
+.ds-data-table .icon-sort-descend {
+  bottom: 0;
+}

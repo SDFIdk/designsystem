@@ -12,14 +12,48 @@
 
     document.querySelector('ds-data-table').data = {
       headers: [
-        'Titel', 'Anden titel', 'Trejde titel'
+        'Simple Title',
+        {
+          value: 'Advanced title',
+          sortable: true,
+          type: 'string'
+        },
+        {
+          value: 'Another title',
+          sortable: true, 
+          type: 'number'
+        },
+        {
+          value: 'Just a title',
+          type: 'number'
+        }
       ],
       body: [
-        ['Noget tekst', 124522, 87665552],
-        ['Anden tekst', 124, 5552],
-        [7466, 522, 'Tekst tekst'],
-        ['Helt anden tekst', 14522, 876552],
-        ['Noget tekst', 124522, 87665552235]
+        ['Simple strings and numbers', 'Some text', 345.678, -972],
+        [
+          'Advanced cell options',
+          {
+            value: 'Editable text content',
+            type: 'string',
+            editable: true,
+            editCallback: function(event) {
+              alert(`This input was edited: ${event.target.value}`)
+            }
+          },
+          {
+            value: 1234.5678,
+            type: 'number'
+          }, 
+          {
+            
+            value: 1234,
+            type: 'number',
+            editable: true
+          }
+        ],
+        ['Text and text', 'More text', 0, -1],
+        ['Simple strings and numbers', 'Text', -345.678, 972],
+        ['Some numbers are strings here', '123445', 362, 52],
       ]
     }
 
