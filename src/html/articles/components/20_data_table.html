@@ -5,55 +5,17 @@
   <p>Data table er en avanceret tabel, hvor indhold kan filtreres og sorteres.</p>
 
   <div id="ex-datatable-1">
-<ds-data-table></ds-data-table>
+<ds-data-table id="dtable-1"></ds-data-table>
 
 <script>
   window.addEventListener('load', () => {
 
-    document.querySelector('ds-data-table').data = {
-      headers: [
-        'Simple Title',
-        {
-          value: 'Advanced title',
-          sortable: true,
-          type: 'string'
-        },
-        {
-          value: 'Another title',
-          sortable: true, 
-          type: 'number'
-        },
-        {
-          value: 'Just a title',
-          type: 'number'
-        }
-      ],
+    document.querySelector('#dtable-1').data = {
+      headers: ['Simple table', 'Title', 'Title'],
       body: [
-        ['Simple strings and numbers', 'Some text', 345.678, -972],
-        [
-          'Advanced cell options',
-          {
-            value: 'Editable text content',
-            type: 'string',
-            editable: true,
-            editCallback: function(event) {
-              alert(`This input was edited: ${event.target.value}`)
-            }
-          },
-          {
-            value: 1234.5678,
-            type: 'number'
-          }, 
-          {
-            
-            value: 1234,
-            type: 'number',
-            editable: true
-          }
-        ],
-        ['Text and text', 'More text', 0, -1],
-        ['Simple strings and numbers', 'Text', -345.678, 972],
-        ['Some numbers are strings here', '123445', 362, 52],
+        ['Some text', 71, 41],
+        ['Another text', 15, 98],
+        ['Wonderful text', 1, 23]
       ]
     }
 
@@ -63,4 +25,66 @@
 
   <code-view data-snip="ex-datatable-1"></code-view>
 
+  <div id="ex-datatable-2">
+    <ds-data-table id="dtable-2"></ds-data-table>
+    
+    <script>
+      window.addEventListener('load', () => {
+    
+        document.querySelector('#dtable-2').data = {
+          headers: [
+            'Simple Title', // You can mix and match simple types and object type data.
+            {
+              type: 'string', // 'string' or 'number'. Default is value's `typeof`. Renders with different text alignment according to type.
+              value: 'Advanced title', // This is the actual content
+              sortable: true // Boolean. Default is `true`. `true` means this column should have the sort feature.
+            },
+            {
+              type: 'number',
+              value: 'Another title',
+              sortable: true
+            },
+            {
+              type: 'number',
+              value: 'Just a title',
+              sortable: false 
+            }
+          ],
+          body: [
+            ['Simple strings and numbers', 'Some text', 345.678, -972], // This is the simple syntax
+            [
+              'Advanced cell options',
+              {
+                type: 'string', // 'string' or 'number'. Default is value's `typeof`. Renders with different text alignment according to type.
+                value: 'Editable text content', // The actual content
+                editable: true, // Boolean. Default `false`. Whether the content should be wrapped in an input field.
+                editCallback: function(event) { // Function to executes
+                  alert(`This input was edited: ${event.target.value}`)
+                }
+              },
+              {
+                type: 'number',
+                value: 1234.5678,
+              }, 
+              { 
+                type: 'number',
+                value: 1234,
+                editable: true
+              },
+              {
+                type: 'aside',
+                value: 'This is descriptive or comment-like content that should presented adjacent to the row of data'
+              }
+            ],
+            ['Text and text', 'More text', 0, -1],
+            ['Simple strings and numbers', 'Text', -345.678, 972],
+            ['Some numbers are strings here', '123445', 362, 52],
+          ]
+        }
+    
+      })
+    </script>
+  </div>
+
+  <code-view data-snip="ex-datatable-2"></code-view>
 </article>
