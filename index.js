@@ -8,6 +8,7 @@ import { DSLogo } from './src/js/logo.js'
 import { DSLogoTitle } from './src/js/logoTitle.js'
 import { DSNav } from './src/js/responsiveNav.js'
 import { DSIcon } from './src/js/icon.js'
+import { DSDataTable } from './src/js/dataTable.js'
 import { popoverPolyfill } from './src/js/popover.js'
 import { showToast } from './src/js/toast.js'
 
@@ -22,6 +23,7 @@ export {
   DSLogoTitle,
   DSNav,
   DSIcon,
+  DSDataTable,
   popoverPolyfill,
   showToast
 }
