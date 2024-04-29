@@ -31,12 +31,13 @@ export class DSDataTable extends HTMLElement {
 
     this.renderHeader()
     this.renderBody()
+    this.dispatchEvent(new CustomEvent('datatable:update', {bubbles: true}))
   }
 
   renderFilterInput() {
     const filterElement = document.createElement('input')
     filterElement.type = 'search'
-    filterElement.style.width = 'auto'
+    filterElement.placeholder = 'Filter'
     filterElement.addEventListener('input', this.filterDataHandler.bind(this))
     return filterElement
   }
@@ -131,6 +132,9 @@ export class DSDataTable extends HTMLElement {
         cellElement.querySelector('input').addEventListener('input', data.editCallback)
       }
       
+    }
+    if (data.className) {
+      cellElement.classList.add(data.className)
     }
     return cellElement
   }

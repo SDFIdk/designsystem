@@ -413,6 +413,8 @@ customElements.define('ds-spinner', Spinner)
 
   <p>Data table er en avanceret tabel, hvor indhold kan filtreres og sorteres.</p>
 
+  <p><strong>Events:</strong> Når en data table er renderet på skærmen, dispatcher den en <code>datatable:update</code> event.</p>
+
   <div id="ex-datatable-1">
 <ds-data-table id="dtable-1"></ds-data-table>
 
@@ -462,14 +464,14 @@ customElements.define('ds-spinner', Spinner)
           body: [
             ['Simple strings and numbers', 'Some text', 345.678, -972], // This is the simple syntax
             [
-              'Advanced cell options',
               {
                 type: 'string', // 'string' or 'number'. Default is value's `typeof`. Renders with different text alignment according to type.
-                value: 'Editable text content', // The actual content
+                value: 'Advanced cell options', // The actual content
                 editable: true, // Boolean. Default `false`. Whether the content should be wrapped in an input field.
                 editCallback: function(event) { // Function to executes
                   alert(`This input was edited: ${event.target.value}`)
-                }
+                },
+                className: 'custom-css-classname' // class name for this table cell. Useful for custom CSS styling.
               },
               {
                 type: 'number',
@@ -479,7 +481,8 @@ customElements.define('ds-spinner', Spinner)
                 type: 'number',
                 value: 1234,
                 editable: true
-              }
+              },
+              'You can mix simple and advanced content'
             ],
             ['Text and text', 'More text', 0, -1],
             ['Simple strings and numbers', 'Text', -345.678, 972],
