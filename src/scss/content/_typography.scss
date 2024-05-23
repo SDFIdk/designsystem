@@ -111,7 +111,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  margin: var(--space-lg) 0 var(--space);
+  margin: 0;
   font-family: var(--font-family);
   font-style: normal;
   color: var(--color);
@@ -130,19 +130,22 @@ h1,
   font-size: 2.625rem;
   font-weight: 500;
   line-height: 1.07;
+  margin-bottom: var(--space-md);
 }
 h2,
 .h2 {
   font-size: 1.375rem;
   font-weight: 500;
   line-height: 1.14;
+  margin-bottom: var(--space);
 }
 h3,
 .h3 {
   font-size: 1.188rem;
   font-weight: 500;
   line-height: 1.10;
-  letter-spacing: 0.01rem; 
+  letter-spacing: 0.01rem;
+  margin-bottom: var(--space-sm);
 }
 h4,
 .h4 {
@@ -150,6 +153,7 @@ h4,
   font-weight: 570;
   line-height: 1.12;
   letter-spacing: 0.02rem;
+  margin-bottom: var(--space-xs);
 }
 h5,
 .h5,
@@ -159,6 +163,7 @@ h6,
   font-weight: 600;
   line-height: 1.14;
   letter-spacing: 0.02rem;
+  margin-bottom: var(--space-xs);
 }
 
 // Small
