@@ -14,14 +14,18 @@
   --font-style: normal;
 
   // Spacings
-  --space: 1rem;
   --space-xxs:  2px;
-  --space-xs:   calc(0.25 * var(--space));
-  --space-sm:   calc(0.5 * var(--space));
-  --space-md:   calc(1.5 * var(--space));
-  --space-lg:   calc(2 * var(--space));
-  --space-xl:   calc(3.5 * var(--space));
-  --space-xxl:  calc(5 * var(--space));
+  --space-xs:   0.25rem;
+  --space-sm:   0.5rem;
+  --space:      1rem;
+  --space-md:   1.5rem;
+  --space-lg:   2rem;
+  --space-xl:   3.5rem;
+  --space-xxl:  5rem;
+
+  --gap: 2vw;
+  --gap-md: 3vw;
+  --gap-lg: 5vw;
 
   // Margins, paddings
   --margin: var(--space-md);

@@ -71,8 +71,8 @@ ds-logo.transparent {
 
 /* Styles for smaller logo */
 .ds-logo.small > ds-logo {
-  width: 3rem;
-  height: 3rem;
+  width: 2rem;
+  height: 2rem;
 }
 .ds-logo.small > strong {
   padding-top: 0.33rem;
@@ -88,12 +88,26 @@ ds-logo.transparent {
   margin-left: -0.66rem;
 }
 
-/* Link styles for DSLogoTitle */
-a > ds-logo-title {
+/* Styles for links wrapping around logo */
+a:has(ds-logo-title),
+a:link:has(ds-logo-title),
+a:visited:has(ds-logo-title) {
+  display: inline-block;
+  border-radius: 2.25rem;
   color: var(--color);
+  text-decoration: none;
+  padding: var(--space-xs) 1.75rem var(--space-xs) var(--space);
+  margin-left: -1rem;
 }
-a:hover > ds-logo-title,
-a:active > ds-logo-title {
-  background-color: var(--bg3);
-  border-radius: var(--space) var(--space-lg) var(--space-lg) var(--space);
+a:hover:has(ds-logo-title),
+a:active:has(ds-logo-title) {
+  background-color: var(--primary);
+  color: var(--hvid);
+}
+
+/* Styles for placing logo on map */
+ds-logo-title.map {
+  padding: var(--space) var(--space-lg);
+  background: var(--shadow1);
+  border-radius: 0 0 var(--space-md) 0;
 }

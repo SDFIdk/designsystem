@@ -44,11 +44,13 @@
 
   <p><em>Bemærk! SDFIs logo må kun bruges af Styrelsen for Dataforsyning og Infrastruktur.</em></p>
 
+  <p><a href="/docs/layouts/logo-examples.html">Demoside med logo findes her.</a></p>
+
   <h3>Web component</h3>
   
   <p>Du kan bruge <code>&lt;ds-logo></code> elementet til at vise et logo. Det giver dig adgang til at style og skalere logoet.</p>
 
-  <p>Det kræver, at du importerer <strong>designsystem.js</strong> <br>Derefter kan logo/bomærke og logotypografi kan sættes op som vist herunder.</p>
+  <p>Det kræver, at du importerer <strong>designsystem.js</strong></p>
 
   <code-view>
     <script type="module">
@@ -63,44 +65,20 @@
     </script>
   </code-view>
 
+  <p>Derefter kan logo/bomærke og logotypografi sættes op som vist herunder.</p>
+
   <div id="ex-logo-5">
-    <ds-logo-title title="Dataforsyningen" byline="Styrelsen for Dataforsyning og Infrastruktur"></ds-logo-title>
-
-    <br>
-
-    <a href="#">
-      <ds-logo-title title="Skråfoto" byline="SDFI"></ds-logo-title>
-    </a>
-
-    <br>
-
-    <ds-logo-title title="Produktnavn" style="width: 15rem; height: 3rem;"></ds-logo-title>
-    
+    <p>
+      <ds-logo-title title="Dataforsyningen" byline="Styrelsen for Dataforsyning og Infrastruktur"></ds-logo-title>
+    </p>
+    <p>
+      <ds-logo-title class="small" title="Dataforsyningen" byline="Styrelsen for Dataforsyning og Infrastruktur"></ds-logo-title>
+    </p>
   </div>
 
   <br>
 
   <code-view data-snip="ex-logo-5"></code-view>
-
-  <p>Alternativt kan logo og logotype sættes op som herunder for at få lidt mere fleksibilitet:</p>
-
-  <div id="ex-logo-1">
-    <a class="ds-logo" href="#">
-      <ds-logo></ds-logo>
-      <strong>Dataforsyningen</strong>
-      <span>Styrelsen for Dataforsyning og Infrastruktur</span>
-    </a>
-
-    <br><br>
-
-    <p class="ds-logo small">
-      <ds-logo></ds-logo>
-      <strong>Produktnavn</strong>
-      <span>SDFI</span>
-    </p>
-  </div>
-
-  <code-view data-snip="ex-logo-1"></code-view>
 
   <h3>SVG-filer</h3>
 
