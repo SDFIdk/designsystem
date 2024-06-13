@@ -11,7 +11,7 @@
   margin-top: var(--space-md);
   margin-bottom: var(--space-md);
 
-  @media (min-width: $breakpoint-sm) {
+  @media (min-width: 36rem) {
     grid-template-columns: 1fr 1fr;
 
     & .ds-grid-item-large {
@@ -19,7 +19,7 @@
     }
   }
 
-  @media (min-width: $breakpoint-lg) {
+  @media (min-width: 60rem) {
     grid-template-columns: 1fr 1fr 1fr;
   }
 
@@ -35,7 +35,7 @@
     width: 100%;
   }
 
-  @media (min-width: $breakpoint-sm) {
+  @media (min-width: 36rem) {
     display: flex; 
     flex-flow: row wrap; 
     gap: var(--space-md);
@@ -46,7 +46,7 @@
     }
   }
 
-  @media (min-width: $breakpoint-md) { 
+  @media (min-width: 48rem) { 
     gap: var(--space-lg);
   }
 
@@ -59,7 +59,7 @@
   grid-template-columns: 1fr;
 }
 
-@media (min-width: $breakpoint-lg) {
+@media (min-width: 60rem) {
 
   .ds-grid-2-1 {
     grid-template-columns: 2fr 1fr;

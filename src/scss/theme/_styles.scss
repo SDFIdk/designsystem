@@ -47,17 +47,6 @@
   // Icons
   --icon-size: calc(var(--space) * 2.5);
 
-  // Responsive typography and spacing  
-  @media (min-width: $breakpoint-sm) {
-    --margin: var(--space-lg) var(--space-xl);
-    --map-element-spacing: var(--space-md) var(--space-lg) var(--space-lg);
-  }
-
-  @media (min-width: $breakpoint-lg) {
-    --margin: var(--space-xl) var(--space-xxl);
-    --map-element-spacing: var(--space-md) var(--space-xl) var(--space-lg);
-  }
-
   // Borders
   --border: solid var(--space-xxs) var(--border-color);
   --border-radius: (--space-xs);

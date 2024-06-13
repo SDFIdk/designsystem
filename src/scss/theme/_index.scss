@@ -3,18 +3,19 @@
  */
 
 // Colors
-@import "default/colors";
+@import "colors";
 
 // Common styles
-@import "default/styles";
+@import "styles";
 
 // Light theme (Default)
 // Can be forced with data-theme="light"
-@import "default/light";
+@import "light";
 
 // Dark theme (Auto)
 // Automatically enabled if user has Dark mode enabled
-@import "default/dark";
+@import "dark";
+
 @media only screen and (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     @include dark;

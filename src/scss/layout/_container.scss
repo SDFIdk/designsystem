@@ -10,20 +10,3 @@
   margin-right: auto;
   margin-left: auto;
 }
-
-.container,
-.ds-container {
-
-  @media (min-width: $breakpoint-sm) {
-    max-width: calc(100vw - var(--space) * 5);
-  }
-
-  @media (min-width: $breakpoint-md) {
-    max-width: calc(100vw - var(--space) * 7);
-  }
-
-  @media (min-width: $breakpoint-xl) {
-    max-width: 75rem;
-  }
-
-}
