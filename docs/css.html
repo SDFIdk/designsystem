@@ -20,7 +20,7 @@
 
         <ds-logo-title title="Designsystem"></ds-logo-title>
       
-        <h1>Designguide eksempler</h1>
+        <h1>SDFI Designsystem</h1>
         <p class="blockquote">Reference-implementationer af SDFIs designguide med HTML/CSS</p>
 
       </div>
@@ -33,12 +33,12 @@
           <li><a href="./components.html">UI-komponenter</a></li>
           <li><a href="./logos.html">Logo</a></li>
           <li><a href="https://github.com/SDFIdk/designsystem">Github</a></li>
-          <li><ds-theme-toggle></ds-theme-toggle></li>
         </ul>
       </nav>
 
-    </header>
-<main class="ds-container"><section class="index-wrapper">
+      <ds-theme-toggle style="position: fixed; bottom: var(--space); right: var(--space); width: auto; z-index: 10;"></ds-theme-toggle>
+
+    </header><main class="ds-container"><section class="index-wrapper">
 
   <h2>Indholdsfortegnelse</h2>
 
@@ -429,26 +429,26 @@
   <h2>Layout</h2>
 
   <nav style="display: flex; flex-flow: column nowrap; align-items: flex-start;">
-    <a href="./layouts/layout0.html">Layout eksempel, simpel</a>
-    <a href="./layouts/layout1.html">Layout eksempel med kolonner</a>
-    <a href="./layouts/layout2.html">Layout eksempel med udfyldende kolonner</a>
-    <a href="./layouts/layout3.html">Layout eksempel, grid 2-1</a>
-    <a href="./layouts/layout4.html">Layout eksempel, grid 2-1</a>
-    <a href="./layouts/layout5.html">Layout eksempel, grig 1-2</a>
-    <a href="./layouts/layout6.html">Layout eksempel med ikoner, etc.</a>
+    <a href="./examples/layout0.html">Layout eksempel, simpel</a>
+    <a href="./examples/layout1.html">Layout eksempel med kolonner</a>
+    <a href="./examples/layout2.html">Layout eksempel med udfyldende kolonner</a>
+    <a href="./examples/layout3.html">Layout eksempel, grid 2-1</a>
+    <a href="./examples/layout4.html">Layout eksempel, grid 2-1</a>
+    <a href="./examples/layout5.html">Layout eksempel, grig 1-2</a>
+    <a href="./examples/layout6.html">Layout eksempel med ikoner, etc.</a>
   </nav>
 
   <p>Herunder kan du finde flere detaljer om, hvordan du nemt laver layouts i SDFI-stil.</p>
   <p>Vi har lavet nogle eksempler, hvor du kan se forskellige layout-teknikker i praksis.</p>
   <ul>
-    <li><a href="./layouts/layout0.html">Se simpelt layout-eksempel</a></li>
-    <li><a href="./layouts/layout6.html">Se avanceret layout-eksempel (med ikoner, etc.)</a></li>
+    <li><a href="./examples/layout0.html">Se simpelt layout-eksempel</a></li>
+    <li><a href="./examples/layout6.html">Se avanceret layout-eksempel (med ikoner, etc.)</a></li>
   </ul>
 
   <h3>Kolonner og grids</h3>
 
   <p>Lav et simpelt kolonne-layout ved at tilføje <code>ds-grid</code> class til det element, der indeholder de elementer, som skal vises i kolonner.</p>
-  <p><a href="./layouts/layout1.html">Se demo</a></p>
+  <p><a href="./examples/layout1.html">Se demo</a></p>
 
   <div id="ex-grid-1">
     <section class="ds-grid">
@@ -464,7 +464,7 @@
   <h4>Fleksible kolonner</h4>
 
   <p>Hvis boksene gerne må bruge den plads, der er til rådighed, så kan du bruge <code>ds-flexgrid</code> class i stedet.</p>
-  <p><a href="./layouts/layout2.html">Se demo</a></p>
+  <p><a href="./examples/layout2.html">Se demo</a></p>
 
   <div id="ex-grid-2">
     <section class="ds-flexgrid">
@@ -482,7 +482,7 @@
 
   <p>Brug class <code>.ds-grid-2-1</code> på elementet udenom, når du vil vise to elementer som hhv. primær og sekundær kolonne.</p>
   
-  <p><a href="./layouts/layout4.html">Se demo</a></p>
+  <p><a href="./examples/layout4.html">Se demo</a></p>
 
   <div id="ex-grid-3">
     <section class="ds-grid-2-1">
@@ -495,7 +495,7 @@
 
   <p>Brug class <code>.ds-grid-1-2</code> hvis rækkefølgen skal være omvendt.</p>
   
-  <p><a href="./layouts/layout5.html">Se demo</a></p>
+  <p><a href="./examples/layout5.html">Se demo</a></p>
 
   <div id="ex-grid-4">
     <section class="ds-grid-1-2">
@@ -509,7 +509,7 @@
   <h3>Indholds-containere</h3>
   
   <p class="ds-container">Hvis du skal vise noget indhold i én kolonne midt i skærmen, så sæt <code>ds-container</code> class på elementet. Indholdet i denne tekst er centreret med class <code>ds-container</code></p>
-  <p><a href="./layouts/layout3.html">Se demo</a></p>
+  <p><a href="./examples/layout3.html">Se demo</a></p>
 
   <h3>Simpel rækkevisning</h3>
 
@@ -533,7 +533,7 @@
   <p>Du kan sætte den korrekte padding ved at bruge class <code>ds-padding</code> i HTML.</p>
   <pre><code>&lt;div class="ds-padding"> ... &lt;/div></code></pre>
 
-  <p><a href="layout1.html">Se demo</a></p>
+  <p><a href="./examples/layout1.html">Se demo</a></p>
 
   <p class="ds-padding" style="border: var(--border); display: inline-block;">
     Indhold med ds-padding omkring sig.
@@ -589,7 +589,7 @@
   <p>Du kan sætte den korrekte margin ved at bruge class <code>ds-margin</code> i HTML.</p>
   <pre><code>&lt;div class="ds-margin"> ... &lt;/div></code></pre>
 
-  <p><a href="layout2.html">Se demo</a></p>
+  <p><a href="./examples/layout2.html">Se demo</a></p>
 
   <p class="ds-margin" style="border: var(--border); display: inline-block;">
     Indhold med ds-margin omkring sig

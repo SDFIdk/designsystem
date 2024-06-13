@@ -1,0 +1,124 @@
+    <header class="ds-header">
+      <div class="ds-container">
+
+        <ds-theme-toggle style="position: fixed; top: var(--space-md); right: var(--space-md);"></ds-theme-toggle>
+
+        <p class="ds-logo">
+          <ds-logo></ds-logo>
+          <strong>Dataforsyningen</strong>
+          <span>Styrelsen for Dataforsyning og Infrastruktur</span>
+        </p>
+      
+        <h1>Layout eksempel: Frie offentlige geodata og kort</h1>
+        <p class="blockquote">Dataforsyningen giver dig direkte adgang til frie offentlige geografiske data via kortvisning, webservices, web applikationer, API'er og download. Du vil også finde viden om, hvordan data skaber nye muligheder og værdi for både offentlige og private.</p>
+
+      </div>
+    </header>
+
+    <main>
+
+      <section class="ds-container ds-grid">
+        <div class="ds-card ds-padding">
+          <h2 class="h3">
+            <ds-logo style="width: 3rem; --ds-logo-background-color: hsl(300,100%,29%); --ds-logo-outline-color: hsl(300,100%,29%);"></ds-logo>
+            Se og hent data
+          </h2>
+          <p>Har du brug for et baggrundskort, højdekurver, bygninger eller veje. Find informationer om data, se data på kort, hent webservices og download data.</p>
+        </div>
+        <div class="ds-card ds-padding">
+          <h2 class="h3">
+            <svg class="ds-icon"><use href="../../assets/designsystem-icons.svg#notification"/></svg>
+            Nyheder
+          </h2>
+          <p>Her finder du nyheder og meddelelser om data, aktiviteter og ændringer på Dataforsyningen.</p>
+        </div>
+        <div class="ds-card ds-padding">
+          <h2 class="h3">
+            <svg class="ds-icon"><use href="../../assets/designsystem-icons.svg#sider-cases"/></svg>
+            Er du IT-udvikler?
+          </h2>
+          <p>Bliv fortrolig med kald til SDFE's API'er. Find dokumentation med snitfladebeskrivelser, parametre, datafelter og kode snippets. Se også vores code repository på GitHub.</p>
+        </div>
+        <div class="ds-card ds-padding">
+          <h2 class="h3">
+            <svg class="ds-icon"><use href="../../assets/designsystem-icons.svg#mail"/></svg>
+            Læs vores cases
+          </h2>
+          <p>Hvordan kan geografiske data skabe værdi i din forretning? Få viden og inspiration til hvordan frie offentlige kort og data skaber nye muligheder og værdi for både offentlige og private.</p>
+        </div>
+      </section>
+
+      <div style="background-color: var(--bg1); padding: var(--space-lg) 0;">
+
+        <section class="ds-container ds-grid-2-1 ds-grid-separator">
+          
+          <article>
+            <h2>Forvaltning og Sagsbehandling</h2>
+            <p>Forvaltning og Sagsbehandling er en nem og samlet adgang til aktuelle grunddata målrettet kommunal sagsbehandling og offentlig forvaltning. Udover sagsbehandlingskortet inkluderer tjenesten lag med information om matrikelskel (både gældende og foreløbige), kommune- og regionsgrænser, stednavne og vejnavne og adresser.</p>
+            <p>Den primære skala for visualisering og anvendelse ligger i området 1:1.000 -> 1:25.000, men kortet kan også benyttes i både større og mindre skala. <a href="#">Her er et lækkert blåt link.</a></p>
+          </article>
+
+          <article>
+            <h2>Forvaltningstjenesten 2.0</h2>
+            <p>Forvaltningstjeneste (WMTS). Tjenesten har en høj performance. Tjenesten indeholder udvalgte lag i EPSG:25832: Basis_kort, Stednavne_basiskort, Vejnavne_basiskort, Husnummer WMTS tjenesten opdateres hver anden måned.</p>
+          </article>
+
+        </section>
+        
+      </div>
+
+    </main>
+
+    <footer class="ds-footer">
+      <div class="ds-container">
+        <div>
+          <p><strong>Dataforsyningen</strong><br><em>er en del af</em></p>
+          <hr>
+          <p class="ds-logo">
+            <ds-logo></ds-logo>
+            <strong>Insæt navn her</strong>
+            <span>Styrelsen for Dataforsyning og Infrastruktur</span>
+          </p>
+          <hr>
+          <p>Rentemestervej 8, 2400 København NV<br>EAN-nummer: 5798009813640<br>CVR-nummer: 37 28 41 14</p>
+          <hr>
+          <p>
+            <a href="tel:+4572545500" class="ds-icon">
+              <svg><use href="../../assets/designsystem-icons.svg#phone"/></svg>
+              7254 5500
+            </a>
+            <a href="mailto:sdfi@sdfi.dk" class="ds-icon">
+              <svg><use href="../../assets/designsystem-icons.svg#mail"/></svg>
+              sdfi@sdfi.dk
+            </a>
+          </p>
+          <p>Bemærk: Sender du os en e-mail, vil oplysningerne blive registreret i vores centrale, digitale system til videre sagsbehandling. </p>
+          <hr>
+          <p>
+            <a href="#" class="ds-icon">
+              <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right"/></svg>
+              Om løsningens navn
+            </a>
+            <a href="#" class="ds-icon">
+              <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right"/></svg>
+              Privatlivspolitik
+            </a>
+            <a href="#" class="ds-icon">
+              <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right"/></svg>
+              Cookiepolitik
+            </a>
+            <a href="/was" class="ds-icon">
+              <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right"/></svg>
+              Tilgængelighedserklæring
+            </a>
+          </p>
+        </div>
+        <hr>
+        <p>© 2023 Styrelsen for Dataforsyning og Infrastruktur</p>
+
+      </div>
+    </footer>
+
+    <script type="module">
+      import { DsLogo } from '../../assets/designsystem.js'
+    </script>

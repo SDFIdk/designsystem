@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="da">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1,user-scalable=yes">
+    <title>SDFI Designsystem eksempler</title>
+
+    <link rel="stylesheet" href="../../assets/designsystem.css">
+    <link rel="stylesheet" href="../docs.css">
+
+    <link rel="icon" href="../../assets/logos/logo-small.svg">
+
+  </head>
+  <body>
+
+    <ds-theme-toggle style="position: fixed; bottom: var(--space); right: var(--space);"></ds-theme-toggle><main>
+  <h2>Something about color</h2>
+</main>  <p style="position: fixed; bottom: var(--space); left: var(--space);">
+    <a role="button" href="../../index.html"><svg style="height: 100%;"><use href="../../assets/designsystem-icons.svg#arrow-left" /></svg> Tilbage til oversigten</a>
+  </p>
+
+
+  <script type="module">
+    import { ThemeToggle } from '../../assets/designsystem.js'
+    customElements.define('ds-theme-toggle', ThemeToggle)
+  </script>
+
+</body>
+</html>

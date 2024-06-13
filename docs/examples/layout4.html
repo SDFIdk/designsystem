@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="da">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1,user-scalable=yes">
+    <title>SDFI Designsystem eksempler</title>
+
+    <link rel="stylesheet" href="../../assets/designsystem.css">
+    <link rel="stylesheet" href="../docs.css">
+
+    <link rel="icon" href="../../assets/logos/logo-small.svg">
+
+  </head>
+  <body>
+
+    <ds-theme-toggle style="position: fixed; bottom: var(--space); right: var(--space);"></ds-theme-toggle>    <header id="header" class="ds-header">
+
+      <div class="ds-container">
+
+        <p class="ds-logo">
+          <strong>Dataforsyningen</strong>
+          <span>Styrelsen for Dataforsyning og Infrastruktur</span>
+        </p>
+      
+        <h1>Designguide eksempler</h1>
+        <p class="blockquote">Reference-implementationer af SDFIs designguide med HTML/CSS</p>
+
+      </div>
+    </header>
+
+    <main id="ex-layout" style="flex-grow: 1; display: flex; flex-flow: column nowrap;">
+
+      <section class="ds-grid-2-1 ds-margin">
+
+        <article class="ds-padding">
+          <h2>Bred spalte</h2>
+          <p>Primær Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </article>
+
+        <article class="ds-padding">
+          <h2>Smal spalte</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </article>
+
+      </section>
+
+    </main>
+    
+    <footer>
+      <div class="ds-margin">
+        <code-example data-snip="ex-layout"></code-example>
+      </div>
+      <p class="ds-margin">© 2022 Styrelsen for Dataforsyning og Infrastruktur</p>
+    </footer>  <p style="position: fixed; bottom: var(--space); left: var(--space);">
+    <a role="button" href="../../index.html"><svg style="height: 100%;"><use href="../../assets/designsystem-icons.svg#arrow-left" /></svg> Tilbage til oversigten</a>
+  </p>
+
+
+  <script type="module">
+    import { ThemeToggle } from '../../assets/designsystem.js'
+    customElements.define('ds-theme-toggle', ThemeToggle)
+  </script>
+
+</body>
+</html>
