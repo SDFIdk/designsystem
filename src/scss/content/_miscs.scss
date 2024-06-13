@@ -12,9 +12,9 @@
 hr {
   height: 1px; // 2
   border: 0;
-  background-color: var(--bg3);
+  background-color: var(--border-color);
   color: inherit; // 1
-  margin: var(--space-md) 0;
+  margin: var(--space) 0;
 }
 
 // Add the correct display in IE 10+
