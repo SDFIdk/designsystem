@@ -25,7 +25,8 @@
   --bg3: var(--c7);
 
   // Shadows
-  --shadow1: hsla(0, 0%, 0%, 0.66);
+  --shadow-1: hsla(0, 0%, 0%, 0.66);
+  --shadow-2: hsla(0, 0%, 100%, 0.33);
 
   // Muted colors
   --muted-color: var(--grey5);
@@ -33,7 +34,7 @@
 
   // Link colors
   --link: var(--highlight);
-  --link-hover: var(--c3);
+  --link-hover: var(--shadow-2);
   --link-focus: var(--highlight);
 
   // Primary colors

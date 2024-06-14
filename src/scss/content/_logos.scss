@@ -108,6 +108,6 @@ a:active:has(ds-logo-title) {
 /* Styles for placing logo on map */
 ds-logo-title.map {
   padding: var(--space) var(--space-lg);
-  background: var(--shadow1);
+  background: var(--shadow-1);
   border-radius: 0 0 var(--space-md) 0;
 }

@@ -1,6 +1,7 @@
 /* Icons */
 
-// SVG icon default styles
+/* SVG icon default styles */
+
 svg:has(use[href*="icon"]) {
   height: 2rem;
   width: 2rem;
@@ -10,7 +11,7 @@ svg:has(use[href*="icon"]) {
 /* Icons in links */
 
 a:has(use[href*="icon"]) {
-  display: flex;
+  display: inline-flex;
   flex-flow: row nowrap;
   align-items: center;
   gap: var(--space-xs);
@@ -18,11 +19,11 @@ a:has(use[href*="icon"]) {
   width: auto;
 }
 
-a svg:has(use[href*="icon"]) {
+a svg use[href*="icon"] {
   --ds-icon-color: var(--link);
 }
 
-a:hover svg:has(use[href*="icon"]),
-a:active svg:has(use[href*="icon"]) {
-  --ds-icon-color: var(--link-hover);
+a:hover svg use[href*="icon"],
+a:active svg use[href*="icon"] {
+  --ds-icon-color: var(--background-color);
 }
