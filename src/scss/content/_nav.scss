@@ -3,7 +3,8 @@
  */
 
 // Basic horizontal Navigation
-nav.ds-nav {
+nav.ds-nav,
+nav.ds-nav-vertical {
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-start;
@@ -25,7 +26,6 @@ nav.ds-nav {
     color: var(--color);
     padding: var(--space);
     border-bottom: solid var(--border-width) transparent;
-    word-wrap: none;
 
     &.active {
       color: var(--link);
@@ -45,23 +45,13 @@ nav.ds-nav {
 }
 
 // Vertical Nav
-aside,
-.ds-nav-vertical {
-  nav,
-  ol,
-  ul,
-  li {
-    display: block;
-  }
+nav.ds-nav-vertical {
+  flex-flow: column nowrap;
+  align-items: stretch;
+  border-bottom: solid 1px var(--border-color);
 
-  li {
-    
-    a {
-      display: block;
-    }
-  }
-  li + li {
-    margin-top: var(--space-sm);
+  & > * {
+    border-top: solid 1px var(--border-color);
   }
 }
 
