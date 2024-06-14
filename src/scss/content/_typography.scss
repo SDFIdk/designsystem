@@ -78,6 +78,7 @@ a,
   font-weight: var(--font-weight);
   transition: background-color var(--transition);
   text-underline-offset: var(--space-xs);
+  border-radius: var(--border-radius);
 
   &:is([aria-current], :hover, :active) {
     color: var(--link-hover);
@@ -85,7 +86,7 @@ a,
   }
 
   &:focus {
-    color: var(--link-focus);
+    outline: solid 1px var(--link-focus);
   }
 }
 
@@ -130,7 +131,7 @@ h1,
   font-size: 2.625rem;
   font-weight: 500;
   line-height: 1.07;
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space);
 }
 h2,
 .h2 {

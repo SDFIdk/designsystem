@@ -7,14 +7,11 @@
     <title>SDFI Designsystem eksempler</title>
 
     <link rel="stylesheet" href="../../assets/designsystem.css">
-    <link rel="stylesheet" href="../docs.css">
 
     <link rel="icon" href="../../assets/logos/logo-small.svg">
 
   </head>
-  <body>
-
-    <ds-theme-toggle style="position: fixed; bottom: var(--space); right: var(--space);"></ds-theme-toggle><main class="ds-container" style="margin: var(--space-xl) auto; max-width: 44rem;">
+  <body><main class="ds-container" style="margin: var(--space-xl) auto; max-width: 44rem;">
 
   <h1>H1. Lorem ipsum</h1>
   <p class="manchet">Sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore mag.</p>
@@ -49,10 +46,9 @@
     <a href="#">Action text</a>
   </p>
 
-</main>  <p style="position: fixed; bottom: var(--space); left: var(--space);">
-    <a role="button" href="../../index.html"><svg style="height: 100%;"><use href="../../assets/designsystem-icons.svg#arrow-left" /></svg> Tilbage til oversigten</a>
-  </p>
-
+</main>  <a style="position: fixed; bottom: var(--space-md); left: var(--space);" role="button" href="../../index.html"><svg><use href="../../assets/designsystem-icons.svg#arrow-left" /></svg> Tilbage til oversigten</a>
+  
+  <ds-theme-toggle style="position: fixed; bottom: var(--space-md); right: var(--space);"></ds-theme-toggle>
 
   <script type="module">
     import { ThemeToggle } from '../../assets/designsystem.js'

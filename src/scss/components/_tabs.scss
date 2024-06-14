@@ -1,7 +1,6 @@
 // Tabs
 .ds-nav-tabs,
 ds-tabs .ds-tabs-header {
-  border-bottom: solid 1px var(--nav-tab-border);
   display: flex;
   flex-flow: row nowrap;
   align-items: flex-end;
@@ -25,14 +24,12 @@ ds-tabs .ds-tabs-header {
     &:active {
       border-color: var(--nav-tab-border) !important;
       background-color: transparent;
-      color: var(--link-hover);
       text-decoration: none;
     }
 
     &:focus {
       border-color: var(--link-focus) !important;
       background-color: transparent;
-      color:  var(--link-focus);
     }
   }
 }
@@ -40,7 +37,6 @@ ds-tabs .ds-tabs-header {
 .ds-nav-tabs > a,
 .ds-nav-tabs > [role="link"],
 ds-tabs .ds-tabs-header button {
-  text-transform: uppercase;
   padding: var(--space-xs) var(--space);
   margin: 0;
   border-style: solid;

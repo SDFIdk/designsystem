@@ -1,3 +1,43 @@
-<main>
-  <h2>Something about color</h2>
+<main class="ds-container">
+
+  <header style="padding: var(--space-lg) 0">
+    <ds-logo-title></ds-logo-title>
+  </header>
+
+  <div class="ds-grid-2-1">
+    <article>
+      <h1>Layout</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+    </article>
+    <aside>
+      <h2 class="h5">H5 overskrift</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+      <p><a href="#">Action text <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right" /></svg></a></p>
+    </aside>
+  </div>
+
 </main>
+
+<hr>
+
+<nav class="ds-nav-tabs ds-container">
+  <ul>
+    <li>
+      <h4><svg><use href="../../assets/designsystem-icons.svg#sider-data" /></svg> Produktnavn</h4>
+    </li>
+    <li class="active">
+      <a href="#tabs">Link</a>    
+    </li>
+    <li>
+      <a href="#tabs">Link</a>    
+    </li>
+    <li>
+      <a href="#tabs">Link</a>    
+    </li>
+  </ul>
+</nav>
+
+<script type="module">
+  import { DSLogoTitle } from '../../assets/designsystem.js'
+  customElements.define('ds-logo-title', DSLogoTitle)
+</script>

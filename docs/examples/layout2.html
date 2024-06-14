@@ -7,14 +7,11 @@
     <title>SDFI Designsystem eksempler</title>
 
     <link rel="stylesheet" href="../../assets/designsystem.css">
-    <link rel="stylesheet" href="../docs.css">
 
     <link rel="icon" href="../../assets/logos/logo-small.svg">
 
   </head>
-  <body>
-
-    <ds-theme-toggle style="position: fixed; bottom: var(--space); right: var(--space);"></ds-theme-toggle>    <header id="header" class="ds-header">
+  <body>    <header id="header" class="ds-header">
 
       <div class="ds-container">
 
@@ -60,10 +57,9 @@
     <script src="js/highlight.min.js"></script>
     <script>
       hljs.highlightAll()
-    </script>  <p style="position: fixed; bottom: var(--space); left: var(--space);">
-    <a role="button" href="../../index.html"><svg style="height: 100%;"><use href="../../assets/designsystem-icons.svg#arrow-left" /></svg> Tilbage til oversigten</a>
-  </p>
-
+    </script>  <a style="position: fixed; bottom: var(--space-md); left: var(--space);" role="button" href="../../index.html"><svg><use href="../../assets/designsystem-icons.svg#arrow-left" /></svg> Tilbage til oversigten</a>
+  
+  <ds-theme-toggle style="position: fixed; bottom: var(--space-md); right: var(--space);"></ds-theme-toggle>
 
   <script type="module">
     import { ThemeToggle } from '../../assets/designsystem.js'

@@ -1,27 +1,28 @@
 /* Icons */
 
-.ds-icon {
-  outline: solid 1px var(--grey3);
+// SVG icon default styles
+svg:has(use[href*="icon"]) {
+  height: 2rem;
+  width: 2rem;
   display: inline-block;
-  height: 3rem;
-  width: 3rem;
-  border-radius: 1.5rem;
 }
 
 /* Icons in links */
 
-a.ds-icon {
+a:has(use[href*="icon"]) {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
+  gap: var(--space-xs);
   height: auto;
   width: auto;
-  border-radius: 0;
-  outline: none;
 }
 
-a.ds-icon > svg {
-  --ds-icon-color: var(--blaa);
-  height: 2rem;
-  width: 2rem;
+a svg:has(use[href*="icon"]) {
+  --ds-icon-color: var(--link);
+}
+
+a:hover svg:has(use[href*="icon"]),
+a:active svg:has(use[href*="icon"]) {
+  --ds-icon-color: var(--link-hover);
 }

@@ -32,7 +32,7 @@
   --muted-border-color: var(--grey5);
 
   // Link colors
-  --link: var(--c4);
+  --link: var(--highlight);
   --link-hover: var(--c3);
   --link-focus: var(--highlight);
 
@@ -69,9 +69,6 @@
   --button-hover-box-shadow: 0 0 0 rgba(0, 0, 0, 0.65);
 
   // Form elements
-  
-  
-  
   --form-element-invalid-border-color: var(--r4);
   --form-element-invalid-active-border-color: var(--r5);
   --form-element-invalid-focus-color: var(--r6);
@@ -82,7 +79,6 @@
   // Navigation
   --nav-link-color: var(--g3);
   --nav-tab-border: var(--blaa);
-  --nav-tab-font-weight: 300;
 
   // Switch (input[type="checkbox"][role="switch"])
   --switch-background-color: var(--c2);
@@ -146,16 +142,4 @@
 
   // Logo
   --ds-logo-theme-color: var(--hvid);
-  
-  h1,
-  .h1 {
-    font-weight: 300;
-  }
-
-  h2,
-  .h2,
-  label {
-    font-weight: 400;
-  }
-
 }

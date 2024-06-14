@@ -47,8 +47,8 @@
 
   // Borders
   --border: solid var(--space-xxs) var(--border-color);
-  --border-radius: (--space-xs);
-  --border-width: 1px;
+  --border-radius: var(--space);
+  --border-width: var(--space-xxs);
 
   // Transitions
   --transition: 0.2s ease-in-out;

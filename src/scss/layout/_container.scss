@@ -6,7 +6,8 @@
 .container-fluid,
 .ds-container,
 .ds-container-fluid {
-  max-width: calc(100vw - var(--space) * 2);
+  width: calc(100vw - var(--gap-md) * 2);
+  max-width: 60rem;
   margin-right: auto;
   margin-left: auto;
 }

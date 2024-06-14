@@ -7,14 +7,11 @@
     <title>SDFI Designsystem eksempler</title>
 
     <link rel="stylesheet" href="../../assets/designsystem.css">
-    <link rel="stylesheet" href="../docs.css">
 
     <link rel="icon" href="../../assets/logos/logo-small.svg">
 
   </head>
-  <body>
-
-    <ds-theme-toggle style="position: fixed; bottom: var(--space); right: var(--space);"></ds-theme-toggle><style>
+  <body><style>
   .map-example {
     position: relative;
     height: 10rem;
@@ -106,10 +103,9 @@
   import { DSLogoTitle } from '../../assets/designsystem.js'
 
   customElements.define('ds-logo-title', DSLogoTitle)
-</script>  <p style="position: fixed; bottom: var(--space); left: var(--space);">
-    <a role="button" href="../../index.html"><svg style="height: 100%;"><use href="../../assets/designsystem-icons.svg#arrow-left" /></svg> Tilbage til oversigten</a>
-  </p>
-
+</script>  <a style="position: fixed; bottom: var(--space-md); left: var(--space);" role="button" href="../../index.html"><svg><use href="../../assets/designsystem-icons.svg#arrow-left" /></svg> Tilbage til oversigten</a>
+  
+  <ds-theme-toggle style="position: fixed; bottom: var(--space-md); right: var(--space);"></ds-theme-toggle>
 
   <script type="module">
     import { ThemeToggle } from '../../assets/designsystem.js'

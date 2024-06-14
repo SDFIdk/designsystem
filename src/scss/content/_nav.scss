@@ -32,24 +32,22 @@ nav {
     [role="link"],
     button,
     [role="button"] {
-      text-transform: uppercase;
       display: inline-block;
       font-weight: 600;
       padding: var(--space-sm) var(--space);
       margin: 0;
       border-radius: var(--space);
       height: var(--button-base-height);
+      color: var(--color);
 
       &:hover,
       &:active {
         background-color: var(--primary);
-        color: var(--primary-inverse);
         text-decoration: none;
       }
 
       &:focus {
         background-color: var(--link-focus);
-        color: var(--primary-inverse);
       }
     }
   }
