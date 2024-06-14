@@ -73,7 +73,7 @@ a[href],
   color: var(--link);
   text-decoration: none;
   background: linear-gradient(0deg, var(--link), var(--link)) no-repeat right bottom / 0 100%;
-  transition: color 0.3s ease-in-out, background-size 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out, background-size 0.3s ease-in-out, outline 0.3s;
 
   &:is([aria-current], :hover, :active) {
     color: var(--background-color);
@@ -82,7 +82,8 @@ a[href],
   }
 
   &:focus {
-    outline: solid 1px var(--link-focus);
+    outline: solid var(--border-width) var(--link);
+    border-radius: var(--space-xxs);
   }
 }
 
