@@ -12,7 +12,7 @@
   --font-style: normal;
 
   // Spacings
-  --space-xxs:  2px;
+  --space-xxs:  3px;
   --space-xs:   0.25rem;
   --space-sm:   0.5rem;
   --space:      1rem;
@@ -46,9 +46,9 @@
   --icon-size: calc(var(--space) * 2.5);
 
   // Borders
-  --border: solid var(--space-xxs) var(--border-color);
-  --border-radius: var(--space);
   --border-width: var(--space-xxs);
+  --border: solid var(--border-width) var(--border-color);
+  --border-radius: var(--space);
 
   // Transitions
   --transition: 0.2s ease-in-out;

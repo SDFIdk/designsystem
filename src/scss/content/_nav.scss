@@ -2,53 +2,44 @@
  * Nav
  */
 
-// Basic horizontal Nav
-nav,
-nav ul {
+// Basic horizontal Navigation
+nav.ds-nav {
   display: flex;
-}
-
-nav {
-  justify-content: space-between;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
   align-items: center;
 
-  & > * {
-    margin: 0;
+  input {
+    width: inherit; 
   }
 
-  ol,
-  ul {
-    align-items: center;
-    padding: 0;
-    list-style: none;
-  }
-
-  li {
+  a, 
+  [role="link"],
+  button,
+  [role="button"] {
     display: inline-block;
-    padding: 0;
-    margin: 0;
+    font-size: 1rem;
+    font-weight: 570;
+    line-height: 1.12;
+    letter-spacing: 0.02rem;
+    color: var(--color);
+    padding: var(--space);
+    border-bottom: solid var(--border-width) transparent;
+    word-wrap: none;
 
-    a, 
-    [role="link"],
-    button,
-    [role="button"] {
-      display: inline-block;
-      font-weight: 600;
-      padding: var(--space-sm) var(--space);
-      margin: 0;
-      border-radius: var(--space);
-      height: var(--button-base-height);
-      color: var(--color);
+    &.active {
+      color: var(--link);
+      border-bottom-color: var(--link);
+    }
 
-      &:hover,
-      &:active {
-        background-color: var(--primary);
-        text-decoration: none;
-      }
+    &:hover,
+    &:active {
+      color: var(--background-color);
+      border-bottom-color: var(--link);
+    }
 
-      &:focus {
-        background-color: var(--link-focus);
-      }
+    &:focus {
+
     }
   }
 }
@@ -72,6 +63,11 @@ aside,
   li + li {
     margin-top: var(--space-sm);
   }
+}
+
+// Horisontal line after `nav`
+nav.ds-nav + hr {
+  margin-top: 0;
 }
 
 // Tool bar nav
