@@ -132,24 +132,30 @@ a[role="button"].secondary:visited {
 }
 
 // Quiet
-:is(button, input[type="submit"], input[type="button"], [role="button"]).quiet,
-input[type="reset"] {
+button.quiet,
+input[type="submit"].quiet,
+input[type="button"].quiet,
+input[type="reset"].quiet,
+a[role="button"].quiet,
+a[role="button"].quiet:link,
+a[role="button"].quiet:visited {
   background-color: transparent;
   border-color: transparent;
-  color: var(--color);
-  cursor: pointer;
+  color: var(--link);
 
-  & > svg {
-    --ds-icon-color: inherit;
+  & svg use[href*="icon"] {
+    --ds-icon-color: var(--link);
   }
 
-  &:is([aria-current], :hover, :active) {
-    border-color: var(--primary-hover);
+  &[aria-current],
+  &:hover, 
+  &:active {
     background-color: var(--primary-hover);
-    color: var(--c1);
+    border-color: var(--primary-hover);
+    color: var(--hvid);
 
-    & > svg {
-      --ds-icon-color: var(--c1);
+    & svg use[href*="icon"] {
+      --ds-icon-color: var(--hvid);
     }
   }
 }
