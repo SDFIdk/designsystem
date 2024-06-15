@@ -52,6 +52,7 @@ a[role="button"]:visited {
   text-align: center;
   cursor: pointer;
   word-wrap: normal;
+  text-decoration: none;
   transition: background-color var(--transition), border-color var(--transition), color var(--transition);
 
   &[aria-current],
@@ -79,10 +80,10 @@ a[role="button"]:visited {
 
   & svg {
     flex: 0 0 auto;
-  }
 
-  & svg use[href*="icon"] {
-    --ds-icon-color: var(--hvid);
+    & use[href*="icon"] {
+      --ds-icon-color: var(--hvid);
+    }
   }
 
   // Icon buttons are identified by having a `title` attribute
@@ -157,15 +158,6 @@ a[role="button"].quiet:visited {
     & svg use[href*="icon"] {
       --ds-icon-color: var(--hvid);
     }
-  }
-}
-
-[role="button"] {
-  text-decoration: none;
-
-  &:hover, &:active {
-    color: var(--hvid);
-    text-decoration: none;
   }
 }
 
