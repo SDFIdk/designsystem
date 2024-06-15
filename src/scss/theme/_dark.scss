@@ -40,11 +40,11 @@
   // Primary colors
   --primary: var(--blaa);
   --primary-inverse: var(--hvid);
-  --primary-hover: var(--c7);
+  --primary-hover: var(--c5);
   --primary-focus: var(--highlight);
 
   // Secondary colors
-  --secondary: var(--grey3);
+  --secondary: var(--hvid);
   --secondary-inverse: var(--c3);
   --secondary-hover: var(--c8);
   --secondary-focus: var(--highlight);
@@ -60,14 +60,6 @@
   // Blockquote
   --blockquote-border-color: var(--muted-border-color);
   --blockquote-footer-color: var(--muted-color);
-
-  // Button
-  --button-primary: var(--c5);
-  --button-primary-hover: var(--c6);
-  // To disable box-shadow, remove the var or set to '0 0 0 rgba(0, 0, 0, 0)'
-  // Don't use, 'none, 'false, 'null', '0', etc.
-  --button-box-shadow: 0 0 0 rgba(0, 0, 0, 0.65);
-  --button-hover-box-shadow: 0 0 0 rgba(0, 0, 0, 0.65);
 
   // Form elements
   --form-element-invalid-border-color: var(--r4);

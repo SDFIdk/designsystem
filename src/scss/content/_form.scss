@@ -139,17 +139,17 @@ textarea {
 select,
 textarea {
   appearance: none;
-  border: solid 1px var(--grey2);
-  border-radius: var(--space);
+  border: solid 1px var(--border-color);
+  border-radius: var(--border-radius);
   outline: none;
-  background-color: var(--c1);
-  color: var(--sort);
+  background-color: var(--background-color);
+  color: var(--color);
   font-weight: var(--font-weight);
   transition: background-color var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
   padding: var(--space-xs) var(--space);
 
   &::placeholder {
-    opacity: 0.5;
+    opacity: 0.6;
   }
 }
 

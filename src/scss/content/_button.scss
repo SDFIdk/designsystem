@@ -31,7 +31,9 @@ button,
 input[type="submit"],
 input[type="button"],
 input[type="reset"],
-[role="button"] {
+a[role="button"],
+a[role="button"]:link,
+a[role="button"]:visited {
   display: inline-flex;
   flex-flow: row nowrap;
   align-items: center;
@@ -39,23 +41,25 @@ input[type="reset"],
   width: auto;
   height: var(--button-base-height);
   padding: var(--space-xs) var(--space);
-  border: 1px solid var(--button-primary);
-  border-radius: var(--space-lg);
+  border: 1px solid var(--primary);
+  border-radius: var(--border-radius);
   outline: none;
-  background-color: var(--button-primary);
+  background-color: var(--primary);
   color: var(--hvid);
-  font-weight: 400;
+  font-weight: var(--font-weight);
   font-size: var(--font-size);
   line-height: 1em;
   text-align: center;
   cursor: pointer;
   word-wrap: normal;
-
   transition: background-color var(--transition), border-color var(--transition), color var(--transition);
 
-  &:is([aria-current], :hover, :active) {
-    background-color: var(--button-primary-hover);
-    border-color: var(--button-primary-hover);
+  &[aria-current],
+  &:hover, 
+  &:active {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+    color: var(--hvid);
   }
 
   &:focus {
@@ -73,15 +77,12 @@ input[type="reset"],
     color: var(--hvid);
   }
 
-  & > svg {
-    width: var(--button-icon-base-width);
-    height: 100%;
-    --ds-icon-color: var(--hvid);
+  & svg {
     flex: 0 0 auto;
+  }
 
-    &:first-child {
-      margin: 0 0 0 -0.5rem;
-    }
+  & svg use[href*="icon"] {
+    --ds-icon-color: var(--hvid);
   }
 
   // Icon buttons are identified by having a `title` attribute
@@ -102,23 +103,30 @@ input[type="reset"],
 }
 
 // Secondary
-:is(button, input[type="submit"], input[type="button"], [role="button"]).secondary,
-input[type="reset"].secondary {
-  background-color: transparent;
-  border-color: var(--button-primary);
-  color: var(--color);
+button.secondary,
+input[type="submit"].secondary,
+input[type="button"].secondary,
+input[type="reset"].secondary,
+a[role="button"].secondary,
+a[role="button"].secondary:link,
+a[role="button"].secondary:visited {
+  background-color: var(--background-color);
+  border-color: var(--border-color);
+  color: var(--secondary);
 
-  & > svg {
-    --ds-icon-color: inherit;
+  & svg use[href*="icon"] {
+    --ds-icon-color: var(--secondary);
   }
 
-  &:is([aria-current], :hover, :active) {
-    border-color: var(--button-primary-hover);
-    background-color: var(--button-primary-hover);
-    color: var(--c1);
+  &[aria-current],
+  &:hover, 
+  &:active {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+    color: var(--hvid);
 
-    & > svg {
-      --ds-icon-color: var(--c1);
+    & svg use[href*="icon"] {
+      --ds-icon-color: var(--hvid);
     }
   }
 }
@@ -136,8 +144,8 @@ input[type="reset"] {
   }
 
   &:is([aria-current], :hover, :active) {
-    border-color: var(--button-primary-hover);
-    background-color: var(--button-primary-hover);
+    border-color: var(--primary-hover);
+    background-color: var(--primary-hover);
     color: var(--c1);
 
     & > svg {

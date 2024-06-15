@@ -1,20 +1,30 @@
-<article class="ds-container">
+<style>
+  div.ds-button-group {
+    margin-bottom: var(--space);
+  }
+</style>
+
+<article class="ds-container" style="margin: var(--space-lg) auto;">
 
   <h1>Knapper, links, actions</h1>
 
-  <div style="display: flex; flex-flow: row nowrap; gap: var(--gap);">
+  <div style="display: flex; flex-flow: row wrap; gap: var(--gap); padding: var(--space-md);">
 
     <div>
 
       <h2>Knapper (<code>button</code>)</h2>
       
       <!-- Primary buttons -->
-      <button>
-        <svg><use href="../../assets/designsystem-icons.svg#arrow-single-left" /></svg>
-        Action text
-        <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right" /></svg>
-      </button>
-      
+      <p>
+        <button>Action text</button>
+      </p>
+      <p>
+        <button>
+          <svg><use href="../../assets/designsystem-icons.svg#arrow-single-left" /></svg>
+          Action text
+          <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right" /></svg>
+        </button>
+      </p>
       <div class="ds-button-group">
         <button>
           <svg><use href="../../assets/designsystem-icons.svg#arrow-single-left" /></svg>
@@ -26,19 +36,25 @@
           <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right" /></svg>
         </button>
       </div>
-
-      <button title="Gå til højre">
-        <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right" /></svg>
-      </button>
-
-      <br>
+      <p>
+        <button title="Gå til højre">
+          <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right" /></svg>
+        </button>
+      </p>
+      <p>
 
       <!-- Secondary buttons -->
-      <button class="secondary">
-        <svg><use href="../../assets/designsystem-icons.svg#arrow-single-left" /></svg>
-        Action text
-        <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right" /></svg>
-      </button>
+      </p>
+    
+        <button class="secondary">Action text</button>
+      </p>
+      <p>
+        <button class="secondary">
+          <svg><use href="../../assets/designsystem-icons.svg#arrow-single-left" /></svg>
+          Action text
+          <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right" /></svg>
+        </button>
+      </p>
       
       <div class="ds-button-group">
         <button class="secondary">
@@ -51,20 +67,24 @@
           <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right" /></svg>
         </button>
       </div>
-
-      <button title="Gå til højre" class="secondary">
-        <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right" /></svg>
-      </button>
-
-      <br>
+      <p>
+        <button title="Gå til højre" class="secondary">
+          <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right" /></svg>
+        </button>
+      </p>
 
       <!-- Quiet buttons -->
-      <button class="quiet">
-        <svg><use href="../../assets/designsystem-icons.svg#arrow-single-left" /></svg>
-        Action text
-        <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right" /></svg>
-      </button>
-      
+      <p>
+        <button class="quiet">Action text</button>
+      </p>
+      <p>
+        <button class="quiet">
+          <svg><use href="../../assets/designsystem-icons.svg#arrow-single-left" /></svg>
+          Action text
+          <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right" /></svg>
+        </button>
+      </p>  
+        
       <div class="ds-button-group">
         <button class="quiet">
           <svg><use href="../../assets/designsystem-icons.svg#arrow-single-left" /></svg>
@@ -77,10 +97,11 @@
         </button>
       </div>
 
-      <button title="Gå til højre" class="quiet">
-        <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right" /></svg>
-      </button>
-
+      <p>
+        <button title="Gå til højre" class="quiet">
+          <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right" /></svg>
+        </button>
+      </p>
     </div>
 
     <div>
@@ -88,12 +109,16 @@
       <h2>Links (<code>a role="button"</code>)</h2>
 
       <!-- Primary buttons -->
-      <a href="#" role="button">
-        <svg><use href="../../assets/designsystem-icons.svg#arrow-single-left" /></svg>
-        Action text
-        <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right" /></svg>
-      </a>
-      
+      <p>
+        <a href="#" role="button">Action text</a>
+      </p>
+      <p>
+        <a href="#" role="button">
+          <svg><use href="../../assets/designsystem-icons.svg#arrow-single-left" /></svg>
+          Action text
+          <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right" /></svg>
+        </a>
+      </p>
       <div class="ds-button-group">
         <a href="#" role="button">
           <svg><use href="../../assets/designsystem-icons.svg#arrow-single-left" /></svg>
@@ -105,20 +130,23 @@
           <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right" /></svg>
         </a>
       </div>
-
-      <a href="#" role="button" title="Gå til højre">
-        <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right" /></svg>
-      </a>
-
-      <br>
+      <p>
+        <a href="#" role="button" title="Gå til højre">
+          <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right" /></svg>
+        </a>
+      </p>
 
       <!-- Secondary buttons -->
-      <a href="#" role="button" class="secondary">
-        <svg><use href="../../assets/designsystem-icons.svg#arrow-single-left" /></svg>
-        Action text
-        <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right" /></svg>
-      </a>
-      
+      <p>
+        <a href="#" role="button" class="secondary">Action text</a>
+      </p>
+      <p>
+        <a href="#" role="button" class="secondary">
+          <svg><use href="../../assets/designsystem-icons.svg#arrow-single-left" /></svg>
+          Action text
+          <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right" /></svg>
+        </a>
+      </p>
       <div class="ds-button-group">
         <a href="#" role="button" class="secondary">
           <svg><use href="../../assets/designsystem-icons.svg#arrow-single-left" /></svg>
@@ -130,20 +158,23 @@
           <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right" /></svg>
         </a>
       </div>
-
-      <button title="Gå til højre" class="secondary">
-        <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right" /></svg>
-      </button>
-
-      <br>
-
+      <p>
+        <button title="Gå til højre" class="secondary">
+          <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right" /></svg>
+        </button>
+      </p>
+      
       <!-- Quiet buttons -->
-      <a href="#" role="button" class="quiet">
-        <svg><use href="../../assets/designsystem-icons.svg#arrow-single-left" /></svg>
-        Action text
-        <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right" /></svg>
-      </a>
-      
+      <p>
+        <a href="#" role="button" class="quiet">Action text</a>
+      </p>
+      <p>
+        <a href="#" role="button" class="quiet">
+          <svg><use href="../../assets/designsystem-icons.svg#arrow-single-left" /></svg>
+          Action text
+          <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right" /></svg>
+        </a>
+      </p>
       <div class="ds-button-group">
         <a href="#" role="button" class="quiet">
           <svg><use href="../../assets/designsystem-icons.svg#arrow-single-left" /></svg>
@@ -155,19 +186,19 @@
           <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right" /></svg>
         </a>
       </div>
-
-      <a href="#" role="button" title="Gå til højre" class="quiet">
-        <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right" /></svg>
-      </a>
-
+      <p>
+        <a href="#" role="button" title="Gå til højre" class="quiet">
+          <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right" /></svg>
+        </a>
+      </p>
       <p>
         <a href="#"><svg><use href="../../assets/designsystem-icons.svg#arrow-right" /></svg> Et helt almindeligt link</a>
       </p>
-
     </div>
 
-    <div>
+    <div style="max-width: 15rem;">
       <h2>Formular-felter, søgning, checkboxes</h2>
+      <p>Sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore mag.</p>
       <p>
         <input type="text" placeholder="Indtast tekst">
       </p>
@@ -184,32 +215,277 @@
       <p>
         <input type="range">
       </p>
+      <fieldset>
+        <legend>Checkboxes and radios</legend>
+        <p>
+          <label>
+            <input type="checkbox">
+            Et valg
+          </label>
+          <label>
+            Et andet valg
+            <input type="checkbox">
+          </label>
+        </p>
+        <p>
+          <label>
+            <input type="radio" name="radio1">
+            En mulighed
+          </label>
+          <label>
+            <input type="radio" name="radio1">
+            En anden mulighed
+          </label>
+        </p>
+        <p>
+          <input type="checkbox" role="switch" checked>
+          <input type="checkbox" role="switch">
+        </p>
+      </fieldset>
       <p>
-        <label>
-          <input type="checkbox">
-          Et valg
-        </label>
-        <label>
-          Et andet valg
-          <input type="checkbox">
-        </label>
+        <textarea>Fritekstfelt</textarea>
+      </p>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-flow: row wrap; gap: var(--gap); background-color: var(--bg1); padding: var(--space-md);">
+      
+    <div>
+
+      <h2>Knapper (<code>button</code>)</h2>
+      
+      <!-- Primary buttons -->
+      <p>
+        <button>Action text</button>
       </p>
       <p>
-        <label>
-          <input type="radio" name="radio1">
-          En mulighed
-        </label>
-        <label>
-          <input type="radio" name="radio1">
-          En anden mulighed
-        </label>
+        <button>
+          <svg><use href="../../assets/designsystem-icons.svg#arrow-single-left" /></svg>
+          Action text
+          <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right" /></svg>
+        </button>
+      </p>
+      <div class="ds-button-group">
+        <button>
+          <svg><use href="../../assets/designsystem-icons.svg#arrow-single-left" /></svg>
+          Action text
+        </button>
+        <hr>
+        <button>
+          Action text
+          <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right" /></svg>
+        </button>
+      </div>
+      <p>
+        <button title="Gå til højre">
+          <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right" /></svg>
+        </button>
       </p>
       <p>
-        <textarea>
-          Fritekstfelt
-        </textarea>
+
+      <!-- Secondary buttons -->
+      </p>
+    
+        <button class="secondary">Action text</button>
+      </p>
+      <p>
+        <button class="secondary">
+          <svg><use href="../../assets/designsystem-icons.svg#arrow-single-left" /></svg>
+          Action text
+          <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right" /></svg>
+        </button>
+      </p>
+      
+      <div class="ds-button-group">
+        <button class="secondary">
+          <svg><use href="../../assets/designsystem-icons.svg#arrow-single-left" /></svg>
+          Action text
+        </button>
+        <hr>
+        <button class="secondary">
+          Action text
+          <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right" /></svg>
+        </button>
+      </div>
+      <p>
+        <button title="Gå til højre" class="secondary">
+          <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right" /></svg>
+        </button>
+      </p>
+
+      <!-- Quiet buttons -->
+      <p>
+        <button class="quiet">Action text</button>
+      </p>
+      <p>
+        <button class="quiet">
+          <svg><use href="../../assets/designsystem-icons.svg#arrow-single-left" /></svg>
+          Action text
+          <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right" /></svg>
+        </button>
+      </p>  
+        
+      <div class="ds-button-group">
+        <button class="quiet">
+          <svg><use href="../../assets/designsystem-icons.svg#arrow-single-left" /></svg>
+          Action text
+        </button>
+        <hr>
+        <button class="quiet">
+          Action text
+          <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right" /></svg>
+        </button>
+      </div>
+
+      <p>
+        <button title="Gå til højre" class="quiet">
+          <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right" /></svg>
+        </button>
       </p>
     </div>
 
+    <div>
+
+      <h2>Links (<code>a role="button"</code>)</h2>
+
+      <!-- Primary buttons -->
+      <p>
+        <a href="#" role="button">Action text</a>
+      </p>
+      <p>
+        <a href="#" role="button">
+          <svg><use href="../../assets/designsystem-icons.svg#arrow-single-left" /></svg>
+          Action text
+          <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right" /></svg>
+        </a>
+      </p>
+      <div class="ds-button-group">
+        <a href="#" role="button">
+          <svg><use href="../../assets/designsystem-icons.svg#arrow-single-left" /></svg>
+          Action text
+        </a>
+        <hr>
+        <a href="#" role="button">
+          Action text
+          <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right" /></svg>
+        </a>
+      </div>
+      <p>
+        <a href="#" role="button" title="Gå til højre">
+          <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right" /></svg>
+        </a>
+      </p>
+
+      <!-- Secondary buttons -->
+      <p>
+        <a href="#" role="button" class="secondary">Action text</a>
+      </p>
+      <p>
+        <a href="#" role="button" class="secondary">
+          <svg><use href="../../assets/designsystem-icons.svg#arrow-single-left" /></svg>
+          Action text
+          <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right" /></svg>
+        </a>
+      </p>
+      <div class="ds-button-group">
+        <a href="#" role="button" class="secondary">
+          <svg><use href="../../assets/designsystem-icons.svg#arrow-single-left" /></svg>
+          Action text
+        </a>
+        <hr>
+        <a href="#" role="button" class="secondary">
+          Action text
+          <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right" /></svg>
+        </a>
+      </div>
+      <p>
+        <button title="Gå til højre" class="secondary">
+          <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right" /></svg>
+        </button>
+      </p>
+      
+      <!-- Quiet buttons -->
+      <p>
+        <a href="#" role="button" class="quiet">Action text</a>
+      </p>
+      <p>
+        <a href="#" role="button" class="quiet">
+          <svg><use href="../../assets/designsystem-icons.svg#arrow-single-left" /></svg>
+          Action text
+          <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right" /></svg>
+        </a>
+      </p>
+      <div class="ds-button-group">
+        <a href="#" role="button" class="quiet">
+          <svg><use href="../../assets/designsystem-icons.svg#arrow-single-left" /></svg>
+          Action text
+        </a>
+        <hr>
+        <a href="#" role="button" class="quiet">
+          Action text
+          <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right" /></svg>
+        </a>
+      </div>
+      <p>
+        <a href="#" role="button" title="Gå til højre" class="quiet">
+          <svg><use href="../../assets/designsystem-icons.svg#arrow-single-right" /></svg>
+        </a>
+      </p>
+      <p>
+        <a href="#"><svg><use href="../../assets/designsystem-icons.svg#arrow-right" /></svg> Et helt almindeligt link</a>
+      </p>
+    </div>
+
+    <div style="max-width: 15rem;">
+      <h2>Formular-felter, søgning, checkboxes</h2>
+      <p>Sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore mag.</p>
+      <p>
+        <input type="text" placeholder="Indtast tekst">
+      </p>
+      <p>
+        <input type="search">
+      </p>
+      <p>
+        <select>
+          <option>Vælg herfra</option>
+          <option>En valgmulighed</option>
+          <option>En anden valgmulighed</option>
+        </select>
+      </p>
+      <p>
+        <input type="range">
+      </p>
+      <fieldset>
+        <legend>Checkboxes and radios</legend>
+        <p>
+          <label>
+            <input type="checkbox">
+            Et valg
+          </label>
+          <label>
+            Et andet valg
+            <input type="checkbox">
+          </label>
+        </p>
+        <p>
+          <label>
+            <input type="radio" name="radio1">
+            En mulighed
+          </label>
+          <label>
+            <input type="radio" name="radio1">
+            En anden mulighed
+          </label>
+        </p>
+        <p>
+          <input type="checkbox" role="switch" checked>
+          <input type="checkbox" role="switch">
+        </p>
+      </fieldset>
+      <p>
+        <textarea>Fritekstfelt</textarea>
+      </p>
+    </div>
   </div>
+
 </article>

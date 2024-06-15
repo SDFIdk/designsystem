@@ -67,7 +67,7 @@ samp {
 }
 
 // Links
-a[href],
+a[href]:not([role="button"]),
 [role="link"] {
   outline: none;
   color: var(--link);
