@@ -82,7 +82,7 @@ a[href],
   }
 
   &:focus {
-    outline: solid var(--border-width) var(--link);
+    outline: solid var(--space-xxs) var(--highlight);
     border-radius: var(--space-xxs);
   }
 }

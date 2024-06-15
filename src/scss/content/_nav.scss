@@ -35,11 +35,6 @@ nav.ds-nav-vertical {
     &:hover,
     &:active {
       color: var(--background-color);
-      border-bottom-color: var(--link);
-    }
-
-    &:focus {
-
     }
   }
 }

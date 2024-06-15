@@ -20,36 +20,18 @@ textarea {
   letter-spacing: inherit; // 2
 }
 
-// Show the overflow in IE.
-input {
-  overflow: visible;
-}
-
 // Remove the inheritance of text transform in Edge, Firefox, and IE
 select {
   text-transform: none;
 }
 
 // 1. Correct the text wrapping in Edge and IE
-// 2. Correct the color inheritance from `fieldset` elements in IE
 // 3. Remove the padding so developers are not caught out when they zero out
 // `fieldset` elements in all browsers
 legend {
   max-width: 100%; // 1
   padding: 0; // 3
-  color: inherit; // 2
   white-space: normal; // 1
-}
-
-// 1. Remove the default vertical scrollbar in IE
-textarea {
-  overflow: auto; // 1
-}
-
-// Remove the padding in IE 10
-[type="checkbox"],
-[type="radio"] {
-  padding: 0;
 }
 
 // Correct the cursor style of increment and decrement buttons in Safari
@@ -91,11 +73,6 @@ textarea {
 // Remove the additional :invalid styles in Firefox
 :-moz-ui-invalid {
   box-shadow: none;
-}
-
-// Change the inconsistent appearance in IE (opinionated)
-::-ms-expand {
-  display: none;
 }
 
 // Remove the border and padding in all browsers (opinionated)
@@ -261,13 +238,6 @@ select:invalid {
 
 // Select
 select {
-
-  // Unstyle the caret on `<select>`s in IE10+.
-  &::-ms-expand {
-    border: 0;
-    background-color: transparent;
-  }
-
   background-image: url("data:image/svg+xml;utf8,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M6%209L12%2015L18%209%22%20stroke%3D%22hsl(171%2C70%25%2C40%25)%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%0A%3C%2Fsvg%3E%0A");
   background-size: var(--space-md) auto;
   background-position: center right calc(var(--space) * 0.75);
