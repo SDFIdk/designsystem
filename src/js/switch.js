@@ -3,27 +3,35 @@ export class DSSwitch extends HTMLElement {
   style = `
     :host {
       display: inline-block;
-      width: 3rem;
-      height: 1.5rem;
+      width: auto;
+      height: var(--space-md);
+    }
+    label {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      align-items: stretch;
+      height: 100%;
+      width: auto;
+      gap: var(--space-sm);
     }
     input[type="checkbox"] {
       display: none;
     }
-    label {
+    .switch {
       border: solid 1px var(--border-color);
       position: relative;
       display: block;
-      width: 100%;
-      height: 100%;
+      width: 3rem;
       background-color: var(--bg1);
       border-radius: var(--border-radius);
       cursor: pointer;
       transition: background-color 0.3s, border-color 0.3s;
     }
-    label::after {
+    .switch::after {
       content: '';
       position: absolute;
-      top: var(--space-xxs);
+      top: 0.125rem;
       left: var(--space-xxs);
       width: 1rem;
       height: 1rem;
@@ -32,11 +40,11 @@ export class DSSwitch extends HTMLElement {
       border-radius: 50%;
       transition: transform 0.3s, border-color 0.3s;
     }
-    input:checked + label {
+    input:checked ~ .switch {
       background-color: var(--primary);
       border-color: var(--primary);
     }
-    input:checked + label::after {
+    input:checked ~ .switch::after {
       transform: translateX(1.5rem);
       border-color: var(--hvid);
     }
@@ -50,8 +58,11 @@ export class DSSwitch extends HTMLElement {
   render() {
     this.shadowRoot.innerHTML = `
       <style>${ this.style }</style>
-      <input type="checkbox" id="switch">
-      <label for="switch"><slot></slot></label>
+      <label>
+        <slot></slot>
+        <input type="checkbox">
+        <span class="switch"></span>
+      </label>
     `
   }
 
