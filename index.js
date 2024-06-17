@@ -11,6 +11,7 @@ import { DSIcon } from './src/js/icon.js'
 import { DSDataTable } from './src/js/dataTable.js'
 import { popoverPolyfill } from './src/js/popover.js'
 import { showToast } from './src/js/toast.js'
+import { DSSwitch } from './src/js/switch.js'
 
 export {
   Tabs,
@@ -24,6 +25,7 @@ export {
   DSNav,
   DSIcon,
   DSDataTable,
+  DSSwitch,
   popoverPolyfill,
   showToast
 }

@@ -18,52 +18,45 @@
   
 }
 
-// Switchs
-[type="checkbox"][role="switch"] {
-  --background-color: var(--switch-background-color);
-  --border-color: var(--switch-background-color);
-  --color: var(--switch-color);
+// Switches
+.ds-switch {
+  display: inline-block;
+  position: relative;
+  padding: 0 2.5rem 0 0;
 
-  // Config
-  $switch-height: 1.5rem;
-  $switch-width: 2rem;
-  $switch-transition: 0.1s ease-in-out;
-
-  // Styles
-  width: $switch-width;
-  height: $switch-height;
-  border: var(--border-width) solid var(--border-color);
-  border-radius: $switch-height;
-  background-color: var(--background-color);
-  line-height: $switch-height;
-
-  &:focus {
-    --background-color: var(--switch-background-color);
-    --border-color: var(--switch-background-color);
+  input {
+    appearance: none;
+    position: absolute;
   }
 
-  &:checked {
-    --background-color: var(--switch-checked-background-color);
-    --border-color: var(--switch-checked-background-color);
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2.5rem;
+    height: 1.5rem;
+    height: var(--space-md);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background-color: var(--primary);
+    z-index: 1;
   }
 
-  &:before {
-    display: block;
-    width: calc(#{$switch-height} - (var(--border-width) * 2));
-    height: 100%;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    width: var(--space);
+    height: var(--space);
+    background-color: var(--background-color);
     border-radius: 50%;
-    background-color: var(--color);
-    content: "";
-    transition: margin $switch-transition;
+    z-index: 1;
   }
 
-  &:checked {
-    background-image: none;
-
-    &::before {
-      margin-left: calc(#{$switch-width * 0.5} - var(--border-width));
-      margin-inline-start: calc(#{$switch-width * 0.5} - var(--border-width));
-    }
+  &:has(input:checked)::after {
+    right: 0;
   }
 }
 
@@ -71,9 +64,7 @@
 [type="checkbox"],
 [type="checkbox"]:checked,
 [type="radio"],
-[type="radio"]:checked,
-[type="checkbox"][role="switch"],
-[type="checkbox"][role="switch"]:checked {
+[type="radio"]:checked {
   
   &[aria-invalid="false"] {
     --border-color: var(--form-element-valid-border-color);

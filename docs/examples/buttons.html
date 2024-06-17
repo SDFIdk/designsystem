@@ -257,8 +257,7 @@
           </label>
         </p>
         <p>
-          <input type="checkbox" role="switch" checked>
-          <input type="checkbox" role="switch">
+          <ds-switch></ds-switch>
         </p>
       </fieldset>
       <p>
@@ -503,8 +502,8 @@
           </label>
         </p>
         <p>
-          <input type="checkbox" role="switch" checked>
-          <input type="checkbox" role="switch">
+          <ds-switch checked></ds-switch>
+          <ds-switch>Label text</ds-switch>
         </p>
       </fieldset>
       <p>
@@ -513,7 +512,12 @@
     </div>
   </div>
 
-</article>  <a style="position: fixed; bottom: var(--space-md); left: var(--space);" role="button" href="../../index.html"><svg><use href="../../assets/designsystem-icons.svg#arrow-left" /></svg> Tilbage til oversigten</a>
+</article>
+
+<script type="module">
+  import { DSSwitch } from '../../assets/designsystem.js'
+  customElements.define('ds-switch', DSSwitch)
+</script>  <a style="position: fixed; bottom: var(--space-md); left: var(--space);" role="button" href="../../index.html"><svg><use href="../../assets/designsystem-icons.svg#arrow-left" /></svg> Tilbage til oversigten</a>
   
   <ds-theme-toggle style="position: fixed; bottom: var(--space-md); right: var(--space);"></ds-theme-toggle>
 
