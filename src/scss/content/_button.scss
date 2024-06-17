@@ -35,12 +35,12 @@ a[role="button"],
 a[role="button"]:link,
 a[role="button"]:visited {
   display: inline-flex;
+  padding: var(--space-xs) var(--space);
   flex-flow: row nowrap;
   align-items: center;
   justify-content: center;
   width: auto;
   height: var(--button-base-height);
-  padding: var(--space-xs) var(--space);
   border: 1px solid var(--primary);
   border-radius: var(--border-radius);
   outline: none;
@@ -78,10 +78,18 @@ a[role="button"]:visited {
     color: var(--hvid);
   }
 
-  & svg {
+  & svg:has(use[href*="icon"]) {
     flex: 0 0 auto;
+    
+    &:last-child {
+      margin: 0 -0.75rem 0 0;
+    }
 
-    & use[href*="icon"] {
+    &:first-child {
+      margin: 0 0 0 -0.75rem;
+    }
+
+    & use {
       --ds-icon-color: var(--hvid);
     }
   }
@@ -93,12 +101,8 @@ a[role="button"]:visited {
     padding: 0;
     overflow: hidden;
 
-    & > *:first-child {
-      margin-left: var(--space-xs);
-    }
-  
-    & > *:last-child {
-      margin-right: var(--space-xs);
+    & svg:has(use[href*="icon"]) {
+      margin: 0 var(--space-xs);
     }
   }
 }
@@ -168,39 +172,4 @@ a[role="button"].quiet:visited {
 a[role="button"]:not([href]) {
   opacity: 0.5;
   pointer-events: none;
-}
-
-.ds-button-group {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: stretch;
-
-  & > button,
-  & > input,
-  & > a {
-    border-radius: 0;
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-
-    &:first-child {
-      border-radius: var(--space-lg) 0 0 var(--space-lg);
-      width: auto;
-    }
-
-    &:last-child {
-      border-radius: 0 var(--space-lg) var(--space-lg) 0;
-      width: auto;
-    }
-
-    &[title]:first-child {
-      padding-left: var(--space-xs);
-    }
-
-    &[title]:last-child {
-      padding-right: var(--space-xs);
-    }
-  }
 }
