@@ -4,14 +4,9 @@ export class ThemeToggle extends HTMLElement {
   buttonDark
   buttonLight
   style = `
-    .ds-theme-toggle {
-      display: flex;
-      flex-flow: row nowrap;
-      align-items: center;
-      width: auto;
-    }
     button[data-toggle="light"] {
       background-color: var(--c1);
+      padding-left: var(--space-sm);
     }
     button[data-toggle="light"]:hover,
     button[data-toggle="light"]:active {

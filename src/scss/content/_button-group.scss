@@ -15,7 +15,7 @@
     background-color: transparent;
   }
 
-  & .secondary + hr {
+  & > .secondary + hr {
     width: 0;
   }
 
@@ -23,7 +23,7 @@
     border-left: none;
   }
 
-  & .quiet + hr {
+  & > .quiet + hr {
     background-color: var(--link);
     align-self: center;
     height: var(--space-md);
@@ -50,11 +50,11 @@
     }
 
     &[title]:first-child {
-      padding-left: var(--space-xs);
+      padding-left: var(--space-sm);
     }
 
     &[title]:last-child {
-      padding-right: var(--space-xs);
+      padding-right: var(--space-sm);
     }
   }
 }
