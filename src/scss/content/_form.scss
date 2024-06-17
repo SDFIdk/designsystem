@@ -238,7 +238,7 @@ select:invalid {
 
 // Select
 select {
-  background-image: url("data:image/svg+xml;utf8,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M6%209L12%2015L18%209%22%20stroke%3D%22hsl(171%2C70%25%2C40%25)%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%0A%3C%2Fsvg%3E%0A");
+  background-image: var(--form-icon-arrow-down);
   background-size: var(--space-md) auto;
   background-position: center right calc(var(--space) * 0.75);
   background-repeat: no-repeat;
