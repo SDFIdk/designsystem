@@ -3,63 +3,6 @@
  * Checkboxes & Radios
  */
 
-[type="checkbox"],
-[type="radio"] {
-
-}
-
-// Checkboxes
-[type="checkbox"] {
-  
-}
-
-// Radios
-[type="radio"] {
-  
-}
-
-// Switches
-.ds-switch {
-  display: inline-block;
-  position: relative;
-  padding: 0 2.5rem 0 0;
-
-  input {
-    appearance: none;
-    position: absolute;
-  }
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 2.5rem;
-    height: 1.5rem;
-    height: var(--space-md);
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius);
-    background-color: var(--primary);
-    z-index: 1;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 1rem;
-    width: var(--space);
-    height: var(--space);
-    background-color: var(--background-color);
-    border-radius: 50%;
-    z-index: 1;
-  }
-
-  &:has(input:checked)::after {
-    right: 0;
-  }
-}
-
 // Aria-invalid
 [type="checkbox"],
 [type="checkbox"]:checked,
