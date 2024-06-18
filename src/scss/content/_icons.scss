@@ -2,11 +2,42 @@
 
 /* SVG icon default styles */
 
+svg.ds-icon,
 svg:has(use[href*="icon"]) {
-  height: 1rem;
+  height: 1.33rem;
   width: auto;
   display: inline-block;
   aspect-ratio: 1/1;
+}
+
+
+/* Icon variants */
+
+svg.ds-icon,
+svg:has(use[href*="icon"]) {
+  &.small {
+    height: 1rem;
+  }
+  &.medium {
+    height: 1.8rem;
+  }
+  &.big {
+    height: 2.66rem;
+  }
+  &.bg-primary {
+    --ds-icon-color: var(--hvid);
+    background-color: var(--primary);
+    border-radius: 50%;
+    outline: solid 0.25rem var(--primary);
+  }
+  &.br {
+    box-shadow: 0 0 0 3px var(--border-color);
+    border-radius: 50%;
+  }
+  &.br-dark {
+    box-shadow: 0 0 0 3px var(--color);
+    border-radius: 50%;
+  }
 }
 
 /* Icons in links */

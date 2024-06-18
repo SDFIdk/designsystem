@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="da">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1,user-scalable=yes">
+    <title>SDFI Designsystem eksempler</title>
+
+    <link rel="stylesheet" href="../../assets/designsystem.css">
+
+    <link rel="icon" href="../../assets/logo-small.svg">
+
+  </head>
+  <body><article class="ds-container" style="margin: var(--space-xl) auto;">
+  <h1>Ikoner</h1>
+  <p>
+    <svg style="--ds-icon-color: var(--primary); height: 5rem;"><use href="../../assets/icons.svg#accessibility" /></svg>
+    <svg style="--ds-icon-color: var(--aktion); height: 3rem;"><use href="../../assets/icons.svg#faq" /></svg>
+    <svg style="--ds-icon-color: var(--highlight); height: 1.5rem;"><use href="../../assets/icons.svg#frame-dual" /></svg>
+  </p>
+  <p>
+    <svg class="big"><use href="../../assets/icons.svg#accessibility" /></svg>
+    <svg class="medium"><use href="../../assets/icons.svg#accessibility" /></svg>
+    <svg><use href="../../assets/icons.svg#accessibility" /></svg>
+    <svg class="small"><use href="../../assets/icons.svg#accessibility" /></svg>
+  </p>
+  <p>
+    <svg class="bg-primary"><use href="../../assets/icons.svg#accessibility" /></svg>
+    <svg class="br-dark"><use href="../../assets/icons.svg#accessibility" /></svg>
+    <svg class="bg-primary br-dark"><use href="../../assets/icons.svg#accessibility" /></svg>
+  </p>
+</article>  <a style="position: fixed; bottom: var(--space-md); left: var(--space);" role="button" href="../../index.html"><svg><use href="../../assets/icons.svg#arrow-left" /></svg> Tilbage til oversigten</a>
+  
+  <ds-theme-toggle style="position: fixed; bottom: var(--space-md); right: var(--space);"></ds-theme-toggle>
+
+  <script type="module">
+    import { ThemeToggle } from '../../assets/designsystem.js'
+    customElements.define('ds-theme-toggle', ThemeToggle)
+  </script>
+
+</body>
+</html>
