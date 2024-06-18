@@ -16,7 +16,7 @@
     "build": "npm run build-css && npm run build-js && npm run build-docs",
     "serve": "node bin/server.js",
     "build-css": "sass index.scss assets/designsystem.css --style compressed",
-    "build-js": "node_modules/.bin/esbuild ./index.js --bundle --outfile=assets/designsystem.js --format=esm --loader:.svg=file",
+    "build-js": "node_modules/.bin/esbuild ./index.js --bundle --outfile=assets/designsystem.js --format=esm --loader:.svg=text",
     "build-docs": "node bin/build-docs.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

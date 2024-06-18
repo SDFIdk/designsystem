@@ -2,21 +2,25 @@
   position: relative;
   margin-left: -1rem;
   margin-right: -1rem;
-  padding-right: var(--space-lg);
-  font-weight: 600;
+  padding-left: var(--space-lg);
 }
-.ds-data-table .icon-sort-ascend,
-.ds-data-table .icon-sort-descend {
+.ds-data-table .sort-asc,
+.ds-data-table .sort-dsc {
   position: absolute;
-  right: var(--space-sm);
+  left: var(--space-sm);
   width: 1rem;
   height: 1rem;
 }
-.ds-data-table .icon-sort-ascend {
+.ds-data-table .sort-asc {
   top: 0;
 }
-.ds-data-table .icon-sort-descend {
+.ds-data-table .sort-dsc {
   bottom: 0;
+}
+.ds-data-table .sort-asc svg,
+.ds-data-table .sort-dsc svg {
+  height: 0.75rem; 
+  width: 0.75rem;
 }
 .ds-data-table input[type="search"] {
   width: 10rem;

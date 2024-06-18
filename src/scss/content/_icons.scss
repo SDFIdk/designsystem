@@ -3,7 +3,7 @@
 /* SVG icon default styles */
 
 svg:has(use[href*="icon"]) {
-  height: 1.75rem;
+  height: 1rem;
   width: auto;
   display: inline-block;
   aspect-ratio: 1/1;
@@ -20,11 +20,11 @@ a:has(use[href*="icon"]) {
   width: auto;
 }
 
-a svg use[href*="icon"] {
+a svg {
   --ds-icon-color: var(--link);
 }
 
-a:hover svg use[href*="icon"],
-a:active svg use[href*="icon"] {
+a:hover svg,
+a:active svg {
   --ds-icon-color: var(--background-color);
 }

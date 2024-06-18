@@ -78,6 +78,10 @@ a[role="button"]:visited {
     color: var(--hvid);
   }
 
+  & svg {
+    --ds-icon-color: var(--hvid);
+  }
+
   & svg:has(use[href*="icon"]) {
     flex: 0 0 auto;
     
@@ -87,10 +91,6 @@ a[role="button"]:visited {
 
     &:first-child {
       margin: 0 0 0 -0.66rem;
-    }
-
-    & use {
-      --ds-icon-color: var(--hvid);
     }
   }
 
@@ -119,7 +119,7 @@ a[role="button"].secondary:visited {
   border-color: var(--border-color);
   color: var(--secondary);
 
-  & svg use[href*="icon"] {
+  & svg {
     --ds-icon-color: var(--secondary);
   }
 
@@ -130,7 +130,7 @@ a[role="button"].secondary:visited {
     border-color: var(--primary-hover);
     color: var(--hvid);
 
-    & svg use[href*="icon"] {
+    & svg {
       --ds-icon-color: var(--hvid);
     }
   }
@@ -148,7 +148,7 @@ a[role="button"].quiet:visited {
   border-color: transparent;
   color: var(--link);
 
-  & svg use[href*="icon"] {
+  & svg {
     --ds-icon-color: var(--link);
   }
 
@@ -159,7 +159,7 @@ a[role="button"].quiet:visited {
     border-color: var(--primary-hover);
     color: var(--hvid);
 
-    & svg use[href*="icon"] {
+    & svg {
       --ds-icon-color: var(--hvid);
     }
   }

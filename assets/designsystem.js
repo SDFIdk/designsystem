@@ -96,6 +96,9 @@ var CodeView = class extends HTMLElement {
   }
 };
 
+// assets/icons/sun.svg
+var sun_default = '<svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">\n  <path d="M0.5 14.5016H3.49844M25.4984 14.5L28.5 14.5016M14.4922 0.5V3.5M14.5 25.5V28.5M4.60163 24.4006L6.72185 22.2804M22.2771 6.72293L24.4006 4.60163M4.59498 4.60603L6.7163 6.72735M22.2782 22.2782L24.3995 24.3995M22.4984 14.5C22.4984 18.9183 18.9167 22.5 14.4984 22.5C10.0802 22.5 6.49844 18.9183 6.49844 14.5C6.49844 10.0817 10.0802 6.5 14.4984 6.5C18.9167 6.5 22.4984 10.0817 22.4984 14.5Z" stroke="var(--ds-icon-color, black)" stroke-linecap="round" stroke-linejoin="round"/>\n</svg>';
+
 // src/js/themeToggle.js
 var ThemeToggle = class extends HTMLElement {
   localstorageKey = "SDFI-theme-choice";
@@ -139,25 +142,11 @@ var ThemeToggle = class extends HTMLElement {
     this.innerHTML = `
       <div class="ds-theme-toggle ds-button-group">
         <button title="Lys" data-toggle="light">
-          <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <title>Lyst tema</title>
-            <circle cx="12" cy="12" r="5" stroke="var(--ds-icon-color, black)" fill="none"/>
-            <path d="M3 12L5 12M19 12L21 12" stroke="var(--ds-icon-color, black)" stroke-linecap="round"/>
-            <path d="M12 3L12 5M12 19L12 21" stroke="var(--ds-icon-color, black)" stroke-linecap="round"/>
-            <path d="M18.3638 5.63672L16.9496 7.05093M7.05006 16.9504L5.63585 18.3646" stroke="var(--ds-icon-color, black)" stroke-linecap="round"/>
-            <path d="M18.3638 18.3633L16.9496 16.9491M7.05006 7.04957L5.63585 5.63536" stroke="var(--ds-icon-color, black)" stroke-linecap="round"/>
-          </svg>
+          ${sun_default}
         </button>
         
         <button title="M\xF8rk" data-toggle="dark">
-          <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <title>M\xF8rkt tema</title>
-            <circle cx="12" cy="12" r="5" stroke="var(--ds-icon-color, black)" fill="none"/>
-            <path d="M3 12L5 12M19 12L21 12" stroke="var(--ds-icon-color, black)" stroke-linecap="round"/>
-            <path d="M12 3L12 5M12 19L12 21" stroke="var(--ds-icon-color, black)" stroke-linecap="round"/>
-            <path d="M18.3638 5.63672L16.9496 7.05093M7.05006 16.9504L5.63585 18.3646" stroke="var(--ds-icon-color, black)" stroke-linecap="round"/>
-            <path d="M18.3638 18.3633L16.9496 16.9491M7.05006 7.04957L5.63585 5.63536" stroke="var(--ds-icon-color, black)" stroke-linecap="round"/>
-          </svg>
+          ${sun_default}
         </button>
       </div>
     `;
@@ -192,6 +181,9 @@ var ThemeToggle = class extends HTMLElement {
   }
 };
 
+// assets/icons/choose.svg
+var choose_default = '<svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">\n  <g stroke="var(--ds-icon-color, black)">\n    <path d="M16.5 14.5C16.5 15.6046 15.6046 16.5 14.5 16.5C13.3954 16.5 12.5 15.6046 12.5 14.5C12.5 13.3954 13.3954 12.5 14.5 12.5C15.6046 12.5 16.5 13.3954 16.5 14.5Z"/>\n    <path d="M27.5 14.5C27.5 15.6046 26.6046 16.5 25.5 16.5C24.3954 16.5 23.5 15.6046 23.5 14.5C23.5 13.3954 24.3954 12.5 25.5 12.5C26.6046 12.5 27.5 13.3954 27.5 14.5Z"/>\n    <path d="M5.5 14.5C5.5 15.6046 4.60457 16.5 3.5 16.5C2.39543 16.5 1.5 15.6046 1.5 14.5C1.5 13.3954 2.39543 12.5 3.5 12.5C4.60457 12.5 5.5 13.3954 5.5 14.5Z"/>\n  </g>\n</svg>';
+
 // src/js/togglePanel.js
 var DSTogglePanel = class extends HTMLElement {
   toggleButton;
@@ -222,15 +214,7 @@ var DSTogglePanel = class extends HTMLElement {
     } else {
       return `
         <button id="ds-toggle-button-${this.componentId}" aria-controls="ds-toggle-panel-${this.componentId}" class="ds-toggle-button" title="${this.componentTitle}">
-          <svg width="24" height="24" viewBox="0 0 24 24" class="ds-svg-icon" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <title>Flere muligheder</title>
-            <path d="M13 12C13 12.5523 12.5523 13 12 13C11.4477 13 11 12.5523 11 12C11 11.4477 11.4477 11 12 11C12.5523 11 13 11.4477 13 12Z" fill="var(--ds-icon-color, black)"></path>
-            <path d="M19 12C19 12.5523 18.5523 13 18 13C17.4477 13 17 12.5523 17 12C17 11.4477 17.4477 11 18 11C18.5523 11 19 11.4477 19 12Z" fill="var(--ds-icon-color, black)"></path>
-            <path d="M7 12C7 12.5523 6.55228 13 6 13C5.44772 13 5 12.5523 5 12C5 11.4477 5.44772 11 6 11C6.55228 11 7 11.4477 7 12Z" fill="var(--ds-icon-color, black)"></path>
-            <path d="M13 12C13 12.5523 12.5523 13 12 13C11.4477 13 11 12.5523 11 12C11 11.4477 11.4477 11 12 11C12.5523 11 13 11.4477 13 12Z" stroke="var(--ds-icon-color, black)"></path>
-            <path d="M19 12C19 12.5523 18.5523 13 18 13C17.4477 13 17 12.5523 17 12C17 11.4477 17.4477 11 18 11C18.5523 11 19 11.4477 19 12Z" stroke="var(--ds-icon-color, black)"></path>
-            <path d="M7 12C7 12.5523 6.55228 13 6 13C5.44772 13 5 12.5523 5 12C5 11.4477 5.44772 11 6 11C6.55228 11 7 11.4477 7 12Z" stroke="var(--ds-icon-color, black)"></path>
-          </svg>
+          ${choose_default}
         </button>
       `;
     }
@@ -726,6 +710,12 @@ var DSIcon = class extends HTMLElement {
   }
 };
 
+// assets/icons/arrow-single-up.svg
+var arrow_single_up_default = '<svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">\n  <path d="M2 22L13.8415 5.41209C14.2795 4.85416 14.9821 4.86401 15.4108 5.43408L27 22" stroke="var(--ds-icon-color, black)" stroke-linecap="round"/>\n</svg>';
+
+// assets/icons/arrow-single-down.svg
+var arrow_single_down_default = '<svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">\n  <path d="M27 7L15.1585 23.5879C14.7205 24.1458 14.0179 24.136 13.5892 23.5659L2 7" stroke="var(--ds-icon-color, black)" stroke-linecap="round"/>\n</svg>';
+
 // src/js/dataTable.js
 var DSDataTable = class extends HTMLElement {
   #tableHeaders = [];
@@ -790,14 +780,8 @@ var DSDataTable = class extends HTMLElement {
   renderSortButtons(title) {
     return `
       <button class="quiet button-sort">
-        <svg class="icon-sort-ascend" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <title>Sort\xE9r stigende</title>
-          <path d="M6 14L12 8L18 14" stroke="var(--ds-icon-color, black)" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
-        </svg>
-        <svg class="icon-sort-descend" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <title>Sort\xE9r faldende</title>
-          <path d="M6 10L12 16L18 10" stroke="var(--ds-icon-color, black)" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
-        </svg>
+        <span class="sort-asc">${arrow_single_up_default}</span>
+        <span class="sort-dsc">${arrow_single_down_default}</span>
         ${title}
       </button>
     `;

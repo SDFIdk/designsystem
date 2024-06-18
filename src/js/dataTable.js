@@ -1,3 +1,6 @@
+import iconArrowSingleUp from '../../assets/icons/arrow-single-up.svg'
+import iconArrowSingleDown from '../../assets/icons/arrow-single-down.svg'
+
 /** Web component to render table data with filter and sort features */
 export class DSDataTable extends HTMLElement {
 
@@ -74,14 +77,8 @@ export class DSDataTable extends HTMLElement {
   renderSortButtons(title) {
     return `
       <button class="quiet button-sort">
-        <svg class="icon-sort-ascend" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <title>Sortér stigende</title>
-          <path d="M6 14L12 8L18 14" stroke="var(--ds-icon-color, black)" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
-        </svg>
-        <svg class="icon-sort-descend" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <title>Sortér faldende</title>
-          <path d="M6 10L12 16L18 10" stroke="var(--ds-icon-color, black)" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
-        </svg>
+        <span class="sort-asc">${ iconArrowSingleUp }</span>
+        <span class="sort-dsc">${ iconArrowSingleDown }</span>
         ${ title }
       </button>
     `
