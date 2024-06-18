@@ -722,7 +722,7 @@ var DSIcon = class extends HTMLElement {
   }
   connectedCallback() {
     this.style = "--ds-icon-width: 3rem; width: var(--ds-icon-width); height: var(--ds-icon-width); display: inline-block;";
-    this.innerHTML = `<svg style="width: 100%; height: 100%;"><use href="../../assets/designsystem-icons.svg#${this.className}"/></svg>`;
+    this.innerHTML = `<svg style="width: 100%; height: 100%;"><use href="../../assets/icons.svg#${this.className}"/></svg>`;
   }
 };
 

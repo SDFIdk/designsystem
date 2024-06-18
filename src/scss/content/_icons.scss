@@ -3,7 +3,7 @@
 /* SVG icon default styles */
 
 svg:has(use[href*="icon"]) {
-  height: auto;
+  height: 1.75rem;
   width: auto;
   display: inline-block;
   aspect-ratio: 1/1;

@@ -104,7 +104,7 @@ async function buildSVGsnippet(svg, filename) {
   const viewBoxRegex = /viewBox="[\d\s]+"/
   const viewBoxAttr = svg.match(viewBoxRegex)
   const newSvg = svg.replaceAll(svgRegex, '')
-  return `<symbol id="${ id }" height="100%" width="100%" ${ viewBoxAttr ? ' ' + viewBoxAttr[0] : '' } fill="none">${ newSvg }</symbol>`
+  return `<symbol id="${ id }" width="100%" height="100%" ${ viewBoxAttr ? ' ' + viewBoxAttr[0] : '' } fill="none">${ newSvg }</symbol>`
 }
 
 export async function buildIconSVG() {
