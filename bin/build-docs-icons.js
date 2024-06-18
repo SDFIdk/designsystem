@@ -43,7 +43,7 @@ async function buildHTMLsnippet(filename, svg) {
         <code-view title="SVG sprite">
 <svg><use href="PATH/designsystem-icons.svg#${ shortname }" /></svg>
         </code-view>
-        <p><em>Husk at angive korrekt PATH til <code>designsystem-icons.svg</code></em></p>
+        <p><em>Husk at angive korrekt PATH til <code>icons.svg</code></em></p>
         <code-view title="SVG embed">
 ${ svg }
         </code-view>
@@ -63,7 +63,7 @@ ${ svg }
 async function buildTOCsnippet(filename) {
   const shortname = filenameToId(filename)
   const html = `
-    <a href="#${ shortname }" title="Icon ${ shortname }"><svg><title>Icon ${ shortname }</title><use href="../assets/designsystem-icons.svg#${ shortname }" /></svg></a>
+    <a href="#${ shortname }" title="Icon ${ shortname }"><svg><title>Icon ${ shortname }</title><use href="../assets/icons.svg#${ shortname }" /></svg></a>
   `
   return html
 }
@@ -114,7 +114,7 @@ export async function buildIconSVG() {
   let markup = await generateSVGContent('./assets/icons')
 
   // Write SVG file
-  await writeToFile(markup, './assets/designsystem-icons.svg')
+  await writeToFile(markup, './assets/icons.svg')
 
   console.log('Done building SVG sprite 👍')
 }
