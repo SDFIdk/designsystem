@@ -41,7 +41,7 @@ async function buildHTMLsnippet(filename, svg) {
     <div class="icon-container">  
       <div>
         <code-view title="SVG sprite">
-<svg><use href="PATH/designsystem-icons.svg#${ shortname }" /></svg>
+<svg><use href="PATH/icons.svg#${ shortname }" /></svg>
         </code-view>
         <p><em>Husk at angive korrekt PATH til <code>icons.svg</code></em></p>
         <code-view title="SVG embed">

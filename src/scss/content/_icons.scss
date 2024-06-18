@@ -3,9 +3,10 @@
 /* SVG icon default styles */
 
 svg:has(use[href*="icon"]) {
-  height: 2rem;
-  width: 2rem;
+  height: auto;
+  width: auto;
   display: inline-block;
+  aspect-ratio: 1/1;
 }
 
 /* Icons in links */
