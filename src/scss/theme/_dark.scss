@@ -17,6 +17,7 @@
   --h4-color: var(--c3);
   --h5-color: var(--c3);
   --h6-color: var(--c3);
+  --warning: var(--r6);
 
   // Background colors 
   --bg0: var(--c9);
@@ -90,8 +91,7 @@
   --range-thumb-active-color: var(--primary);
 
   // Table
-  --table-border-color: var(--grey3);
-  --table-row-stripped-background-color: var(--c2);
+  --table-row-striped-background-color: var(--bg1);
 
   // Code
   --code-background-color: var(--c6);

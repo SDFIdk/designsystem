@@ -23,7 +23,7 @@
 th,
 td {
   padding: var(--space-xs) var(--space);
-  border-bottom: var(--border-width) solid var(--table-border-color);
+  border-bottom: solid 1px var(--border-color);
   color: var(--color);
   font-weight: var(--font-weight);
   font-size: var(--font-size);
@@ -40,8 +40,8 @@ table caption {
   @extend .blockquote;
   display: table-caption;
   text-align: left;
-  border-top: 3px solid var(--table-border-color);
-  border-bottom: var(--border-width) solid var(--table-border-color);
+  border-top: 3px solid var(--border-color);
+  border-bottom: var(--border-width) solid var(--border-color);
   padding: var(--space-sm) var(--space);
   margin: 0;
 }
@@ -50,7 +50,7 @@ table caption {
 tfoot {
   th,
   td {
-    border-top: var(--border-width) solid var(--table-border-color);
+    border-top: var(--border-width) solid var(--border-color);
     border-bottom: 0;
   }
 }
@@ -59,7 +59,7 @@ tfoot {
 table {
   &[role="grid"] {
     tbody tr:nth-child(odd) {
-      background-color: var(--table-row-stripped-background-color);
+      background-color: var(--table-row-striped-background-color);
     }
   }
 }
