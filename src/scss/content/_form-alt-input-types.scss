@@ -43,8 +43,8 @@ input[type="search"] {
 
   padding-right: var(--space-lg);
   background-image: var(--form-icon-search);
-  background-position: right var(--space-sm) center;
-  background-size: var(--space-lg) auto;
+  background-position: right 0.66rem center;
+  background-size: var(--space) auto;
   background-repeat: no-repeat;
 
   &[aria-invalid="false"] {

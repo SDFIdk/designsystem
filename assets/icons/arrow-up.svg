@@ -1,4 +1,4 @@
-<svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg class="ds-icon" width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
   <g transform="rotate(180 15 15)">
     <path d="M27 14L15.2071 25.7929C14.8166 26.1834 14.1834 26.1834 13.7929 25.7929L2 14M14.5 26L14.5 4" stroke="var(--ds-icon-color, black)" stroke-linecap="round"/>
   </g>

@@ -18,6 +18,9 @@ function showToast({ message, duration = 5e3 }) {
   }, duration);
 }
 
+// assets/icons/copy.svg
+var copy_default = '<svg class="ds-icon" width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">\n  <path d="M20.5 6V4.5C20.5 3.39543 19.6046 2.5 18.5 2.5H4.5C3.39543 2.5 2.5 3.39543 2.5 4.5V18.5C2.5 19.6046 3.39543 20.5 4.5 20.5H6M26.5 24.5V10.5C26.5 9.39543 25.6046 8.5 24.5 8.5H10.5C9.39543 8.5 8.5 9.39543 8.5 10.5V24.5C8.5 25.6046 9.39543 26.5 10.5 26.5H24.5C25.6046 26.5 26.5 25.6046 26.5 24.5Z" stroke="var(--ds-icon-color, black)" stroke-linecap="round"/>\n</svg>';
+
 // src/js/codeview.js
 var CodeView = class extends HTMLElement {
   styles = `
@@ -55,10 +58,7 @@ var CodeView = class extends HTMLElement {
         <label>${this._label}</label>
         <pre><code></code></pre>
         <button class="ds-code-view-copy quiet" title="Kopi\xE9r">
-          <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <title>Kopi\xE9r</title>
-            <path d="M7.30769 15H6.53846C6.13044 15 5.73912 14.8379 5.4506 14.5494C5.16209 14.2609 5 13.8696 5 13.4615V6.53846C5 6.13044 5.16209 5.73912 5.4506 5.4506C5.73912 5.16209 6.13044 5 6.53846 5H13.4615C13.8696 5 14.2609 5.16209 14.5494 5.4506C14.8379 5.73912 15 6.13044 15 6.53846V7.30769M10.5385 9.00001H17.4615C18.3112 9.00001 19 9.6888 19 10.5385V17.4615C19 18.3112 18.3112 19 17.4615 19H10.5385C9.68879 19 9 18.3112 9 17.4615V10.5385C9 9.6888 9.68879 9.00001 10.5385 9.00001Z" stroke="var(--ds-icon-color, black)" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
-          </svg>
+          ${copy_default}
         </button>
       </div>
     `;
@@ -97,7 +97,7 @@ var CodeView = class extends HTMLElement {
 };
 
 // assets/icons/sun.svg
-var sun_default = '<svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">\n  <path d="M0.5 14.5016H3.49844M25.4984 14.5L28.5 14.5016M14.4922 0.5V3.5M14.5 25.5V28.5M4.60163 24.4006L6.72185 22.2804M22.2771 6.72293L24.4006 4.60163M4.59498 4.60603L6.7163 6.72735M22.2782 22.2782L24.3995 24.3995M22.4984 14.5C22.4984 18.9183 18.9167 22.5 14.4984 22.5C10.0802 22.5 6.49844 18.9183 6.49844 14.5C6.49844 10.0817 10.0802 6.5 14.4984 6.5C18.9167 6.5 22.4984 10.0817 22.4984 14.5Z" stroke="var(--ds-icon-color, black)" stroke-linecap="round" stroke-linejoin="round"/>\n</svg>';
+var sun_default = '<svg class="ds-icon" width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">\n  <path d="M0.5 14.5016H3.49844M25.4984 14.5L28.5 14.5016M14.4922 0.5V3.5M14.5 25.5V28.5M4.60163 24.4006L6.72185 22.2804M22.2771 6.72293L24.4006 4.60163M4.59498 4.60603L6.7163 6.72735M22.2782 22.2782L24.3995 24.3995M22.4984 14.5C22.4984 18.9183 18.9167 22.5 14.4984 22.5C10.0802 22.5 6.49844 18.9183 6.49844 14.5C6.49844 10.0817 10.0802 6.5 14.4984 6.5C18.9167 6.5 22.4984 10.0817 22.4984 14.5Z" stroke="var(--ds-icon-color, black)" stroke-linecap="round" stroke-linejoin="round"/>\n</svg>';
 
 // src/js/themeToggle.js
 var ThemeToggle = class extends HTMLElement {
@@ -182,7 +182,7 @@ var ThemeToggle = class extends HTMLElement {
 };
 
 // assets/icons/choose.svg
-var choose_default = '<svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">\n  <g stroke="var(--ds-icon-color, black)">\n    <path d="M16.5 14.5C16.5 15.6046 15.6046 16.5 14.5 16.5C13.3954 16.5 12.5 15.6046 12.5 14.5C12.5 13.3954 13.3954 12.5 14.5 12.5C15.6046 12.5 16.5 13.3954 16.5 14.5Z"/>\n    <path d="M27.5 14.5C27.5 15.6046 26.6046 16.5 25.5 16.5C24.3954 16.5 23.5 15.6046 23.5 14.5C23.5 13.3954 24.3954 12.5 25.5 12.5C26.6046 12.5 27.5 13.3954 27.5 14.5Z"/>\n    <path d="M5.5 14.5C5.5 15.6046 4.60457 16.5 3.5 16.5C2.39543 16.5 1.5 15.6046 1.5 14.5C1.5 13.3954 2.39543 12.5 3.5 12.5C4.60457 12.5 5.5 13.3954 5.5 14.5Z"/>\n  </g>\n</svg>';
+var choose_default = '<svg class="ds-icon" width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">\n  <g stroke="var(--ds-icon-color, black)">\n    <path d="M16.5 14.5C16.5 15.6046 15.6046 16.5 14.5 16.5C13.3954 16.5 12.5 15.6046 12.5 14.5C12.5 13.3954 13.3954 12.5 14.5 12.5C15.6046 12.5 16.5 13.3954 16.5 14.5Z"/>\n    <path d="M27.5 14.5C27.5 15.6046 26.6046 16.5 25.5 16.5C24.3954 16.5 23.5 15.6046 23.5 14.5C23.5 13.3954 24.3954 12.5 25.5 12.5C26.6046 12.5 27.5 13.3954 27.5 14.5Z"/>\n    <path d="M5.5 14.5C5.5 15.6046 4.60457 16.5 3.5 16.5C2.39543 16.5 1.5 15.6046 1.5 14.5C1.5 13.3954 2.39543 12.5 3.5 12.5C4.60457 12.5 5.5 13.3954 5.5 14.5Z"/>\n  </g>\n</svg>';
 
 // src/js/togglePanel.js
 var DSTogglePanel = class extends HTMLElement {
@@ -711,10 +711,10 @@ var DSIcon = class extends HTMLElement {
 };
 
 // assets/icons/arrow-single-up.svg
-var arrow_single_up_default = '<svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">\n  <path d="M2 22L13.8415 5.41209C14.2795 4.85416 14.9821 4.86401 15.4108 5.43408L27 22" stroke="var(--ds-icon-color, black)" stroke-linecap="round"/>\n</svg>';
+var arrow_single_up_default = '<svg class="ds-icon" width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">\n  <path d="M2 22L13.8415 5.41209C14.2795 4.85416 14.9821 4.86401 15.4108 5.43408L27 22" stroke="var(--ds-icon-color, black)" stroke-linecap="round"/>\n</svg>';
 
 // assets/icons/arrow-single-down.svg
-var arrow_single_down_default = '<svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">\n  <path d="M27 7L15.1585 23.5879C14.7205 24.1458 14.0179 24.136 13.5892 23.5659L2 7" stroke="var(--ds-icon-color, black)" stroke-linecap="round"/>\n</svg>';
+var arrow_single_down_default = '<svg class="ds-icon" width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">\n  <path d="M27 7L15.1585 23.5879C14.7205 24.1458 14.0179 24.136 13.5892 23.5659L2 7" stroke="var(--ds-icon-color, black)" stroke-linecap="round"/>\n</svg>';
 
 // src/js/dataTable.js
 var DSDataTable = class extends HTMLElement {
