@@ -1,0 +1,20 @@
+[data-count] {
+  position: relative;
+}
+[data-count]::after {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  content: attr(data-count);
+  position: absolute;
+  top: -0.5rem;
+  right: var(--space-xs);
+  height: 1.25rem;
+  min-width: 1.25rem;
+  padding: 0 var(--space-xs);
+  border-radius: 0.66rem;
+  background-color: var(--primary);
+  color: var(--hvid);
+  font-size: 0.66rem;
+  font-weight: 600;
+}
