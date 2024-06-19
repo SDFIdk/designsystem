@@ -173,6 +173,10 @@ small {
 }
 
 // Lists
+ul,
+ol {
+  margin-bottom: var(--space-md);
+}
 :where(ol, ul) {
   padding-right: 0;
   padding-left: var(--space);

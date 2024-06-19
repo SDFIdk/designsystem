@@ -2,6 +2,10 @@
  * Nav
  */
 
+nav {
+  margin-bottom: var(--space-md);
+}
+
 // Basic horizontal Navigation
 nav.ds-nav,
 nav.ds-nav-vertical {
