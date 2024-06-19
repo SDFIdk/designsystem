@@ -13,7 +13,7 @@ svg:has(use[href*="icon"]) {
 
 /* Icon variants */
 
-.small:has(svg),
+.mini,
 .medium,
 .big,
 .hero,
@@ -30,8 +30,8 @@ svg:has(use[href*="icon"]) {
   aspect-ratio: 1/1;
   border: solid 1px transparent;
 }
-.small > svg.ds-icon
-.small > svg:has(use[href*="icons"]) {
+.mini > svg.ds-icon
+.mini > svg:has(use[href*="icons"]) {
   height: 1rem;
 }
 .medium > svg.ds-icon,
