@@ -12,23 +12,157 @@
 
   </head>
   <body><article class="ds-container" style="margin: var(--space-xl) auto;">
-  <h1>Ikoner</h1>
-  <p>
-    <svg style="--ds-icon-color: var(--primary); height: 5rem;"><use href="../../assets/icons.svg#accessibility" /></svg>
-    <svg style="--ds-icon-color: var(--aktion); height: 3rem;"><use href="../../assets/icons.svg#faq" /></svg>
-    <svg style="--ds-icon-color: var(--highlight); height: 1.5rem;"><use href="../../assets/icons.svg#frame-dual" /></svg>
-  </p>
-  <p>
-    <svg class="big"><use href="../../assets/icons.svg#accessibility" /></svg>
-    <svg class="medium"><use href="../../assets/icons.svg#accessibility" /></svg>
-    <svg><use href="../../assets/icons.svg#accessibility" /></svg>
-    <svg class="small"><use href="../../assets/icons.svg#accessibility" /></svg>
-  </p>
-  <p>
-    <svg class="bg-primary"><use href="../../assets/icons.svg#accessibility" /></svg>
-    <svg class="br-dark"><use href="../../assets/icons.svg#accessibility" /></svg>
-    <svg class="bg-primary br-dark"><use href="../../assets/icons.svg#accessibility" /></svg>
-  </p>
+  <h1>
+    <span class="big bg-primary">
+      <svg><use href="../../assets/icons.svg#accessibility" /></svg>
+    </span>
+    Ikoner
+  </h1>
+
+  <div class="ds-grid-2-1">
+
+    <section>
+      <h2>Størrelser</h2>
+      <p>
+        For at vise ikoner i forskellige størrelses-varianter, omgiv dem af en <code>&lt;span class="big">&lt;/span></code><br>
+        Mulige valg: <code>big</code>, <code>medium</code>, <code>small</code> 
+      </p>
+      <p>
+        <span class="big">
+          <svg><use href="../../assets/icons.svg#stack" /></svg>
+        </span>
+        <span class="medium">
+          <svg><use href="../../assets/icons.svg#accessibility" /></svg>
+        </span>
+        <span class="small">
+          <svg><use href="../../assets/icons.svg#info" /></svg>
+        </span>
+      </p>
+      <p>Man kan også have valgfri størrelser ved at sætte <code>height</code> style på <code>svg</code>-elementet.</p>
+      <p>
+        <svg style="height: 5rem;"><use href="../../assets/icons.svg#mail" /></svg>
+        <svg style="height: 1.5rem;"><use href="../../assets/icons.svg#frame-multi" /></svg>
+      </p>
+      <h2>Baggrundsfarver</h2>
+      <p>
+        For at vise ikoner med forskellige baggrunde, omgiv dem af en <code>&lt;span class="bg-primary">&lt;/span></code><br>
+        Mulige valg: <code>bg-primary</code>, <code>bg-secondary</code>, <code>bg-active</code> 
+      </p>
+      <p>
+        <span class="bg-primary">
+          <svg><use href="../../assets/icons.svg#accessibility" /></svg>
+        </span>
+        <span class="bg-secondary">
+          <svg><use href="../../assets/icons.svg#accessibility" /></svg>
+        </span>
+        <span class="bg-active">
+          <svg><use href="../../assets/icons.svg#accessibility" /></svg>
+        </span>
+      </p>
+      <h2>Kanter</h2>
+      <p>
+        For at vise ikoner med forskellige kanter, omgiv dem af en <code>&lt;span class="border">&lt;/span></code><br>
+        Mulige valg: <code>border</code>, <code>border-soft</code> 
+      </p>
+      <p>
+        <span class="border">
+          <svg><use href="../../assets/icons.svg#accessibility" /></svg>
+        </span>
+        <span class="border-soft">
+          <svg><use href="../../assets/icons.svg#accessibility" /></svg>
+        </span>
+      </p>
+      <h2>Ikon-farver</h2>
+      <p>Ikoner kan vises med forskellige farver ved at ændre css property <code>--ds-icon-color</code> på selve <code>svg</code>-elementet.</p>
+      <p>
+        <svg style="--ds-icon-color: var(--color);"><use href="../../assets/icons.svg#accessibility" /></svg>
+        <svg style="--ds-icon-color: var(--link);"><use href="../../assets/icons.svg#accessibility" /></svg>
+      </p>
+    </section>
+
+    <section style="background-color: var(--bg1); padding: var(--space-md);">
+      <h2>Eksempler</h2>
+      <p style="display: flex; flex-flow: row wrap; gap: var(--space-sm); align-items: center; margin-bottom: var(--space-lg);">
+        <span class="small bg-primary">
+          <svg><use href="../../assets/icons.svg#info" /></svg>
+        </span>
+        <span class="small bg-active">
+          <svg><use href="../../assets/icons.svg#inbox" /></svg>
+        </span>
+        <span class="small bg-secondary">
+          <svg><use href="../../assets/icons.svg#inbox" /></svg>
+        </span>
+        <span class="small">
+          <svg><use href="../../assets/icons.svg#accessibility" /></svg>
+        </span>
+        <span class="small bg-secondary border-soft">
+          <svg><use href="../../assets/icons.svg#accessibility" /></svg>
+        </span>
+        <span class="small border-soft">
+          <svg><use href="../../assets/icons.svg#accessibility" /></svg>
+        </span>
+        <span class="small border">
+          <svg><use href="../../assets/icons.svg#accessibility" /></svg>
+        </span>
+        <span class="small bg-secondary border-soft">
+          <svg style="--ds-icon-color: var(--primary);"><use href="../../assets/icons.svg#accessibility" /></svg>
+        </span>
+      </p>
+      <p style="display: flex; flex-flow: row wrap; gap: var(--space-sm); align-items: center; margin-bottom: var(--space-lg);">
+        <span class="medium bg-primary">
+          <svg><use href="../../assets/icons.svg#info" /></svg>
+        </span>
+        <span class="medium bg-active">
+          <svg><use href="../../assets/icons.svg#inbox" /></svg>
+        </span>
+        <span class="medium bg-secondary">
+          <svg><use href="../../assets/icons.svg#inbox" /></svg>
+        </span>
+        <span class="medium">
+          <svg><use href="../../assets/icons.svg#accessibility" /></svg>
+        </span>
+        <span class="medium bg-secondary border-soft">
+          <svg><use href="../../assets/icons.svg#accessibility" /></svg>
+        </span>
+        <span class="medium border-soft">
+          <svg><use href="../../assets/icons.svg#accessibility" /></svg>
+        </span>
+        <span class="medium border">
+          <svg><use href="../../assets/icons.svg#accessibility" /></svg>
+        </span>
+        <span class="medium bg-secondary border-soft">
+          <svg style="--ds-icon-color: var(--primary);"><use href="../../assets/icons.svg#accessibility" /></svg>
+        </span>
+      </p>
+      <p style="display: flex; flex-flow: row wrap; gap: var(--space-sm); align-items: center;">
+        <span class="big bg-primary">
+          <svg><use href="../../assets/icons.svg#info" /></svg>
+        </span>
+        <span class="big bg-active">
+          <svg><use href="../../assets/icons.svg#inbox" /></svg>
+        </span>
+        <span class="big bg-secondary">
+          <svg><use href="../../assets/icons.svg#inbox" /></svg>
+        </span>
+        <span class="big">
+          <svg><use href="../../assets/icons.svg#accessibility" /></svg>
+        </span>
+        <span class="big bg-secondary border-soft">
+          <svg><use href="../../assets/icons.svg#accessibility" /></svg>
+        </span>
+        <span class="big border-soft">
+          <svg><use href="../../assets/icons.svg#accessibility" /></svg>
+        </span>
+        <span class="big border">
+          <svg><use href="../../assets/icons.svg#accessibility" /></svg>
+        </span>
+        <span class="big bg-secondary border-soft">
+          <svg style="--ds-icon-color: var(--primary);"><use href="../../assets/icons.svg#accessibility" /></svg>
+        </span>
+      </p>
+    </section>
+
+  </div>
 </article>  <a style="position: fixed; bottom: var(--space-md); left: var(--space);" role="button" href="../../index.html"><svg><use href="../../assets/icons.svg#arrow-left" /></svg> Tilbage til oversigten</a>
   
   <ds-theme-toggle style="position: fixed; bottom: var(--space-md); right: var(--space);"></ds-theme-toggle>

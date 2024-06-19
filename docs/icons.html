@@ -257,22 +257,22 @@
   <h2>Varianter</h2>
 
   <p>
-    <a href="./examples/icons.html">Se ikon-eksempler her.</a>
+    Du kan ændre størrelse og farver på ikoner med classses og CSS-variabler.<br>
+    Det gøres ved at placere ikon svg-elementet i en <code>&lt;span>&lt;/span></code> og tilføje en class (f.eks. <code>class="big bg-primary"</code>).
   </p>
-
-  <p>
-    Du kan ændre størrelse og farver på ikoner med CSS.<br>
-    Størrelse ændres ved at justere <code>height</code><br>
-    Farve ændres ved at justere CSS variablen <code>--ds-icon-color</code>
-  </p>
+  <p><strong><a href="./examples/icons.html">Du kan finde eksempler og en komplet oversigt over classes her.</a></strong></p>
 
   <div id="ex-icon-manipulation">
-    <svg style="--ds-icon-color: var(--primary); height: 5rem;"><use href="../assets/icons.svg#accessibility" /></svg>
-    <svg style="--ds-icon-color: var(--aktion); height: 3rem;"><use href="../assets/icons.svg#faq" /></svg>
-    <svg style="--ds-icon-color: var(--highlight); height: 1.5rem;"><use href="../assets/icons.svg#frame-dual" /></svg>
+    <span class="big bg-primary">
+      <svg><use href="../assets/icons.svg#arrow-up" /></svg>
+    </span>
+    <span class="medium bg-secondary border-soft">
+      <svg><use href="../assets/icons.svg#arrow-down" /></svg>
+    </span>
+    <svg style="--ds-icon-color: red;"><use href="../assets/icons.svg#pointer-address" /></svg>
   </div>
 
-  <code-view data-snip="ex-icon-manipulation" title="Eksempel på justering af width og color"></code-view>
+  <code-view data-snip="ex-icon-manipulation" title="Eksempler på justering af størrelse og farve"></code-view>
 
 </article>
 

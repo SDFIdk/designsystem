@@ -13,31 +13,53 @@ svg:has(use[href*="icon"]) {
 
 /* Icon variants */
 
-svg.ds-icon,
-svg:has(use[href*="icon"]) {
-  &.small {
-    height: 1rem;
-  }
-  &.medium {
-    height: 1.8rem;
-  }
-  &.big {
-    height: 2.66rem;
-  }
-  &.bg-primary {
-    --ds-icon-color: var(--hvid);
-    background-color: var(--primary);
-    border-radius: 50%;
-    outline: solid 0.25rem var(--primary);
-  }
-  &.br {
-    box-shadow: 0 0 0 3px var(--border-color);
-    border-radius: 50%;
-  }
-  &.br-dark {
-    box-shadow: 0 0 0 3px var(--color);
-    border-radius: 50%;
-  }
+.small:has(svg),
+.medium,
+.big,
+.bg-primary,
+.bg-secondary,
+.bg-active,
+.border,
+.border-soft { 
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  padding: 0.33rem;
+  aspect-ratio: 1/1;
+  border: solid 1px transparent;
+}
+.small > svg.ds-icon
+.small > svg:has(use[href*="icons"]) {
+  height: 1rem;
+}
+.medium > svg.ds-icon,
+.medium > svg:has(use[href*="icons"]) {
+  height: 1.8rem;
+}
+.big {
+  padding: 0.5rem;
+}
+.big > .svg.ds-icon,
+.big > svg:has(use[href*="icons"]) {
+  height: 2.66rem;
+}
+.bg-primary {
+  --ds-icon-color: var(--hvid);
+  background-color: var(--primary);
+}
+.bg-secondary {
+  background-color: var(--background-color);
+}
+.bg-active {
+  --ds-icon-color: var(--hvid);
+  background-color: var(--c5);
+}
+.border {
+  border-color: var(--color);
+}
+.border-soft {
+  border-color: var(--border-color); 
 }
 
 /* Icons in links */
