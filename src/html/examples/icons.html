@@ -12,9 +12,12 @@
       <h2>Størrelser</h2>
       <p>
         For at vise ikoner i forskellige størrelses-varianter, omgiv dem af en <code>&lt;span class="big">&lt;/span></code><br>
-        Mulige valg: <code>big</code>, <code>medium</code>, <code>small</code> 
+        Mulige valg: <code>hero</code>,<code>big</code>, <code>medium</code>, <code>small</code> 
       </p>
       <p>
+        <span class="hero">
+          <svg><use href="../../assets/icons.svg#arrow-left" /></svg>
+        </span>
         <span class="big">
           <svg><use href="../../assets/icons.svg#stack" /></svg>
         </span>
@@ -56,6 +59,12 @@
           <svg><use href="../../assets/icons.svg#accessibility" /></svg>
         </span>
         <span class="border-soft">
+          <svg><use href="../../assets/icons.svg#accessibility" /></svg>
+        </span>
+      </p>
+      <p>Vis ikon med skarpe kanter ved at bruge <code>class="square"</code></p>
+      <p>
+        <span class="bg-primary square">
           <svg><use href="../../assets/icons.svg#accessibility" /></svg>
         </span>
       </p>
@@ -121,7 +130,7 @@
           <svg style="--ds-icon-color: var(--primary);"><use href="../../assets/icons.svg#accessibility" /></svg>
         </span>
       </p>
-      <p style="display: flex; flex-flow: row wrap; gap: var(--space-sm); align-items: center;">
+      <p style="display: flex; flex-flow: row wrap; gap: var(--space-sm); align-items: center; margin-bottom: var(--space-lg);">
         <span class="big bg-primary">
           <svg><use href="../../assets/icons.svg#info" /></svg>
         </span>
@@ -145,6 +154,31 @@
         </span>
         <span class="big bg-secondary border-soft">
           <svg style="--ds-icon-color: var(--primary);"><use href="../../assets/icons.svg#accessibility" /></svg>
+        </span>
+      </p>
+      <p style="display: flex; flex-flow: row wrap; gap: var(--space-sm); align-items: center; margin-bottom: var(--space-lg);">
+        <span class="hero bg-primary">
+          <svg><use href="../../assets/icons.svg#info" /></svg>
+        </span>
+        <span class="hero bg-active">
+          <svg><use href="../../assets/icons.svg#inbox" /></svg>
+        </span>
+        <span class="hero border">
+          <svg><use href="../../assets/icons.svg#accessibility" /></svg>
+        </span>
+        <span class="hero bg-secondary border-soft">
+          <svg style="--ds-icon-color: var(--primary);"><use href="../../assets/icons.svg#accessibility" /></svg>
+        </span>
+      </p>
+      <p style="display: flex; flex-flow: row wrap; gap: var(--space-sm); align-items: center;">
+        <span class="square small bg-primary">
+          <svg><use href="../../assets/icons.svg#inbox" /></svg>
+        </span>
+        <span class="square medium bg-active">
+          <svg><use href="../../assets/icons.svg#inbox" /></svg>
+        </span>
+        <span class="square big bg-secondary">
+          <svg><use href="../../assets/icons.svg#inbox" /></svg>
         </span>
       </p>
     </section>

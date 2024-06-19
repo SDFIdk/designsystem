@@ -16,6 +16,7 @@ svg:has(use[href*="icon"]) {
 .small:has(svg),
 .medium,
 .big,
+.hero,
 .bg-primary,
 .bg-secondary,
 .bg-active,
@@ -44,6 +45,13 @@ svg:has(use[href*="icon"]) {
 .big > svg:has(use[href*="icons"]) {
   height: 2.66rem;
 }
+.hero {
+  padding: 0.75rem;
+}
+.hero > .svg.ds-icon,
+.hero > svg:has(use[href*="icons"]) {
+  height: 4.5rem;
+}
 .bg-primary {
   --ds-icon-color: var(--hvid);
   background-color: var(--primary);
@@ -60,6 +68,9 @@ svg:has(use[href*="icon"]) {
 }
 .border-soft {
   border-color: var(--border-color); 
+}
+.square {
+  border-radius: 0 !important;
 }
 
 /* Icons in links */
