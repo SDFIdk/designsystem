@@ -70,6 +70,20 @@
       </fieldset>
 
       <fieldset>
+        <ds-switch checked></ds-switch>
+      </fieldset>
+      <fieldset>
+        <ds-switch>Label text</ds-switch>
+      </fieldset>
+      
+      <p>Brug af ds-switch elementet kræver registrering af ds-switch i Javascript.</p>
+
+      <script type="module">
+        import { DSSwitch } from '../../assets/designsystem.js'
+        customElements.define('ds-switch', DSSwitch)
+      </script>
+
+      <fieldset>
         <label for="mytext">A textarea</label>
         <textarea placeholder="Some text in a textarea"></textarea>
       </fieldset>
