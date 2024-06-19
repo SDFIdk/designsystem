@@ -18,7 +18,7 @@
     <p>Du kan ændre typografi i knapperne ved at bruge <code>.hx</code> classes på knapperne.<br> F.eks. <code>&lt;button class="h4">H4 tekst knap&lt;/button></code></p>
 
     <span id="btn-ex-3">
-    <button class="h2">H2 primær</button>
+      <button class="h2">H2 primær</button>
     </span>
     <button class="secondary h3">H3 secondary</button>
     <button class="quiet h4">H4 quiet</button>
@@ -35,13 +35,13 @@
     <code-view data-snip="btn-ex-2"></code-view>
   
     <p>Du kan lave knapgrupper ved at pakke <code>&lt;button></code> elementerne ind i et element med <code>class="ds-button-group"</code>.</p>
-    
+  
     <div id="btn-ex-4">
-      <p class="ds-button-group">
+      <div class="ds-button-group">
         <button>Standard knap</button>
         <hr>
         <button>Mere knap</button>
-      </p>
+      </div>
     </div>
 
     <code-view data-snip="btn-ex-4"></code-view>
@@ -116,8 +116,8 @@
         Tilføj
       </button>
       <a role="button" href="#knapper">
+        <span>Link</span>
         <svg><use href="../assets/icons.svg#arrow-right"></use></svg>
-        Link
       </a>
     </p>
 

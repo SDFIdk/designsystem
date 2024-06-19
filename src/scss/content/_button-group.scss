@@ -31,7 +31,8 @@
 
   & > button,
   & > input,
-  & > a {
+  & > a,
+  & > a[title] {
     border-radius: 0;
     display: flex;
     flex-flow: row nowrap;
