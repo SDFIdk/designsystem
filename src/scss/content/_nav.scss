@@ -31,6 +31,8 @@ nav.ds-nav-vertical {
     color: var(--color);
     padding: var(--space);
     border-bottom: solid var(--border-width) transparent;
+    border-radius: 0;
+    height: auto;
 
     &.active {
       color: var(--link);

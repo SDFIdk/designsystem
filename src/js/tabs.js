@@ -45,6 +45,9 @@ export class Tabs extends HTMLElement {
         "aria-controls",
         `tabpanel-${this.componentId}-${index}`
       )
+      if (index === this.activeIndex) {
+        tabTitleButton.classList.add('active')
+      } 
       tabTitleButton.addEventListener("click", () =>
         this.switchTab(index)
       )
@@ -60,12 +63,16 @@ export class Tabs extends HTMLElement {
       tabContent.appendChild(tab)
 
       this.tabContents.push(tabContent)
-    });
+    })
   }
 
   switchTab(index) {
     this.tabTitles[this.activeIndex].setAttribute("aria-selected", false)
     this.tabTitles[index].setAttribute("aria-selected", true)
+    this.tabTitles.forEach((tabElement) => {
+      tabElement.classList.remove('active')
+    })
+    this.tabTitles[index].classList.add('active')
     this.tabContents[this.activeIndex].style.display = "none"
     this.tabContents[index].style.display = "block"
     this.activeIndex = index
@@ -87,15 +94,19 @@ export class Tabs extends HTMLElement {
     
     this.appendChild(styleContainer)
 
-    const tabsContainer = document.createElement("div")
-    tabsContainer.className = "ds-tabs-header"
+    const tabsContainer = document.createElement("nav")
+    tabsContainer.className = "ds-nav"
 
     this.tabTitles.forEach((tabTitle, index) => {
       tabTitle.id = `tab-${this.componentId}-${index}`
+      tabTitle.classList.add('quiet')
       tabsContainer.appendChild(tabTitle)
     })
 
     this.appendChild(tabsContainer)
+
+    const hrElement = document.createElement('hr')
+    this.appendChild(hrElement)
 
     const tabContentContainer = document.createElement("div")
     tabContentContainer.className = "ds-tabs-body"

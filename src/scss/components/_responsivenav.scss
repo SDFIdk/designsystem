@@ -17,6 +17,7 @@ ds-nav > nav {
   gap: var(--space-sm);
   flex-flow: row nowrap; 
   justify-content: flex-start;
+  margin: 0;
 }
 
 ds-nav[data-align="right"] > nav {
