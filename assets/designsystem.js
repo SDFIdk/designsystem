@@ -545,7 +545,7 @@ var DSLogoTitle = class extends HTMLElement {
     this.shadow.innerHTML = `
       <style>
         :host {
-          display: inline-block;
+          display: block;
         }
         :host(.black) ds-logo {
           --ds-logo-color: var(--hvid);

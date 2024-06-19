@@ -33,7 +33,7 @@
 a.ds-logo,
 .ds-logo a {
   text-decoration: none;
-  color: var(--ds-logo-theme-color);
+  color: var(--color);
 
   &:hover strong,
   &:hover span,
@@ -89,9 +89,9 @@ ds-logo.transparent {
 }
 
 /* Styles for links wrapping around logo */
-a:has(ds-logo-title),
-a:link:has(ds-logo-title),
-a:visited:has(ds-logo-title) {
+a[href]:has(ds-logo-title),
+a[href]:link:has(ds-logo-title),
+a[href]:visited:has(ds-logo-title) {
   display: inline-block;
   border-radius: 2.25rem;
   color: var(--color);
@@ -99,8 +99,8 @@ a:visited:has(ds-logo-title) {
   padding: var(--space-xs) 1.75rem var(--space-xs) var(--space);
   margin-left: -1rem;
 }
-a:hover:has(ds-logo-title),
-a:active:has(ds-logo-title) {
+a[href]:hover:has(ds-logo-title),
+a[href]:active:has(ds-logo-title) {
   background-color: var(--primary);
   color: var(--hvid);
 }
