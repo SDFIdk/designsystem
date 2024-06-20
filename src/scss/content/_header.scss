@@ -1,24 +1,6 @@
 .ds-header {
-  display: flex;
-  padding-top: var(--space-xl);
-  padding-bottom: var(--space-xl);
   background-color: var(--bg1);
-
-  & > * {
-    width: 100%;
-  }
-
-  .ds-logo,
-  .ds-logo-responsive {
-    margin-bottom: var(--space-xl);
-  }
-
-  h1 {
-    margin: 0 0 var(--space);
-  }
-  
-  blockquote,
-  .blockquote {
-    margin: var(--space) 0;
-  }
+}
+.ds-header ds-logo-title {
+  margin-bottom: var(--space-lg);
 }

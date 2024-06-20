@@ -27,27 +27,14 @@
 }
 
 .ds-flexgrid {
+  display: flex; 
+  flex-flow: row wrap; 
+  gap: var(--gap);
   
   & > * {
-    margin: var(--space-md) 0;
-    width: 100%;
+    max-width: 45rem;
+    min-width: 15rem;
   }
-
-  @media (min-width: 36rem) {
-    display: flex; 
-    flex-flow: row wrap; 
-    gap: var(--gap);
-
-    & > * {
-      flex: 1 0 15rem;
-      margin: 0;
-    }
-  }
-
-  @media (min-width: 48rem) { 
-    gap: var(--gap);
-  }
-
 }
 
 .ds-grid-2-1,

@@ -5,35 +5,21 @@
     #ex-grid-2 div,
     #ex-grid-3 div,
     #ex-grid-4 div {
-      color: var(--background-color);
-      background-color: var(--color);
-      padding: var(--padding);
+      background-color: var(--bg1);
+      padding: var(--space);
     }
   </style>
 
   <h2>Layout</h2>
 
-  <nav style="display: flex; flex-flow: column nowrap; align-items: flex-start;">
-    <a href="./examples/layout0.html">Layout eksempel, simpel</a>
-    <a href="./examples/layout1.html">Layout eksempel med kolonner</a>
-    <a href="./examples/layout2.html">Layout eksempel med udfyldende kolonner</a>
-    <a href="./examples/layout3.html">Layout eksempel, grid 2-1</a>
-    <a href="./examples/layout4.html">Layout eksempel, grid 2-1</a>
-    <a href="./examples/layout5.html">Layout eksempel, grig 1-2</a>
-    <a href="./examples/layout6.html">Layout eksempel med ikoner, etc.</a>
-  </nav>
-
   <p>Herunder kan du finde flere detaljer om, hvordan du nemt laver layouts i SDFI-stil.</p>
   <p>Vi har lavet nogle eksempler, hvor du kan se forskellige layout-teknikker i praksis.</p>
-  <ul>
-    <li><a href="./examples/layout0.html">Se simpelt layout-eksempel</a></li>
-    <li><a href="./examples/layout6.html">Se avanceret layout-eksempel (med ikoner, etc.)</a></li>
-  </ul>
+
+  <p><strong><a href="./docs/examples/grid.html">Eksempler på brug af grid og layout</a></strong></p>
 
   <h3>Kolonner og grids</h3>
 
   <p>Lav et simpelt kolonne-layout ved at tilføje <code>ds-grid</code> class til det element, der indeholder de elementer, som skal vises i kolonner.</p>
-  <p><a href="./examples/layout1.html">Se demo</a></p>
 
   <div id="ex-grid-1">
     <section class="ds-grid">
@@ -49,7 +35,6 @@
   <h4>Fleksible kolonner</h4>
 
   <p>Hvis boksene gerne må bruge den plads, der er til rådighed, så kan du bruge <code>ds-flexgrid</code> class i stedet.</p>
-  <p><a href="./examples/layout2.html">Se demo</a></p>
 
   <div id="ex-grid-2">
     <section class="ds-flexgrid">
@@ -67,8 +52,6 @@
 
   <p>Brug class <code>.ds-grid-2-1</code> på elementet udenom, når du vil vise to elementer som hhv. primær og sekundær kolonne.</p>
   
-  <p><a href="./examples/layout4.html">Se demo</a></p>
-
   <div id="ex-grid-3">
     <section class="ds-grid-2-1">
       <div>Primær / main</div>
@@ -79,8 +62,6 @@
   <code-view data-snip="ex-grid-3"></code-view>
 
   <p>Brug class <code>.ds-grid-1-2</code> hvis rækkefølgen skal være omvendt.</p>
-  
-  <p><a href="./examples/layout5.html">Se demo</a></p>
 
   <div id="ex-grid-4">
     <section class="ds-grid-1-2">
@@ -93,22 +74,31 @@
 
   <h3>Indholds-containere</h3>
   
-  <p class="ds-container">Hvis du skal vise noget indhold i én kolonne midt i skærmen, så sæt <code>ds-container</code> class på elementet. Indholdet i denne tekst er centreret med class <code>ds-container</code></p>
-  <p><a href="./examples/layout3.html">Se demo</a></p>
+  <p class="ds-container ds-bg-1 ds-mb-md">Hvis du skal vise noget indhold i én kolonne midt i skærmen, så sæt <code>ds-container</code> class på elementet. Indholdet i denne tekst er centreret med class <code>ds-container</code></p>
 
   <h3>Simpel rækkevisning</h3>
 
   <p>Brug class <code>ds-flex-row</code>, hvis du blot vil vise to elementer ved siden af hinanden, og de skal være centreret i højden.<br> F.eks.:</p>
-  <p class="ds-flex-row">
-    <button>En knap</button>
-    <span>Et tekstelement</span>
-  </p>
-  <pre><code>
-    &lt;p class="ds-flex-row">
-      &lt;button>En knap&lt;/button>
-      &lt;span>Et tekstelement&lt;/span>
-    &lt;/p>
-  </code></pre>
+  <div id="ex-layout-1">
+    <p class="ds-flex-row">
+      <span class="ds-bg-1 ds-p">Noget indhold</span>
+      <span class="ds-bg-1 ds-p">Noget andet indhold</span>
+      <span class="ds-bg-1 ds-p">Noget trejde indhold</span>
+    </p>
+  </div>
+  <code-view data-snip="ex-layout-1"></code-view>
+  
+  <h3>Simpel kolonnevisning</h3>
+
+  <p>Brug class <code>ds-flex-column</code>, hvis du blot vil vise nogle elementer over/under hinanden, og de skal adskilles af samme afstand.<br> F.eks.:</p>
+  <div id="ex-layout-2">
+    <p class="ds-flex-column">
+      <span class="ds-bg-1 ds-p">Noget indhold</span>
+      <span class="ds-bg-1 ds-p">Noget andet indhold</span>
+      <span class="ds-bg-1 ds-p">Noget trejde indhold</span>
+    </p>
+  </div>
+  <code-view data-snip="ex-layout-2"></code-view>
   
 
 </section>

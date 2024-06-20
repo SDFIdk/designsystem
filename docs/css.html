@@ -15,34 +15,29 @@
   <body>
 
     <header id="header" class="ds-header">
-
       <div class="ds-container">
+        <ds-logo-title title="Dataforsyningen" by-line="Styrelsen for Dataforsyning og Infrastruktur"></ds-logo-title>
+        <h1>SDFI Designsystem v7.0.0</h1>
+        <p class="manchet">Reference-implementationer af SDFIs designguide med HTML/CSS</p>
 
-        <ds-logo-title title="Designsystem" byline="Styrelsen for Dataforsyning og Infrastruktur"></ds-logo-title>
-      
-        <h1>SDFI Designsystem</h1>
-        <p class="blockquote">Reference-implementationer af SDFIs designguide med HTML/CSS</p>
-
+        <nav class="ds-nav">
+          <a href="../index.html">Introduktion</a>
+          <a href="./css.html">Basis</a>
+          <a href="./icons.html">Ikoner</a>
+          <a href="./components.html">UI-komponenter</a>
+          <a href="./logos.html">Logo</a>
+          <a href="https://github.com/SDFIdk/designsystem">Github</a>
+        </nav>
+  
+        <ds-theme-toggle style="position: fixed; bottom: var(--space); right: var(--space); width: auto; z-index: 10;"></ds-theme-toggle>
+  
       </div>
-
-      <nav class="ds-nav">
-        <a href="../index.html">Introduktion</a>
-        <a href="./css.html">Basis</a>
-        <a href="./icons.html">Ikoner</a>
-        <a href="./components.html">UI-komponenter</a>
-        <a href="./logos.html">Logo</a>
-        <a href="https://github.com/SDFIdk/designsystem">Github</a>
-      </nav>
-
-      <ds-theme-toggle style="position: fixed; bottom: var(--space); right: var(--space); width: auto; z-index: 10;"></ds-theme-toggle>
-
     </header><main class="ds-container"><section class="index-wrapper">
 
   <h2>Indholdsfortegnelse</h2>
 
-  <div style="display: flex; flex-flow: row wrap; gap: var(--space-lg);">
+  <nav class="ds-flexgrid">
     
-    <nav class="ds-nav-vertical">
       <a href="#typografi">Typografi</a>
       <a href="#farver">Farver</a>
       <a href="#knapper">Knapper</a>
@@ -51,9 +46,7 @@
       <a href="#tabeller">Tabeller</a>
       <a href="#lists">Lister</a>
       <a href="#disclosure">Collapsible</a>
-    </nav>
-
-    <nav class="ds-nav-vertical">
+    
       <a href="#grid">Grid</a>
       <a href="#padding">Padding</a>
       <a href="#margin">Margin</a>
@@ -62,9 +55,8 @@
       <a href="#navs">Navigation</a>
       <a href="#cards">Cards</a>
       <a href="#labels">Labels</a>
-    </nav>
 
-  </div>
+  </nav>
   
 </section>
 <article id="typografi">
@@ -433,35 +425,21 @@
     #ex-grid-2 div,
     #ex-grid-3 div,
     #ex-grid-4 div {
-      color: var(--background-color);
-      background-color: var(--color);
-      padding: var(--padding);
+      background-color: var(--bg1);
+      padding: var(--space);
     }
   </style>
 
   <h2>Layout</h2>
 
-  <nav style="display: flex; flex-flow: column nowrap; align-items: flex-start;">
-    <a href="./examples/layout0.html">Layout eksempel, simpel</a>
-    <a href="./examples/layout1.html">Layout eksempel med kolonner</a>
-    <a href="./examples/layout2.html">Layout eksempel med udfyldende kolonner</a>
-    <a href="./examples/layout3.html">Layout eksempel, grid 2-1</a>
-    <a href="./examples/layout4.html">Layout eksempel, grid 2-1</a>
-    <a href="./examples/layout5.html">Layout eksempel, grig 1-2</a>
-    <a href="./examples/layout6.html">Layout eksempel med ikoner, etc.</a>
-  </nav>
-
   <p>Herunder kan du finde flere detaljer om, hvordan du nemt laver layouts i SDFI-stil.</p>
   <p>Vi har lavet nogle eksempler, hvor du kan se forskellige layout-teknikker i praksis.</p>
-  <ul>
-    <li><a href="./examples/layout0.html">Se simpelt layout-eksempel</a></li>
-    <li><a href="./examples/layout6.html">Se avanceret layout-eksempel (med ikoner, etc.)</a></li>
-  </ul>
+
+  <p><strong><a href="./docs/examples/grid.html">Eksempler på brug af grid og layout</a></strong></p>
 
   <h3>Kolonner og grids</h3>
 
   <p>Lav et simpelt kolonne-layout ved at tilføje <code>ds-grid</code> class til det element, der indeholder de elementer, som skal vises i kolonner.</p>
-  <p><a href="./examples/layout1.html">Se demo</a></p>
 
   <div id="ex-grid-1">
     <section class="ds-grid">
@@ -477,7 +455,6 @@
   <h4>Fleksible kolonner</h4>
 
   <p>Hvis boksene gerne må bruge den plads, der er til rådighed, så kan du bruge <code>ds-flexgrid</code> class i stedet.</p>
-  <p><a href="./examples/layout2.html">Se demo</a></p>
 
   <div id="ex-grid-2">
     <section class="ds-flexgrid">
@@ -495,8 +472,6 @@
 
   <p>Brug class <code>.ds-grid-2-1</code> på elementet udenom, når du vil vise to elementer som hhv. primær og sekundær kolonne.</p>
   
-  <p><a href="./examples/layout4.html">Se demo</a></p>
-
   <div id="ex-grid-3">
     <section class="ds-grid-2-1">
       <div>Primær / main</div>
@@ -507,8 +482,6 @@
   <code-view data-snip="ex-grid-3"></code-view>
 
   <p>Brug class <code>.ds-grid-1-2</code> hvis rækkefølgen skal være omvendt.</p>
-  
-  <p><a href="./examples/layout5.html">Se demo</a></p>
 
   <div id="ex-grid-4">
     <section class="ds-grid-1-2">
@@ -521,41 +494,43 @@
 
   <h3>Indholds-containere</h3>
   
-  <p class="ds-container">Hvis du skal vise noget indhold i én kolonne midt i skærmen, så sæt <code>ds-container</code> class på elementet. Indholdet i denne tekst er centreret med class <code>ds-container</code></p>
-  <p><a href="./examples/layout3.html">Se demo</a></p>
+  <p class="ds-container ds-bg-1 ds-mb-md">Hvis du skal vise noget indhold i én kolonne midt i skærmen, så sæt <code>ds-container</code> class på elementet. Indholdet i denne tekst er centreret med class <code>ds-container</code></p>
 
   <h3>Simpel rækkevisning</h3>
 
   <p>Brug class <code>ds-flex-row</code>, hvis du blot vil vise to elementer ved siden af hinanden, og de skal være centreret i højden.<br> F.eks.:</p>
-  <p class="ds-flex-row">
-    <button>En knap</button>
-    <span>Et tekstelement</span>
-  </p>
-  <pre><code>
-    &lt;p class="ds-flex-row">
-      &lt;button>En knap&lt;/button>
-      &lt;span>Et tekstelement&lt;/span>
-    &lt;/p>
-  </code></pre>
+  <div id="ex-layout-1">
+    <p class="ds-flex-row">
+      <span class="ds-bg-1 ds-p">Noget indhold</span>
+      <span class="ds-bg-1 ds-p">Noget andet indhold</span>
+      <span class="ds-bg-1 ds-p">Noget trejde indhold</span>
+    </p>
+  </div>
+  <code-view data-snip="ex-layout-1"></code-view>
+  
+  <h3>Simpel kolonnevisning</h3>
+
+  <p>Brug class <code>ds-flex-column</code>, hvis du blot vil vise nogle elementer over/under hinanden, og de skal adskilles af samme afstand.<br> F.eks.:</p>
+  <div id="ex-layout-2">
+    <p class="ds-flex-column">
+      <span class="ds-bg-1 ds-p">Noget indhold</span>
+      <span class="ds-bg-1 ds-p">Noget andet indhold</span>
+      <span class="ds-bg-1 ds-p">Noget trejde indhold</span>
+    </p>
+  </div>
+  <code-view data-snip="ex-layout-2"></code-view>
   
 
 </section>
 <section id="padding">
   <h2>Indvendig afstand / padding</h2>
 
-  <p>Du kan sætte den korrekte padding ved at bruge class <code>ds-padding</code> i HTML.</p>
-  <pre><code>&lt;div class="ds-padding"> ... &lt;/div></code></pre>
+  <p>Du kan sætte standard padding ved at bruge <code>class="ds-p"</code> i et HTML-element.</p>
+  <pre><code>&lt;div class="ds-p"> ... &lt;/div></code></pre>
 
-  <p><a href="./examples/layout1.html">Se demo</a></p>
-
-  <p class="ds-padding" style="border: var(--border); display: inline-block;">
+  <p class="ds-p">
     Indhold med ds-padding omkring sig.
   </p>
-
-  <p>Hvis du skal bruge den officielle padding i CSS, kan du bruge CSS custom property <code>--padding</code>.</p>
-  <pre><code>.my-custom-class {
-    padding: var(--padding);
-  }</code></pre>
 
   <h3>Specielle paddings</h3>
 
@@ -568,52 +543,9 @@
   <p>En class <code>ds-pb-sm</code> vil således give en <code>padding-bottom: 0.5rem</code></p>
   <p>Det samme resultat kan opnås ved at bruge CSS custom properties: <code>style="padding-bottom: var(--space-sm);"</code></p>
 
-  <h3>Når elementer skal flugte med hinanden</h3>
-
-  <p>Når tekst og elementer med runde kanter (ikoner, knapper, etc.) står sammen, skal teksten og de runde elementer rykkes lidt i forhold til hinanden. Det er for at modvirke et optisk fænomen, hvor det ser ud som om, at de ikke står på linie.</p>
-  <p>Du kan gøre det ved at give teksten lidt ekstra padding med <code>ds-optical-padding</code> class ELLER give ikoner/knapper en justeringsmargin.</p>
-
-  <div class="bordered">
-    <p class="ds-optical-padding">Her er din tekst med optical padding.</p>
-    <button>En knap</button>
-  </div>
-
-  <pre><code>
-    &lt;p class="ds-optical-padding">Her er din tekst&lt;/p>
-    &lt;button>En knap&lt;/button>
-  </code></pre>
-
-  <div class="bordered">
-    <p>Her er din tekst</p>
-    <button class="ds-optical-margin">En knap med optical margin</button>
-  </div>
-
-  <pre><code>
-    &lt;p>Her er din tekst&lt;/p>
-    &lt;button class="ds-optical-margin">En knap&lt;/button>
-  </code></pre>
-
-  <p>Her kan du også bruge CSS custom properties <code>--optical-padding</code> og <code>--optical-margin</code> til mere specialiserede layouts.</p>
-
 </section>
 <section id="margin">
   <h2>Udvendig afstand / margin</h2>
-
-  <p>Du kan sætte den korrekte margin ved at bruge class <code>ds-margin</code> i HTML.</p>
-  <pre><code>&lt;div class="ds-margin"> ... &lt;/div></code></pre>
-
-  <p><a href="./examples/layout2.html">Se demo</a></p>
-
-  <p class="ds-margin" style="border: var(--border); display: inline-block;">
-    Indhold med ds-margin omkring sig
-  </p>
-
-  <p>Hvis du skal bruge den officielle margin i CSS, kan du bruge CSS custom property <code>--margin</code>.</p>
-  <pre><code>.my-custom-class {
-    margin: var(--margin);
-  }</code></pre>
-
-  <h3>Specielle margins</h3>
 
   <p>Du kan sætte en <code>class</code> med en specifik margin til særlige indrykninger o.l.</p>
   <p>Du kan bygge en specifik class ved at kombinere:</p>
@@ -628,8 +560,7 @@
 <article id="header-layout">
   <style>
     #ex-header-1 .ds-header {
-      padding-left: var(--space-xxl);
-      padding-right: var(--space-xxl);
+      
     }
   </style>
   <h2>Header layout</h2>
@@ -637,13 +568,9 @@
   <div id="ex-header-1">
     <header class="ds-header" data-theme="dark">
       <div class="ds-container">
-        <p class="ds-logo">
-          <ds-logo></ds-logo>
-          <strong>Dataforsyningen</strong>
-          <span>Styrelsen for Dataforsyning og Infrastruktur</span>
-        </p>  
+        <ds-logo-title title="Dataforsyningen" by-line="Styrelsen for Dataforsyning og Infrastruktur"></ds-logo-title>
         <h1>Designguide eksempler</h1>
-        <p class="blockquote">Reference-implementationer af SDFIs designguide med HTML/CSS</p>
+        <p class="manchet">Reference-implementationer af SDFIs designguide med HTML/CSS</p>
       </div>
     </header>
   </div>
@@ -652,23 +579,16 @@
 
 </article><article id="footer-layout">
 
-  <style>
-    #ex-footer-1 .ds-footer {
-      padding-left: var(--space-xxl);
-      padding-right: var(--space-xxl);
-    }
-  </style>
-
   <h2>Footer layout</h2>
 
   <p>Her er en standard footer, som kan placeres i bunden af en webside.</p>
 
   <div id="ex-footer-1">
-    <footer class="ds-footer" data-theme="light">
+    <footer class="ds-footer">
       <div class="ds-container">
         <ds-logo-title class="transparent" title="Styrelsen for Dataforsyning og Infrastruktur"></ds-logo-title>
         <hr>
-        <p>© 2023 Styrelsen for Dataforsyning og Infrastruktur</p>
+        <p>© 2024 Styrelsen for Dataforsyning og Infrastruktur
       </div>
     </footer>
   </div>
