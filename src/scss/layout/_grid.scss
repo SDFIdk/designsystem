@@ -6,10 +6,8 @@
 .grid,
 .ds-grid {
   display: grid;
-  gap: var(--space-md);
+  gap: var(--gap);
   grid-template-columns: minmax(15rem, 1fr);
-  margin-top: var(--space-md);
-  margin-bottom: var(--space-md);
 
   @media (min-width: 36rem) {
     grid-template-columns: 1fr 1fr;
@@ -38,7 +36,7 @@
   @media (min-width: 36rem) {
     display: flex; 
     flex-flow: row wrap; 
-    gap: var(--space-md);
+    gap: var(--gap);
 
     & > * {
       flex: 1 0 15rem;
@@ -47,7 +45,7 @@
   }
 
   @media (min-width: 48rem) { 
-    gap: var(--space-lg);
+    gap: var(--gap);
   }
 
 }
@@ -55,7 +53,7 @@
 .ds-grid-2-1,
 .ds-grid-1-2 {
   display: grid;
-  gap: var(--space-lg);
+  gap: var(--gap);
   grid-template-columns: 1fr;
 }
 
@@ -71,14 +69,25 @@
 
 }
 
-.ds-flex-row {
+.ds-flex-row,
+.ds-flex-column {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  gap: var(--space-sm);
+  flex-wrap: nowrap;
+  gap: var(--gap);
 
   & > * {
     margin: 0;
   }
+}
+
+.ds-flex-row {
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.ds-flex-column {
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
 }

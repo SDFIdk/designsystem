@@ -41,3 +41,23 @@ figcaption {
   font-size: smaller;
   padding: var(--space-xs) 0;
 }
+
+// Misc. utility classes
+.ds-border-round {
+  border-radius: var(--border-radius);
+}
+.ds-bg-0 {
+  background-color: var(--bg0);
+}
+.ds-bg-1 {
+  background-color: var(--bg1);
+}
+.ds-bg-2 {
+  background-color: var(--bg2);
+}
+.ds-w-max {
+  max-width: 55rem;
+}
+.ds-w-min {
+  max-width: 22rem;
+}

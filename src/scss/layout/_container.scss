@@ -3,11 +3,9 @@
  */
 
 .container,
-.container-fluid,
-.ds-container,
-.ds-container-fluid {
-  width: calc(100vw - var(--gap-md) * 2);
-  max-width: 60rem;
-  margin-right: auto;
-  margin-left: auto;
+.ds-container {
+  width: 100%;
+  max-width: 90rem;
+  padding: var(--gap);
+  margin: 0 auto;
 }
