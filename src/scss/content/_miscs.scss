@@ -1,4 +1,4 @@
-/**
+/*
  * Miscs
  */
 
@@ -42,22 +42,47 @@ figcaption {
   padding: var(--space-xs) 0;
 }
 
-// Misc. utility classes
+/* Misc. utility classes */
+
+/**
+ * Adds rounded corners to an element 
+ * @var --border-radius
+ */
 .ds-border-round {
   border-radius: var(--border-radius);
 }
+/**
+ * Paints an element's background with base color 
+ * @var --bg0
+ */
 .ds-bg-0 {
   background-color: var(--bg0);
 }
+/**
+ * Paints an element's background with slightly tinted color 
+ * @var --bg1
+ */
 .ds-bg-1 {
   background-color: var(--bg1);
 }
+/**
+ * Paints an element's background with heavily tinted color 
+ * @var --bg2
+ */
 .ds-bg-2 {
   background-color: var(--bg2);
 }
+/**
+ * Sets an element's width to maximum allowed value  
+ * @var --w-max
+ */
 .ds-w-max {
-  max-width: 55rem;
+  width: var(--w-max);
 }
+/**
+ * Sets an element's width to minimum allowed value  
+ * @var --w-min
+ */
 .ds-w-min {
-  max-width: 22rem;
+  width: var(--w-min);
 }

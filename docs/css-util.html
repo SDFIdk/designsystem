@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="da">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1,user-scalable=yes">
+    <title>SDFI Designsystem dokumentation</title>
+
+    <link rel="stylesheet" href="../assets/designsystem.css">
+    <link rel="stylesheet" href="./docs.css">
+
+    <link rel="icon" href="../assets/logo-small.svg">
+
+  </head>
+  <body>
+
+    <header id="header" class="ds-header">
+      <div class="ds-container">
+        <ds-logo-title title="Dataforsyningen" by-line="Styrelsen for Dataforsyning og Infrastruktur"></ds-logo-title>
+        <h1>SDFI Designsystem v7.0.0</h1>
+        <p class="manchet">Reference-implementationer af SDFIs designguide med HTML/CSS</p>
+
+        <nav class="ds-nav">
+          <a href="../index.html">Introduktion</a>
+          <a href="./css.html">Basis</a>
+          <a href="./icons.html">Ikoner</a>
+          <a href="./components.html">UI-komponenter</a>
+          <a href="./logos.html">Logo</a>
+          <a href="./css-util.html">CSS classes</a>
+          <a href="https://github.com/SDFIdk/designsystem">Github</a>
+        </nav>
+  
+        <ds-theme-toggle style="position: fixed; bottom: var(--space); right: var(--space); width: auto; z-index: 10;"></ds-theme-toggle>
+  
+      </div>
+    </header><main class="ds-container"><h2>CSS utility classes</h2><table><thead><tr><th>class</th><th>Beskrivelse</th><th>Relateret CSS var</th></tr></thead><tbody><tr><td>.ds-border-round</td><td>Adds rounded corners to an element 
+ </td><td>--border-radius
+ </td></tr><tr><td>.ds-bg-0</td><td>Paints an element's background with base color 
+ </td><td>--bg0
+ </td></tr><tr><td>.ds-bg-1</td><td>Paints an element's background with slightly tinted color 
+ </td><td>--bg1
+ </td></tr><tr><td>.ds-bg-2</td><td>Paints an element's background with heavily tinted color 
+ </td><td>--bg2
+ </td></tr><tr><td>.ds-w-max</td><td>Sets an element's width to maximum allowed value  
+ </td><td>--w-max
+ </td></tr><tr><td>.ds-w-min</td><td>Sets an element's width to minimum allowed value  
+ </td><td>--w-min
+ </td></tr></tbody></table></main><footer class="ds-footer">
+  <div class="ds-container">
+    <ds-logo-title class="transparent" title="Styrelsen for Dataforsyning og Infrastruktur"></ds-logo-title>
+    <hr>
+    <p>© 2024 Styrelsen for Dataforsyning og Infrastruktur - <a href="https://github.com/SDFIdk/designsystem">Find os på Github</a></p>
+  </div>
+</footer>
+
+<script type="module">
+  import { 
+    CodeView, 
+    ThemeToggle, 
+    Tabs,
+    DSNav,
+    DSTogglePanel,
+    Spinner,
+    DSLogo,
+    DSLogoTitle,
+    DSDataTable
+  } from '../assets/designsystem.js'
+  customElements.define('code-view', CodeView)
+  customElements.define('ds-theme-toggle', ThemeToggle)
+  customElements.define('ds-tabs', Tabs)
+  customElements.define('ds-nav', DSNav)
+  customElements.define('ds-logo', DSLogo)
+  customElements.define('ds-logo-title', DSLogoTitle)
+  customElements.define('ds-spinner', Spinner)
+  customElements.define('ds-data-table', DSDataTable)
+  if (!customElements.get('ds-toggle-panel')) {
+    customElements.define('ds-toggle-panel', DSTogglePanel)
+  }
+  
+</script>
+
+</body>
+</html>

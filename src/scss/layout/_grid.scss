@@ -7,7 +7,7 @@
 .ds-grid {
   display: grid;
   gap: var(--gap);
-  grid-template-columns: minmax(15rem, 1fr);
+  grid-template-columns: minmax(var(--w-min), 1fr);
 
   @media (min-width: 36rem) {
     grid-template-columns: 1fr 1fr;
@@ -32,8 +32,8 @@
   gap: var(--gap);
   
   & > * {
-    max-width: 45rem;
-    min-width: 15rem;
+    max-width: var(--w-max);
+    min-width: var(--w-min);
   }
 }
 
