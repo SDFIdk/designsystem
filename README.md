@@ -33,10 +33,19 @@ New files will appear in the `assets` folder.
 
 #### Stylesheets
 
-You can find designsystem stylesheets in [assets/designsystem.css](./assets/designsystem.css). Copy it to your project and include the stylesheet by add a reference in the `head` section of your HTML pages.
-```
+You can load the styles directly from CDN. 
+```html
 <head>
   ...
+  <link rel="stylesheet" href="https://cdn.dataforsyningen.dk/assets/designsystem/v7.0/designsystem.css">
+  ...
+<head>
+```
+
+Or you can find the designsystem stylesheet in [assets/designsystem.css](./assets/designsystem.css). Copy it to your project and include the stylesheet by add a reference in the `head` section of your HTML pages.
+```html
+<head>
+  ...   
   <link rel="stylesheet" href="YOUR_PATH/designsystem.css">
   ...
 <head>
@@ -48,8 +57,13 @@ You can find all designsystem icons in [assets/icons](./assets/icons). You can c
 
 When using the single SVG, you just add an `svg` element to your markup and display your icon of choice with `use`.
 Here is an example where we display the `notification` icon:
-```
+```html
 <svg><use href="YOUR_PATH/icons.svg#notification" /></svg>
+```
+
+Icons are also available via CDN. Here is an example with `<use>`
+```html
+<svg><use href="https://cdn.dataforsyningen.dk/assets/designsystem/v7.0/icons.svg#notification" /></svg>
 ```
 
 #### Javascript
