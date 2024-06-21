@@ -44,12 +44,12 @@ You can find designsystem stylesheets in [assets/designsystem.css](./assets/desi
 
 #### Icons (SVG)
 
-You can find all designsystem icons in [assets/icons](./assets/icons). You can copy and use them individually or use the entire icon set as a single SVG file: [assets/designsystem-icons.svg](./assets/designsystem-icons.svg)
+You can find all designsystem icons in [assets/icons](./assets/icons). You can copy and use them individually or use the entire icon set as a single SVG file: [assets/icons.svg](./assets/icons.svg)
 
 When using the single SVG, you just add an `svg` element to your markup and display your icon of choice with `use`.
 Here is an example where we display the `notification` icon:
 ```
-<svg><use href="YOUR_PATH/designsystem-icons.svg#notification" /></svg>
+<svg><use href="YOUR_PATH/icons.svg#notification" /></svg>
 ```
 
 #### Javascript
@@ -113,7 +113,7 @@ require('esbuild').buildSync({
 
 Then you can import a reference to the svg sprites file and use them in your .js files.
 ```
-import svgIcon from '@dataforsyningen/designsystem/designsystem-icons.svg'
+import svgIcon from '@dataforsyningen/designsystem/icons.svg'
 
 // Using the **notification** icon
 const templateString = `
