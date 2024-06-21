@@ -2,7 +2,9 @@
  * Utilities for accessibility 
  */
 
-// Hide visually, but have it available for screen readers
+/**
+ * Hide an element visually, but have it available for screen readers
+ */
 .ds-sr-only {
   width: 0;
   height: 0;

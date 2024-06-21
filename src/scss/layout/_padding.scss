@@ -1,7 +1,10 @@
-/**
+/*
  * Utility classes for paddings
  */
 
+/**
+ * Set standard padding around an element.
+ */
 .ds-p,
 .ds-padding {
   padding: var(--space) var(--space-lg) var(--space-lg);
@@ -12,105 +15,235 @@
 }
 
 /* padding-top */
+
+/**
+ * Set padding top standard size.
+ * @var --space
+ */
 .ds-pt {
   padding-top: var(--space);
 }
+
+/**
+ * Set padding top size extra extra small.
+ * @var --space-xxs
+ */
 .ds-pt-xxs {
   padding-top: var(--space-xxs);
 }
+/**
+ * Set padding top size extra small.
+ * @var --space-xs
+ */
 .ds-pt-xs {
   padding-top: var(--space-xs);
 }
+/**
+ * Set padding top size small.
+ */
 .ds-pt-sm {
   padding-top: var(--space-sm);
 }
+/**
+ * Set padding top size medium.
+ * @var --space-md
+ */
 .ds-pt-md {
   padding-top: var(--space-md);
 }
+/**
+ * Set padding top size large.
+ * @var --space-lg
+ */
 .ds-pt-lg {
   padding-top: var(--space-lg);
 }
+/**
+ * Set padding top size extra large.
+ * @var --space-xl
+ */
 .ds-pt-xl {
   padding-top: var(--space-xl);
 }
+/**
+ * Set padding top size extra extra large.
+ * @var --space-xxl
+ */
 .ds-pt-xxl {
   padding-top: var(--space-xxl);
 }
 
 /* padding-bottom */
+/**
+ * Set padding bottom standard size.
+ * @var --space
+ */
 .ds-pb  {
   padding-bottom: var(--space);
 }
+/**
+ * Set padding bottom size extra extra small.
+ * @var --space-xxs
+ */
 .ds-pb-xxs {
   padding-bottom: var(--space-xxs);
 }
+/**
+ * Set padding bottom size extra small.
+ * @var --space-xs
+ */
 .ds-pb-xs {
   padding-bottom: var(--space-xs);
 }
+/**
+ * Set padding bottom size small.
+ * @var --space-sm
+ */
 .ds-pb-sm {
   padding-bottom: var(--space-sm);
 }
+/**
+ * Set padding bottom size medium.
+ * @var --space-md
+ */
 .ds-pb-md {
   padding-bottom: var(--space-md);
 }
+/**
+ * Set padding bottom size large.
+ * @var --space-lg
+ */
 .ds-pb-lg {
   padding-bottom: var(--space-lg);
 }
+/**
+ * Set padding bottom size extra large.
+ * @var --space-xl
+ */
 .ds-pb-xl {
   padding-bottom: var(--space-xl);
 }
+/**
+ * Set padding bottom size extra extra large.
+ * @var --space-xxl
+ */
 .ds-pb-xxl {
   padding-bottom: var(--space-xxl);
 }
 
 /* padding-left */
+/**
+ * Set padding left standard size.
+ * @var --space
+ */
 .ds-pl {
   padding-left: var(--space);
 }
+/**
+ * Set padding left size extra extra small.
+ * @var --space-xxs
+ */
 .ds-pl-xxs {
   padding-left: var(--space-xxs);
 }
+/**
+ * Set padding left size extra small.
+ * @var --space-xs
+ */
 .ds-pl-xs {
   padding-left: var(--space-xs);
 }
+/**
+ * Set padding left size small.
+ * @var --space-sm
+ */
 .ds-pl-sm {
   padding-left: var(--space-sm);
 }
+/**
+ * Set padding left size medium.
+ * @var --space-md
+ */
 .ds-pl-md {
   padding-left: var(--space-md);
 }
+/**
+ * Set padding left size large.
+ * @var --space-lg
+ */
 .ds-pl-lg {
   padding-left: var(--space-lg);
 }
+/**
+ * Set padding left size extra large.
+ * @var --space-xl
+ */
 .ds-pl-xl {
   padding-left: var(--space-xl);
 }
+/**
+ * Set padding left size extra extra large.
+ * @var --space-xxl
+ */
 .ds-pl-xxl {
   padding-left: var(--space-xxl);
 }
 
 /* padding-right */
+/**
+ * Set padding right standard size.
+ * @var --space
+ */
 .ds-pr  {
   padding-right: var(--space);
 }
+
+/**
+ * Set padding right size extra extra small.
+ * @var --space-xxs
+ */
 .ds-pr-xxs {
   padding-right: var(--space-xxs);
 }
+/**
+ * Set padding right size extra small.
+ * @var --space-xs
+ */
 .ds-pr-xs {
   padding-right: var(--space-xs);
 }
+/**
+ * Set padding right size small.
+ * @var --space-sm
+ */
 .ds-pr-sm {
   padding-right: var(--space-sm);
 }
+/**
+ * Set padding right size medium.
+ * @var --space-md
+ */
 .ds-pr-md {
   padding-right: var(--space-md);
 }
+/**
+ * Set padding right size large.
+ * @var --space-lg
+ */
 .ds-pr-lg {
   padding-right: var(--space-lg);
 }
+/**
+ * Set padding right size extra large.
+ * @var --space-xl
+ */
 .ds-pr-xl {
   padding-right: var(--space-xl);
 }
+/**
+ * Set padding right size extra extra large.
+ * @var --space-xxl
+ */
 .ds-pr-xxl {
   padding-right: var(--space-xxl);
 }

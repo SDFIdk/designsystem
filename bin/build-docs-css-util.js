@@ -2,39 +2,88 @@ import { readdir } from 'node:fs/promises'
 
 import { writeToFile, readHTML } from './shared.js'
 
+const cssCommentRegex = /\/\*\*[\s\w\*\'\@\-\.\,]+\*\/\s\.[\w\-\,\.\s]+\{/g
+
+function parseVar(str) {
+  let varStr = ''
+  let varMatch = str.match(/\@var[\-\w\s]+\*/g)
+  if (varMatch) {
+    varStr = varMatch[0].substring(4).replace('*', '')
+  }
+  return varStr
+}
+
+function parseClass(str) {
+  let classStr = ''
+  let match = str.match(/\.[\w\-\,\.\s]+\{/g)
+  if (match) {
+    classStr = match[0].replace('{', '')
+  }
+  return classStr
+}
+
+function parseDesc(str) {
+  let descStr = ''
+  let match = str.match(/\*\*[\s\w\*\'\-\.\,]+(\*\/|\@)/g)
+  if (match) {
+    descStr = match[0].replace(/[\@\/\*]/g,'')
+  }
+  return descStr
+}
+
+function parser(string) {
+  let parsed = []
+  let matches = string.matchAll(cssCommentRegex)
+  for (let m of matches) {
+    const desc = parseDesc(m[0])
+    const varStr = parseVar(m[0])
+    const classStr = parseClass(m[0])
+    parsed.push({
+      desription: desc,
+      variable: varStr,
+      class: classStr
+    })
+  }
+  return parsed
+}
+
+function extractFilename(filestring) {
+  const filenameMatch = filestring.match(/\_\w+\.scss/g)
+  const filename = filenameMatch[0].substring(1, filenameMatch[0].length - 5)
+  return filename
+}
+
 // Build CSS utility classes doc
 export async function buildCSSUtilDoc() {
   const docs_dir = 'src/scss'
-  const cssCommentRegex = /\/\*{2}[\s\w\*@'\-]+\*\/\s\.[\w-\d]+/g
   let markup = ''
 
   markup += await readHTML('src/html/blocks/header.html')
-  markup += '<main class="ds-container"><h2>CSS utility classes</h2><table><thead><tr><th>class</th><th>Description</th><th>Related CSS property</th></tr></thead><tbody>'
+  markup += `
+    <main class="ds-container">
+      <h2>CSS utility classes</h2>
+      <p>Utility classes gør det nemt at ændre specifikke dele af stylingen på elementer, så det stadig sker i overrensstemmelse med designguiden.</p>
+      <table><thead><tr><th>class</th><th>Beskrivelse</th><th>Anvender CSS property</th></tr></thead><tbody>
+  `
 
   try {
     const files = await readdir(docs_dir, {recursive: true})
+    let parsed = []
     for (const file of files) {
       if (file.match(/scss/g)) {
         const scssSource = await readHTML(`${ docs_dir }/${ file }`)
-        let matches = scssSource.matchAll(cssCommentRegex)
-        for (const m of matches) {
-          const parsed = m[0].split(/\/\*\*\s+|\*\s+|\*\/\s+/g)
-          const infoArr = ['', '', '']
-          markup += '<tr>'
-          for (const p of parsed) {
-            if (p.match(/\.\w/g)) {
-              infoArr[0] = p
-            } else if (p.match(/@var/g)) {
-              infoArr[2] += p.substring(5)
-            } else if (p) {
-              infoArr[1] += p
-            }
-          }
-          infoArr.forEach((i) => {
-            markup += `<td>${ i }</td>`
-          })
-          markup += '</tr>'
+        const commentsFound = parser(scssSource)
+        if (commentsFound.length < 1) {
+          continue
         }
+        parsed.push({file: extractFilename(file), output: commentsFound})
+      }
+    }
+    console.log(parsed)
+    for (const p of parsed) {
+      markup += `<tr><th colspan="3">${ p.file }</th></tr>`
+      for (const o of p.output) {
+        markup += `<tr><td>${ o.class }</td><td>${ o.desription }</td><td>${ o.variable }</td></tr>`
       }
     }
   } catch (err) {

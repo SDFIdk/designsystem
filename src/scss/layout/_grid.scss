@@ -1,10 +1,13 @@
-/**
-* Grid
-* Minimal grid system with auto-layout columns
-*/
+/*
+ * Grid
+ * Minimal grid system with auto-layout columns
+ */
 
-.grid,
-.ds-grid {
+/**
+ * Display child elements in a basic grid with fixed item widths.
+ */
+.ds-grid,
+.grid {
   display: grid;
   gap: var(--gap);
   grid-template-columns: minmax(var(--w-min), 1fr);
@@ -26,6 +29,9 @@
   }
 }
 
+/**
+ * Display elements in a basic grid with flexible item widths.
+ */
 .ds-flexgrid {
   display: flex; 
   flex-flow: row wrap; 
@@ -46,10 +52,16 @@
 
 @media (min-width: 60rem) {
 
+  /**
+   * Display two elements in a row, the first element being twice the size of the last element.
+   */
   .ds-grid-2-1 {
     grid-template-columns: 2fr 1fr;
   }
 
+  /**
+   * Display two elements in a row, the last element being twice the size of the first element.
+   */
   .ds-grid-1-2 {
     grid-template-columns: 1fr 2fr;
   }
@@ -67,12 +79,18 @@
   }
 }
 
+/**
+ * Display elements in a neat row
+ */
 .ds-flex-row {
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
 }
 
+/**
+ * Display elements in a neat column
+ */
 .ds-flex-column {
   flex-direction: column;
   align-items: stretch;
