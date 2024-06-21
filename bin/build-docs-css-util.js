@@ -9,7 +9,7 @@ export async function buildCSSUtilDoc() {
   let markup = ''
 
   markup += await readHTML('src/html/blocks/header.html')
-  markup += '<main class="ds-container"><h2>CSS utility classes</h2><table><thead><tr><th>class</th><th>Beskrivelse</th><th>Relateret CSS var</th></tr></thead><tbody>'
+  markup += '<main class="ds-container"><h2>CSS utility classes</h2><table><thead><tr><th>class</th><th>Description</th><th>Related CSS property</th></tr></thead><tbody>'
 
   try {
     const files = await readdir(docs_dir, {recursive: true})
