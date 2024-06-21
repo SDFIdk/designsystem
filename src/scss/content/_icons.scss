@@ -30,14 +30,23 @@ svg:has(use[href*="icon"]) {
   aspect-ratio: 1/1;
   border: solid 1px transparent;
 }
+/**
+ * Change an icon to size mini.
+ */
 .mini > svg.ds-icon
 .mini > svg:has(use[href*="icons"]) {
   height: 1rem;
 }
+/**
+ * Change an icon to size medium.
+ */
 .medium > svg.ds-icon,
 .medium > svg:has(use[href*="icons"]) {
   height: 1.8rem;
 }
+/**
+ * Change an icon to size big.
+ */
 .big {
   padding: 0.5rem;
 }
@@ -45,6 +54,9 @@ svg:has(use[href*="icon"]) {
 .big > svg:has(use[href*="icons"]) {
   height: 2.66rem;
 }
+/**
+ * Change an icon to size hero (extra large).
+ */
 .hero {
   padding: 0.75rem;
 }
@@ -52,23 +64,46 @@ svg:has(use[href*="icon"]) {
 .hero > svg:has(use[href*="icons"]) {
   height: 4.5rem;
 }
+/**
+ * Change an icon's background to the primary color.
+ * @var --primary
+ */
 .bg-primary {
   --ds-icon-color: var(--hvid);
   background-color: var(--primary);
 }
+/**
+ * Change an icon's background to the secondary color.
+ * @var --background-color
+ */
 .bg-secondary {
   background-color: var(--background-color);
 }
+/**
+ * Change an icon's look to an "active" style.
+ * @var --c5
+ */
 .bg-active {
   --ds-icon-color: var(--hvid);
   background-color: var(--c5);
 }
+/**
+ * Make an element's border more pronounced.
+ * @var --color
+ */
 .border {
   border-color: var(--color);
 }
+/**
+ * Change an elements border to the standard border color.
+ * @var --border-color
+ */
 .border-soft {
   border-color: var(--border-color); 
 }
+/**
+ * Make a rounded element appear square.
+ */
 .square {
   border-radius: 0 !important;
 }

@@ -1,9 +1,13 @@
-/**
+/*
  * Container
  */
 
-.container,
-.ds-container {
+/**
+ * Make element a box with standard dimensions.
+ * @var --gap-lg
+ */
+.ds-container,
+.container {
   width: 100%;
   max-width: 90rem;
   padding: var(--gap-lg);

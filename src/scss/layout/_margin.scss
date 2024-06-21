@@ -2,6 +2,10 @@
  * Utility classes for margins
  */
 
+ /**
+  * Add standard margins to an element.
+  * @var --space
+  */
 .ds-m,
 .ds-margin {
   margin: var(--space);

@@ -63,7 +63,7 @@ export async function buildCSSUtilDoc() {
     <main class="ds-container">
       <h2>CSS utility classes</h2>
       <p>Utility classes gør det nemt at ændre specifikke dele af stylingen på elementer, så det stadig sker i overrensstemmelse med designguiden.</p>
-      <table><thead><tr><th>class</th><th>Beskrivelse</th><th>Anvender CSS property</th></tr></thead><tbody>
+      <table><thead><tr><th>CSS selector(s)</th><th>Beskrivelse</th><th>Anvender CSS property</th></tr></thead><tbody>
   `
 
   try {
@@ -79,7 +79,6 @@ export async function buildCSSUtilDoc() {
         parsed.push({file: extractFilename(file), output: commentsFound})
       }
     }
-    console.log(parsed)
     for (const p of parsed) {
       markup += `<tr><th colspan="3">${ p.file }</th></tr>`
       for (const o of p.output) {

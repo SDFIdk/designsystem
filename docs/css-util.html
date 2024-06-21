@@ -37,10 +37,14 @@
     <main class="ds-container">
       <h2>CSS utility classes</h2>
       <p>Utility classes gør det nemt at ændre specifikke dele af stylingen på elementer, så det stadig sker i overrensstemmelse med designguiden.</p>
-      <table><thead><tr><th>class</th><th>Beskrivelse</th><th>Anvender CSS property</th></tr></thead><tbody>
+      <table><thead><tr><th>CSS selector(s)</th><th>Beskrivelse</th><th>Anvender CSS property</th></tr></thead><tbody>
   <tr><th colspan="3">a11y</th></tr><tr><td>.ds-sr-only </td><td>
   Hide an element visually, but have it available for screen readers
- </td><td></td></tr><tr><th colspan="3">grid</th></tr><tr><td>.ds-grid,
+ </td><td></td></tr><tr><th colspan="3">container</th></tr><tr><td>.ds-container,
+.container </td><td>
+  Make element a box with standard dimensions.
+  </td><td> --gap-lg
+ </td></tr><tr><th colspan="3">grid</th></tr><tr><td>.ds-grid,
 .grid </td><td>
   Display child elements in a basic grid with fixed item widths.
  </td><td></td></tr><tr><td>.ds-flexgrid </td><td>
@@ -49,7 +53,11 @@
   Display elements in a neat row
  </td><td></td></tr><tr><td>.ds-flex-column </td><td>
   Display elements in a neat column
- </td><td></td></tr><tr><th colspan="3">padding</th></tr><tr><td>.ds-p,
+ </td><td></td></tr><tr><th colspan="3">margin</th></tr><tr><td>.ds-m,
+.ds-margin </td><td>
+   Add standard margins to an element.
+   </td><td> --space
+  </td></tr><tr><th colspan="3">padding</th></tr><tr><td>.ds-p,
 .ds-padding </td><td>
   Set standard padding around an element.
  </td><td></td></tr><tr><td>.ds-pt </td><td>
@@ -147,7 +155,27 @@
  </td></tr><tr><td>.ds-pr-xxl </td><td>
   Set padding right size extra extra large.
   </td><td> --space-xxl
- </td></tr><tr><th colspan="3">miscs</th></tr><tr><td>.ds-border-round </td><td>
+ </td></tr><tr><th colspan="3">footer</th></tr><tr><td>.ds-footer </td><td>
+  Page footer style
+ </td><td></td></tr><tr><th colspan="3">header</th></tr><tr><td>.ds-header </td><td>
+  Page header style
+ </td><td></td></tr><tr><th colspan="3">icons</th></tr><tr><td>.big </td><td>
+  Change an icon to size big.
+ </td><td></td></tr><tr><td>.bg-primary </td><td>
+  Change an icon's background to the primary color.
+  </td><td> --primary
+ </td></tr><tr><td>.bg-secondary </td><td>
+  Change an icon's background to the secondary color.
+  </td><td> --background-color
+ </td></tr><tr><td>.border </td><td>
+  Make an element's border more pronounced.
+  </td><td> --color
+ </td></tr><tr><td>.border-soft </td><td>
+  Change an elements border to the standard border color.
+  </td><td> --border-color
+ </td></tr><tr><td>.square </td><td>
+  Make a rounded element appear square.
+ </td><td></td></tr><tr><th colspan="3">miscs</th></tr><tr><td>.ds-border-round </td><td>
   Adds rounded corners to an element 
   </td><td> --border-radius
  </td></tr><tr><td>.ds-bg-0 </td><td>
@@ -165,7 +193,29 @@
  </td></tr><tr><td>.ds-w-min </td><td>
   Sets an element's width to minimum allowed value  
   </td><td> --w-min
- </td></tr></tbody></table></main><footer class="ds-footer">
+ </td></tr><tr><th colspan="3">typography</th></tr><tr><td>.h1,
+h1 </td><td>
+  Make an element's text appear as a H1 heading.
+ </td><td></td></tr><tr><td>.h2,
+h2 </td><td>
+  Make an element's text appear as a H2 heading.
+ </td><td></td></tr><tr><td>.h3,
+h3 </td><td>
+  Make an element's text appear as a H3 heading.
+ </td><td></td></tr><tr><td>.h4,
+h4 </td><td>
+  Make an element's text appear as a H4 heading.
+ </td><td></td></tr><tr><td>.h5,
+.h6,
+h5,
+h6 </td><td>
+  Make an element's text appear as a H5 or H6 heading.
+ </td><td></td></tr><tr><td>.small,
+small </td><td>
+  Make an element's text appear smaller.
+ </td><td></td></tr><tr><th colspan="3">card</th></tr><tr><td>.ds-card </td><td>
+  Make an element appear as a card.
+ </td><td></td></tr></tbody></table></main><footer class="ds-footer">
   <div class="ds-container">
     <ds-logo-title class="transparent" title="Styrelsen for Dataforsyning og Infrastruktur"></ds-logo-title>
     <hr>
