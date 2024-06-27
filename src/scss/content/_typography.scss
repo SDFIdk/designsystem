@@ -87,9 +87,9 @@ a[href]:not([role="button"]),
   }
 
   /**
-  * Make link (<a>) hover/active animations more subtle. 
-  * @var --color
-  */ 
+   * Make link (<a>) hover/active animations more subtle. 
+   * @var --color
+   */ 
   &.plain {
     &:is([aria-current], :hover, :active) {
       background: none;
@@ -97,6 +97,14 @@ a[href]:not([role="button"]),
       transition: none;
     }
   }
+}
+
+/**
+ * Make link (<a>) hover/active animations more subtle. 
+ * @var --color
+ */ 
+.plain {
+  color: #fff;
 }
 
 // Paragraphs
