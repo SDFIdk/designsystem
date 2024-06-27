@@ -90,14 +90,9 @@ Here is an example where we import the `Tabs` component from designsystem Javasc
 
 ### With NPM
 
-Add `@dataforsyningen/designsystem` to your package.json:
 ```
-"dependencies": {
-  ...
-  "@dataforsyningen/designsystem": "SDFIdk/designsystem"
-}
+npm i @dataforsyningen/designsystem --save
 ```
-(Will publish an NPM package later)
 
 ### With esbuild (Javascript/NPM)
 
