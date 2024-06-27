@@ -69,7 +69,7 @@ svg:has(use[href*="icon"]) {
  * @var --primary
  */
 .bg-primary {
-  --ds-icon-color: var(--hvid);
+  --ds-icon-color: var(--white);
   background-color: var(--primary);
 }
 /**
@@ -84,7 +84,7 @@ svg:has(use[href*="icon"]) {
  * @var --c5
  */
 .bg-active {
-  --ds-icon-color: var(--hvid);
+  --ds-icon-color: var(--white);
   background-color: var(--c5);
 }
 /**

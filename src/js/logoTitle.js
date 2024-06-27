@@ -19,14 +19,14 @@ export class DSLogoTitle extends HTMLElement {
           display: block;
         }
         :host(.black) ds-logo {
-          --ds-logo-color: var(--hvid);
-          --ds-logo-outline-color: var(--sort);
-          --ds-logo-background-color: var(--sort);
+          --ds-logo-color: var(--white);
+          --ds-logo-outline-color: var(--black);
+          --ds-logo-background-color: var(--black);
         }
         :host(.white) ds-logo {
-          --ds-logo-color: var(--sort);
-          --ds-logo-outline-color: var(--hvid);
-          --ds-logo-background-color: var(--hvid);
+          --ds-logo-color: var(--black);
+          --ds-logo-outline-color: var(--white);
+          --ds-logo-background-color: var(--white);
         }
         :host(.transparent) ds-logo {
           --ds-logo-color: var(--ds-logo-theme-color);

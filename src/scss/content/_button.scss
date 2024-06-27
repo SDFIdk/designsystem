@@ -45,7 +45,7 @@ a[role="button"]:visited {
   border-radius: var(--border-radius);
   outline: none;
   background-color: var(--primary);
-  color: var(--hvid);
+  color: var(--white);
   font-weight: var(--font-weight);
   font-size: var(--font-size);
   line-height: 1em;
@@ -60,7 +60,7 @@ a[role="button"]:visited {
   &:active {
     background-color: var(--primary-hover);
     border-color: var(--primary-hover);
-    color: var(--hvid);
+    color: var(--white);
   }
 
   &:focus {
@@ -75,11 +75,11 @@ a[role="button"]:visited {
   &.h5,
   &.h6 {
     margin: 0;
-    color: var(--hvid);
+    color: var(--white);
   }
 
   & svg {
-    --ds-icon-color: var(--hvid);
+    --ds-icon-color: var(--white);
   }
 
   & svg.ds-icon,
@@ -132,10 +132,10 @@ a[role="button"].secondary:visited {
   &:active {
     background-color: var(--primary-hover);
     border-color: var(--primary-hover);
-    color: var(--hvid);
+    color: var(--white);
 
     & svg {
-      --ds-icon-color: var(--hvid);
+      --ds-icon-color: var(--white);
     }
   }
 }
@@ -161,10 +161,10 @@ a[role="button"].quiet:visited {
   &:active {
     background-color: var(--primary-hover);
     border-color: var(--primary-hover);
-    color: var(--hvid);
+    color: var(--white);
 
     & svg {
-      --ds-icon-color: var(--hvid);
+      --ds-icon-color: var(--white);
     }
   }
 }

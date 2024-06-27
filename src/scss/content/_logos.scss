@@ -44,15 +44,15 @@ a.ds-logo,
 }
 
 ds-logo.black {
-  --ds-logo-color: var(--hvid);
-  --ds-logo-outline-color: var(--sort);
-  --ds-logo-background-color: var(--sort);
+  --ds-logo-color: var(--white);
+  --ds-logo-outline-color: var(--black);
+  --ds-logo-background-color: var(--black);
 }
 
 ds-logo.white {
-  --ds-logo-color: var(--sort);
-  --ds-logo-outline-color: var(--hvid);
-  --ds-logo-background-color: var(--hvid);
+  --ds-logo-color: var(--black);
+  --ds-logo-outline-color: var(--white);
+  --ds-logo-background-color: var(--white);
 }
 
 ds-logo.transparent {
@@ -102,7 +102,7 @@ a[href]:visited:has(ds-logo-title) {
 a[href]:hover:has(ds-logo-title),
 a[href]:active:has(ds-logo-title) {
   background-color: var(--primary);
-  color: var(--hvid);
+  color: var(--white);
 }
 
 /* Styles for placing logo on map */

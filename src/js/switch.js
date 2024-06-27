@@ -35,7 +35,7 @@ export class DSSwitch extends HTMLElement {
       left: var(--space-xxs);
       width: 1rem;
       height: 1rem;
-      background-color: var(--hvid);
+      background-color: var(--white);
       border: solid 1px var(--border-color);
       border-radius: 50%;
       transition: transform 0.3s, border-color 0.3s;
@@ -46,7 +46,7 @@ export class DSSwitch extends HTMLElement {
     }
     input:checked ~ .switch::after {
       transform: translateX(1.5rem);
-      border-color: var(--hvid);
+      border-color: var(--white);
     }
   `
 

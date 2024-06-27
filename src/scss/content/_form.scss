@@ -162,7 +162,7 @@ textarea {
 input:not([type="submit"]):not([type="button"]):not([type="reset"]):not([role="switch"]):not([readonly]),
 :where(select, textarea) {
   &:is(:active, :focus) {
-    border-color: var(--blaa);
+    border-color: var(--blue);
   }
 }
 

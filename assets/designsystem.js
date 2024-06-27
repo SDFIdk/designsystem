@@ -548,14 +548,14 @@ var DSLogoTitle = class extends HTMLElement {
           display: block;
         }
         :host(.black) ds-logo {
-          --ds-logo-color: var(--hvid);
-          --ds-logo-outline-color: var(--sort);
-          --ds-logo-background-color: var(--sort);
+          --ds-logo-color: var(--white);
+          --ds-logo-outline-color: var(--black);
+          --ds-logo-background-color: var(--black);
         }
         :host(.white) ds-logo {
-          --ds-logo-color: var(--sort);
-          --ds-logo-outline-color: var(--hvid);
-          --ds-logo-background-color: var(--hvid);
+          --ds-logo-color: var(--black);
+          --ds-logo-outline-color: var(--white);
+          --ds-logo-background-color: var(--white);
         }
         :host(.transparent) ds-logo {
           --ds-logo-color: var(--ds-logo-theme-color);
@@ -1467,7 +1467,7 @@ var DSSwitch = class extends HTMLElement {
       left: var(--space-xxs);
       width: 1rem;
       height: 1rem;
-      background-color: var(--hvid);
+      background-color: var(--white);
       border: solid 1px var(--border-color);
       border-radius: 50%;
       transition: transform 0.3s, border-color 0.3s;
@@ -1478,7 +1478,7 @@ var DSSwitch = class extends HTMLElement {
     }
     input:checked ~ .switch::after {
       transform: translateX(1.5rem);
-      border-color: var(--hvid);
+      border-color: var(--white);
     }
   `;
   constructor() {
