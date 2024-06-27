@@ -85,6 +85,18 @@ a[href]:not([role="button"]),
     outline: solid var(--space-xxs) var(--highlight);
     border-radius: var(--space-xxs);
   }
+
+  /**
+  * Make link (<a>) hover/active animations more subtle. 
+  * @var --color
+  */ 
+  &.plain {
+    &:is([aria-current], :hover, :active) {
+      background: none;
+      color: var(--color);
+      transition: none;
+    }
+  }
 }
 
 // Paragraphs

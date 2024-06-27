@@ -1,4 +1,4 @@
-# Designsystem release notes
+# Designsystem release notes (from v7 up)
 
 ## v7.0.0
 
