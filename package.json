@@ -1,12 +1,12 @@
 {
   "name": "@dataforsyningen/designsystem",
   "version": "7.1.0",
-  "description": "Common design system for SDFI with CSS, icons, UI components, and logo images.",
+  "description": "Common design system for Klimadatastyrelsen with CSS, icons, UI components, and logo images.",
   "type": "module",
   "author": {
     "name": "Styrelsen for Dataforsyning og Infrastruktur",
-    "email": "support@sdfi.dk",
-    "url": "https://sdfi.dk/"
+    "email": "support@Klimadatastyrelsen.dk",
+    "url": "https://Klimadatastyrelsen.dk/"
   },
   "main": "index.js",
   "directories": {
@@ -21,7 +21,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "SDFI",
+    "Klimadatastyrelsen",
     "Styrelsen for Dataforsyning og Infrastruktur",
     "designsystem",
     "icons",

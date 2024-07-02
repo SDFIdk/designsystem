@@ -1,10 +1,10 @@
-# SDFI Designsystem
+# Klimadatastyrelsen Designsystem
 
-Common design system for SDFI with CSS, icons, UI components, and logo images.
+Common design system for Klimadatastyrelsen with CSS, icons, UI components, and logo images.
 
 ## Read the documentation
 
-Documentation is available at [sdfidk.github.io/designsystem/](https://sdfidk.github.io/designsystem/)
+Documentation is available at [Klimadatastyrelsendk.github.io/designsystem/](https://Klimadatastyrelsendk.github.io/designsystem/)
 
 You can also build and read the docs locally.
 

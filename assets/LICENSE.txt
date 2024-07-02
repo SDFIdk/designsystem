@@ -2,7 +2,7 @@ All files expect for font files in this folder are subject to the MIT License as
 
 MIT License
 
-Copyright (c) 2024 SDFI
+Copyright (c) 2024 Klimadatastyrelsen
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
