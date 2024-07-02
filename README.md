@@ -4,7 +4,7 @@ Common design system for Klimadatastyrelsen with CSS, icons, UI components, and 
 
 ## Read the documentation
 
-Documentation is available at [Klimadatastyrelsendk.github.io/designsystem/](https://Klimadatastyrelsendk.github.io/designsystem/)
+Documentation is available at [sdfidk.github.io/designsystem/](https://sdfidk.github.io/designsystem/)
 
 You can also build and read the docs locally.
 
