@@ -235,12 +235,18 @@
 
   <h3>Med SVG sprite (anbefalet)</h3>
 
-  <p>Du kan gemme alle ikoner som én fil og blot referere til ikonerne.</p>
-  <p>Download og gem <strong>ds-icon-sprites.svg</strong> et passende sted (<strong>PATH</strong>).</p>
+  <p>Du kan bruge én fil til alle ikoner, hvor du blot referere til ikonerne.</p>
+  <p>Download og gem <strong>icons.svg</strong> et passende sted (<strong>PATH</strong>).</p>
   <p>Herefter kan du blot indsætte SVG-tags og angive en reference til det ønskede ikon med <strong>use</strong>. F.eks.:</p>
   <pre>
     <code>
-&lt;svg>&lt;use href="PATH/icons.svg#arrow-right">&lt;/svg>
+&lt;svg>&lt;use href="icons.svg#arrow-right">&lt;/svg>
+    </code>
+  </pre>
+  <p>Du kan også bruge icons direkte fra cdn:</p>
+  <pre>
+    <code>
+&lt;svg>&lt;use href="https://cdn.dataforsyningen.dk/assets/designsystem/v7.0/icons.svg#arrow-right">&lt;/svg>
     </code>
   </pre>
 

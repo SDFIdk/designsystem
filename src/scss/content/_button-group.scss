@@ -15,10 +15,6 @@
     background-color: transparent;
   }
 
-  & > .secondary + hr {
-    width: 0;
-  }
-
   & > hr + .secondary {
     border-left: none;
   }
