@@ -46,7 +46,7 @@ a[role="button"]:visited {
   outline: none;
   background-color: var(--primary);
   color: var(--white);
-  font-weight: var(--font-weight);
+  font-weight: 400;
   font-size: var(--font-size);
   line-height: 1em;
   text-align: center;
@@ -84,7 +84,7 @@ a[role="button"]:visited {
 
   & svg.ds-icon,
   & svg:has(use[href*="icon"]) {
-    height: 1.125rem;
+    height: 1.33rem;
     width: auto;
     flex: 0 0 auto;
     
