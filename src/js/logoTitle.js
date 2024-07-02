@@ -113,7 +113,7 @@ export class DSLogoTitle extends HTMLElement {
     } else if (title && !byline) {
       txt = `<p class="single-line">${ title }</p>`
     } else {
-      txt = `<p class="single-line">Styrelsen for Dataforsyning og Infrastruktur</p>`
+      txt = `<p class="single-line">Klimadatastyrelsen</p>`
     }
     return txt
   }

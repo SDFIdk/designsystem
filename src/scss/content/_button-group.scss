@@ -15,14 +15,6 @@
     background-color: transparent;
   }
 
-  & > .secondary + hr {
-    width: 0;
-  }
-
-  & > hr + .secondary {
-    border-left: none;
-  }
-
   & > .quiet + hr {
     background-color: var(--link);
     align-self: center;

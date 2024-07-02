@@ -1,6 +1,6 @@
-# SDFI Designsystem
+# Klimadatastyrelsen Designsystem
 
-Common design system for SDFI with CSS, icons, UI components, and logo images.
+Common design system for Klimadatastyrelsen with CSS, icons, UI components, and logo images.
 
 ## Read the documentation
 

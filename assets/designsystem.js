@@ -101,7 +101,7 @@ var sun_default = '<svg class="ds-icon" width="29" height="29" viewBox="0 0 29 2
 
 // src/js/themeToggle.js
 var ThemeToggle = class extends HTMLElement {
-  localstorageKey = "SDFI-theme-choice";
+  localstorageKey = "Klimadatastyrelsen-theme-choice";
   buttonDark;
   buttonLight;
   style = `
@@ -324,7 +324,7 @@ var DSLogo = class extends HTMLElement {
         }
       </style>
       <svg width="100%" height="100%" viewBox="0 0 63 63" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <title>SDFI</title>
+        <title>Klimadatastyrelsen</title>
         <circle class="dsl-circle" cx="31.5" cy="31.5" r="30"/>
         <g class="dsl-group">
           <path class="dsl-path" d="M21.50 1.03V3.48M21.50 7.93V9.41M26.17 5.71H23.72M19.28 5.71H16.83" stroke-linecap="round"/>
@@ -641,7 +641,7 @@ var DSLogoTitle = class extends HTMLElement {
     } else if (title && !byline) {
       txt = `<p class="single-line">${title}</p>`;
     } else {
-      txt = `<p class="single-line">Styrelsen for Dataforsyning og Infrastruktur</p>`;
+      txt = `<p class="single-line">Klimadatastyrelsen</p>`;
     }
     return txt;
   }

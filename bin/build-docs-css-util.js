@@ -1,8 +1,8 @@
 import { readdir } from 'node:fs/promises'
-
 import { writeToFile, readHTML } from './shared.js'
+import { cssCommentsCompiler } from './compiler/index.js'
 
-const cssCommentRegex = /\/\*\*[\s\w\*\'\@\-\.\,]+\*\/\s\.[\w\-\,\.\s]+\{/g
+const cssCommentRegex = /\/\*\*[\s\w\*'@\-\.,()<>/]+\*\/\s&?\.[\w\-\,\.\s]+\{/g
 
 function parseVar(str) {
   let varStr = ''
@@ -32,6 +32,9 @@ function parseDesc(str) {
 }
 
 function parser(string) {
+
+  //const parsedParts = cssCommentsCompiler(string)
+
   let parsed = []
   let matches = string.matchAll(cssCommentRegex)
   for (let m of matches) {
@@ -39,7 +42,7 @@ function parser(string) {
     const varStr = parseVar(m[0])
     const classStr = parseClass(m[0])
     parsed.push({
-      desription: desc,
+      description: desc,
       variable: varStr,
       class: classStr
     })
@@ -72,6 +75,7 @@ export async function buildCSSUtilDoc() {
     for (const file of files) {
       if (file.match(/scss/g)) {
         const scssSource = await readHTML(`${ docs_dir }/${ file }`)
+        //console.log('processing', file)
         const commentsFound = parser(scssSource)
         if (commentsFound.length < 1) {
           continue
@@ -82,7 +86,7 @@ export async function buildCSSUtilDoc() {
     for (const p of parsed) {
       markup += `<tr><th colspan="3">${ p.file }</th></tr>`
       for (const o of p.output) {
-        markup += `<tr><td>${ o.class }</td><td>${ o.desription }</td><td>${ o.variable }</td></tr>`
+        markup += `<tr><td>${ o.class }</td><td>${ o.description }</td><td>${ o.variable }</td></tr>`
       }
     }
   } catch (err) {

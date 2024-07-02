@@ -1,12 +1,16 @@
 dialog[open] {
-  border-radius: var(--space-sm);
+  border-radius: var(--border-radius);
   border-width: 0;
   box-shadow: 0 var(--space-sm) var(--space-md) hsla(0,0%,0%,0.33);
-  padding: var(--space-md);
-  background-color: var(--bg2);
-  margin: var(--margin) auto;
+  padding: 0;
+  background-color: var(--bg1);
+  margin: var(--gap-lg) auto;
   width: auto;
   max-width: 44rem;
+  max-height: calc(100vh - var(--gap-lg));
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: stretch;
 }
 
 dialog > header {
@@ -15,6 +19,18 @@ dialog > header {
   justify-content: space-between;
   gap: var(--space);
   align-items: center;
+}
+
+dialog > header,
+dialog > footer {
+  flex: 0 1 auto;
+  padding: var(--space);
+}
+dialog > header + * {
+  flex:  0 1 100%;
+  overflow: scroll;
+  padding: var(--space);
+  margin: 0;
 }
 
 dialog > header > *,
@@ -26,7 +42,7 @@ dialog > footer {
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-end;
-  gap: var(--space);
+  gap: var(--space-sm);
   align-items: center;
   padding-top: var(--space);
 }

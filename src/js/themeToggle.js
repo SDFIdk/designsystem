@@ -2,7 +2,7 @@ import iconSun from '../../assets/icons/sun.svg'
 
 export class ThemeToggle extends HTMLElement {
 
-  localstorageKey = 'SDFI-theme-choice'
+  localstorageKey = 'Klimadatastyrelsen-theme-choice'
   buttonDark
   buttonLight
   style = `

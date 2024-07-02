@@ -4,7 +4,7 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1,user-scalable=yes">
-    <title>SDFI Designsystem dokumentation</title>
+    <title>Klimadatastyrelsen Designsystem dokumentation</title>
 
     <link rel="stylesheet" href="../assets/designsystem.css">
     <link rel="stylesheet" href="./docs.css">
@@ -16,9 +16,9 @@
 
     <header id="header" class="ds-header">
       <div class="ds-container">
-        <ds-logo-title title="Dataforsyningen" by-line="Styrelsen for Dataforsyning og Infrastruktur"></ds-logo-title>
-        <h1>SDFI Designsystem v7.0.0</h1>
-        <p class="manchet">Reference-implementationer af SDFIs designguide med HTML/CSS</p>
+        <ds-logo-title title="Dataforsyningen" by-line="Klimadatastyrelsen"></ds-logo-title>
+        <h1>Designsystem v7.0.0</h1>
+        <p class="manchet">Reference-implementationer af Klimadatastyrelsens designguide med HTML/CSS</p>
 
         <nav class="ds-nav">
           <a href="../index.html">Introduktion</a>
@@ -27,7 +27,7 @@
           <a href="./components.html">UI-komponenter</a>
           <a href="./logos.html">Logo</a>
           <a href="./css-util.html">CSS classes</a>
-          <a href="https://github.com/SDFIdk/designsystem">Github</a>
+          <a href="https://github.com/sdfidk/designsystem">Github</a>
         </nav>
   
         <ds-theme-toggle style="position: fixed; bottom: var(--space); right: var(--space); width: auto; z-index: 10;"></ds-theme-toggle>
@@ -159,12 +159,14 @@ customElements.define('ds-tabs', Tabs)
         <h3 tabindex="0">Dialogboks overskrift</h3>
         <button 
           aria-controls="example-dialog"
-          class="ds-icon-icon-close secondary" 
+          class="secondary" 
           title="Luk dialogboks">
+          <svg><use href="../../assets/icons.svg#close" /></svg>
         </button>
       </header>
       <article>
         <p>Denne dialogbox indeholder en besked til dig.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       </article>
       <footer>
         <button class="btn-toggle-dialog" aria-controls="example-dialog">OK</button>
@@ -451,9 +453,9 @@ customElements.define('ds-spinner', Spinner)
   <code-view data-snip="ex-datatable-2"></code-view>
 </article></main><footer class="ds-footer">
   <div class="ds-container">
-    <ds-logo-title class="transparent" title="Styrelsen for Dataforsyning og Infrastruktur"></ds-logo-title>
+    <ds-logo-title class="transparent" title="Klimadatastyrelsen"></ds-logo-title>
     <hr>
-    <p>© 2024 Styrelsen for Dataforsyning og Infrastruktur - <a href="https://github.com/SDFIdk/designsystem">Find os på Github</a></p>
+    <p>© 2024 Klimadatastyrelsen - <a href="https://github.com/sdfidk/designsystem">Find os på Github</a></p>
   </div>
 </footer>
 
