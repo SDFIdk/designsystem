@@ -4,9 +4,9 @@
   "description": "Common design system for Klimadatastyrelsen with CSS, icons, UI components, and logo images.",
   "type": "module",
   "author": {
-    "name": "Styrelsen for Dataforsyning og Infrastruktur",
-    "email": "support@Klimadatastyrelsen.dk",
-    "url": "https://Klimadatastyrelsen.dk/"
+    "name": "Klimadatastyrelsen",
+    "email": "support@sdfi.dk",
+    "url": "https://sdfi.dk/"
   },
   "main": "index.js",
   "directories": {
@@ -22,7 +22,6 @@
   },
   "keywords": [
     "Klimadatastyrelsen",
-    "Styrelsen for Dataforsyning og Infrastruktur",
     "designsystem",
     "icons",
     "stylesheets",
