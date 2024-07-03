@@ -1,72 +1,72 @@
 :root {
 
-  // Greyscale colors (incl. black and white)
-  --grey1: hsl(0,0%,100%); // Hvid
-  --grey2: hsl(60, 7%, 90%); // KEFM Light beige
-  --grey3: hsl(60, 15%, 80%); // KEFM Dark beige
-  --grey4: hsl(55, 15%, 70%);
-  --grey5: hsl(50, 15%, 53%);
-  --grey6: hsl(45, 15%, 33%);
+  /* Greyscale colors (incl. black and white) */
+  --grey1: hsl(0,0%,100%); /* Hvid */
+  --grey2: hsl(60, 7%, 90%); /* KEFM Light beige */
+  --grey3: hsl(60, 7%, 80%); /* A greyer version of KEFM Dark beige */
+  --grey4: hsl(55, 7%, 70%);
+  --grey5: hsl(50, 7%, 53%);
+  --grey6: hsl(45, 7%, 33%);
   --grey7: hsl(45, 15%, 20%);
   --grey8: hsl(45, 15%, 10%);
-  --grey9: hsl(0,0%,0%); // Sort
+  --grey9: hsl(0,0%,0%); /* Sort */
   
-  // Primary "blue" colors
+  /* Primary "blue" colors */
   --c1: hsl(198, 100%, 90%);
   --c2: hsl(198, 100%, 80%);
   --c3: hsl(198, 100%, 70%); 
   --c4: hsl(198, 100%, 60%);
   --c5: hsl(198, 100%, 50%);
-  --c6: hsl(198, 100%, 40%); // Hover blå
-  --c7: hsl(198, 100%, 30%); // Primær blå
+  --c6: hsl(198, 100%, 40%); /* Hover blå */
+  --c7: hsl(198, 100%, 30%); /* Primær blå */
   --c8: hsl(198, 100%, 15%);
   --c9: hsl(198, 100%, 7%);
 
-  // "Blue-green" colors
+  /* "Blue-green" colors */
   --g1: hsl(186,100%,90%);
   --g2: hsl(186,100%,80%);
   --g3: hsl(186,100%,70%);
   --g4: hsl(186,100%,60%);
-  --g5: hsl(186,100%,54%); // Aktion
-  --g6: hsl(186,100%,33%); // KEFM Light green
-  --g7: hsl(186,79%,29%); // KEFM Medium green
-  --g8: hsl(186,92%,21%); // KEFM Dark green
+  --g5: hsl(186,100%,54%); /* Aktion */
+  --g6: hsl(186,100%,33%); /* KEFM Light green */
+  --g7: hsl(186,79%,29%); /* KEFM Medium green */
+  --g8: hsl(186,92%,21%); /* KEFM Dark green */
   --g9: hsl(186,92%,10%);
 
-  // "Red" colors
+  /* "Red" colors */
   --r1: hsl(350,80%,90%);
   --r2: hsl(350,80%,80%);
   --r3: hsl(350,80%,70%);
-  --r4: hsl(351,82%,60%); // KEFM pink
+  --r4: hsl(351,82%,60%); /* KEFM pink */
   --r5: hsl(355,75%,50%);
-  --r6: hsl(359,69%,40%); // KEFM Dark pink / Advarsel / Text-attention
+  --r6: hsl(359,69%,40%); /* KEFM Dark pink / Advarsel / Text-attention */
   --r7: hsl(359,69%,30%);
   --r8: hsl(359,69%,20%);
   --r9: hsl(359,69%,10%);
 
-  // "Yellow" colors
+  /* "Yellow" colors */
   --y1: hsl(50, 100%, 90%);
   --y2: hsl(50, 100%, 80%);
   --y3: hsl(50, 100%, 70%);
-  --y4: hsl(50, 100%, 60%); // KEFM Light yellow / Text-attention yellow
-  --y5: hsl(47, 80%, 52%); // KEFM Dark yellow
+  --y4: hsl(50, 100%, 60%); /* KEFM Light yellow / Text-attention yellow */
+  --y5: hsl(47, 80%, 52%); /* KEFM Dark yellow */
   --y6: hsl(47, 80%, 45%);
-  --y7: hsl(47, 80%, 40%); // Darker yellow
+  --y7: hsl(47, 80%, 40%); /* Darker yellow */
   --y8: hsl(47, 80%, 30%);
   --y9: hsl(47, 80%, 15%);
 
-  // "Orange" colors
+  /* "Orange" colors */
   --o1: hsl(25,95%,90%);
   --o2: hsl(25,95%,80%);
   --o3: hsl(25,95%,70%);
-  --o4: hsl(25,95%,60%); // KEFM Light orange / Highligt
+  --o4: hsl(25,95%,60%); /* KEFM Light orange / Highligt */
   --o5: hsl(20,80%,50%); 
-  --o6: hsl(16,65%,43%); // KEFM Dark orange
+  --o6: hsl(16,65%,43%); /* KEFM Dark orange */
   --o7: hsl(16,65%,35%);
   --o8: hsl(16,65%,25%);
   --o9: hsl(16,65%,15%);
 
-  // Color shorthands
+  /* Color shorthands */
   --yellow: var(--y4);
   --orange: var(--o4);
   --red: var(--r6);
