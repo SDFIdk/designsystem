@@ -33,7 +33,7 @@ function parseDesc(str) {
 
 function parser(string) {
 
-  //const parsedParts = cssCommentsCompiler(string)
+  const parsedParts = cssCommentsCompiler(string)
 
   let parsed = []
   let matches = string.matchAll(cssCommentRegex)
@@ -75,7 +75,7 @@ export async function buildCSSUtilDoc() {
     for (const file of files) {
       if (file.match(/scss/g)) {
         const scssSource = await readHTML(`${ docs_dir }/${ file }`)
-        //console.log('processing', file)
+        console.log('processing', file)
         const commentsFound = parser(scssSource)
         if (commentsFound.length < 1) {
           continue

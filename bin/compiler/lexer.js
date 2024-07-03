@@ -1,28 +1,47 @@
-function tokenizer(input) {
-  const skippableRgx = /[\s\{\}\(\)\[\]\|–<>`"',+=&]/
-  const commentRgx = /[\/\*]/
-  const classRgx = /[\.\:]/
-  const classNameRgx = /[\:\.\w\d\-]/
-  const tokens = []
-  let current = 0
+let input
+let line
+let current
+let tokens
+
+function walkString(testRgx) {
+  let char = input[current]
+  let value = ''
+  while (testRgx.test(char)) {
+    value += char
+    char = input[++current]
+  }
+  console.log('testing', testRgx, value)
+  return value
+}
+
+function tokenizer(inputStr) {
+
+  tokens = []
+  input = inputStr
+  current = 0
+  line = 1
 
   while (current < input.length) {
     let char = input[current]
 
-    if (skippableRgx.test(char)) {
+    // Count lines
+    if (char === '\n') {
+      line++
       current++
       continue
     }
 
-    if (char === '@') {
-      let value = ''
-      while (/[\w@]/.test(char)) {
-        value += char
-        char = input[++current]
-      }
-      if (value === '@var') {
+    // Identify pseudo selectors
+    if (char === ':') {
+      const value = walkString(/[:\w\-]/)
+      if (value.length > 5) {
         tokens.push({
-          type: 'variablePrefix',
+          type: 'cssSelector',
+          value: value
+        })
+      } else {
+        tokens.push({
+          type: 'cssRuleDivider',
           value: value
         })
       }
@@ -30,31 +49,51 @@ function tokenizer(input) {
       continue
     }
 
-    // Identify variables
+    // Identify css vars
     if (char === '-') {
-      let value = ''
-      while (/[\-\w\d]/.test(char)) {
-        value += char
-        char = input[++current]
-      }
-      if (/--/.test(value)) {
+      const value = walkString(/[\-\w\d]/)
+      if (/^\-\-[\-\w\d]+/.test(value)) {
         tokens.push({
           type: 'cssVariable',
           value: value
         })
+      } else {
+        tokens.push({
+          type: 'textNode',
+          value: value
+        })
       }
       current++
       continue
     }
 
-    // Identify comments
-    if (commentRgx.test(char)) {
-      let value = ''
-      while (commentRgx.test(char)) {
-        value += char
-        char = input[++current]
+    // Identify @ directives
+    if (char === '@') {
+      const value = walkString(/^\s/)
+      if (value === '@var') {
+        tokens.push({
+          type: 'atRuleVariable',
+          value: value
+        })
+      } else {
+        tokens.push({
+          type: 'atRule',
+          value: value
+        })
       }
-      if (value !== '/') {
+      current++
+      continue
+    }
+
+    // Identify comment markers
+    if (char === '/' || char === '*') {
+      const value = walkString(/[\/\*]/)
+      if (value.length < 2) {
+        tokens.push({
+          type: 'textNode',
+          value: value
+        })
+      } else {
         tokens.push({
           type: 'commentMarker',
           value: value
@@ -63,20 +102,35 @@ function tokenizer(input) {
       current++
       continue
     }
-    
-    // Identify textnodes
-    if (/\w/.test(char)) {
-      let value = ''
-      while (/[\w:;]/.test(char)) {
-        value += char
-        char = input[++current]
-      }
-      if (/[\w\-]+:/.test(value)) {
+
+    // Identify classnames
+    if (char === '.') {
+      const value = walkString(/[\.a-z0-9\-]/)
+      if (value === '.') {
         tokens.push({
-          type: 'cssRuleKey',
+          type: 'textNode',
           value: value
         })
-      } else if (/.+;/.test(value)) {
+      } else {
+        tokens.push({
+          type: 'className',
+          value: value
+        })
+      }
+      current++
+      continue
+    }
+
+    // Identify CSS rules 
+    if (/[\w\"\']/.test(char)) {
+
+      const value = walkString(/[^\s]/)
+      if (/[\w\d\-]:$/.test(value)) {
+        tokens.push({
+          type: 'cssRuleName',
+          value: value
+        })
+      } else if (/.+;$/.test(value)) {
         tokens.push({
           type: 'cssRuleValue',
           value: value
@@ -90,24 +144,46 @@ function tokenizer(input) {
       current++
       continue
     }
-    
-    // Identify classnames
-    if (classRgx.test(char)) {
-      let value = ''
-      while (classNameRgx.test(char)) {
-        value += char
-        char = input[++current]
-      }
+
+    // CSS block markers
+    if (char === '{' || char === '}') {
       tokens.push({
-        type: 'className',
-        value: value
+        type: 'cssRuleBlock',
+        value: char
       })
       current++
       continue
     }
 
-    throw new TypeError(`Unknown char: '${char}'`)
+    // Paren
+    if (char === '(' || char === ')') {
+      tokens.push({
+        type: 'parenthesis',
+        value: char
+      })
+      current++
+      continue
+    }
+
+    // Various symbols 
+    if (/,></.test(char)) {
+      tokens.push({
+        type: 'symbol',
+        value: char
+      })
+      current++
+      continue
+    }
+
+    // Skip whitespace
+    if (/\s/.test(char)) {
+      current++
+      continue
+    }
+
+    throw new TypeError(`ln ${ line }: Unknown char: '${char}' in ${ input.slice(current - 20, current + 20)}`)
   }
+  console.log('scanned', line, 'lines')
   return tokens
 }
 
