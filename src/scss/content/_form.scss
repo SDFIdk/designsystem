@@ -180,8 +180,8 @@ input:not([type="submit"]):not([type="button"]):not([type="reset"])[disabled],
 select[disabled],
 textarea[disabled],
 :where(fieldset[disabled]) :is(input:not([type="submit"]):not([type="button"]):not([type="reset"]), select, textarea) {
-  background-color: var(--grey1);
-  border-color: var(--grey1);
+  background-color: var(--grey2);
+  border-color: var(--grey2);
   opacity: 0.5;
   pointer-events: none;
 }
