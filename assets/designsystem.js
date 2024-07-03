@@ -106,7 +106,7 @@ var ThemeToggle = class extends HTMLElement {
   buttonLight;
   style = `
     button[data-toggle="light"] {
-      background-color: var(--c1);
+      background-color: var(--white);
       padding-left: var(--space-sm);
     }
     button[data-toggle="light"]:hover,
@@ -115,18 +115,18 @@ var ThemeToggle = class extends HTMLElement {
       border-color: var(--c2);
     }
     button[data-toggle="light"] > svg {
-      --ds-icon-color: var(--c10);
+      --ds-icon-color: var(--black);
     }
     button[data-toggle="dark"] {
-      background-color: var(--c6);
+      background-color: var(--c7);
     }
     button[data-toggle="dark"]:hover,
     button[data-toggle="dark"]:active {
-      background-color: var(--c5);
-      border-color: var(--c5);
+      background-color: var(--c6);
+      border-color: var(--c6);
     }
     button[data-toggle="dark"] > svg {
-      --ds-icon-color: var(--c1);
+      --ds-icon-color: var(--white);
     }
   `;
   constructor() {

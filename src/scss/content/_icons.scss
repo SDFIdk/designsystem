@@ -81,11 +81,11 @@ svg:has(use[href*="icon"]) {
 }
 /**
  * Change an icon's look to an "active" style.
- * @var --c5
+ * @var --c6
  */
 .bg-active {
   --ds-icon-color: var(--white);
-  background-color: var(--c5);
+  background-color: var(--c6);
 }
 /**
  * Make an element's border more pronounced.
