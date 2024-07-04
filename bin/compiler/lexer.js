@@ -10,7 +10,6 @@ function walkString(testRgx) {
     value += char
     char = input[++current]
   }
-  console.log('testing', testRgx, value)
   return value
 }
 
@@ -27,6 +26,10 @@ function tokenizer(inputStr) {
     // Count lines
     if (char === '\n') {
       line++
+      tokens.push({
+        type: 'newLine',
+        value: char
+      })
       current++
       continue
     }
@@ -165,8 +168,25 @@ function tokenizer(inputStr) {
       continue
     }
 
+    if (char === '#') {
+      const value = walkString(/[\#a-fA-F0-9]/)
+      if (/\#[a-fA-F0-9]{3,6}/.test(value)) {
+        tokens.push({
+          type: 'hexColor',
+          value: value
+        })
+      } else {
+        tokens.push({
+          type: 'textNode',
+          value: value
+        })
+      }
+      current++
+      continue
+    }
+
     // Various symbols 
-    if (/,></.test(char)) {
+    if (/[\,\<\>\&\[\]\|\-\–`\+!]/.test(char)) {
       tokens.push({
         type: 'symbol',
         value: char
