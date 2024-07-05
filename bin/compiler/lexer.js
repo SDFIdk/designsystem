@@ -34,17 +34,26 @@ function tokenizer(inputStr) {
       continue
     }
 
+    if (/[\{\};,]/.test(char)) {
+      tokens.push({
+        type: 'divider',
+        value: char
+      })
+      current++
+      continue
+    }
+
     // Identify pseudo selectors
     if (char === ':') {
       const value = walkString(/[:\w\-]/)
-      if (value.length > 5) {
+      if (value.length === 1) {
         tokens.push({
-          type: 'cssSelector',
+          type: 'divider',
           value: value
         })
       } else {
         tokens.push({
-          type: 'cssRuleDivider',
+          type: 'cssSelector',
           value: value
         })
       }
@@ -73,17 +82,10 @@ function tokenizer(inputStr) {
     // Identify @ directives
     if (char === '@') {
       const value = walkString(/^\s/)
-      if (value === '@var') {
-        tokens.push({
-          type: 'atRuleVariable',
-          value: value
-        })
-      } else {
-        tokens.push({
-          type: 'atRule',
-          value: value
-        })
-      }
+      tokens.push({
+        type: 'atRule',
+        value: value
+      })
       current++
       continue
     }
@@ -98,7 +100,7 @@ function tokenizer(inputStr) {
         })
       } else {
         tokens.push({
-          type: 'commentMarker',
+          type: 'divider',
           value: value
         })
       }
@@ -116,7 +118,7 @@ function tokenizer(inputStr) {
         })
       } else {
         tokens.push({
-          type: 'className',
+          type: 'cssSelector',
           value: value
         })
       }
@@ -125,18 +127,18 @@ function tokenizer(inputStr) {
     }
 
     // Identify CSS rules 
-    if (/[\w\"\']/.test(char)) {
+    if (/[\w\"\'\<\>\&\[\]\|\-\–`\+!\(\)]/.test(char)) {
 
       const value = walkString(/[^\s]/)
-      if (/[\w\d\-]:$/.test(value)) {
+      if (/.+:$/.test(value)) {
         tokens.push({
           type: 'cssRuleName',
-          value: value
+          value: value.substring(0, value.length -1 )
         })
       } else if (/.+;$/.test(value)) {
         tokens.push({
           type: 'cssRuleValue',
-          value: value
+          value: value.substring(0, value.length -1 )
         })
       } else {
         tokens.push({
@@ -144,26 +146,6 @@ function tokenizer(inputStr) {
           value: value
         })
       }
-      current++
-      continue
-    }
-
-    // CSS block markers
-    if (char === '{' || char === '}') {
-      tokens.push({
-        type: 'cssRuleBlock',
-        value: char
-      })
-      current++
-      continue
-    }
-
-    // Paren
-    if (char === '(' || char === ')') {
-      tokens.push({
-        type: 'parenthesis',
-        value: char
-      })
       current++
       continue
     }
@@ -186,9 +168,9 @@ function tokenizer(inputStr) {
     }
 
     // Various symbols 
-    if (/[\,\<\>\&\[\]\|\-\–`\+!]/.test(char)) {
+    if (/[\,\<\>\&\[\]\|\-\–`\+!\(\)]/.test(char)) {
       tokens.push({
-        type: 'symbol',
+        type: 'textNode',
         value: char
       })
       current++
@@ -203,7 +185,7 @@ function tokenizer(inputStr) {
 
     throw new TypeError(`ln ${ line }: Unknown char: '${char}' in ${ input.slice(current - 20, current + 20)}`)
   }
-  console.log('scanned', line, 'lines')
+  console.log(tokens)
   return tokens
 }
 

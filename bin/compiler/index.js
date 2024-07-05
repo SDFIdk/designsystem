@@ -1,25 +1,19 @@
 import { tokenizer } from './lexer.js' 
+import { parser } from './parser.js'
+import {utilDataGenerator, varDataGenerator} from './generator.js'
 
-function parser(tokens) {
-  return tokens
-}
-
-function dataGenerator(ast) {
-  return {
-    description: 'desc',
-    variable: 'varStr',
-    class: 'classStr'
-  }
-}
-
-function cssCommentsCompiler(input) {
+function cssDocCompiler(input) {
   const tokens = tokenizer(input)
   console.log(tokens)
+  /*
   const ast = parser(tokens)
-  const output = dataGenerator(ast)
-  return output
+  return {
+    utilClassList: utilDataGenerator(ast), 
+    varList: varDataGenerator(ast)
+  }
+  */
 }
 
 export {
-  cssCommentsCompiler
+  cssDocCompiler
 }

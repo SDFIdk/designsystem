@@ -1,6 +1,6 @@
 import { readdir } from 'node:fs/promises'
 import { writeToFile, readHTML } from './shared.js'
-import { cssCommentsCompiler } from './compiler/index.js'
+import { cssDocCompiler } from './compiler/index.js'
 
 const cssCommentRegex = /\/\*\*[\s\w\*'@\-\.,()<>/]+\*\/\s&?\.[\w\-\,\.\s]+\{/g
 
@@ -33,7 +33,7 @@ function parseDesc(str) {
 
 function parser(string) {
 
-  const parsedParts = cssCommentsCompiler(string)
+  const parsedParts = cssDocCompiler(string)
 
   let parsed = []
   let matches = string.matchAll(cssCommentRegex)
