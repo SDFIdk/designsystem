@@ -185,7 +185,7 @@ function tokenizer(inputStr) {
 
     throw new TypeError(`ln ${ line }: Unknown char: '${char}' in ${ input.slice(current - 20, current + 20)}`)
   }
-  console.log(tokens)
+  console.log('lexer output', tokens)
   return tokens
 }
 

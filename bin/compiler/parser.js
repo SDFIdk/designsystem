@@ -7,17 +7,34 @@ function walk() {
     return 'eof'
   }
   
+  console.log('past')
+
   let token = tokens[current]
 
-  //console.log(current, tokens.length, token)
-
-  if (token.type === 'divider' && /\/\/|\/\*|\/\*\*/.test(token.value)) {
+  if (token.type === 'divider') {
     let node = {
-      type: 'comment',
+      type: 'block',
       body: []
     }
+    let dividerEndSymbol
+    switch(token.value) {
+      case '/*':
+        dividerEndSymbol = '*/'
+        break
+      case '//':
+        dividerEndSymbol = '\n'
+        break
+      case '/**':
+        dividerEndSymbol = '*/'
+      case '{':
+        dividerEndSymbol = '}'
+      default:
+        console.log('default divider action')
+        current++
+        return 'none'
+    }
     current++
-    while (token.type !== 'divider' && token.value !== '*/') {
+    while (token.value !== dividerEndSymbol) {
       node.body.push(walk())
     }
     return node
@@ -104,12 +121,12 @@ function parser(tokenArr) {
 
   current = 0
   tokens = tokenArr
-  
+  console.log(tokens.length, current)
   const ast = {
     type: 'root',
-    body: walk() 
+    body: [walk()] 
   }  
-  console.log(ast)
+  console.log('parser output', ast)
   
   return ast
 }

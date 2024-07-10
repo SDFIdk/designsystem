@@ -4,9 +4,8 @@ import {utilDataGenerator, varDataGenerator} from './generator.js'
 
 function cssDocCompiler(input) {
   const tokens = tokenizer(input)
-  console.log(tokens)
-  /*
   const ast = parser(tokens)
+  /*
   return {
     utilClassList: utilDataGenerator(ast), 
     varList: varDataGenerator(ast)
