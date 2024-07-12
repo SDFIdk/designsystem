@@ -1,16 +1,20 @@
 let input
-let line
 let current
 let tokens
 
-function walkString(testRgx) {
+function walk(testRgx) {
   let char = input[current]
   let value = ''
   while (testRgx.test(char)) {
     value += char
-    char = input[++current]
+    current++
+    char = input[current]
   }
   return value
+}
+
+function previous() {
+  return tokens[tokens.length - 2]
 }
 
 function tokenizer(inputStr) {
@@ -18,25 +22,28 @@ function tokenizer(inputStr) {
   tokens = []
   input = inputStr
   current = 0
-  line = 1
 
   while (current < input.length) {
     let char = input[current]
 
-    // Count lines
-    if (char === '\n') {
-      line++
+    // Skip whitespace and newlines
+    if (/[\s\n]/.test(char)) {
+      current++
+      continue
+    }
+
+    // Identify dividers
+    if (char === '{') {
       tokens.push({
-        type: 'newLine',
+        type: 'cssRulesStart',
         value: char
       })
       current++
       continue
     }
-
-    if (/[\{\};,]/.test(char)) {
+    if (char === '}') {
       tokens.push({
-        type: 'divider',
+        type: 'cssRulesEnd',
         value: char
       })
       current++
@@ -45,7 +52,7 @@ function tokenizer(inputStr) {
 
     // Identify pseudo selectors
     if (char === ':') {
-      const value = walkString(/[:\w\-]/)
+      const value = walk(/[:\w\-]/)
       if (value.length === 1) {
         tokens.push({
           type: 'divider',
@@ -63,15 +70,15 @@ function tokenizer(inputStr) {
 
     // Identify css vars
     if (char === '-') {
-      const value = walkString(/[\-\w\d]/)
-      if (/^\-\-[\-\w\d]+/.test(value)) {
+      const value = walk(/[\-\w\d]/)
+      if (/^\-{2}[\-\w\d]+/.test(value)) {
         tokens.push({
           type: 'cssVariable',
           value: value
         })
       } else {
         tokens.push({
-          type: 'textNode',
+          type: 'unknown',
           value: value
         })
       }
@@ -81,7 +88,7 @@ function tokenizer(inputStr) {
 
     // Identify @ directives
     if (char === '@') {
-      const value = walkString(/^\s/)
+      const value = walk(/\S/)
       tokens.push({
         type: 'atRule',
         value: value
@@ -91,16 +98,32 @@ function tokenizer(inputStr) {
     }
 
     // Identify comment markers
-    if (char === '/' || char === '*') {
-      const value = walkString(/[\/\*]/)
-      if (value.length < 2) {
+    if (char === '/') {
+      const value = walk(/[\*\/]/)
+      if (value === '/**' || value === '/*' || value === '//') {
         tokens.push({
-          type: 'textNode',
+          type: 'commentStart',
           value: value
         })
       } else {
         tokens.push({
-          type: 'divider',
+          type: 'unknown',
+          value: value
+        })
+      }
+      current++
+      continue
+    }
+    if (char === '*') {
+      const value = walk(/[\*\/]/)
+      if (value === '*/') {
+        tokens.push({
+          type: 'commentEnd',
+          value: value
+        })
+      } else {
+        tokens.push({
+          type: 'unknown',
           value: value
         })
       }
@@ -110,10 +133,10 @@ function tokenizer(inputStr) {
 
     // Identify classnames
     if (char === '.') {
-      const value = walkString(/[\.a-z0-9\-]/)
+      const value = walk(/[\.a-z0-9\-]/)
       if (value === '.') {
         tokens.push({
-          type: 'textNode',
+          type: 'unknown',
           value: value
         })
       } else {
@@ -129,20 +152,28 @@ function tokenizer(inputStr) {
     // Identify CSS rules 
     if (/[\w\"\'\<\>\&\[\]\|\-\–`\+!\(\)]/.test(char)) {
 
-      const value = walkString(/[^\s]/)
+      const value = walk(/\S/)
       if (/.+:$/.test(value)) {
         tokens.push({
           type: 'cssRuleName',
           value: value.substring(0, value.length -1 )
+        })
+        tokens.push({
+          type: 'cssRuleValueStart',
+          value: ':'
         })
       } else if (/.+;$/.test(value)) {
         tokens.push({
           type: 'cssRuleValue',
           value: value.substring(0, value.length -1 )
         })
+        tokens.push({
+          type: 'cssRuleValueEnd',
+          value: ';'
+        })
       } else {
         tokens.push({
-          type: 'textNode',
+          type: 'unknown',
           value: value
         })
       }
@@ -151,7 +182,7 @@ function tokenizer(inputStr) {
     }
 
     if (char === '#') {
-      const value = walkString(/[\#a-fA-F0-9]/)
+      const value = walk(/[\#a-fA-F0-9]/)
       if (/\#[a-fA-F0-9]{3,6}/.test(value)) {
         tokens.push({
           type: 'hexColor',
@@ -159,7 +190,7 @@ function tokenizer(inputStr) {
         })
       } else {
         tokens.push({
-          type: 'textNode',
+          type: 'unknown',
           value: value
         })
       }
@@ -170,22 +201,16 @@ function tokenizer(inputStr) {
     // Various symbols 
     if (/[\,\<\>\&\[\]\|\-\–`\+!\(\)]/.test(char)) {
       tokens.push({
-        type: 'textNode',
+        type: 'unknown',
         value: char
       })
       current++
       continue
     }
 
-    // Skip whitespace
-    if (/\s/.test(char)) {
-      current++
-      continue
-    }
-
-    throw new TypeError(`ln ${ line }: Unknown char: '${char}' in ${ input.slice(current - 20, current + 20)}`)
+    throw new TypeError(`Unknown char: '${char}' in ${ input.slice(current - 20, current + 20)}`)
   }
-  console.log('lexer output', tokens)
+
   return tokens
 }
 

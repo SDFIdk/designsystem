@@ -1,120 +1,70 @@
 let current
 let tokens
+let context
+
+function isAtEnd() {
+  return current >= tokens.length ? true : false
+}
+
+function match(typeArr) {
+  for (const type of typeArr) {
+    if (check(type)) {
+      advance()
+      return true
+    }
+  }
+  return false
+}
+
+function check(type) {
+  if (isAtEnd()) {
+    return false
+  } else {
+    return peek().type === type
+  }
+}
+
+function peek() {
+  return tokens[current]
+}
+
+function previous() {
+  return tokens[current - 1]
+}
+
+function advance() {
+  if (!isAtEnd()) {
+    current++
+  }
+  return previous()
+}
 
 function walk() {
 
-  if (current >= tokens.length) {
-    return 'eof'
+  if (peek().type === 'commentStart') {
+    context = 'comment'
+    let node = {
+      type: 'comment',
+      body: []
+    }
+    while (peek().type !== 'commentEnd') {
+      advance()
+      node.body.push(walk())
+    }
+    return node
+  }
+
+  if (peek().type === 'commentEnd') {
+    context = null
+    return 'EOL'
+  }
+
+  if (context === 'comment' || peek().type === 'unknown') {
+    advance()
+    return peek().value
   }
   
-  console.log('past')
-
-  let token = tokens[current]
-
-  if (token.type === 'divider') {
-    let node = {
-      type: 'block',
-      body: []
-    }
-    let dividerEndSymbol
-    switch(token.value) {
-      case '/*':
-        dividerEndSymbol = '*/'
-        break
-      case '//':
-        dividerEndSymbol = '\n'
-        break
-      case '/**':
-        dividerEndSymbol = '*/'
-      case '{':
-        dividerEndSymbol = '}'
-      default:
-        console.log('default divider action')
-        current++
-        return 'none'
-    }
-    current++
-    while (token.value !== dividerEndSymbol) {
-      node.body.push(walk())
-    }
-    return node
-  }
-
-  if (token.type === 'textNode' || token.type === 'symbol') {
-    let node = {
-      type: 'text',
-      body: [token.value]
-    }
-    current++
-    while (token.type === 'textNode' || token.type === 'symbol') {
-      token = tokens[current]
-      node.body.push(token.value)
-      current++
-    }
-    return node
-  }
-
-  if (token.type === 'newLine') {
-    current++
-    return 'newLine'
-  }
-
-  if (token.type === 'cssSelector') {
-    current++
-    return {
-      type: 'cssSelector',
-      value: token.value
-    }
-  }
-
-  if (token.type === 'cssRulesMarker' && token.value === '{') {
-    let node = {
-      type: 'cssRules',
-      body: []
-    }
-    current++
-    while (token.type !== 'cssRulesMarker' && token.value !== '}') {
-      node.body.push(walk())
-    }
-    return node
-  }
-
-  if (token.type === 'cssRulesMarker' && token.value === '}') {
-    current++
-    return ''
-  }
-
-  if (token.type === 'cssRuleName') {
-    current++
-    return token.value
-  }
-
-  if (token.type === 'cssRuleValue') {
-    current++
-    return token.value
-  }
-
-  if (token.type === 'cssVariable') {
-    current++
-    return {
-      type: 'cssVar',
-      body: token.value
-    }
-  }
-
-  if (token.type === 'atRule') {
-    let node = {
-      type: 'atRule',
-      body: [token.value]
-    }
-    current++
-    while (token && token.type !== 'divider' && token.value !== ';') {
-      node.body.push(walk())
-    }
-    return node
-  }
-
-  throw new TypeError(`Unexpected token: ${token.type}, ${token.value}`)
+  throw new TypeError(`Unexpected token: ${peek().type}, ${peek().value}`)
 }
 
 function parser(tokenArr) {
@@ -123,11 +73,13 @@ function parser(tokenArr) {
   tokens = tokenArr
   console.log(tokens.length, current)
   const ast = {
-    type: 'root',
-    body: [walk()] 
-  }  
-  console.log('parser output', ast)
-  
+    type: 'ast',
+    body: []
+  }
+  while (!isAtEnd()) {
+    ast.body.push(walk())
+    advance()
+  }
   return ast
 }
 

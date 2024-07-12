@@ -3,6 +3,24 @@
  */
 
 /**
+ * A turn, a dance, and a reference to :root:not([href*="horse"])
+ */
+:root {
+
+  --horses: hsla(123, 20% 20%, 0.2);
+
+  transition: translate 0.3s ease-in-out;
+  background-color: hsla(123, 20% 20%, 0.2);
+
+  & a,
+  a:link,
+  .link::after,
+  .link {
+    background-color: transparent; /* Comment about this rule */
+  }
+}
+
+/**
  * Turn a block element into a centered box with standard dimensions.
  * @var --gap-lg
  */
