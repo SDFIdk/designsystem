@@ -63,8 +63,38 @@ function walk() {
     advance()
     return peek().value
   }
+
+  if (peek().type === 'cssRulesStart') {
+    context = 'cssRules'
+    let node = {
+      type: 'cssRules',
+      body: []
+    }
+    while (peek().type !== 'cssRulesEnd') {
+      advance()
+      node.body.push(walk())
+    }
+    return node
+  }
+
+  if (context === 'cssRules') {
+
+  }
+
+  if (peek().type === 'cssRulesEnd') {
+    context = null
+    return 'EOL'
+  }
   
   throw new TypeError(`Unexpected token: ${peek().type}, ${peek().value}`)
+}
+
+function walkCssRules() {
+  let node = {
+    type: 'cssRules',
+    body: []
+  }
+  return node
 }
 
 function parser(tokenArr) {

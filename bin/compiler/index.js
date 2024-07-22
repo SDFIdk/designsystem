@@ -1,18 +1,12 @@
-import { tokenizer } from './lexer.js' 
+import { scanTokens } from './lexer.js' 
 import { parser } from './parser.js'
 import {utilDataGenerator, varDataGenerator} from './generator.js'
 
 function cssDocCompiler(input) {
-  const tokens = tokenizer(input)
-  console.log(tokens)
-  const ast = parser(tokens)
-  return ast
-  /*
-  return {
-    utilClassList: utilDataGenerator(ast), 
-    varList: varDataGenerator(ast)
-  }
-  */
+  const tokens = scanTokens(input)
+  return tokens
+  //const ast = parser(tokens)
+  //return ast
 }
 
 export {

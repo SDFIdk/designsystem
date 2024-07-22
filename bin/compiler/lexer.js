@@ -1,219 +1,173 @@
-let input
-let current
-let tokens
+let source = ''
+let tokens = []
 
-function walk(testRgx) {
-  let char = input[current]
-  let value = ''
-  while (testRgx.test(char)) {
-    value += char
-    current++
-    char = input[current]
+let current = 0
+let start = 0
+let line = 1
+
+class Token {
+  type
+  text
+  line
+  constructor(type, text, line) {
+    this.type = type
+    this.text = text
+    this.line = line
   }
-  return value
 }
 
-function previous() {
-  return tokens[tokens.length - 2]
-}
-
-function tokenizer(inputStr) {
-
-  tokens = []
-  input = inputStr
-  current = 0
-
-  while (current < input.length) {
-    let char = input[current]
-
-    // Skip whitespace and newlines
-    if (/[\s\n]/.test(char)) {
-      current++
-      continue
-    }
-
-    // Identify dividers
-    if (char === '{') {
-      tokens.push({
-        type: 'cssRulesStart',
-        value: char
-      })
-      current++
-      continue
-    }
-    if (char === '}') {
-      tokens.push({
-        type: 'cssRulesEnd',
-        value: char
-      })
-      current++
-      continue
-    }
-
-    // Identify pseudo selectors
-    if (char === ':') {
-      const value = walk(/[:\w\-]/)
-      if (value.length === 1) {
-        tokens.push({
-          type: 'divider',
-          value: value
-        })
-      } else {
-        tokens.push({
-          type: 'cssSelector',
-          value: value
-        })
-      }
-      current++
-      continue
-    }
-
-    // Identify css vars
-    if (char === '-') {
-      const value = walk(/[\-\w\d]/)
-      if (/^\-{2}[\-\w\d]+/.test(value)) {
-        tokens.push({
-          type: 'cssVariable',
-          value: value
-        })
-      } else {
-        tokens.push({
-          type: 'unknown',
-          value: value
-        })
-      }
-      current++
-      continue
-    }
-
-    // Identify @ directives
-    if (char === '@') {
-      const value = walk(/\S/)
-      tokens.push({
-        type: 'atRule',
-        value: value
-      })
-      current++
-      continue
-    }
-
-    // Identify comment markers
-    if (char === '/') {
-      const value = walk(/[\*\/]/)
-      if (value === '/**' || value === '/*' || value === '//') {
-        tokens.push({
-          type: 'commentStart',
-          value: value
-        })
-      } else {
-        tokens.push({
-          type: 'unknown',
-          value: value
-        })
-      }
-      current++
-      continue
-    }
-    if (char === '*') {
-      const value = walk(/[\*\/]/)
-      if (value === '*/') {
-        tokens.push({
-          type: 'commentEnd',
-          value: value
-        })
-      } else {
-        tokens.push({
-          type: 'unknown',
-          value: value
-        })
-      }
-      current++
-      continue
-    }
-
-    // Identify classnames
-    if (char === '.') {
-      const value = walk(/[\.a-z0-9\-]/)
-      if (value === '.') {
-        tokens.push({
-          type: 'unknown',
-          value: value
-        })
-      } else {
-        tokens.push({
-          type: 'cssSelector',
-          value: value
-        })
-      }
-      current++
-      continue
-    }
-
-    // Identify CSS rules 
-    if (/[\w\"\'\<\>\&\[\]\|\-\–`\+!\(\)]/.test(char)) {
-
-      const value = walk(/\S/)
-      if (/.+:$/.test(value)) {
-        tokens.push({
-          type: 'cssRuleName',
-          value: value.substring(0, value.length -1 )
-        })
-        tokens.push({
-          type: 'cssRuleValueStart',
-          value: ':'
-        })
-      } else if (/.+;$/.test(value)) {
-        tokens.push({
-          type: 'cssRuleValue',
-          value: value.substring(0, value.length -1 )
-        })
-        tokens.push({
-          type: 'cssRuleValueEnd',
-          value: ';'
-        })
-      } else {
-        tokens.push({
-          type: 'unknown',
-          value: value
-        })
-      }
-      current++
-      continue
-    }
-
-    if (char === '#') {
-      const value = walk(/[\#a-fA-F0-9]/)
-      if (/\#[a-fA-F0-9]{3,6}/.test(value)) {
-        tokens.push({
-          type: 'hexColor',
-          value: value
-        })
-      } else {
-        tokens.push({
-          type: 'unknown',
-          value: value
-        })
-      }
-      current++
-      continue
-    }
-
-    // Various symbols 
-    if (/[\,\<\>\&\[\]\|\-\–`\+!\(\)]/.test(char)) {
-      tokens.push({
-        type: 'unknown',
-        value: char
-      })
-      current++
-      continue
-    }
-
-    throw new TypeError(`Unknown char: '${char}' in ${ input.slice(current - 20, current + 20)}`)
+function scanTokens(input) {
+  source = input
+  while (!isAtEnd()) {
+    // We are at the beginning of the next lexeme.
+    start = current
+    scanToken()
   }
-
+  tokens.push(new Token('EOF', "", ++line))
   return tokens
 }
 
+function scanToken() {
+  const c = advance()
+  switch (c) {
+    case '(': addToken('LEFT_PAREN'); break
+    case ')': addToken('RIGHT_PAREN'); break
+    case '{': addToken('LEFT_BRACE'); break
+    case '}': addToken('RIGHT_BRACE'); break
+    case '[': addToken('LEFT_BRACKET'); break
+    case ']': addToken('RIGHT_BRACKET'); break
+    case ',': addToken('COMMA'); break
+    case ';': addToken('SEMICOLON'); break
+    case ':': addToken('COLON'); break
+    case '=': addToken('EQUAL'); break
+    case '"': addToken('DOUBLE_QUOTE'); break
+    case '%': addToken('PERCENT'); break
+    case '&': addToken('AND'); break
+    case '.': scanClassSelector(); break
+    case '*': scanComment(); break
+    case '/': scanComment(); break
+    case '@': scanAtRule(); break
+    case '-': scanVariable(); break
+    case ' ':
+    case '\r':
+    case '\t': break // Ignore whitespace.
+    case '\n': line++; break
+    default:
+      // Handle text strings
+      if (/\w/.test(c)) {
+        scanText()
+        break
+      }
+      // Handle numbers
+      if (/\d/.test(c)) {
+        scanNumber()
+        break
+      }
+      throw new Error(`
+        ln ${ line }: Unknown character ${ c } in >>>
+        "${ source.substring(current - 20, current + 20) }"
+      `)
+  }
+}
+
+function scanVariable() {
+  if (match('-')) {
+    // A comment goes until the end of the line.
+    while (/[\w\d\-]/.test(peek())) {
+      advance()
+    }
+    addToken('CSS_VARIABLE')
+  } else {
+    addToken('DASH')
+  }
+}
+
+function scanAtRule() {
+  while (/\S/.test(peek())) {
+    advance()
+  }
+  const value = source.substring(start, current)
+  if (value.length > 1) {
+    addToken('AT_RULE')
+  } else {
+    addToken('DASH')
+  }
+}
+
+function scanComment() {
+  while (/\/|\*/.test(peek())) {
+    advance()
+  }
+  const value = source.substring(start, current)
+  switch(value) {
+    case '//': addToken('COMMENT'); break
+    case '/*':
+    case '/**': addToken('COMMENT_OPEN'); break
+    case '*/': addToken('COMMENT_CLOSE'); break
+    case '/': addToken('SLASH'); break
+    case '*': addToken('STAR'); break
+    default: addToken('TEXT')
+  }
+}
+
+function scanText() {
+  while(/\S/.test(peek()) && !isAtEnd()) {
+    advance()
+  }
+  addToken('TEXT')
+}
+
+function scanNumber() {
+  while(/\d|\./.test(peek()) && !isAtEnd()) {
+    advance()
+  }
+  addToken('NUMBER')
+}
+
+function scanClassSelector() {
+  while(/\S/.test(peek()) && peek() !== ',') {
+    advance()
+  }
+  const value = source.substring(start, current)
+  if (/\.[a-zA-Z0-9\-]+/.test(value)) {
+    addToken('CSS_SELECTOR')
+  } else {
+    addToken('DOT')
+  }
+}
+
+function isAtEnd() {
+  return current >= source.length
+} 
+
+function peek() {
+  if (isAtEnd()) {
+    return '\0'
+  } else {
+    return source[current]
+  }
+}
+
+function match(expected) {
+  if (isAtEnd()) {
+    return false
+  }
+  if (source[current] !== expected) {
+    return false
+  }
+  current++
+  return true
+}
+
+function advance() {
+  return source[current++]
+}
+
+function addToken(type) {
+  const text = source.substring(start, current)
+  tokens.push(new Token(type, text, line))
+}
+
 export {
-  tokenizer
+  scanTokens
 }
