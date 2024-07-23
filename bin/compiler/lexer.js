@@ -19,8 +19,7 @@ class Token {
 function scanTokens(input) {
   source = input
   while (!isAtEnd()) {
-    // We are at the beginning of the next lexeme.
-    start = current
+    start = current // We are at the beginning of the next lexeme.
     scanToken()
   }
   tokens.push(new Token('EOF', "", ++line))
@@ -38,11 +37,11 @@ function scanToken() {
     case ']': addToken('RIGHT_BRACKET'); break
     case ',': addToken('COMMA'); break
     case ';': addToken('SEMICOLON'); break
-    case ':': addToken('COLON'); break
     case '=': addToken('EQUAL'); break
     case '"': addToken('DOUBLE_QUOTE'); break
     case '%': addToken('PERCENT'); break
     case '&': addToken('AND'); break
+    case ':': scanPseudoSelector(); break
     case '.': scanClassSelector(); break
     case '*': scanComment(); break
     case '/': scanComment(); break
@@ -54,7 +53,7 @@ function scanToken() {
     case '\n': line++; break
     default:
       // Handle text strings
-      if (/\w/.test(c)) {
+      if (/[a-zA-Z]/.test(c)) {
         scanText()
         break
       }
@@ -72,8 +71,7 @@ function scanToken() {
 
 function scanVariable() {
   if (match('-')) {
-    // A comment goes until the end of the line.
-    while (/[\w\d\-]/.test(peek())) {
+    while (/[\w\d\-]/.test(peek()) && !isAtEnd()) {
       advance()
     }
     addToken('CSS_VARIABLE')
@@ -83,7 +81,7 @@ function scanVariable() {
 }
 
 function scanAtRule() {
-  while (/\S/.test(peek())) {
+  while (/\S/.test(peek()) && !isAtEnd()) {
     advance()
   }
   const value = source.substring(start, current)
@@ -95,7 +93,7 @@ function scanAtRule() {
 }
 
 function scanComment() {
-  while (/\/|\*/.test(peek())) {
+  while (/\/|\*/.test(peek()) && !isAtEnd()) {
     advance()
   }
   const value = source.substring(start, current)
@@ -111,7 +109,7 @@ function scanComment() {
 }
 
 function scanText() {
-  while(/\S/.test(peek()) && !isAtEnd()) {
+  while(/\w/.test(peek()) && !isAtEnd()) {
     advance()
   }
   addToken('TEXT')
@@ -125,14 +123,42 @@ function scanNumber() {
 }
 
 function scanClassSelector() {
-  while(/\S/.test(peek()) && peek() !== ',') {
+  while(/[a-zA-Z0-9\-]/.test(peek()) && !isAtEnd()) {
     advance()
   }
   const value = source.substring(start, current)
   if (/\.[a-zA-Z0-9\-]+/.test(value)) {
     addToken('CSS_SELECTOR')
-  } else {
+  } else if (value === '.') {
     addToken('DOT')
+  } else {
+    addToken('TEXT')
+  }
+}
+
+function scanPseudoSelector() {
+  while(/[\w\-]/.test(peek()) && !isAtEnd()) {
+    advance()
+  }
+  const value = source.substring(start, current)
+  switch(value) {
+    case ':root':
+    case ':not':
+    case ':hover':
+    case ':active':
+    case ':link':
+    case ':focus':
+    case '::after':
+    case '::before':
+    case ':first-child':
+    case ':last-child':
+    case ':nth-child': addToken('PSEUDO_SELECTOR'); break
+    default:
+      if (value === ':') {
+        addToken('COLON')
+      } else {
+        addToken('TEXT')
+      }
   }
 }
 
