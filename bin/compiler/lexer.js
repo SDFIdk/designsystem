@@ -109,7 +109,7 @@ function scanComment() {
 }
 
 function scanText() {
-  while(/\w/.test(peek()) && !isAtEnd()) {
+  while(/[\w\-]/.test(peek()) && !isAtEnd()) {
     advance()
   }
   addToken('TEXT')
