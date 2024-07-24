@@ -142,16 +142,18 @@ function scanPseudoSelector() {
   }
   const value = source.substring(start, current)
   switch(value) {
-    case ':root':
-    case ':not':
-    case ':hover':
-    case ':active':
-    case ':link':
-    case ':focus':
-    case '::after':
-    case '::before':
-    case ':first-child':
-    case ':last-child':
+    case ':root': addToken('PSEUDO_SELECTOR'); break
+    case ':not': addToken('PSEUDO_SELECTOR'); break
+    case ':hover': addToken('PSEUDO_SELECTOR'); break
+    case ':active': addToken('PSEUDO_SELECTOR'); break
+    case ':link': addToken('PSEUDO_SELECTOR'); break
+    case ':focus': addToken('PSEUDO_SELECTOR'); break
+    case '::after': addToken('PSEUDO_SELECTOR'); break
+    case '::before': addToken('PSEUDO_SELECTOR'); break
+    case ':first-child': addToken('PSEUDO_SELECTOR'); break
+    case ':last-child': addToken('PSEUDO_SELECTOR'); break
+    case ':has': addToken('PSEUDO_SELECTOR'); break
+    case ':is': addToken('PSEUDO_SELECTOR'); break
     case ':nth-child': addToken('PSEUDO_SELECTOR'); break
     default:
       if (value === ':') {

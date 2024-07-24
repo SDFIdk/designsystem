@@ -99,6 +99,8 @@ function walkCssRules() {
 
 function parser(tokenArr) {
 
+  return tokenArr
+
   current = 0
   tokens = tokenArr
   console.log(tokens.length, current)
