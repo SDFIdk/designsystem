@@ -67,7 +67,7 @@ samp {
 }
 
 // Links
-a[href]:not([role="button"]),
+a[href]:not([role="button"], .plain),
 [role="link"] {
   outline: none;
   color: var(--link);
@@ -85,26 +85,15 @@ a[href]:not([role="button"]),
     outline: solid var(--space-xxs) var(--highlight);
     border-radius: var(--space-xxs);
   }
-
-  /**
-   * Make link (<a>) hover/active animations more subtle. 
-   * @var --color
-   */ 
-  &.plain {
-    &:is([aria-current], :hover, :active) {
-      background: none;
-      color: var(--color);
-      transition: none;
-    }
-  }
 }
 
 /**
- * Make link (<a>) hover/active animations more subtle. 
+ * Utility class to make links (<a>) more subtle. 
  * @var --color
- */ 
-.plain {
-  color: #fff;
+ */  
+a.plain {
+  text-decoration: none;
+  color: inherit;
 }
 
 // Paragraphs
