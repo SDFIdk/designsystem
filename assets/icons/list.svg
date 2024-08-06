@@ -1,3 +1,5 @@
 <svg class="ds-icon" width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M27.0008 22.5H12.5M27 14.5H12.5M27.0008 6.5H12.5M8.5 22.5H2M8.5 14.5H2M8.5 6.5H2" stroke="var(--ds-icon-color, black)" stroke-linecap="round" stroke-linejoin="round"/>
+  <g stroke="var(--ds-icon-color, black)" stroke-linejoin="round" stroke-linecap="round" stroke-width="var(--ds-icon-stroke, 1)">
+    <path d="M27.0008 22.5H12.5M27 14.5H12.5M27.0008 6.5H12.5M8.5 22.5H2M8.5 14.5H2M8.5 6.5H2"/>
+  </g>
 </svg>

@@ -1,4 +1,4 @@
 <svg class="ds-icon" width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M2.5 14.5006H26.4975M14.4975 2.5V26.5" stroke="var(--ds-icon-color, black)" stroke-width="3" stroke-linecap="round"/>
-  <path d="M2.5 14.5016H26.4982M14.5 2.5V26.5016" stroke="var(--background-color, white)" stroke-linecap="round"/>
+  <path d="M2.5 14.5006H26.4975M14.4975 2.5V26.5" stroke="var(--ds-icon-color, black)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M2.5 14.5016H26.4982M14.5 2.5V26.5016" stroke="var(--background-color, white)" stroke-linecap="round" stroke-width="var(--ds-icon-stroke, 1)" stroke-linejoin="round"/>
 </svg>

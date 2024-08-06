@@ -1,8 +1,10 @@
 <svg class="ds-icon" width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <g stroke="var(--ds-icon-color, black)">
-    <path d="M25.5 17L3.5 3.5L8.5 25.5L25.5 17Z" stroke-linejoin="round" stroke-dasharray="1 1"/>
-    <path d="M2.5 2.5H4.5V4.5H2.5V2.5Z"/>
-    <path d="M24.5 16H26.5V18H24.5V16Z"/>
-    <path d="M7.5 24.5H9.5V26.5H7.5V24.5Z"/>
+  <g stroke="var(--ds-icon-color, black)" stroke-width="var(--ds-icon-stroke, 1)">
+    <path d="M25.5 17L3.5 3.5L8.5 25.5L25.5 17Z" stroke-dasharray="1 1"/>
+    <g stroke-linejoin="round" stroke-linecap="round">
+      <path d="M2.5 2.5H4.5V4.5H2.5V2.5Z" />
+      <path d="M24.5 16H26.5V18H24.5V16Z"/>
+      <path d="M7.5 24.5H9.5V26.5H7.5V24.5Z"/>
+    </g>
   </g>
 </svg>
