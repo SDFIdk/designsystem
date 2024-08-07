@@ -72,12 +72,11 @@ a[href]:not([role="button"], .plain),
   outline: none;
   color: var(--link);
   text-decoration: none;
-  background: linear-gradient(0deg, var(--link), var(--link)) no-repeat right bottom / 0 100%;
+  background: linear-gradient(0deg, var(--link), var(--link)) no-repeat right bottom / 0 8%;
   transition: color 0.3s ease-in-out, background-size 0.3s ease-in-out, outline 0.3s;
 
   &:is([aria-current], :hover, :active) {
-    color: var(--background-color);
-    background-size: 100% 100%;
+    background-size: 100% 8%;
     background-position-x: left;
   }
 
