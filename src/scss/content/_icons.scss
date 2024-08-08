@@ -121,8 +121,3 @@ a:has(use[href*="icon"]) {
 a svg {
   --ds-icon-color: var(--link);
 }
-
-a:hover svg,
-a:active svg {
-  --ds-icon-color: var(--background-color);
-}
