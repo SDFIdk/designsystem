@@ -1,6 +1,6 @@
 <svg class="ds-icon" width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
   <g stroke="var(--ds-icon-color, black)" stroke-width="var(--ds-icon-stroke, 1)">
     <path d="M26.5 17.5V2.5H2.5V26.5H17.5" stroke="var(--ds-icon-color, black)" stroke-dasharray="1 1" stroke-width="var(--ds-icon-stroke, 1)"/>
-    <path transform="rotate(86 14 14)" d="M12.4559 14.9453L12 16.9995L14.0813 16.6977M12.4559 14.9453L14.0813 16.6977M12.4559 14.9453L13.6331 11.4453L22.554 2.52426C23.6694 1.40888 25.4813 1.42059 26.5822 2.55031C27.6631 3.65954 27.6516 5.43156 26.5565 6.52672L17.5838 15.4995L14.0813 16.6977" stroke-linejoin="round" stroke-linecap="round"/>
+    <path transform="rotate(86 14 14)" d="M12.46 14.95L12 17L14.08 16.7M12.46 14.95L14.08 16.7M12.46 14.95L13.63 11.45L22.55 2.52C23.67 1.41 25.48 1.42 26.58 2.55C27.66 3.66 27.65 5.43 26.56 6.53L17.58 15.5L14.08 16.7" stroke-linejoin="round" stroke-linecap="round"/>
   </g>
 </svg>
