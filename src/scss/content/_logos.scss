@@ -34,13 +34,6 @@ a.ds-logo,
 .ds-logo a {
   text-decoration: none;
   color: var(--color);
-
-  &:hover strong,
-  &:hover span,
-  &:active strong,
-  &:active span {
-    text-decoration: underline;
-  }
 }
 
 ds-logo.black {
@@ -92,12 +85,14 @@ ds-logo.transparent {
 a[href]:has(ds-logo-title),
 a[href]:link:has(ds-logo-title),
 a[href]:visited:has(ds-logo-title) {
+  background: none;
   display: inline-block;
   border-radius: 2.25rem;
   color: var(--color);
   text-decoration: none;
-  padding: var(--space-xs) 1.75rem var(--space-xs) var(--space);
-  margin-left: -1rem;
+  padding: 0 1.75rem 0 0.75rem;
+  margin-left: -0.75rem;
+  transition: background-color 0.3s;
 }
 a[href]:hover:has(ds-logo-title),
 a[href]:active:has(ds-logo-title) {
