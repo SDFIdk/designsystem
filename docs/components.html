@@ -268,6 +268,28 @@ customElements.define('ds-nav', DSNav)
 
   <code-view data-snip="ex-resp-nav-1" title="HTML"></code-view>
 
+  <div id="ex-resp-nav-2">
+    <ds-nav-responsive>
+      <button slot="toggle">Toggle it</button>
+      <nav class="ds-nav">
+        <a href="#">A link</a>
+        <a href="#">Link</a>
+        <a href="#">Go here</a>
+        <a href="#">A loooooooong link</a>
+        <a href="#">A little link</a>
+        <a href="#">Another link</a>
+        <a href="#">About us</a>
+      </nav>
+    </ds-nav-responsive>
+  </div>
+
+  <code-view title="Javascript">
+import { DSNavResponsive } from '@dataforsyningen/designsystem/assets/designsystem.js'
+customElements.define('ds-nav-responsive', DSNavResponsive)
+  </code-view>
+    
+  <code-view data-snip="ex-resp-nav-2" title="HTML"></code-view>
+
 </article><section id="togglepanel">
 
   <h2>Skjult panel</h2>
@@ -465,6 +487,7 @@ customElements.define('ds-spinner', Spinner)
     ThemeToggle, 
     Tabs,
     DSNav,
+    DSNavResponsive,
     DSTogglePanel,
     Spinner,
     DSLogo,
@@ -475,6 +498,7 @@ customElements.define('ds-spinner', Spinner)
   customElements.define('ds-theme-toggle', ThemeToggle)
   customElements.define('ds-tabs', Tabs)
   customElements.define('ds-nav', DSNav)
+  customElements.define('ds-nav-responsive', DSNavResponsive)
   customElements.define('ds-logo', DSLogo)
   customElements.define('ds-logo-title', DSLogoTitle)
   customElements.define('ds-spinner', Spinner)

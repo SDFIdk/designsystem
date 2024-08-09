@@ -70,3 +70,98 @@ export class DSNav extends HTMLElement {
   }
 
 }
+ 
+export class DSNavResponsive extends HTMLElement {
+
+  #style = `
+    :host {
+      max-width: 100%;
+      display: block;
+    }
+    .menu-container {
+      position: relative;
+    }
+    .menu-toggle {
+      display: none;
+    }
+    .menu-items {
+      max-width: 100%;
+      overflow: scroll;
+      display: flex;
+      flex-flow: row nowrap;
+    }
+    .compact .menu-toggle {
+      display: inline-block;
+    }
+    .compact .menu-items {
+      position: absolute;
+      display: flex;
+      flex-flow: row wrap;
+      top: var(--space);
+      left: 0;
+      z-index: 100;
+      gap: var(--space-sm);
+      background-color: var(--background-color);
+      padding: var(--gap-lg);
+      box-shadow: var(--space-xs) var(--space-xs) var(--space-sm) var(--shadow-2);
+    }
+    .compact .menu-items.collapsed {
+      display: none;
+    }
+  `
+
+  constructor() {
+    super()
+    this.attachShadow({ mode: 'open' })
+  }
+
+  connectedCallback() {
+    this.render()
+    window.addEventListener('resize', this.updateMenu.bind(this))
+    window.addEventListener('click', this.toggleMenu.bind(this))
+    this.updateMenu();
+  }
+
+  disconnectedCallback() {
+    window.removeEventListener('resize', this.updateMenu)
+    window.removeEventListener('click', this.toggleMenu)
+  }
+
+  render() {
+    this.shadowRoot.innerHTML += `
+      <style>
+        ${ this.#style }
+      </style>
+      <div class="menu-container">
+        <slot name="toggle" class="menu-toggle"></slot>
+        <nav class="menu-items">
+          <slot></slot>
+        </nav>
+      </div>
+    `
+
+    this.shadowRoot.querySelector('.menu-toggle').addEventListener('click', this.toggleMenu.bind(this))
+  }
+
+  toggleMenu(event) {
+    event.stopPropagation()
+    const menu = this.shadowRoot.querySelector('.menu-items')
+    menu.classList.toggle('collapsed')
+  }
+
+  updateMenu() {
+    const container = this.shadowRoot.querySelector('.menu-container')
+    const items = this.shadowRoot.querySelector('.menu-items')
+
+    const menuWidth = items.scrollWidth
+    const containerWidth = this.clientWidth
+
+    if (menuWidth > containerWidth) {
+      items.classList.add('collapsed')
+      container.classList.add('compact')
+    } else {
+      container.classList.remove('compact')
+      items.classList.remove('collapsed')
+    }
+  }
+}
