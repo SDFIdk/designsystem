@@ -75,39 +75,26 @@ export class DSNavResponsive extends HTMLElement {
 
   #style = `
     :host {
-      max-width: 100%;
       display: block;
-      text-align: right; 
+      overflow: auto;
+      min-width: calc(var(--button-base-height) + 0.25rem);
+      min-height: var(--button-base-height);
     }
     .menu-container {
-      position: relative;
+      width: 100%;
+      height: 100%;
     }
     .menu-toggle {
       display: none;
     }
-    .menu-items {
-      max-width: 100%;
-      overflow: scroll;
-      display: flex;
-      flex-flow: row nowrap;
-    }
-    .compact .menu-toggle {
+    .menu-container.compact .menu-toggle {
       display: inline-block;
     }
-    .compact .menu-items {
-      position: absolute;
-      display: flex;
-      flex-flow: row wrap;
-      top: var(--space);
-      left: 0;
-      z-index: 100;
-      gap: var(--space-sm);
-      background-color: var(--background-color);
-      padding: var(--gap-lg);
-      box-shadow: var(--space-xs) var(--space-xs) var(--space-sm) var(--shadow-2);
-    }
-    .compact .menu-items.collapsed {
+    .menu-container.compact .menu-items {
       display: none;
+    }
+    .menu-container.compact .menu-items.expanded {
+      display: block;
     }
   `
 
@@ -135,9 +122,9 @@ export class DSNavResponsive extends HTMLElement {
       </style>
       <div class="menu-container">
         <slot name="toggle" class="menu-toggle"></slot>
-        <nav class="menu-items">
+        <div class="menu-items">
           <slot></slot>
-        </nav>
+        </div>
       </div>
     `
 
@@ -147,22 +134,30 @@ export class DSNavResponsive extends HTMLElement {
   toggleMenu(event) {
     event.stopPropagation()
     const menu = this.shadowRoot.querySelector('.menu-items')
-    menu.classList.toggle('collapsed')
+    this.classList.toggle('expanded')
+    menu.classList.toggle('expanded')
   }
 
   updateMenu() {
+    
     const container = this.shadowRoot.querySelector('.menu-container')
     const items = this.shadowRoot.querySelector('.menu-items')
 
-    const menuWidth = items.scrollWidth
-    const containerWidth = this.clientWidth
+    const menuWidth = container.scrollWidth
+    const containerWidth = this.offsetWidth
+    // offsetWidth, clientWidth, scrollWidth
+
+    console.log('widths')
+    console.log(this.offsetWidth, this.scrollWidth)
+    console.log(container.offsetWidth, container.scrollWidth)
+    console.log(items.offsetWidth, items.scrollWidth)
 
     if (menuWidth > containerWidth) {
-      items.classList.add('collapsed')
+      this.classList.add('compact')
       container.classList.add('compact')
     } else {
+      this.classList.remove('compact')
       container.classList.remove('compact')
-      items.classList.remove('collapsed')
     }
   }
 }

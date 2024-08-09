@@ -1,0 +1,67 @@
+<article style="padding: var(--space-lg);">
+
+  <style>
+    #responsive-nav-example {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space);
+      position: relative;
+    }
+
+    #responsive-nav-example ds-nav-responsive .ds-nav-responsive-content {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      gap: var(--space);
+      margin: 0;
+    }
+
+    #responsive-nav-example ds-nav-responsive.compact .ds-nav-responsive-content {
+      position: absolute;
+      top: 0;
+      right: 0;
+      max-width: 100vw;
+      height: auto;
+      flex-flow: column nowrap;
+      align-items: flex-start;
+      z-index: 100;
+      border-radius: var(--space-lg);
+      background: var(--card-background-color);
+      box-shadow: var(--space-xs) var(--space-xs) var(--space-sm) var(--shadow-2);
+      padding: var(--space-md);
+    }
+
+    #responsive-nav-example ds-nav-responsive .ds-nav-responsive-content a {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+    }
+  </style>
+
+  <header id="responsive-nav-example" class="header">
+    
+    <h1>Eksempler på navigation</h1>
+
+    <ds-nav-responsive>
+      <button slot="toggle" title="Vis menu" class="secondary">
+        <svg><use href="../../assets/icons.svg#burgerbar"/></svg>
+      </button>
+      <nav class="ds-nav-responsive-content">
+        <a href="" class="h6"><span class="border-soft"><svg><use href="../../assets/icons.svg#cases"/></svg></span>Cases</a>
+        <a href="" class="h6"><span class="border-soft"><svg><use href="../../assets/icons.svg#stack"/></svg></span>Data</a>
+        <a href="" class="h6"><span class="border-soft"><svg><use href="../../assets/icons.svg#map"/></svg></span>Kort</a>
+        <a href="" class="h6"><span class="border-soft"><svg><use href="../../assets/icons.svg#apps"/></svg></span>Web apps</a>
+        <a href="" class="h6"><span class="border-soft"><svg><use href="../../assets/icons.svg#user"/></svg></span>Login</a>
+      </nav>
+    </ds-nav-responsive>
+  
+  </header>
+
+</article>
+
+<script type="module">
+  import { DSNavResponsive } from '../../assets/designsystem.js'
+  customElements.define('ds-nav-responsive', DSNavResponsive)
+</script>
