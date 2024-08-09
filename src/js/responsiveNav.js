@@ -77,6 +77,7 @@ export class DSNavResponsive extends HTMLElement {
     :host {
       max-width: 100%;
       display: block;
+      text-align: right; 
     }
     .menu-container {
       position: relative;

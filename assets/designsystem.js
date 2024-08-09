@@ -713,6 +713,7 @@ var DSNavResponsive = class extends HTMLElement {
     :host {
       max-width: 100%;
       display: block;
+      text-align: right; 
     }
     .menu-container {
       position: relative;
