@@ -40,9 +40,30 @@
     }
   </style>
 
-  <header id="responsive-nav-example" class="header">
+  <header id="responsive-nav-example" class="header" data-theme="light" style="width: 100%; padding: var(--space-lg); background-color: var(--bg1);">
     
-    <h1>Eksempler på navigation</h1>
+    <h1 style="margin: 0;">Navigation lang</h1>
+
+    <ds-nav-responsive>
+      <button slot="toggle" title="Vis menu" class="secondary">
+        <svg><use href="../../assets/icons.svg#burgerbar"/></svg>
+      </button>
+      <nav class="ds-nav-responsive-content">
+        <a href="" class="h6"><span class="border-soft"><svg><use href="../../assets/icons.svg#cases"/></svg></span>Cases</a>
+        <a href="" class="h6"><span class="border-soft"><svg><use href="../../assets/icons.svg#stack"/></svg></span>Data</a>
+        <a href="" class="h6"><span class="border-soft"><svg><use href="../../assets/icons.svg#map"/></svg></span>Kort</a>
+        <a href="" class="h6"><span class="border-soft"><svg><use href="../../assets/icons.svg#apps"/></svg></span>Web apps</a>
+        <a href="" class="h6"><span class="border-soft"><svg><use href="../../assets/icons.svg#user"/></svg></span>Login</a>
+      </nav>
+    </ds-nav-responsive>
+  
+  </header>
+
+  <hr>
+
+  <header id="responsive-nav-example" class="header" data-theme="dark" style="width: 30rem; padding: var(--space-lg);">
+    
+    <h1 style="margin: 0;">Navigation kort</h1>
 
     <ds-nav-responsive>
       <button slot="toggle" title="Vis menu" class="secondary">
