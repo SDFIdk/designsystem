@@ -23,7 +23,9 @@ nav.ds-nav-vertical {
   [role="link"],
   button,
   [role="button"] {
-    display: inline-block;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
     font-size: 1rem;
     font-weight: 570;
     line-height: 1.12;
