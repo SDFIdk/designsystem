@@ -2,11 +2,25 @@ body {
   display: flex;
   flex-flow: column nowrap;
 }
-#header nav {
-  width: auto;
+#header ds-nav-responsive.compact nav {
   position: absolute;
   top: 0;
-  right: var(--space);
+  right: 0;
+  height: 100vh;
+  width: 20rem;
+  flex-flow: column nowrap;
+  align-items: stretch;
+  transition: all 1s ease-in-out;
+  transform: translate(-20rem, 0);
+  background-color: var(--bg1);
+  z-index: 100;
+  box-shadow: var(--space-xs) var(--space-xs) var(--space-sm) var(--shadow-2);
+}
+#header ds-nav-responsive.compact.expanded nav {
+  transform: translate(0, 0);
+}
+#header ds-nav-responsive.compact nav a {
+  border-bottom: solid 1px var(--border-color);
 }
 main {
   margin-top: var(--space-lg);
