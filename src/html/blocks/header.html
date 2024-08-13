@@ -16,21 +16,27 @@
 
     <header id="header" class="ds-header">
       <div class="ds-container">
-        <ds-logo-title title="Dataforsyningen" by-line="Klimadatastyrelsen"></ds-logo-title>
+        <div style="display: flex; flex-flow: row nowrap; justify-content: space-between; gap: var(--space-md);">
+          <ds-logo-title title="Dataforsyningen" by-line="Klimadatastyrelsen"></ds-logo-title>
+          <ds-nav-responsive>
+            <button slot="toggle" title="Menu">
+              <svg><use href="../assets/icons.svg#burgerbar" /></svg>
+            </button>
+            <nav class="ds-nav">
+              <a href="../index.html">Introduktion</a>
+              <a href="./css.html">Basis</a>
+              <a href="./icons.html">Ikoner</a>
+              <a href="./components.html">UI-komponenter</a>
+              <a href="./logos.html">Logo</a>
+              <a href="./css-util.html">CSS classes</a>
+              <a href="https://github.com/sdfidk/designsystem">Github</a>
+            </nav>
+          </ds-nav-responsive>
+        </div>
         <h1>Designsystem v7</h1>
         <p class="manchet">Reference-implementationer af Klimadatastyrelsens designguide med HTML/CSS</p>
-
-        <nav class="ds-nav">
-          <a href="../index.html">Introduktion</a>
-          <a href="./css.html">Basis</a>
-          <a href="./icons.html">Ikoner</a>
-          <a href="./components.html">UI-komponenter</a>
-          <a href="./logos.html">Logo</a>
-          <a href="./css-util.html">CSS classes</a>
-          <a href="https://github.com/sdfidk/designsystem">Github</a>
-        </nav>
   
         <ds-theme-toggle style="position: fixed; bottom: var(--space); right: var(--space); width: auto; z-index: 10;"></ds-theme-toggle>
-  
+
       </div>
     </header>
