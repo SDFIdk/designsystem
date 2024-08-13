@@ -1,15 +1,16 @@
 :root {
 
   /* Greyscale colors (incl. black and white) */
-  --grey1: hsl(0,0%,100%); /* Hvid */
-  --grey2: hsl(60, 7%, 90%); /* KEFM Light beige */
-  --grey3: hsl(60, 7%, 80%); /* A greyer version of KEFM Dark beige */
-  --grey4: hsl(55, 7%, 70%);
-  --grey5: hsl(50, 7%, 53%);
-  --grey6: hsl(45, 7%, 33%);
-  --grey7: hsl(45, 15%, 20%);
-  --grey8: hsl(45, 15%, 10%);
-  --grey9: hsl(0,0%,0%); /* Sort */
+  --grey1: hsl(0, 0%, 100%); /* Hvid */
+  --grey2: hsl(60, 7%, 95%);
+  --grey3: hsl(60, 7%, 90%); /* KEFM Light beige */
+  --grey4: hsl(60, 7%, 80%); /* A greyer version of KEFM Dark beige */
+  --grey5: hsl(55, 7%, 70%);
+  --grey6: hsl(50, 7%, 53%);
+  --grey7: hsl(45, 7%, 33%);
+  --grey8: hsl(45, 15%, 20%);
+  --grey9: hsl(45, 15%, 10%);
+  --grey10: hsl(0, 0%, 0%); /* Sort */
   
   /* Primary "blue" colors */
   --c1: hsl(198, 100%, 90%);
@@ -19,8 +20,9 @@
   --c5: hsl(198, 100%, 50%);
   --c6: hsl(198, 100%, 40%); /* Hover blå */
   --c7: hsl(198, 100%, 30%); /* Primær blå */
-  --c8: hsl(198, 100%, 15%);
-  --c9: hsl(198, 100%, 7%);
+  --c8: hsl(198, 100%, 22%);
+  --c9: hsl(198, 100%, 14%);
+  --c10: hsl(198, 100%, 6%);
 
   /* "Blue-green" colors */
   --g1: hsl(186,100%,90%);
@@ -72,7 +74,7 @@
   --red: var(--r6);
   --green: var(--g7);
   --blue: var(--c7); 
-  --black: var(--grey9);
+  --black: var(--grey10);
   --white: var(--grey1);
   --highlight: var(--o4);
   --warning: var(--r6);

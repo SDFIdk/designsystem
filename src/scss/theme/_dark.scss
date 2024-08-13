@@ -4,7 +4,7 @@
   // Document
   color-scheme: dark;
   accent-color: var(--blue);
-  --background-color: var(--c9);
+  --background-color: var(--c10);
 
   // Borders
   --border-color: hsla(198, 100%, 60%, 0.25); // --c4 with opacity
@@ -20,10 +20,10 @@
   --warning: var(--y4);
 
   // Background colors 
-  --bg0: var(--c9);
-  --bg1: var(--c8);
-  --bg2: var(--c7);
-  --bg3: var(--c6);
+  --bg0: var(--c10);
+  --bg1: var(--c9);
+  --bg2: var(--c8);
+  --bg3: var(--c7);
 
   // Shadows
   --shadow-1: hsla(0, 0%, 0%, 0.66);
@@ -41,7 +41,7 @@
   // Secondary colors
   --secondary: var(--white);
   --secondary-inverse: var(--c3);
-  --secondary-hover: var(--c8);
+  --secondary-hover: var(--c9);
   --secondary-focus: var(--highlight);
 
   // Highlighted text (<mark>)
@@ -73,7 +73,7 @@
 
   // Switch (input[type="checkbox"][role="switch"])
   --switch-background-color: var(--c2);
-  --switch-color: var(--c8);
+  --switch-color: var(--c9);
   --switch-checked-background-color: var(--blue);
 
   // Range (input[type="range"])
@@ -103,8 +103,8 @@
   --accordion-open-summary-color: var(--muted-color);
 
   // Card
-  --card-background-color: var(--c9);
-  --card-border-color: var(--c7);
+  --card-background-color: var(--c10);
+  --card-border-color: var(--c9);
   
   // Dropdown (<details role="list">)
   --dropdown-background-color: var(--grey1);

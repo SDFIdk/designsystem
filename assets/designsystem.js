@@ -762,12 +762,6 @@ var DSNavResponsive = class extends HTMLElement {
     `;
     this.shadowRoot.querySelector(".menu-toggle").addEventListener("click", this.openMenu.bind(this));
   }
-  toggleMenu(event) {
-    event.stopPropagation();
-    const menu = this.shadowRoot.querySelector(".menu-items");
-    this.classList.toggle("expanded");
-    menu.classList.toggle("expanded");
-  }
   openMenu(event) {
     event.stopPropagation();
     const menu = this.shadowRoot.querySelector(".menu-items");
