@@ -5,6 +5,7 @@ export class DSNav extends HTMLElement {
   navElement
   toggleElement
   hiddenNavElements
+  debounceTimer
 
   constructor() {
     super()
@@ -105,9 +106,10 @@ export class DSNavResponsive extends HTMLElement {
 
   connectedCallback() {
     this.render()
+    this.updateMenu()
     window.addEventListener('resize', this.updateMenu.bind(this))
     window.addEventListener('click', this.toggleMenu.bind(this))
-    this.updateMenu();
+    
   }
 
   disconnectedCallback() {
@@ -139,25 +141,23 @@ export class DSNavResponsive extends HTMLElement {
   }
 
   updateMenu() {
-    
+    if (this.debounceTimer) {
+      clearTimeout(this.debounceTimer)
+    }
+    this.debounceTimer = setTimeout(this.setClassBySize.bind(this), 100)
+  }
+
+  setClassBySize() {
     const container = this.shadowRoot.querySelector('.menu-container')
     const items = this.shadowRoot.querySelector('.menu-items')
+  
+    this.classList.remove('compact')
+    container.classList.remove('compact')
 
-    const menuWidth = container.scrollWidth
-    const containerWidth = this.offsetWidth
-    // offsetWidth, clientWidth, scrollWidth
-
-    console.log('widths')
-    console.log(this.offsetWidth, this.scrollWidth)
-    console.log(container.offsetWidth, container.scrollWidth)
-    console.log(items.offsetWidth, items.scrollWidth)
-
-    if (menuWidth > containerWidth) {
+    if (items.scrollWidth > items.clientWidth) {
       this.classList.add('compact')
       container.classList.add('compact')
-    } else {
-      this.classList.remove('compact')
-      container.classList.remove('compact')
     }
+
   }
 }
