@@ -742,11 +742,11 @@ var DSNavResponsive = class extends HTMLElement {
     this.render();
     this.updateMenu();
     window.addEventListener("resize", this.updateMenu.bind(this));
-    window.addEventListener("click", this.toggleMenu.bind(this));
+    window.addEventListener("click", this.closeMenu.bind(this));
   }
   disconnectedCallback() {
     window.removeEventListener("resize", this.updateMenu);
-    window.removeEventListener("click", this.toggleMenu);
+    window.removeEventListener("click", this.closeMenu);
   }
   render() {
     this.shadowRoot.innerHTML += `
@@ -760,13 +760,24 @@ var DSNavResponsive = class extends HTMLElement {
         </div>
       </div>
     `;
-    this.shadowRoot.querySelector(".menu-toggle").addEventListener("click", this.toggleMenu.bind(this));
+    this.shadowRoot.querySelector(".menu-toggle").addEventListener("click", this.openMenu.bind(this));
   }
   toggleMenu(event) {
     event.stopPropagation();
     const menu = this.shadowRoot.querySelector(".menu-items");
     this.classList.toggle("expanded");
     menu.classList.toggle("expanded");
+  }
+  openMenu(event) {
+    event.stopPropagation();
+    const menu = this.shadowRoot.querySelector(".menu-items");
+    this.classList.add("expanded");
+    menu.classList.add("expanded");
+  }
+  closeMenu(event) {
+    const menu = this.shadowRoot.querySelector(".menu-items");
+    this.classList.remove("expanded");
+    menu.classList.remove("expanded");
   }
   updateMenu() {
     if (this.debounceTimer) {
