@@ -2,6 +2,35 @@
 
   <h2>Responsiv navigation</h2>
 
+  <p><a href="examples/navigation.html">Se demoside</a></p>
+
+  <p>Prøv at ændre browservinduets størrelse for at se navigationen ændre sig.</p>
+
+  <div id="ex-resp-nav-2">
+    <ds-nav-responsive>
+      <button slot="toggle" title="Toggle menu">
+        <svg><use href="../assets/icons.svg#burgerbar" /></svg>
+      </button>
+      <nav class="ds-nav ds-panel">
+        <a href="#">A link</a>
+        <a href="#">Link</a>
+        <a href="#">Go here</a>
+        <a href="#">A loooooooong link</a>
+        <a href="#">A little link</a>
+        <a href="#">Another link</a>
+        <a href="#">About us</a>
+      </nav>
+    </ds-nav-responsive>
+  </div>
+
+  <code-view title="Javascript">
+import { DSNavResponsive } from '@dataforsyningen/designsystem/assets/designsystem.js'
+customElements.define('ds-nav-responsive', DSNavResponsive)
+  </code-view>
+    
+  <code-view data-snip="ex-resp-nav-2" title="HTML"></code-view>
+
+
   <div id="ex-resp-nav-1">
 
     <ds-nav style="width: 10rem;" data-align="left">
@@ -54,27 +83,5 @@ customElements.define('ds-nav', DSNav)
   </code-view>
 
   <code-view data-snip="ex-resp-nav-1" title="HTML"></code-view>
-
-  <div id="ex-resp-nav-2">
-    <ds-nav-responsive>
-      <button slot="toggle">Toggle it</button>
-      <nav class="ds-nav">
-        <a href="#">A link</a>
-        <a href="#">Link</a>
-        <a href="#">Go here</a>
-        <a href="#">A loooooooong link</a>
-        <a href="#">A little link</a>
-        <a href="#">Another link</a>
-        <a href="#">About us</a>
-      </nav>
-    </ds-nav-responsive>
-  </div>
-
-  <code-view title="Javascript">
-import { DSNavResponsive } from '@dataforsyningen/designsystem/assets/designsystem.js'
-customElements.define('ds-nav-responsive', DSNavResponsive)
-  </code-view>
-    
-  <code-view data-snip="ex-resp-nav-2" title="HTML"></code-view>
 
 </article>
