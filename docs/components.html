@@ -223,7 +223,7 @@ document.querySelectorAll('[aria-controls="example-dialog"]').forEach(function(e
 
   <p><a href="examples/navigation.html">Se demoside</a></p>
 
-  <p>Prøv at ændre browservinduets størrelse for at se navigationen ændre sig.</p>
+  <p>Eksempel på `ds-nav-responsive`, der ændrer layout i forhold til pladsen. Prøv at ændre browservinduets størrelse for at se navigationen ændre sig.</p>
 
   <div id="ex-resp-nav-2">
     <ds-nav-responsive>
@@ -243,11 +243,34 @@ document.querySelectorAll('[aria-controls="example-dialog"]').forEach(function(e
   </div>
 
   <code-view title="Javascript">
-import { DSNavResponsive } from '@dataforsyningen/designsystem/assets/designsystem.js'
+import { DSNavResponsive } from '@dataforsyningen/designsystem'
 customElements.define('ds-nav-responsive', DSNavResponsive)
   </code-view>
     
   <code-view data-snip="ex-resp-nav-2" title="HTML"></code-view>
+
+  <p>Med `ds-nav-scrollable` kan man lave tilføje diskret scroll-funktionalitet til nav-elementer, der er lidt for lange til at vise alle links.</p>
+  
+  <div id="ex-resp-nav-3" style="width: 30rem;">
+    <ds-nav-scrollable>
+      <nav class="ds-nav">
+        <a href="#">A link</a>
+        <a href="#">Link</a>
+        <a href="#">Go here</a>
+        <a href="#">A loooooooong link</a>
+        <a href="#">A little link</a>
+        <a href="#">Another link</a>
+        <a href="#">About us</a>
+      </nav>
+    </ds-nav-scrollable>
+  </div>
+
+  <code-view title="Javascript">
+import { DSNavScrollable } from '@dataforsyningen/designsystem'
+customElements.define('ds-nav-scrollable', DSNavScrollable)
+  </code-view>
+    
+  <code-view data-snip="ex-resp-nav-3" title="HTML"></code-view>
 
 
   <div id="ex-resp-nav-1">
@@ -297,7 +320,7 @@ customElements.define('ds-nav-responsive', DSNavResponsive)
   </div>
 
   <code-view title="Javascript">
-import { DSNav } from '@dataforsyningen/designsystem/assets/designsystem.js'
+import { DSNav } from '@dataforsyningen/designsystem'
 customElements.define('ds-nav', DSNav)
   </code-view>
 
@@ -501,6 +524,7 @@ customElements.define('ds-spinner', Spinner)
     Tabs,
     DSNav,
     DSNavResponsive,
+    DSNavScrollable,
     DSTogglePanel,
     Spinner,
     DSLogo,
@@ -512,6 +536,7 @@ customElements.define('ds-spinner', Spinner)
   customElements.define('ds-tabs', Tabs)
   customElements.define('ds-nav', DSNav)
   customElements.define('ds-nav-responsive', DSNavResponsive)
+  customElements.define('ds-nav-scrollable', DSNavScrollable)
   customElements.define('ds-logo', DSLogo)
   customElements.define('ds-logo-title', DSLogoTitle)
   customElements.define('ds-spinner', Spinner)

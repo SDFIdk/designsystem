@@ -14,9 +14,10 @@ nav.ds-nav-vertical {
   justify-content: flex-start;
   align-items: center;
   margin-bottom: 0;
+  white-space: nowrap;
 
   input {
-    width: inherit; 
+    width: inherit;
   }
 
   a[href],

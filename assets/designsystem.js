@@ -790,6 +790,118 @@ var DSNavResponsive = class extends HTMLElement {
     }
   }
 };
+var DSNavScrollable = class extends HTMLElement {
+  debounceTimer;
+  style = `
+    :host {
+      display: block;
+      position: relative;
+    }
+    .btn-scroll-right,
+    .btn-scroll-left {
+      display: none;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: calc(var(--space) * 4);
+      height: 100%;
+      padding: 0;
+      border: none;
+    }
+    .btn-scroll-left {
+      text-align: left;
+      left: 0;
+      background: linear-gradient(to right, var(--background-color) 33%, transparent);
+    }
+    .btn-scroll-right {
+      text-align: right;
+      right: 0;
+      background: linear-gradient(to left, var(--background-color) 33%, transparent);
+    }
+    .btn-scroll-right svg,
+    .btn-scroll-left svg {
+      height: auto;
+      width: var(--space);
+    }
+    slot {
+      display: block;
+      width: 100%;
+      overflow-x: auto;
+      scrollbar-width: none;
+      scroll-snap-type: x mandatory;
+    }
+  `;
+  constructor() {
+    super();
+    this.attachShadow({ mode: "open" });
+  }
+  connectedCallback() {
+    this.shadowRoot.innerHTML += `
+      <style>
+        ${this.style}
+      </style>
+      <button class="btn-scroll-left" title="Scroll mod venstre">
+        <svg class="ds-icon" width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g stroke="var(--ds-icon-color, black)" stroke-linejoin="round" stroke-linecap="round" stroke-width="var(--ds-icon-stroke, 1)">
+            <path d="M22 27L5.41 15.16C4.85 14.72 4.86 14.02 5.43 13.59L22 2"/>
+          </g>
+        </svg>
+      </button>
+      <slot></slot>
+      <button class="btn-scroll-right" title="Scroll mod h\xF8jre">
+        <svg class="ds-icon" width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g stroke="var(--ds-icon-color, black)" stroke-linejoin="round" stroke-linecap="round" stroke-width="var(--ds-icon-stroke, 1)">
+            <path d="M6 2L22.59 13.84C23.15 14.28 23.14 14.98 22.57 15.41L6 27"/>
+          </g>
+        </svg>
+      </button>
+    `;
+    this.updateButtons();
+    this.shadowRoot.querySelector("slot").addEventListener("scroll", this.scrollHandler.bind(this));
+    this.shadowRoot.querySelector(".btn-scroll-left").addEventListener("click", this.scrollLeftHandler.bind(this));
+    this.shadowRoot.querySelector(".btn-scroll-right").addEventListener("click", this.scrollRightHandler.bind(this));
+  }
+  scrollHandler() {
+    if (this.debounceTimer) {
+      clearTimeout(this.debounceTimer);
+    }
+    this.debounceTimer = setTimeout(this.updateButtons.bind(this), 100);
+  }
+  scrollLeftHandler() {
+    const scrollableElement = this.shadowRoot.querySelector("slot");
+    this.scrollBtnHandler(scrollableElement.scrollLeft - 200);
+  }
+  scrollRightHandler() {
+    const scrollableElement = this.shadowRoot.querySelector("slot");
+    this.scrollBtnHandler(scrollableElement.scrollLeft + 200);
+  }
+  scrollBtnHandler(position) {
+    this.shadowRoot.querySelector("slot").scroll({
+      top: 0,
+      left: position,
+      behavior: "smooth"
+    });
+  }
+  updateButtons() {
+    console.log("update btns");
+    const scrollableElement = this.shadowRoot.querySelector("slot");
+    const leftBtn = this.shadowRoot.querySelector(".btn-scroll-left");
+    const rightBtn = this.shadowRoot.querySelector(".btn-scroll-right");
+    const scrolled = scrollableElement.scrollLeft;
+    const visibleWidth = scrollableElement.clientWidth;
+    const totalWidth = scrollableElement.scrollWidth;
+    if (scrolled > 0) {
+      leftBtn.style.display = "block";
+    } else {
+      leftBtn.style.display = "none";
+    }
+    if (visibleWidth > totalWidth || scrolled + visibleWidth >= totalWidth) {
+      rightBtn.style.display = "none";
+    } else {
+      rightBtn.style.display = "block";
+    }
+  }
+};
 
 // src/js/icon.js
 var DSIcon = class extends HTMLElement {
@@ -1633,6 +1745,7 @@ export {
   DSLogoTitle,
   DSNav,
   DSNavResponsive,
+  DSNavScrollable,
   DSSlide,
   DSSwitch,
   DSTogglePanel,
