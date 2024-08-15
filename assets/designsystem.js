@@ -448,6 +448,30 @@ var Tabs = class extends HTMLElement {
     .ds-tabs-header {
       border-bottom: solid 1px var(--border-color);
     }
+    .ds-tabs-header > button {
+      font-size: 1rem;
+      font-weight: 570;
+      line-height: 1.12;
+      letter-spacing: 0.02rem;
+      color: var(--color);
+      padding: var(--space);
+      border: none;
+      height: auto;
+      background: linear-gradient(0deg, var(--link), var(--link)) no-repeat right bottom / 0 8%;
+      transition: color 0.3s ease-in-out, background-size 0.3s ease-in-out, outline 0.3s;
+    }
+    .ds-tabs-header > button:hover,
+    .ds-tabs-header > button:active {
+      background-size: 100% 8%;
+      background-position-x: left;
+    }
+    .ds-tabs-header > button:focus {
+      outline: solid var(--space-xxs) var(--highlight);
+      border-radius: var(--space-xxs);
+    }
+    .ds-tabs-header > button.active {
+      background: linear-gradient(0deg, var(--highlight), var(--highlight)) no-repeat left bottom / 100% 8%;
+    }
   `;
   constructor() {
     super();
@@ -490,19 +514,21 @@ var Tabs = class extends HTMLElement {
     });
   }
   switchTab(index) {
-    this.tabTitles[this.activeIndex].setAttribute("aria-selected", false);
-    this.tabTitles[index].setAttribute("aria-selected", true);
-    this.tabTitles.forEach((tabElement) => {
+    const tabTitles = this.shadowRoot.querySelectorAll(".ds-tabs-header button");
+    const tabContents = Array.from(this.children);
+    tabTitles[this.activeIndex].setAttribute("aria-selected", false);
+    tabTitles[index].setAttribute("aria-selected", true);
+    tabTitles.forEach((tabElement) => {
       tabElement.classList.remove("active");
     });
-    this.tabTitles[index].classList.add("active");
-    this.tabContents[this.activeIndex].style.display = "none";
-    this.tabContents[index].style.display = "block";
+    tabTitles[index].classList.add("active");
+    tabContents[this.activeIndex].style.display = "none";
+    tabContents[index].style.display = "block";
     this.activeIndex = index;
     const tabChangeEvent = new CustomEvent("tabchange", {
       detail: {
         index,
-        title: this.tabTitles[index].textContent
+        title: tabTitles[index].textContent
       },
       bubbles: true
     });

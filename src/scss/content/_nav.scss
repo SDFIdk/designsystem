@@ -33,13 +33,12 @@ nav.ds-nav-vertical {
     letter-spacing: 0.02rem;
     color: var(--color);
     padding: var(--space);
-    border-bottom: solid var(--border-width) transparent;
+    border: none;
     border-radius: 0;
     height: auto;
 
     &.active {
-      color: var(--link);
-      border-bottom-color: var(--link);
+      background: linear-gradient(0deg, var(--highlight), var(--highlight)) no-repeat left bottom / 100% 8%;
     }
   }
 }
