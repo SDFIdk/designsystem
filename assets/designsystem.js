@@ -807,6 +807,7 @@ var DSNavScrollable = class extends HTMLElement {
       height: 100%;
       padding: 0;
       border: none;
+      z-index: 2;
     }
     .btn-scroll-left {
       text-align: left;
@@ -840,6 +841,9 @@ var DSNavScrollable = class extends HTMLElement {
       <style>
         ${this.style}
       </style>
+
+      <slot></slot>
+
       <button class="btn-scroll-left" title="Scroll mod venstre">
         <svg class="ds-icon" width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g stroke="var(--ds-icon-color, black)" stroke-linejoin="round" stroke-linecap="round" stroke-width="var(--ds-icon-stroke, 1)">
@@ -847,7 +851,7 @@ var DSNavScrollable = class extends HTMLElement {
           </g>
         </svg>
       </button>
-      <slot></slot>
+      
       <button class="btn-scroll-right" title="Scroll mod h\xF8jre">
         <svg class="ds-icon" width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g stroke="var(--ds-icon-color, black)" stroke-linejoin="round" stroke-linecap="round" stroke-width="var(--ds-icon-stroke, 1)">
