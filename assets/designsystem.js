@@ -488,7 +488,6 @@ var Tabs = class extends HTMLElement {
   }
   setupTabs() {
     const tabs = Array.from(this.children);
-    console.log(tabs);
     tabs.forEach((tab, index) => {
       const title = tab.getAttribute("title");
       const tabTitleButton = document.createElement("button");
@@ -726,13 +725,10 @@ var DSNav = class extends HTMLElement {
   }
 };
 var DSNavResponsive = class extends HTMLElement {
+  mode;
+  // 'fill' or 'switch'
+  intersectionObserver;
   #style = `
-    :host {
-      display: block;
-      overflow: auto;
-      min-width: calc(var(--button-base-height) + 0.25rem);
-      min-height: var(--button-base-height);
-    }
     .menu-container {
       width: 100%;
       height: 100%;
@@ -740,23 +736,43 @@ var DSNavResponsive = class extends HTMLElement {
     .menu-toggle {
       display: none;
     }
-    .menu-container.compact .menu-toggle {
+
+    /* Styles for 'switch' mode */
+    .menu-container.switch.compact .menu-toggle {
       display: inline-block;
     }
-    .menu-container.compact .menu-items {
+    .menu-container.switch.compact .menu-items {
       display: none;
     }
-    .menu-container.compact .menu-items.expanded {
+    .menu-container.switch.compact.expanded .menu-items {
       display: block;
     }
+
+    /* Styles for 'fill' mode */
+    .menu-container.fill:not(.expanded) {
+      overflow: hidden;
+    }
+    .menu-container.fill.expanded {
+      overflow: visible;
+    }
+    .menu-container.fill .menu-toggle {
+      display: inline-block;
+      float: right;
+    }
+    .menu-container.fill .menu-items {
+      display: flex;
+    } 
   `;
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
   }
   connectedCallback() {
+    this.mode = this.classList.contains("fill") ? "fill" : "switch";
+    this.classList.add(this.mode);
     this.render();
-    this.updateMenu();
+    this.setClassBySize();
+    this.setIntersectionStyles();
     window.addEventListener("resize", this.updateMenu.bind(this));
     window.addEventListener("click", this.closeMenu.bind(this));
   }
@@ -769,7 +785,7 @@ var DSNavResponsive = class extends HTMLElement {
       <style>
         ${this.#style}
       </style>
-      <div class="menu-container">
+      <div class="menu-container ${this.mode}">
         <slot name="toggle" class="menu-toggle"></slot>
         <div class="menu-items">
           <slot></slot>
@@ -780,20 +796,22 @@ var DSNavResponsive = class extends HTMLElement {
   }
   openMenu(event) {
     event.stopPropagation();
-    const menu = this.shadowRoot.querySelector(".menu-items");
+    const container = this.shadowRoot.querySelector(".menu-container");
     this.classList.add("expanded");
-    menu.classList.add("expanded");
+    container.classList.add("expanded");
   }
-  closeMenu(event) {
-    const menu = this.shadowRoot.querySelector(".menu-items");
+  closeMenu() {
+    const container = this.shadowRoot.querySelector(".menu-container");
     this.classList.remove("expanded");
-    menu.classList.remove("expanded");
+    container.classList.remove("expanded");
   }
   updateMenu() {
     if (this.debounceTimer) {
       clearTimeout(this.debounceTimer);
     }
-    this.debounceTimer = setTimeout(this.setClassBySize.bind(this), 100);
+    this.debounceTimer = setTimeout(() => {
+      this.setClassBySize.bind(this);
+    }, 100);
   }
   setClassBySize() {
     const container = this.shadowRoot.querySelector(".menu-container");
@@ -804,6 +822,31 @@ var DSNavResponsive = class extends HTMLElement {
       this.classList.add("compact");
       container.classList.add("compact");
     }
+  }
+  setIntersectionStyles() {
+    if (this.mode !== "fill") {
+      return;
+    }
+    const options = {
+      root: this,
+      rootMargin: "0px",
+      threshold: 1
+    };
+    this.intersectionObserver = new IntersectionObserver(this.intersectionCallback, options);
+    const container = this.querySelector(':not(button[slot="toggle"])');
+    Array.from(container.children).map((element) => {
+      this.intersectionObserver.observe(element);
+    });
+  }
+  intersectionCallback(entries) {
+    entries.map((entry) => {
+      if (entry.intersectionRatio < 1) {
+        console.log("intersected", entry);
+        entry.target.style.display = "none";
+      } else {
+        entry.target.style.display = "inherit";
+      }
+    });
   }
 };
 var DSNavScrollable = class extends HTMLElement {
@@ -903,7 +946,6 @@ var DSNavScrollable = class extends HTMLElement {
     });
   }
   updateButtons() {
-    console.log("update btns");
     const scrollableElement = this.shadowRoot.querySelector("slot");
     const leftBtn = this.shadowRoot.querySelector(".btn-scroll-left");
     const rightBtn = this.shadowRoot.querySelector(".btn-scroll-right");

@@ -6,6 +6,12 @@
 
   <p>Eksempel på `ds-nav-responsive`, der ændrer layout i forhold til pladsen. Prøv at ændre browservinduets størrelse for at se navigationen ændre sig.</p>
 
+
+  <code-view title="Javascript">
+import { DSNavResponsive } from '@dataforsyningen/designsystem'
+customElements.define('ds-nav-responsive', DSNavResponsive)
+  </code-view>
+
   <div id="ex-resp-nav-2">
     <ds-nav-responsive>
       <button slot="toggle" title="Toggle menu">
@@ -22,13 +28,28 @@
       </nav>
     </ds-nav-responsive>
   </div>
-
-  <code-view title="Javascript">
-import { DSNavResponsive } from '@dataforsyningen/designsystem'
-customElements.define('ds-nav-responsive', DSNavResponsive)
-  </code-view>
     
   <code-view data-snip="ex-resp-nav-2" title="HTML"></code-view>
+
+  <div id="ex-resp-nav-4" style="width: 20rem;">
+    <ds-nav-responsive class="fill">
+      <nav class="ds-panel">
+        <button><svg><use href="../../assets/icons.svg#map"/></svg> Lorem</button>
+        <button><svg><use href="../../assets/icons.svg#mail"/></svg> Ipsum</button>
+        <button><svg><use href="../../assets/icons.svg#stack"/></svg> Dolor</button>
+        <a href="#" role="button"><svg><use href="../../assets/icons.svg#crosshair"/></svg> Hest</a>
+        <a href="#" role="button"><svg><use href="../../assets/icons.svg#user"/></svg> Kanin</a>
+        <a href="#" role="button"><svg><use href="../../assets/icons.svg#arrow-left"/></svg> Hamster</a>
+      </nav>
+      <button slot="toggle" title="Toggle menu">
+        <svg><use href="../assets/icons.svg#choose" /></svg>
+      </button>
+    </ds-nav-responsive>
+  </div>
+    
+  <code-view data-snip="ex-resp-nav-4" title="HTML"></code-view>
+
+  <hr>
 
   <p>Med `ds-nav-scrollable` kan man lave tilføje diskret scroll-funktionalitet til nav-elementer, der er lidt for lange til at vise alle links.</p>
   
