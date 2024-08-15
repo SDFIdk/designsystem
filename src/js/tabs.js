@@ -13,11 +13,16 @@
  * </ds-tabs>
 */
 export class Tabs extends HTMLElement {
-  
+
+  style = `
+    .ds-tabs-header {
+      border-bottom: solid 1px var(--border-color);
+    }
+  `
+
   constructor() {
     super()
-    this.tabTitles = []
-    this.tabContents = []
+    this.attachShadow({mode: 'open'})
     this.activeIndex = 0
     this.componentId = Math.floor(Math.random() * 1000)
   }
@@ -28,12 +33,13 @@ export class Tabs extends HTMLElement {
     if (idx >= 0 && idx < this.childElementCount) {
       this.activeIndex = idx
     }
-    this.setupTabs()
+    //this.setupTabs()
     this.render()
   }
 
   setupTabs() {
     const tabs = Array.from(this.children)
+    console.log(tabs)
 
     tabs.forEach((tab, index) => {
       const title = tab.getAttribute("title")
@@ -52,17 +58,12 @@ export class Tabs extends HTMLElement {
         this.switchTab(index)
       )
 
-      this.tabTitles.push(tabTitleButton)
+      this.shadowRoot.querySelector('.ds-tabs-header').append(tabTitleButton)
 
-      const tabContent = document.createElement("div")
-      tabContent.className = "tab-content"
-      tabContent.id = `tabpanel-${this.componentId}-${index}`
-      tabContent.setAttribute("role", "tabpanel")
-      tabContent.setAttribute("aria-labelledby", `tab-${this.componentId}-${index}`)
-      tabContent.style.display = index === this.activeIndex ? "block" : "none"
-      tabContent.appendChild(tab)
-
-      this.tabContents.push(tabContent)
+      tab.id = `tabpanel-${this.componentId}-${index}`
+      tab.setAttribute("role", "tabpanel")
+      tab.setAttribute("aria-labelledby", `tab-${this.componentId}-${index}`)
+      tab.style.display = index === this.activeIndex ? "block" : "none"
     })
   }
 
@@ -88,34 +89,15 @@ export class Tabs extends HTMLElement {
   }
 
   render() {
-    const styleContainer = document.createElement("style")
-    
-    styleContainer.textContent = this.styles
-    
-    this.appendChild(styleContainer)
-
-    const tabsContainer = document.createElement("nav")
-    tabsContainer.className = "ds-nav"
-
-    this.tabTitles.forEach((tabTitle, index) => {
-      tabTitle.id = `tab-${this.componentId}-${index}`
-      tabTitle.classList.add('quiet')
-      tabsContainer.appendChild(tabTitle)
-    })
-
-    this.appendChild(tabsContainer)
-
-    const hrElement = document.createElement('hr')
-    this.appendChild(hrElement)
-
-    const tabContentContainer = document.createElement("div")
-    tabContentContainer.className = "ds-tabs-body"
-
-    this.tabContents.forEach((tabContent) => {
-      tabContent.className = "tabpanel"
-      tabContentContainer.appendChild(tabContent)
-    })
-
-    this.appendChild(tabContentContainer)
+    this.shadowRoot.innerHTML += `
+      <style>
+        ${ this.style }
+      </style>
+      <nav class="ds-tabs-header"></nav>
+      <div class="ds-tabs-body">
+        <slot></slot>
+      </div>
+    `
+    this.setupTabs()
   }
 }
