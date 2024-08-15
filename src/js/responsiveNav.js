@@ -99,16 +99,21 @@ export class DSNavResponsive extends HTMLElement {
     /* Styles for 'fill' mode */
     .menu-container.fill:not(.expanded) {
       overflow: hidden;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
     }
     .menu-container.fill.expanded {
       overflow: visible;
     }
     .menu-container.fill .menu-toggle {
       display: inline-block;
-      float: right;
+      order: 2;
     }
     .menu-container.fill .menu-items {
       display: flex;
+      order: 1;
+      flex: 0 1 auto;
     } 
   `
 
@@ -122,7 +127,7 @@ export class DSNavResponsive extends HTMLElement {
     this.classList.add(this.mode)
     this.render()
     this.setClassBySize()
-    this.setIntersectionStyles()
+    this.setContainerSize()
     window.addEventListener('resize', this.updateMenu.bind(this))
     window.addEventListener('click', this.closeMenu.bind(this))
   }
@@ -182,35 +187,28 @@ export class DSNavResponsive extends HTMLElement {
     }
   }
 
-  setIntersectionStyles() {
+  setContainerSize() {
     if (this.mode !== 'fill') {
       return
     }
-
-    const options = {
-      root: this,
-      rootMargin: "0px",
-      threshold: 1.0,
-    }
-
-    this.intersectionObserver = new IntersectionObserver(this.intersectionCallback, options)
     
     const container = this.querySelector(':not(button[slot="toggle"])')
-    Array.from(container.children).map((element) => {
-      this.intersectionObserver.observe(element)
-    })
-  }
-
-  intersectionCallback(entries) {
-    entries.map((entry) => {
-      if (entry.intersectionRatio < 1) {
-        console.log('intersected', entry)
-        entry.target.style.display = 'none'
+    const toggle = this.querySelector('button[slot="toggle"]')
+    const maxWidth = this.clientWidth - toggle.clientWidth - 8
+    let visibleContentWidth = 0
+    for (const element of Array.from(container.children)) {
+      console.log(element, element.clientWidth)
+      
+      if (visibleContentWidth < maxWidth) {
+        visibleContentWidth = visibleContentWidth + element.clientWidth + 8
+        continue
       } else {
-        entry.target.style.display = 'inherit'
+        visibleContentWidth = visibleContentWidth - element.clientWidth - 16
+        break
       }
-    })
-
+    }
+    console.log('minmax', visibleContentWidth, maxWidth)
+    this.shadowRoot.querySelector('.menu-items').style.width = `${ visibleContentWidth }px`
   }
 }
 

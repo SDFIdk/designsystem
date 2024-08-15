@@ -119,17 +119,15 @@ ds-nav-responsive.switch {
 }
 
 ds-nav-responsive.fill {
-  display: block;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
   min-width: calc(var(--button-base-height) + 0.25rem);
   min-height: var(--button-base-height);
   position: relative; 
 
-  & > button[slot="toggle"] {
-    margin-left: var(--space-sm);
-  }
-
   &:not(.expanded) > .ds-panel {
-    width: 100%;
+    width: auto;
     height: auto;
     display: flex;
     flex-flow: row nowrap;
@@ -142,9 +140,9 @@ ds-nav-responsive.fill {
     position: absolute;
     top: 0;
     right: 0;
+    left: 0;
     width: 100%;
     height: auto;
-    max-width: 80vw;
     display: flex;
     flex-flow: row wrap;
     gap: var(--space-sm);
