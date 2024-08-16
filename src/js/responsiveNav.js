@@ -74,13 +74,9 @@ export class DSNav extends HTMLElement {
  
 export class DSNavResponsive extends HTMLElement {
 
+  mode // 'fill' or 'switch'
+  intersectionObserver
   #style = `
-    :host {
-      display: block;
-      overflow: auto;
-      min-width: calc(var(--button-base-height) + 0.25rem);
-      min-height: var(--button-base-height);
-    }
     .menu-container {
       width: 100%;
       height: 100%;
@@ -88,15 +84,37 @@ export class DSNavResponsive extends HTMLElement {
     .menu-toggle {
       display: none;
     }
-    .menu-container.compact .menu-toggle {
+
+    /* Styles for 'switch' mode */
+    .menu-container.switch.compact .menu-toggle {
       display: inline-block;
     }
-    .menu-container.compact .menu-items {
+    .menu-container.switch.compact .menu-items {
       display: none;
     }
-    .menu-container.compact .menu-items.expanded {
+    .menu-container.switch.compact.expanded .menu-items {
       display: block;
     }
+
+    /* Styles for 'fill' mode */
+    .menu-container.fill:not(.expanded) {
+      overflow: hidden;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+    }
+    .menu-container.fill.expanded {
+      overflow: visible;
+    }
+    .menu-container.fill .menu-toggle {
+      display: inline-block;
+      order: 2;
+    }
+    .menu-container.fill .menu-items {
+      display: flex;
+      order: 1;
+      flex: 0 1 auto;
+    } 
   `
 
   constructor() {
@@ -105,8 +123,11 @@ export class DSNavResponsive extends HTMLElement {
   }
 
   connectedCallback() {
+    this.mode = this.classList.contains('fill') ? 'fill' : 'switch'
+    this.classList.add(this.mode)
     this.render()
-    this.updateMenu()
+    this.setClassBySize()
+    this.setContainerSize()
     window.addEventListener('resize', this.updateMenu.bind(this))
     window.addEventListener('click', this.closeMenu.bind(this))
   }
@@ -121,7 +142,7 @@ export class DSNavResponsive extends HTMLElement {
       <style>
         ${ this.#style }
       </style>
-      <div class="menu-container">
+      <div class="menu-container ${ this.mode}">
         <slot name="toggle" class="menu-toggle"></slot>
         <div class="menu-items">
           <slot></slot>
@@ -133,22 +154,24 @@ export class DSNavResponsive extends HTMLElement {
 
   openMenu(event) {
     event.stopPropagation()
-    const menu = this.shadowRoot.querySelector('.menu-items')
+    const container = this.shadowRoot.querySelector('.menu-container')
     this.classList.add('expanded')
-    menu.classList.add('expanded')
+    container.classList.add('expanded')
   }
 
-  closeMenu(event) {
-    const menu = this.shadowRoot.querySelector('.menu-items')
+  closeMenu() {
+    const container = this.shadowRoot.querySelector('.menu-container')
     this.classList.remove('expanded')
-    menu.classList.remove('expanded')
+    container.classList.remove('expanded')
   }
 
   updateMenu() {
     if (this.debounceTimer) {
       clearTimeout(this.debounceTimer)
     }
-    this.debounceTimer = setTimeout(this.setClassBySize.bind(this), 100)
+    this.debounceTimer = setTimeout(() => {
+      this.setClassBySize.bind(this)
+    }, 100)
   }
 
   setClassBySize() {
@@ -162,7 +185,30 @@ export class DSNavResponsive extends HTMLElement {
       this.classList.add('compact')
       container.classList.add('compact')
     }
+  }
 
+  setContainerSize() {
+    if (this.mode !== 'fill') {
+      return
+    }
+    
+    const container = this.querySelector(':not(button[slot="toggle"])')
+    const toggle = this.querySelector('button[slot="toggle"]')
+    const maxWidth = this.clientWidth - toggle.clientWidth - 8
+    let visibleContentWidth = 0
+    for (const element of Array.from(container.children)) {
+      console.log(element, element.clientWidth)
+      
+      if (visibleContentWidth < maxWidth) {
+        visibleContentWidth = visibleContentWidth + element.clientWidth + 8
+        continue
+      } else {
+        visibleContentWidth = visibleContentWidth - element.clientWidth - 16
+        break
+      }
+    }
+    console.log('minmax', visibleContentWidth, maxWidth)
+    this.shadowRoot.querySelector('.menu-items').style.width = `${ visibleContentWidth }px`
   }
 }
 
@@ -271,7 +317,6 @@ export class DSNavScrollable extends HTMLElement {
   }
 
   updateButtons() {
-    console.log('update btns')
     const scrollableElement = this.shadowRoot.querySelector('slot')
     const leftBtn = this.shadowRoot.querySelector('.btn-scroll-left')
     const rightBtn = this.shadowRoot.querySelector('.btn-scroll-right')

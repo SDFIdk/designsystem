@@ -84,24 +84,74 @@ ds-nav[data-showtitle] .ds-toggle-panel > *::after {
   text-overflow: ellipsis;
 }
 
-ds-nav-responsive.compact > .ds-panel {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 20rem;
-  max-width: 80vw;
-  height: 100vh;
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: stretch;
-  z-index: 100;
-  background: var(--background-color);
-  box-shadow: var(--space-xs) var(--space-xs) var(--space-sm) var(--shadow-2);
-  transform: translate(-20rem,0);
-  transition: transform 0.3s;
-  margin: 0;
+/* DSNavResponsive */
+
+ds-nav-responsive.switch {
+  display: block;
+  min-width: calc(var(--button-base-height) + 0.25rem);
+  min-height: var(--button-base-height);
+  overflow: auto;
+
+  &.compact {
+    
+    & > .ds-panel {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 20rem;
+      max-width: 80vw;
+      height: 100vh;
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: stretch;
+      z-index: 100;
+      background: var(--background-color);
+      box-shadow: var(--space-xs) var(--space-xs) var(--space-sm) var(--shadow-2);
+      transform: translate(-20rem,0);
+      transition: transform 0.3s;
+      margin: 0;
+    }
+
+    &.expanded > .ds-panel {
+      transform: translate(0,0);
+    }
+  }
 }
 
-ds-nav-responsive.compact.expanded > .ds-panel {
-  transform: translate(0,0);
+ds-nav-responsive.fill {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  min-width: calc(var(--button-base-height) + 0.25rem);
+  min-height: var(--button-base-height);
+  position: relative; 
+
+  &:not(.expanded) > .ds-panel {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: var(--space-sm);
+    overflow: hidden;
+    margin: 0;
+  }
+  
+  &.expanded > .ds-panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-flow: row wrap;
+    gap: var(--space-sm);
+    z-index: 100;
+    background: var(--bg1);
+    border-radius: var(--border-radius);
+    box-shadow: 0 var(--space-xs) var(--space-sm) var(--shadow-2);
+    margin: 0;
+    padding: var(--space);
+    overflow: visible;
+  } 
 }

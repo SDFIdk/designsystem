@@ -63,7 +63,6 @@ export class Tabs extends HTMLElement {
 
   setupTabs() {
     const tabs = Array.from(this.children)
-    console.log(tabs)
 
     tabs.forEach((tab, index) => {
       const title = tab.getAttribute("title")

@@ -52,6 +52,7 @@ a[role="button"]:visited {
   text-align: center;
   cursor: pointer;
   word-wrap: normal;
+  white-space: nowrap;
   text-decoration: none;
   transition: background-color var(--transition), border-color var(--transition), color var(--transition);
 
