@@ -814,9 +814,7 @@ var DSNavResponsive = class extends HTMLElement {
     if (this.debounceTimer) {
       clearTimeout(this.debounceTimer);
     }
-    this.debounceTimer = setTimeout(() => {
-      this.setClassBySize.bind(this);
-    }, 100);
+    this.debounceTimer = setTimeout(this.setClassBySize.bind(this), 100);
   }
   setClassBySize() {
     const container = this.shadowRoot.querySelector(".menu-container");
@@ -837,7 +835,6 @@ var DSNavResponsive = class extends HTMLElement {
     const maxWidth = this.clientWidth - toggle.clientWidth - 8;
     let visibleContentWidth = 0;
     for (const element of Array.from(container.children)) {
-      console.log(element, element.clientWidth);
       if (visibleContentWidth < maxWidth) {
         visibleContentWidth = visibleContentWidth + element.clientWidth + 8;
         continue;
@@ -846,7 +843,6 @@ var DSNavResponsive = class extends HTMLElement {
         break;
       }
     }
-    console.log("minmax", visibleContentWidth, maxWidth);
     this.shadowRoot.querySelector(".menu-items").style.width = `${visibleContentWidth}px`;
   }
 };
@@ -1682,7 +1678,6 @@ function apply() {
 }
 function popoverPolyfill() {
   if (!isSupported()) {
-    console.log("polyfilling popover");
     apply();
   }
 }

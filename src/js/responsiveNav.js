@@ -169,15 +169,14 @@ export class DSNavResponsive extends HTMLElement {
     if (this.debounceTimer) {
       clearTimeout(this.debounceTimer)
     }
-    this.debounceTimer = setTimeout(() => {
-      this.setClassBySize.bind(this)
-    }, 100)
+    this.debounceTimer = setTimeout(this.setClassBySize.bind(this), 100)
   }
 
   setClassBySize() {
+    
     const container = this.shadowRoot.querySelector('.menu-container')
     const items = this.shadowRoot.querySelector('.menu-items')
-  
+
     this.classList.remove('compact')
     container.classList.remove('compact')
 
@@ -197,7 +196,6 @@ export class DSNavResponsive extends HTMLElement {
     const maxWidth = this.clientWidth - toggle.clientWidth - 8
     let visibleContentWidth = 0
     for (const element of Array.from(container.children)) {
-      console.log(element, element.clientWidth)
       
       if (visibleContentWidth < maxWidth) {
         visibleContentWidth = visibleContentWidth + element.clientWidth + 8
@@ -207,7 +205,6 @@ export class DSNavResponsive extends HTMLElement {
         break
       }
     }
-    console.log('minmax', visibleContentWidth, maxWidth)
     this.shadowRoot.querySelector('.menu-items').style.width = `${ visibleContentWidth }px`
   }
 }

@@ -535,9 +535,9 @@ function apply() {
   addEventListeners(document);
 }
 
+// Polyfill popover
 export function popoverPolyfill() {
   if (!isSupported()) {
-    console.log('polyfilling popover')
     apply()
   }
 }
