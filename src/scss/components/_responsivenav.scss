@@ -87,7 +87,6 @@ ds-nav[data-showtitle] .ds-toggle-panel > *::after {
 /* DSNavResponsive */
 
 ds-nav-responsive.switch {
-  display: block;
   min-width: calc(var(--button-base-height) + 0.25rem);
   min-height: var(--button-base-height);
   overflow: auto;
@@ -119,8 +118,6 @@ ds-nav-responsive.switch {
 }
 
 ds-nav-responsive.fill {
-  display: flex;
-  flex-flow: row nowrap;
   justify-content: flex-end;
   min-width: calc(var(--button-base-height) + 0.25rem);
   min-height: var(--button-base-height);

@@ -727,8 +727,12 @@ var DSNav = class extends HTMLElement {
 var DSNavResponsive = class extends HTMLElement {
   mode;
   // 'fill' or 'switch'
-  intersectionObserver;
+  mutationObserver;
   #style = `
+    :host {
+      display: flex;
+      flex-flow: row nowrap;
+    }
     .menu-container {
       width: 100%;
       height: 100%;
@@ -780,6 +784,9 @@ var DSNavResponsive = class extends HTMLElement {
     this.setContainerSize();
     window.addEventListener("resize", this.updateMenu.bind(this));
     window.addEventListener("click", this.closeMenu.bind(this));
+    this.mutationObserver = new MutationObserver(this.updateMenu.bind(this));
+    const target = this.querySelector(".ds-panel");
+    this.mutationObserver.observe(target, { childList: true, subtree: true });
   }
   disconnectedCallback() {
     window.removeEventListener("resize", this.updateMenu);
@@ -814,9 +821,15 @@ var DSNavResponsive = class extends HTMLElement {
     if (this.debounceTimer) {
       clearTimeout(this.debounceTimer);
     }
-    this.debounceTimer = setTimeout(this.setClassBySize.bind(this), 100);
+    this.debounceTimer = setTimeout(() => {
+      this.setClassBySize();
+      this.setContainerSize();
+    }, 100);
   }
   setClassBySize() {
+    if (this.mode !== "switch") {
+      return;
+    }
     const container = this.shadowRoot.querySelector(".menu-container");
     const items = this.shadowRoot.querySelector(".menu-items");
     this.classList.remove("compact");
@@ -830,9 +843,9 @@ var DSNavResponsive = class extends HTMLElement {
     if (this.mode !== "fill") {
       return;
     }
-    const container = this.querySelector(':not(button[slot="toggle"])');
+    const container = this.querySelector(".ds-panel");
     const toggle = this.querySelector('button[slot="toggle"]');
-    const maxWidth = this.clientWidth - toggle.clientWidth - 8;
+    const maxWidth = this.clientWidth - toggle.clientWidth;
     let visibleContentWidth = 0;
     for (const element of Array.from(container.children)) {
       if (visibleContentWidth < maxWidth) {
