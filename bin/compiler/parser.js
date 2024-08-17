@@ -1,13 +1,9 @@
-let current
 let tokens
+let current = 0
 let context
 
-function isAtEnd() {
-  return current >= tokens.length ? true : false
-}
-
-function match(typeArr) {
-  for (const type of typeArr) {
+function match(...types) {
+  for (const type of types) {
     if (check(type)) {
       advance()
       return true
@@ -24,6 +20,18 @@ function check(type) {
   }
 }
 
+
+function advance() {
+  if (!isAtEnd()) {
+    current++
+  }
+  return previous()
+}
+
+function isAtEnd() {
+  return current >= tokens.length
+}
+
 function peek() {
   return tokens[current]
 }
@@ -32,12 +40,7 @@ function previous() {
   return tokens[current - 1]
 }
 
-function advance() {
-  if (!isAtEnd()) {
-    current++
-  }
-  return previous()
-}
+/* --- */
 
 function walk() {
 
