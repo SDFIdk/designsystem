@@ -2,6 +2,19 @@ let tokens
 let current = 0
 let context
 
+/* Type functions */
+
+function commentOpen() {
+  const node = {type: 'COMMENT', body: []}
+  while (!isAtEnd() && peek().type !== 'COMMENT_END') {
+    advance()
+    node.body.push(walk())
+  }
+  return node
+}
+
+/* Core parser functions */
+
 function match(...types) {
   for (const type of types) {
     if (check(type)) {
@@ -19,7 +32,6 @@ function check(type) {
     return peek().type === type
   }
 }
-
 
 function advance() {
   if (!isAtEnd()) {
@@ -40,70 +52,16 @@ function previous() {
   return tokens[current - 1]
 }
 
-/* --- */
-
 function walk() {
-
-  if (peek().type === 'commentStart') {
-    context = 'comment'
-    let node = {
-      type: 'comment',
-      body: []
-    }
-    while (peek().type !== 'commentEnd') {
-      advance()
-      node.body.push(walk())
-    }
-    return node
+  switch(peek().type) {
+    case 'COMMENT_OPEN':
+      return commentOpen()
+    default:
+      throw new TypeError(`Unexpected token: ${peek().type}, ${peek().value}`)
   }
-
-  if (peek().type === 'commentEnd') {
-    context = null
-    return 'EOL'
-  }
-
-  if (context === 'comment' || peek().type === 'unknown') {
-    advance()
-    return peek().value
-  }
-
-  if (peek().type === 'cssRulesStart') {
-    context = 'cssRules'
-    let node = {
-      type: 'cssRules',
-      body: []
-    }
-    while (peek().type !== 'cssRulesEnd') {
-      advance()
-      node.body.push(walk())
-    }
-    return node
-  }
-
-  if (context === 'cssRules') {
-
-  }
-
-  if (peek().type === 'cssRulesEnd') {
-    context = null
-    return 'EOL'
-  }
-  
-  throw new TypeError(`Unexpected token: ${peek().type}, ${peek().value}`)
-}
-
-function walkCssRules() {
-  let node = {
-    type: 'cssRules',
-    body: []
-  }
-  return node
 }
 
 function parser(tokenArr) {
-
-  return tokenArr
-
   current = 0
   tokens = tokenArr
   console.log(tokens.length, current)
@@ -111,11 +69,16 @@ function parser(tokenArr) {
     type: 'ast',
     body: []
   }
-  while (!isAtEnd()) {
-    ast.body.push(walk())
-    advance()
+  try {
+    while (!isAtEnd()) {
+      ast.body.push(walk())
+      advance()
+    }
+    return ast
+  } 
+  catch(err) {
+    console.log('Parsing aborted:', err)
   }
-  return ast
 }
 
 export {
