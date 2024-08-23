@@ -77,9 +77,26 @@
     <button>Kort</button>
   </nav>
 
+  <hr>
+
+  <h2>ds-nav-scrollable</h2>
+
+  <ds-nav-scrollable style="width: 25rem;">
+    <nav class="ds-nav">
+      <a href="#">A link</a>
+      <a href="#">Link</a>
+      <a href="#">Go here</a>
+      <a href="#">A loooooooong link</a>
+      <a href="#">A little link</a>
+      <a href="#">Another link</a>
+      <a href="#">About us</a>
+    </nav>
+  </ds-nav-scrollable>
+
 </article>
 
 <script type="module">
-  import { DSNavResponsive } from '../../assets/designsystem.js'
+  import { DSNavResponsive, DSNavScrollable } from '../../assets/designsystem.js'
   customElements.define('ds-nav-responsive', DSNavResponsive)
+  customElements.define('ds-nav-scrollable', DSNavScrollable)
 </script>

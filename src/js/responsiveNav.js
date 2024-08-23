@@ -223,6 +223,7 @@ export class DSNavResponsive extends HTMLElement {
 export class DSNavScrollable extends HTMLElement {
 
   debounceTimer
+  mutationObserver
   style = `
     :host {
       display: block;
@@ -297,6 +298,10 @@ export class DSNavScrollable extends HTMLElement {
     this.shadowRoot.querySelector('slot').addEventListener('scroll', this.scrollHandler.bind(this))
     this.shadowRoot.querySelector('.btn-scroll-left').addEventListener('click', this.scrollLeftHandler.bind(this))
     this.shadowRoot.querySelector('.btn-scroll-right').addEventListener('click', this.scrollRightHandler.bind(this))
+
+    this.mutationObserver = new MutationObserver(this.updateButtons.bind(this))
+    const target = this.querySelector('.ds-panel')
+    this.mutationObserver.observe(target, { childList: true, subtree: true })
   }
 
   scrollHandler() {
