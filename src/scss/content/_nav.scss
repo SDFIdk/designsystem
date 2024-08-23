@@ -20,13 +20,14 @@ nav.ds-nav-vertical {
     width: inherit;
   }
 
-  a[href],
+  a,
   [role="link"],
   button,
   [role="button"] {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
+    justify-content: flex-start;
     font-size: 1rem;
     font-weight: 570;
     line-height: 1.12;
@@ -36,9 +37,16 @@ nav.ds-nav-vertical {
     border: none;
     border-radius: 0;
     height: auto;
+    transition: background-size 0.3s;
+    background: linear-gradient(0deg, var(--link), var(--link)) no-repeat left bottom / 0% 8%;
 
     &.active {
       background: linear-gradient(0deg, var(--highlight), var(--highlight)) no-repeat left bottom / 100% 8%;
+    }
+
+    &:hover,
+    &:active {
+      background: linear-gradient(0deg, var(--link), var(--link)) no-repeat left bottom / 100% 8%;
     }
   }
 }

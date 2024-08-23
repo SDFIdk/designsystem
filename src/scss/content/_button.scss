@@ -65,8 +65,8 @@ a[role="button"]:visited {
   }
 
   &:focus {
-    border-color: var(--highlight) !important;
-    box-shadow: inset 0 0 0 2px var(--highlight);
+    outline: solid var(--space-xxs) var(--highlight);
+    border-radius: var(--space-xxs);
   }
 
   &.h1,
