@@ -62,14 +62,18 @@ export class ThemeToggle extends HTMLElement {
     `
   }
 
-  goDarkHandler(event) {
-    document.documentElement.dataset.theme = 'dark'
-    localStorage.setItem(this.localstorageKey, 'dark')
+  goDarkHandler() {
+    this.changeTheme('dark')
   }
 
-  goLightHandler(event) {
-    document.documentElement.dataset.theme = 'light'
-    localStorage.setItem(this.localstorageKey, 'light')
+  goLightHandler() {
+    this.changeTheme('light')
+  }
+
+  changeTheme(theme) {
+    document.documentElement.dataset.theme = theme
+    localStorage.setItem(this.localstorageKey, theme)
+    this.dispatchEvent(new CustomEvent('themechange', {detail: theme, bubbles: true, composed: true}))
   }
 
   checkPreference() {
