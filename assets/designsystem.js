@@ -1061,20 +1061,6 @@ var DSDataTable = class extends HTMLElement {
   renderSortButtons(title) {
     return `
       <button class="quiet button-sort">
-        <span class="sort-asc">
-          <svg class="ds-icon" width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g stroke="var(--ds-icon-color, black)" stroke-linejoin="round" stroke-linecap="round" stroke-width="var(--ds-icon-stroke, 1)">
-              <path d="M2 22L13.84 5.41C14.28 4.85 14.98 4.86 15.41 5.43L27 22"></path>
-            </g>
-          </svg>
-        </span>
-        <span class="sort-dsc">
-          <svg class="ds-icon" width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g stroke="var(--ds-icon-color, black)" stroke-linejoin="round" stroke-linecap="round" stroke-width="var(--ds-icon-stroke, 1)">
-              <path d="M27 7L15.16 23.59C14.72 24.15 14.02 24.14 13.59 23.57L2 7"></path>
-            </g>
-          </svg>
-        </span>
         ${title}
       </button>
     `;
