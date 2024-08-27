@@ -1,6 +1,3 @@
-import iconArrowSingleUp from '../../assets/icons/arrow-single-up.svg'
-import iconArrowSingleDown from '../../assets/icons/arrow-single-down.svg'
-
 /** Web component to render table data with filter and sort features */
 export class DSDataTable extends HTMLElement {
 
