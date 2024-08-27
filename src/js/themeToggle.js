@@ -1,3 +1,7 @@
+/**
+ * Custom web component that enables user to switch between light and dark modes
+ * @fires themechange - An event where event.detail contains a string "light" or "dark" for the respective mode chosen by the user.
+ */
 export class ThemeToggle extends HTMLElement {
 
   localstorageKey = 'Klimadatastyrelsen-theme-choice'
