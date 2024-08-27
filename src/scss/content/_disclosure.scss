@@ -7,6 +7,7 @@ details summary {
   line-height: 1.10;
   letter-spacing: 0.01rem;
   margin-bottom: var(--space-sm);
+  cursor: pointer;
 }
 
 details summary::marker {
