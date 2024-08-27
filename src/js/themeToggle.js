@@ -1,5 +1,3 @@
-import iconSun from '../../assets/icons/sun.svg'
-
 export class ThemeToggle extends HTMLElement {
 
   localstorageKey = 'Klimadatastyrelsen-theme-choice'
@@ -30,6 +28,13 @@ export class ThemeToggle extends HTMLElement {
       --ds-icon-color: var(--white);
     }
   `
+  iconSun = `
+    <svg class="ds-icon" width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g stroke="var(--ds-icon-color, black)" stroke-linejoin="round" stroke-linecap="round" stroke-width="var(--ds-icon-stroke, 1)">
+        <path d="M0.5 14.5H3.5M25.5 14.5L28.5 14.5M14.49 0.5V3.5M14.5 25.5V28.5M4.6 24.4L6.72 22.28M22.28 6.72L24.4 4.6M4.59 4.61L6.72 6.73M22.28 22.28L24.4 24.4M22.5 14.5C22.5 18.92 18.92 22.5 14.5 22.5C10.08 22.5 6.5 18.92 6.5 14.5C6.5 10.08 10.08 6.5 14.5 6.5C18.92 6.5 22.5 10.08 22.5 14.5Z"></path>
+      </g>
+    </svg>
+  `
 
   constructor() {
     super()
@@ -47,11 +52,11 @@ export class ThemeToggle extends HTMLElement {
     this.innerHTML = `
       <div class="ds-theme-toggle ds-button-group">
         <button title="Lys" data-toggle="light">
-          ${ iconSun }
+          ${ this.iconSun }
         </button>
         
         <button title="Mørk" data-toggle="dark">
-          ${ iconSun }
+          ${ this.iconSun }
         </button>
       </div>
     `
