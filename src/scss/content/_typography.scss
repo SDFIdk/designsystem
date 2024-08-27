@@ -82,7 +82,6 @@ a:not([role="button"], .plain),
 
   &:focus {
     outline: solid var(--space-xxs) var(--highlight);
-    border-radius: var(--space-xxs);
   }
 }
 
