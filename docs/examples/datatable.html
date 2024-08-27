@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="da">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1,user-scalable=yes">
+    <title>Klimadatastyrelsen Designsystem eksempler</title>
+
+    <link rel="stylesheet" href="../../assets/designsystem.css">
+
+    <link rel="icon" href="../../assets/logo-small.svg">
+
+  </head>
+  <body>
+
+<article class="ds-p">
+  <h1>Superheroes</h1>
+  <ds-data-table></ds-data-table>
+</article>
+
+<script type="module">
+  import { DSDataTable } from '../../assets/designsystem.js'
+  customElements.define('ds-data-table', DSDataTable)
+
+  const dtElement = document.querySelector('ds-data-table')
+  const data = {
+    headers: ['Name', 'Power', 'Appearance'],
+    body: [
+      ['Spiderman', 'Fire sticky net', 'Marvel comics'],
+      ['Batman', 'Many gadgets', 'DC comics'],
+      ["Joan d'Arc", 'Persuasion', 'Medieval France'],
+      ['The Pope', 'Wears white dress', 'Vatican'],
+      ['Bender', 'Bends girders', 'Futurama'],
+    ]
+  }
+  dtElement.data = data
+</script>  <a style="position: fixed; bottom: var(--space-md); left: var(--space);" role="button" href="../../index.html"><svg><use href="../../assets/icons.svg#arrow-left" /></svg> Tilbage til oversigten</a>
+  
+  <ds-theme-toggle style="position: fixed; bottom: var(--space-md); right: var(--space);"></ds-theme-toggle>
+
+  <script type="module">
+    import { ThemeToggle } from '../../assets/designsystem.js'
+    customElements.define('ds-theme-toggle', ThemeToggle)
+  </script>
+
+</body>
+</html>

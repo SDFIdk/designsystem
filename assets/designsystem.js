@@ -1009,6 +1009,7 @@ var DSDataTable = class extends HTMLElement {
   #tableBody = [];
   #tableBodyFiltered = [];
   set data(payload) {
+    console.log("data set", payload);
     this.#tableHeaders = payload.headers;
     this.#tableBody = payload.body;
     this.#tableBodyFiltered = payload.body;

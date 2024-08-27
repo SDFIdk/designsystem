@@ -1,0 +1,24 @@
+
+
+<article class="ds-p">
+  <h1>Superheroes</h1>
+  <ds-data-table></ds-data-table>
+</article>
+
+<script type="module">
+  import { DSDataTable } from '../../assets/designsystem.js'
+  customElements.define('ds-data-table', DSDataTable)
+
+  const dtElement = document.querySelector('ds-data-table')
+  const data = {
+    headers: ['Name', 'Power', 'Appearance'],
+    body: [
+      ['Spiderman', 'Fire sticky net', 'Marvel comics'],
+      ['Batman', 'Many gadgets', 'DC comics'],
+      ["Joan d'Arc", 'Persuasion', 'Medieval France'],
+      ['The Pope', 'Wears white dress', 'Vatican'],
+      ['Bender', 'Bends girders', 'Futurama'],
+    ]
+  }
+  dtElement.data = data
+</script>
