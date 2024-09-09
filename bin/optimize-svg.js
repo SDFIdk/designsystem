@@ -13,28 +13,45 @@ function shortenDigits(svg) {
 /** 
  * Goes through a folder of SVG files and shortens all numbers therein to a max of 2 digits.
  * Set the `{dryRun: true}` option to only display proposed changes. (Does not write to file.) */
-async function optimizeSVG(docs_dir, options) {
+async function optimizeSVG(options) {
   try {
-    const files = await readdir(docs_dir)
-    for (const file of files) {
-      if (/\.svg/.test(file)) {
-        const svgContent = await readHTML(`${ docs_dir }/${ file }`)
+
+    if (options.dir) {
+      const files = await readdir(options.dir)
+      for (const file of files) {
+        if (/\.svg/.test(file)) {
+          const svgContent = await readHTML(`${ options.dir }/${ file }`)
+          if (options.dryRun) {
+            console.log(`---- Comparing ${ file } ----`)
+            console.log(`---- before ----`)
+            console.log(svgContent)
+            console.log(`---- after ----`)
+            console.log(shortenDigits(svgContent))
+          } else {
+            await writeToFile(shortenDigits(svgContent), `${ options.dir }/${ file }`)
+          }
+        }
+      }
+    } else if (options.file) {
+      if (/\.svg/.test(options.file)) {
+        const svgContent = await readHTML(`${ options.file }`)
         if (options.dryRun) {
-          console.log(`---- Comparing ${ file } ----`)
+          console.log(`---- Comparing ${ options.file } ----`)
           console.log(`---- before ----`)
           console.log(svgContent)
           console.log(`---- after ----`)
           console.log(shortenDigits(svgContent))
         } else {
-          await writeToFile(shortenDigits(svgContent), `${ docs_dir }/${ file }`)
+          await writeToFile(shortenDigits(svgContent), `${ options.file }`)
         }
       }
     }
+    
   } catch (err) {
     console.error(err)
   }
 
-  console.log(`Done optimizing SVG files in ${ docs_dir } 👍`)
+  console.log(`Done optimizing SVG files 👍`)
 }
 
-optimizeSVG('assets/icons', {dryRun: true})
+optimizeSVG({dir: false, file: 'assets/icons/quote.svg', dryRun: true})
