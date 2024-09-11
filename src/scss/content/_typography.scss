@@ -278,8 +278,3 @@ ins {
 del {
   color: var(--del-color);
 }
-
-// selection
-::selection {
-  background-color: var(--primary-focus);
-}
