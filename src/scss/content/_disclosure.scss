@@ -1,3 +1,7 @@
+details {
+  list-style: none;
+}
+
 details summary {
   position: relative;
   padding: var(--space-sm) 0 var(--space-sm) 1.75rem;
@@ -8,9 +12,11 @@ details summary {
   letter-spacing: 0.01rem;
   margin-bottom: var(--space-sm);
   cursor: pointer;
+  list-style: none;
 }
 
-details summary::marker {
+details summary::marker,
+details summary::-webkit-details-marker {
   display: none;
 }
 
