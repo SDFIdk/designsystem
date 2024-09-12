@@ -2,11 +2,11 @@ import { readdir } from 'node:fs/promises'
 import { writeToFile, readHTML } from './shared.js'
 
 function replaceFunc(replaceVal) {
-  return new String(Math.round( new Number(replaceVal) * 100 ) / 100)
+  return Math.round(new Number(replaceVal) * 100) / 100
 }
 
 function shortenDigits(svg) {
-  let newSvg = svg.replaceAll(/\d\.\d{3,}/g, replaceFunc)
+  let newSvg = svg.replaceAll(/\d+\.\d{3,}/g, replaceFunc)
   return newSvg
 }
 
@@ -45,6 +45,14 @@ async function optimizeSVG(options) {
           await writeToFile(shortenDigits(svgContent), `${ options.file }`)
         }
       }
+    } else if (options.string) {
+      console.log(`---- Converting string ----`)
+      console.log(`---- before ----`)
+      console.log(options.string)
+      console.log(`---- after ----`)
+      console.log('')
+      console.log(shortenDigits(options.string))
+      console.log('')
     }
     
   } catch (err) {
@@ -54,4 +62,36 @@ async function optimizeSVG(options) {
   console.log(`Done optimizing SVG files 👍`)
 }
 
-optimizeSVG({dir: false, file: 'assets/icons/plane.svg', dryRun: false})
+// Handle command line options
+const args = process.argv.slice(2)
+const options = {dryRun: null, dir: null, file: null, string: null}
+
+if (args.find((arg) => arg === '--dryrun')) {
+  options.dryRun = true
+}
+const fileOptionIdx = args.findIndex((arg) => arg === '--file')
+const dirOptionIdx = args.findIndex((arg) => arg === '--dir')
+const stringOptionIdx = args.findIndex((arg) => arg === '--string')
+if (fileOptionIdx >= 0) {
+  options.file = args[fileOptionIdx + 1]
+} else if (dirOptionIdx >= 0) {
+  options.dir = args[dirOptionIdx + 1]
+} else if (stringOptionIdx >= 0) {
+  options.string = args[stringOptionIdx + 1]
+}
+
+if (!options.file && !options.dir && !options.string) {
+  console.log('---')
+  console.log('optimize-svg.js: Utility to optimize SVG files by shortening decimal values.')
+  console.log(`
+    Usage: node optimize-svg.js [args] [file|dir] 
+
+    --help    Get an overview of the possible commands
+    --file    Optimize SVG file. Must be followed by path to file
+    --dir     Optimize SVG files in directory. Must be followed by directory path
+    --string   Optimize a single string of numbers and characters. Must be followed by string
+    --dryrun  Output optimizations to console but do not write to file
+  `)
+} else {
+  optimizeSVG({dir: options.dir, file: options.file, dryRun: options.dryRun, string: options.string})
+}
