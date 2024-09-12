@@ -54,4 +54,4 @@ async function optimizeSVG(options) {
   console.log(`Done optimizing SVG files 👍`)
 }
 
-optimizeSVG({dir: false, file: 'assets/icons/quote.svg', dryRun: true})
+optimizeSVG({dir: false, file: 'assets/icons/plane.svg', dryRun: false})
