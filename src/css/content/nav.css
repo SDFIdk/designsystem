@@ -6,7 +6,7 @@ nav {
   margin-bottom: var(--space-md);
 }
 
-// Basic horizontal Navigation
+/* Basic horizontal Navigation */
 nav.ds-nav,
 nav.ds-nav-vertical {
   display: flex;
@@ -51,7 +51,7 @@ nav.ds-nav-vertical {
   }
 }
 
-// Vertical Nav
+/* Vertical Nav */
 nav.ds-nav-vertical {
   flex-flow: column nowrap;
   align-items: stretch;
@@ -62,12 +62,12 @@ nav.ds-nav-vertical {
   }
 }
 
-// Horisontal line after `nav`
+/* Horisontal line after `nav` */
 nav.ds-nav + hr {
   margin-top: 0;
 }
 
-// Tool bar nav
+/* Tool bar nav */
 nav.ds-nav-tools,
 aside.ds-nav-tools {
   

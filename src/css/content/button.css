@@ -2,22 +2,24 @@
  * Button
  */
 
-// Reboot based on :
-// - normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
-// - sanitize.css v13.0.0 | CC0 1.0 Universal | github.com/csstools/sanitize.css
-// ––––––––––––––––––––
+/* Reboot based on :
+ - normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
+ - sanitize.css v13.0.0 | CC0 1.0 Universal | github.com/csstools/sanitize.css
+ ––––––––––––––––––––
 
-// 1. Change the font styles in all browsers
-// 2. Remove the margin on controls in Safari
-// 3. Show the overflow in Edge
+ 1. Change the font styles in all browsers
+ 2. Remove the margin on controls in Safari
+ 3. Show the overflow in Edge
+*/
+
 button {
-  margin: 0; // 2
-  overflow: visible; // 3
-  font-family: inherit; // 1
-  text-transform: none; // 1
+  margin: 0; /* 2 */
+  overflow: visible; /* 3 */
+  font-family: inherit; /* 1 */
+  text-transform: none; /* 1 */
 }
 
-// Correct the inability to style buttons in iOS and Safari
+/* Correct the inability to style buttons in iOS and Safari */
 button,
 [type="button"],
 [type="reset"],
@@ -25,7 +27,7 @@ button,
   -webkit-appearance: button;
 }
 
-// ––––––––––––––––––––
+/* –––––––––––––––––––– */
 
 button,
 input[type="submit"],
@@ -97,7 +99,7 @@ a[role="button"]:visited {
     }
   }
 
-  // Icon buttons are identified by having a `title` attribute
+  /* Icon buttons are identified by having a `title` attribute */
   &[title] {
     width: calc(var(--button-base-height) + 0.125rem);
     height: var(--button-base-height);
@@ -111,7 +113,7 @@ a[role="button"]:visited {
   }
 }
 
-// Secondary
+/* Secondary */
 button.secondary,
 input[type="submit"].secondary,
 input[type="button"].secondary,
@@ -140,7 +142,7 @@ a[role="button"].secondary:visited {
   }
 }
 
-// Quiet
+/* Quiet */
 button.quiet,
 input[type="submit"].quiet,
 input[type="button"].quiet,
@@ -169,8 +171,8 @@ a[role="button"].quiet:visited {
   }
 }
 
-// Button [disabled]
-// Links without href are disabled by default
+/* Button [disabled] */
+/* Links without href are disabled by default */
 :where(button, [type="submit"], [type="button"], [type="reset"], [role="button"])[disabled],
 :where(fieldset[disabled]) :is(button, [type="submit"], [type="button"], [type="reset"], [role="button"]),
 a[role="button"]:not([href]) {

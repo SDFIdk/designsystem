@@ -1,0 +1,32 @@
+/**
+ * Sectioning
+ * Container and responsive spacings for header, main, footer, section
+ */
+
+/* Reboot based on :
+ - normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
+ - sanitize.css v13.0.0 | CC0 1.0 Universal | github.com/csstools/sanitize.css
+ ––––––––––––––––––––
+*/
+
+/* Render the `main` element consistently in IE */
+main {
+  display: block;
+}
+
+/* Pico */
+/* –––––––––––––––––––– */
+
+/* 1. Remove the margin in all browsers (opinionated) */
+body {
+  width: 100%;
+  margin: 0; /* 1 */
+
+  > header,
+  > main,
+  > footer {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}

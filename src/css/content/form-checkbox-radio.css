@@ -3,7 +3,7 @@
  * Checkboxes & Radios
  */
 
-// Aria-invalid
+/* Aria-invalid */
 [type="checkbox"],
 [type="checkbox"]:checked,
 [type="radio"],

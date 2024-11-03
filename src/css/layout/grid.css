@@ -25,7 +25,7 @@
   }
 
   & > * {
-    min-width: 0; // HACK for childs in overflow
+    min-width: 0; /* HACK for children in overflow */
   }
 }
 

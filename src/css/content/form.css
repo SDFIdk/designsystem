@@ -2,87 +2,88 @@
  * Form elements
  */
 
-// Reboot based on :
-// - normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
-// - sanitize.css v13.0.0 | CC0 1.0 Universal | github.com/csstools/sanitize.css
-// ––––––––––––––––––––
+/* Reboot based on :
+- normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
+- sanitize.css v13.0.0 | CC0 1.0 Universal | github.com/csstools/sanitize.css
+––––––––––––––––––––
 
-// 1. Change the font styles in all browsers
-// 2. Remove the margin in Firefox and Safari
+1. Change the font styles in all browsers
+2. Remove the margin in Firefox and Safari
+*/
 input,
 optgroup,
 select,
 textarea {
-  margin: 0; // 2
-  font-size: var(--font-zize); // 1
-  line-height: var(--line-height); // 1
-  font-family: inherit; // 1
-  letter-spacing: inherit; // 2
+  margin: 0; /* 2 */
+  font-size: var(--font-zize); /* 1 */
+  line-height: var(--line-height); /* 1 */
+  font-family: inherit; /* 1 */
+  letter-spacing: inherit; /* 2 */
 }
 
-// Remove the inheritance of text transform in Edge, Firefox, and IE
+/* Remove the inheritance of text transform in Edge, Firefox, and IE */
 select {
   text-transform: none;
 }
 
-// 1. Correct the text wrapping in Edge and IE
-// 3. Remove the padding so developers are not caught out when they zero out
-// `fieldset` elements in all browsers
+/* 1. Correct the text wrapping in Edge and IE */
+/* 3. Remove the padding so developers are not caught out when they zero out */
+/* `fieldset` elements in all browsers */
 legend {
-  max-width: 100%; // 1
-  padding: 0; // 3
-  white-space: normal; // 1
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
 }
 
-// Correct the cursor style of increment and decrement buttons in Safari
+/* Correct the cursor style of increment and decrement buttons in Safari */
 ::-webkit-inner-spin-button,
 ::-webkit-outer-spin-button {
   height: auto;
 }
 
-// 1. Correct the odd appearance in Chrome and Safari
-// 2. Correct the outline style in Safari
+/* 1. Correct the odd appearance in Chrome and Safari */
+/* 2. Correct the outline style in Safari */
 [type="search"] {
-  -webkit-appearance: textfield; // 1
-  outline-offset: -2px; // 2
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
 }
 
-// Remove the inner padding in Chrome and Safari on macOS
+/* Remove the inner padding in Chrome and Safari on macOS */
 [type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-// 1. Correct the inability to style clickable types in iOS and Safari
-// 2. Change font properties to `inherit` in Safari
+/* 1. Correct the inability to style clickable types in iOS and Safari */
+/* 2. Change font properties to `inherit` in Safari */
 ::-webkit-file-upload-button {
-  -webkit-appearance: button; // 1
-  font: inherit; // 2
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
 }
 
-// Remove the inner border and padding of focus outlines in Firefox
+/* Remove the inner border and padding of focus outlines in Firefox */
 ::-moz-focus-inner {
   padding: 0;
   border-style: none;
 }
 
-//  Remove the focus outline in Firefox
+/* Remove the focus outline in Firefox */
 :-moz-focusring {
   outline: none;
 }
 
-// Remove the additional :invalid styles in Firefox
+/* Remove the additional :invalid styles in Firefox */
 :-moz-ui-invalid {
   box-shadow: none;
 }
 
-// Remove the border and padding in all browsers (opinionated)
+/* Remove the border and padding in all browsers (opinionated) */
 [type="file"],
 [type="range"] {
   padding: 0;
   border-width: 0;
 }
 
-// Fieldset
+/* Fieldset */
 fieldset {
   margin: var(--space) 0;
   padding: 0;
@@ -97,7 +98,7 @@ fieldset:last-child {
   margin-bottom: 0;
 }
 
-// Label & legend
+/* Label & legend */
 label,
 fieldset legend {
   display: block;
@@ -105,7 +106,7 @@ fieldset legend {
   font-weight: var(--font-weight);
 }
 
-// Blocks, 100%
+/* Blocks, 100% */
 [type="text"],
 [type="search"],
 [type="number"],
@@ -122,7 +123,7 @@ textarea {
   width: 100%;
 }
 
-// Common input styles
+/* Common input styles */
 [type="text"],
 [type="search"],
 [type="number"],
@@ -153,12 +154,12 @@ textarea {
   }
 }
 
-// Textarea
+/* Textarea */
 textarea {
   padding: var(--space-sm) var(--space);
 }
 
-// Active & Focus
+/* Active & Focus */
 input:not([type="submit"]):not([type="button"]):not([type="reset"]):not([role="switch"]):not([readonly]),
 :where(select, textarea) {
   &:is(:active, :focus) {
@@ -166,7 +167,7 @@ input:not([type="submit"]):not([type="button"]):not([type="reset"]):not([role="s
   }
 }
 
-// Focus
+/* Focus */
 input:not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="range"]):not([type="file"]):not([readonly]),
 select,
 textarea {
@@ -175,7 +176,7 @@ textarea {
   }
 }
 
-// Disabled
+/* Disabled */
 input:not([type="submit"]):not([type="button"]):not([type="reset"])[disabled],
 select[disabled],
 textarea[disabled],
@@ -186,7 +187,7 @@ textarea[disabled],
   pointer-events: none;
 }
 
-// Aria-invalid
+/* Aria-invalid */
 :where(input, select, textarea) {
   &:not([type="checkbox"]):not([type="radio"]) {
     &[aria-invalid] {
@@ -227,7 +228,7 @@ textarea[disabled],
   }
 }
 
-// Placeholder
+/* Placeholder */
 input::placeholder,
 input::-webkit-input-placeholder,
 textarea::placeholder,
@@ -236,7 +237,7 @@ select:invalid {
   opacity: 0.6;
 }
 
-// Select
+/* Select */
 select {
   background-image: var(--form-icon-arrow-down);
   background-size: var(--space) auto;
@@ -245,7 +246,7 @@ select {
   padding-right: calc(var(--space) * 2.5);
 }
 
-// Helper
+/* Helper */
 :where(input, select, textarea) {
   + small {
     display: block;

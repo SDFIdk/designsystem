@@ -1,15 +1,16 @@
-// Default: Light theme
+/* Default: Light theme */
 [data-theme="light"],
 :root:not([data-theme="dark"]) {
-  // Document
+  
+  /* Document */
   color-scheme: light;
   accent-color: var(--blue);
   --background-color: var(--white);
 
-  // Borders
-  --border-color: hsla(50, 7%, 53%, 0.33); // --grey5 with opacity
+  /* Borders */
+  --border-color: hsla(50, 7%, 53%, 0.33); /* --grey5 with opacity */
 
-  // Texts colors
+  /* Texts colors */
   --color: var(--black);
   --h1-color: var(--black);
   --h2-color: var(--black);
@@ -19,64 +20,65 @@
   --h6-color: var(--grey7);
   --warning: var(--r6);
 
-  // Background colors 
+  /* Background colors */
   --bg0: var(--grey1);
   --bg1: var(--grey2);
   --bg2: var(--grey3);
   --bg3: var(--grey4);
 
-  // Shadows
+  /* Shadows */
   --shadow-1: hsla(0, 0%, 100%, 0.66);
   --shadow-2: hsla(0, 0%, 0%, 0.33);
 
-  // Muted colors
+  /* Muted colors */
   --muted-color: var(--grey6);
   --muted-border-color: var(--grey6);
 
-  // Link colors
+  /* Link colors */
   --link: var(--c7);
   --link-hover: var(--shadow-2);
   --link-focus: var(--highlight);
 
-  // Secondary colors
+  /* Secondary colors */
   --secondary: var(--primary);
   --secondary-inverse: var(--grey7);
   --secondary-hover: var(--grey3);
   --secondary-focus: var(--highlight);
 
-  // Highlighted text (<mark>)
+  /* Highlighted text (<mark>) */
   --mark-background-color: var(--grey6);
   --mark-color: var(--black);
 
-  // Inserted (<ins>) & Deleted (<ins>)
+  /* Inserted (<ins>) & Deleted (<ins>) */
   --ins-color: var(--g5);
   --del-color: var(--warning);
 
-  // Blockquote
+  /* Blockquote */
   --blockquote-border-color: var(--muted-border-color);
   --blockquote-footer-color: var(--muted-color);
 
-  // Form elements
+  /* Form elements */
   --form-element-invalid-border-color: var(--r4);
   --form-element-invalid-active-border-color: var(--r6);
   --form-element-invalid-focus-color: var(--r6);
   --form-element-valid-border-color: var(--g4);
   --form-element-valid-active-border-color: var(--g5);
   --form-element-valid-focus-color: var(--g6);
-  // Form icons
+  
+  /* Form icons */
   --form-icon-arrow-down: url("data:image/svg+xml;utf8,%3Csvg%20class%3D%22ds-icon%22%20width%3D%2229%22%20height%3D%2229%22%20viewBox%3D%220%200%2029%2029%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M27%207L15.1585%2023.5879C14.7205%2024.1458%2014.0179%2024.136%2013.5892%2023.5659L2%207%22%20stroke%3D%22hsl(198%2C%20100%25%2C%2030%25)%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E");
   --form-icon-search: url("data:image/svg+xml;utf8,%3Csvg%20class%3D%22ds-icon%22%20width%3D%2229%22%20height%3D%2229%22%20viewBox%3D%220%200%2029%2029%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M28.5%2028.5L23.0037%2022.9988M26.5%2014C26.5%2020.9036%2020.9036%2026.5%2014%2026.5C7.09644%2026.5%201.5%2020.9036%201.5%2014C1.5%207.09644%207.09644%201.5%2014%201.5C20.9036%201.5%2026.5%207.09644%2026.5%2014Z%22%20stroke%3D%22hsl(198%2C%20100%25%2C%2030%25)%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E");
 
-  // Navigation
+  /* Navigation */
   --nav-link-color: var(--c7);
   --nav-tab-border: var(--blue);
 
-  // Switch (input[type="checkbox"][role="switch"])
+  /* Switch (input[type="checkbox"][role="switch"]) */
   --switch-background-color: var(--c2);
   --switch-color: var(--c8);
   --switch-checked-background-color: var(--blue);
 
-  // Range (input[type="range"])
+  /* Range (input[type="range"]) */
   --range-border-color: var(--color);
   --range-active-border-color: var(--highlight);
   --range-thumb-border-color: var(--background-color);
@@ -84,10 +86,10 @@
   --range-thumb-hover-color: var(--secondary-hover);
   --range-thumb-active-color: var(--primary);
 
-  // Table
+  /* Table */
   --table-row-striped-background-color: var(--bg1);
 
-  // Code
+  /* Code */
   --code-background-color: var(--bg1);
   --code-color: var(--muted-color);
   --code-kbd-background-color: var(--contrast);
@@ -97,40 +99,39 @@
   --code-value-color: var(--r4);
   --code-comment-color: var(--grey7);
 
-  // Accordion (<details>)
+  /* Accordion (<details>) */
   --accordion-border-color: var(--muted-border-color);
   --accordion-close-summary-color: var(--color);
   --accordion-open-summary-color: var(--muted-color);
 
-  // Card
+  /* Card */
   --card-background-color: var(--white);
   --card-border-color: var(--grey2);
   
-  // Dropdown (<details role="list">)
+  /* Dropdown (<details role="list">) */
   --dropdown-background-color: var(--c8);
   --dropdown-border-color: var(--white);
   --dropdown-box-shadow: var(--card-box-shadow);
   --dropdown-color: var(--color);
   --dropdown-hover-background-color: var(--grey3);
 
-  // Modal (<dialog>)
+  /* Modal (<dialog>) */
   --modal-overlay-background-color: var(--grey7);
 
-  // Progress
+  /* Progress */
   --progress-background-color: var(--grey3);
   --progress-color: var(--blue);
 
-  // Loading ([aria-busy=true])
+  /* Loading ([aria-busy=true]) */
   --loading-spinner-opacity: 0.5;
 
-  // Tooltip ([data-tooltip])
+  /* Tooltip ([data-tooltip]) */
   --tooltip-background-color: var(--contrast);
   --tooltip-color: var(--contrast-inverse);
 
-  // Icons
+  /* Icons */
   --ds-icon-color: var(--black);
 
-  // Logo
+  /* Logo */
   --ds-logo-theme-color: var(--black);
-
 }
