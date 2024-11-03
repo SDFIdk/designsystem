@@ -1,9 +1,9 @@
-/* Default: Dark theme */
-@mixin dark {
+/* Dark theme */
+[data-theme="dark"],
+:root:not([data-theme="light"]) {
 
   /* Document */
   color-scheme: dark;
-  accent-color: var(--blue);
   --background-color: var(--c10);
 
   /* Borders */

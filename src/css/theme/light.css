@@ -1,10 +1,9 @@
-/* Default: Light theme */
+/* Light theme */
 [data-theme="light"],
 :root:not([data-theme="dark"]) {
   
   /* Document */
   color-scheme: light;
-  accent-color: var(--blue);
   --background-color: var(--white);
 
   /* Borders */

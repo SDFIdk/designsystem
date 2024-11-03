@@ -38,7 +38,9 @@ th {
 
 /* Header */
 table caption {
-  @extend .blockquote;
+  font-weight: 370;
+  font-size: 1.125rem;
+  line-height: 1.33;
   display: table-caption;
   text-align: left;
   border-top: 3px solid var(--border-color);

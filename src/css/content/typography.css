@@ -227,7 +227,10 @@ ul li {
 }
 
 dl dt {
-  @extend .h5;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.14;
+  letter-spacing: 0.02rem;
   margin: var(--space-md) 0 var(--space-xxs);
   padding: 0;
   opacity: 0.75;
