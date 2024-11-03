@@ -16,6 +16,11 @@
   @layer lighttheme, darktheme;
 }
 
+:root {
+  /* Document */
+  accent-color: var(--blue);
+}
+
 /* Light theme */
 /* Enabled if forced with data-theme="light" */
 @layer lighttheme {

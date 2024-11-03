@@ -2,9 +2,6 @@
 
 :root {
 
-  /* Document */
-  accent-color: var(--blue);
-
   /* Typography */
   /* Use 'Roboto' font */
   --font-family: 'Roboto', sans-serif;

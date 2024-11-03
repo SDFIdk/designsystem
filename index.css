@@ -6,51 +6,51 @@
  * Copyright 2019-2022 - Licensed under MIT
  */
 
- /* Theming */
- @import "./src/css/theme/index.css"; /* Colors, sizes, etc. */
+/* Theming */
+@import "./src/css/theme/index.css"; /* Colors, sizes, etc. */
 
- /* Layout */
- @import "./src/css/layout/document.css"; /* html */
- @import "./src/css/layout/sectioning.css"; /* body, header, main, footer, section */
- @import "./src/css/layout/container.css"; /* .container, .container-fluid */
- @import "./src/css/layout/grid.css"; /* .grid */
- @import "./src/css/layout/margin.css"; /* .ds-margin */
- @import "./src/css/layout/padding.css"; /* .ds-padding */
-  
- /* Content */
- @import "./src/css/content/typography.css"; /* a, headings, p, ul, blockquote, ... */
- /* @import "content/embedded.css"; /* audio, canvas, iframe, img, svg, video */
- @import "./src/css/content/button.css"; /* button, a[role=button], type=button, type=submit ... */
- @import "./src/css/content/button-group.css"; /* button group styles */
- @import "./src/css/content/form.css"; /* input, select, textarea, label, fieldset, legend */
- @import "./src/css/content/form-checkbox-radio.css";
- @import "./src/css/content/form-alt-input-types.css";
- @import "./src/css/content/table.css"; /* table, tr, td, ... */
- @import "./src/css/content/miscs.css"; /* hr */
- @import "./src/css/content/icons.css"; /* icon styles */
- @import "./src/css/content/logos.css"; /* logo styles */
- @import "./src/css/content/dialog.css"; /* dialog styles */
- @import "./src/css/content/header.css"; /* header styles */
- @import "./src/css/content/footer.css"; /* footer styles */
- @import "./src/css/content/nav.css"; /* navigationselementer */
- @import "./src/css/content/disclosure.css"; /* Disclosure element (collapsible) */
+/* Layout */
+@import "./src/css/layout/document.css"; /* html */
+@import "./src/css/layout/sectioning.css"; /* body, header, main, footer, section */
+@import "./src/css/layout/container.css"; /* .container, .container-fluid */
+@import "./src/css/layout/grid.css"; /* .grid */
+@import "./src/css/layout/margin.css"; /* .ds-margin */
+@import "./src/css/layout/padding.css"; /* .ds-padding */
 
- /* Components */
- @import "./src/css/components/card.css"; /* produktkort */
- @import "./src/css/components/tabs.css"; /* tabs */
- @import "./src/css/components/popover.css"; /* popover */
- @import "./src/css/components/toast.css"; /* toast */
- @import "./src/css/components/togglepanel.css"; /* toggle panel */
- @import "./src/css/components/responsivenav.css"; /* responsive navigation */
- @import "./src/css/components/datatable.css"; /* data table */
- 
- /* Utilities */
- @import "./src/css/utilities/a11y.css";
- @import "./src/css/content/labels.css"; /* Labels */
- /* @import "utilities/reduce-motion.css"; /* prefers-reduced-motion */
+/* Content */
+@import "./src/css/content/typography.css"; /* a, headings, p, ul, blockquote, ... */
+/* @import "content/embedded.css"; /* audio, canvas, iframe, img, svg, video */
+@import "./src/css/content/icons.css"; /* icon styles */
+@import "./src/css/content/button.css"; /* button, a[role=button], type=button, type=submit ... */
+@import "./src/css/content/button-group.css"; /* button group styles */
+@import "./src/css/content/form.css"; /* input, select, textarea, label, fieldset, legend */
+@import "./src/css/content/form-checkbox-radio.css";
+@import "./src/css/content/form-alt-input-types.css";
+@import "./src/css/content/table.css"; /* table, tr, td, ... */
+@import "./src/css/content/miscs.css"; /* hr */
+@import "./src/css/content/logos.css"; /* logo styles */
+@import "./src/css/content/dialog.css"; /* dialog styles */
+@import "./src/css/content/header.css"; /* header styles */
+@import "./src/css/content/footer.css"; /* footer styles */
+@import "./src/css/content/nav.css"; /* navigationselementer */
+@import "./src/css/content/disclosure.css"; /* Disclosure element (collapsible) */
 
- /* Define font faces */
- @font-face {
+/* Components */
+@import "./src/css/components/card.css"; /* produktkort */
+@import "./src/css/components/tabs.css"; /* tabs */
+@import "./src/css/components/popover.css"; /* popover */
+@import "./src/css/components/toast.css"; /* toast */
+@import "./src/css/components/togglepanel.css"; /* toggle panel */
+@import "./src/css/components/responsivenav.css"; /* responsive navigation */
+@import "./src/css/components/datatable.css"; /* data table */
+
+/* Utilities */
+@import "./src/css/utilities/a11y.css";
+@import "./src/css/content/labels.css"; /* Labels */
+/* @import "utilities/reduce-motion.css"; /* prefers-reduced-motion */
+
+/* Define font faces */
+@font-face {
   font-family: Roboto;
   font-style: italic;
   font-weight: 400;
