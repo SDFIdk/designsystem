@@ -92,15 +92,6 @@ a[role="button"] {
     outline: solid var(--space-xxs) var(--highlight);
   }
 
-  &.h1,
-  &.h2,
-  &.h3,
-  &.h4,
-  &.h5,
-  &.h6 {
-    margin: 0;
-  }
-
   /* Tweak margins for various constellations of icons in buttons */
   & svg.ds-icon,
   & svg:has(use[href*="icon"]) {
@@ -123,8 +114,10 @@ a[role="button"] {
 
     & svg.ds-icon,
     & svg:has(use[href*="icon"]) {
-      margin-left: 0;
-      margin-right: 0;
+      &:only-child {
+        margin-left: 0;
+        margin-right: 0;
+      }
     }
   }
 }
@@ -151,15 +144,6 @@ a[role="button"] {
     background-color: var(--primary-hover);
     border-color: var(--primary-hover);
   }
-
-  &.h1,
-  &.h2,
-  &.h3,
-  &.h4,
-  &.h5,
-  &.h6 {
-    --color: var(--white);
-  }
 }
 
 
@@ -185,15 +169,6 @@ a[role="button"].secondary {
     background-color: var(--primary-hover);
     border-color: var(--primary-hover);
   }
-
-  &.h1,
-  &.h2,
-  &.h3,
-  &.h4,
-  &.h5,
-  &.h6 {
-    --color: var(--secondary);
-  }
 }
 
 
@@ -218,15 +193,6 @@ a[role="button"].quiet {
     color: var(--white);
     background-color: var(--primary-hover);
     border-color: var(--primary-hover);
-  }
-
-  &.h1,
-  &.h2,
-  &.h3,
-  &.h4,
-  &.h5,
-  &.h6 {
-    --color: var(--link);
   }
 }
 
