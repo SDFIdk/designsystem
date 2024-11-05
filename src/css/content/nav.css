@@ -47,6 +47,7 @@ nav.ds-nav-vertical {
     &:hover,
     &:active {
       background: linear-gradient(0deg, var(--link), var(--link)) no-repeat left bottom / 100% 8%;
+      color: var(--color);
     }
   }
 }

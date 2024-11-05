@@ -67,34 +67,6 @@ samp {
   line-height: 1.31;
 }
 
-/* Links */
-a:not([role="button"], .plain),
-[role="link"] {
-  outline: none;
-  color: var(--link);
-  text-decoration: none;
-  background: linear-gradient(0deg, var(--link), var(--link)) no-repeat right bottom / 0 8%;
-  transition: color 0.3s ease-in-out, background-size 0.3s ease-in-out, outline 0.3s;
-
-  &:is([aria-current], :hover, :active) {
-    background-size: 100% 8%;
-    background-position-x: left;
-  }
-
-  &:focus {
-    outline: solid var(--space-xxs) var(--highlight);
-  }
-}
-
-/**
- * Utility class to make links (<a>) more subtle. 
- * @var --color
- */  
-a.plain {
-  text-decoration: none;
-  color: inherit;
-}
-
 /* Paragraphs */
 p {
   margin: 0 0 var(--space);
