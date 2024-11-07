@@ -37,7 +37,7 @@ You can load the styles directly from CDN.
 ```html
 <head>
   ...
-  <link rel="stylesheet" href="https://cdn.dataforsyningen.dk/assets/designsystem/v7.0/designsystem.css">
+  <link rel="stylesheet" href="https://cdn.dataforsyningen.dk/assets/designsystem/v7/designsystem.css">
   ...
 <head>
 ```
@@ -63,7 +63,7 @@ Here is an example where we display the `notification` icon:
 
 Icons are also available via CDN. Here is an example with `<use>`
 ```html
-<svg><use href="https://cdn.dataforsyningen.dk/assets/designsystem/v7.0/icons.svg#notification" /></svg>
+<svg><use href="https://cdn.dataforsyningen.dk/assets/designsystem/v7/icons.svg#notification" /></svg>
 ```
 
 #### Javascript
