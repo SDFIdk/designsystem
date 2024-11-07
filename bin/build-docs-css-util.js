@@ -52,7 +52,7 @@ function parser(string) {
 
 function extractFilename(filestring) {
   const filenameMatch = filestring.match(/\w+\.css/g)
-  const filename = filenameMatch[0].substring(0, filenameMatch[0].length - 5)
+  const filename = filenameMatch[0].substring(0, filenameMatch[0].length - 4)
   return filename
 }
 
