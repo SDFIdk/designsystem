@@ -2,11 +2,54 @@
  * Custom styles for Dataforsyningen Design System
  *
  * Based on a modified version of 
- * Pico.css v1.5.3 (https://picocss.com)
+ * Pico.css v1.5.3 (https:/*picocss.com)
  * Copyright 2019-2022 - Licensed under MIT
  */
 
-// Define font faces
+/* Theming */
+@import "./src/css/theme/index.css"; /* Colors, sizes, etc. */
+
+/* Layout */
+@import "./src/css/layout/document.css"; /* html */
+@import "./src/css/layout/sectioning.css"; /* body, header, main, footer, section */
+@import "./src/css/layout/container.css"; /* .container, .container-fluid */
+@import "./src/css/layout/grid.css"; /* .grid */
+@import "./src/css/layout/margin.css"; /* .ds-margin */
+@import "./src/css/layout/padding.css"; /* .ds-padding */
+
+/* Content */
+@import "./src/css/content/typography.css"; /* a, headings, p, ul, blockquote, ... */
+/* @import "content/embedded.css"; /* audio, canvas, iframe, img, svg, video */
+@import "./src/css/content/icons.css"; /* icon styles */
+@import "./src/css/content/button.css"; /* button, a[role=button], type=button, type=submit ... */
+@import "./src/css/content/button-group.css"; /* button group styles */
+@import "./src/css/content/form.css"; /* input, select, textarea, label, fieldset, legend */
+@import "./src/css/content/form-checkbox-radio.css";
+@import "./src/css/content/form-alt-input-types.css";
+@import "./src/css/content/table.css"; /* table, tr, td, ... */
+@import "./src/css/content/miscs.css"; /* hr */
+@import "./src/css/content/logos.css"; /* logo styles */
+@import "./src/css/content/dialog.css"; /* dialog styles */
+@import "./src/css/content/header.css"; /* header styles */
+@import "./src/css/content/footer.css"; /* footer styles */
+@import "./src/css/content/nav.css"; /* navigationselementer */
+@import "./src/css/content/disclosure.css"; /* Disclosure element (collapsible) */
+
+/* Components */
+@import "./src/css/components/card.css"; /* produktkort */
+@import "./src/css/components/tabs.css"; /* tabs */
+@import "./src/css/components/popover.css"; /* popover */
+@import "./src/css/components/toast.css"; /* toast */
+@import "./src/css/components/togglepanel.css"; /* toggle panel */
+@import "./src/css/components/responsivenav.css"; /* responsive navigation */
+@import "./src/css/components/datatable.css"; /* data table */
+
+/* Utilities */
+@import "./src/css/utilities/a11y.css";
+@import "./src/css/content/labels.css"; /* Labels */
+/* @import "utilities/reduce-motion.css"; /* prefers-reduced-motion */
+
+/* Define font faces */
 @font-face {
   font-family: Roboto;
   font-style: italic;
@@ -54,46 +97,3 @@
   font-weight: 700;
   src: local("Source Code Pro Bold"), local("SourceCodePro-Bold"), url(https://cdn.dataforsyningen.dk/assets/designsystem/v7.0/SourceCodePro-Bold.woff2) format("woff2")
 }
-
-// Theming
-@import "./src/scss/theme/index"; // Colors, sizes, etc.
-
-// Layout
-@import "./src/scss/layout/document"; // html
-@import "./src/scss/layout/sectioning"; // body, header, main, footer, section
-@import "./src/scss/layout/container"; // .container, .container-fluid
-@import "./src/scss/layout/grid"; // .grid
-@import "./src/scss/layout/margin"; // .ds-margin
-@import "./src/scss/layout/padding"; // .ds-padding
-
-// Content
-@import "./src/scss/content/typography"; // a, headings, p, ul, blockquote, ...
-//@import "content/embedded"; // audio, canvas, iframe, img, svg, video
-@import "./src/scss/content/button"; // button, a[role=button], type=button, type=submit ...
-@import "./src/scss/content/button-group"; // button group styles
-@import "./src/scss/content/form"; // input, select, textarea, label, fieldset, legend
-@import "./src/scss/content/form-checkbox-radio";
-@import "./src/scss/content/form-alt-input-types";
-@import "./src/scss/content/table"; // table, tr, td, ...
-@import "./src/scss/content/miscs"; // hr
-@import "./src/scss/content/icons"; // icon styles
-@import "./src/scss/content/logos"; // logo styles
-@import "./src/scss/content/dialog"; // dialog styles
-@import "./src/scss/content/header"; // header styles
-@import "./src/scss/content/footer"; // footer styles
-@import "./src/scss/content/nav"; // navigationselementer
-@import "./src/scss/content/disclosure"; // Disclosure element (collapsible)
-
-// Components
-@import "./src/scss/components/card"; // produktkort
-@import "./src/scss/components/tabs"; // tabs
-@import "./src/scss/components/popover"; // popover
-@import "./src/scss/components/toast"; // toast
-@import "./src/scss/components/togglepanel"; // toggle panel
-@import "./src/scss/components/responsivenav"; // responsive navigation
-@import "./src/scss/components/datatable"; // data table
-
-// Utilities
-@import "./src/scss/utilities/a11y";
-@import "./src/scss/content/labels"; // Labels
-//@import "utilities/reduce-motion"; // prefers-reduced-motion

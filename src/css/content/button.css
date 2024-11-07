@@ -1,0 +1,206 @@
+/**
+ * Buttons and links
+ */
+
+/* Reboot based on :
+ - normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
+ - sanitize.css v13.0.0 | CC0 1.0 Universal | github.com/csstools/sanitize.css
+ ––––––––––––––––––––
+
+ 1. Change the font styles in all browsers
+ 2. Remove the margin on controls in Safari
+ 3. Show the overflow in Edge
+*/
+
+button {
+  margin: 0; /* 2 */
+  overflow: visible; /* 3 */
+  font-family: inherit; /* 1 */
+  text-transform: none; /* 1 */
+}
+
+/* Correct the inability to style buttons in iOS and Safari */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+/* –––––––––––––––––––– */
+
+/* Links */
+a:not([role="button"], .plain),
+[role="link"] {
+  outline: none;
+  color: var(--link);
+  text-decoration: none;
+  background: linear-gradient(0deg, var(--link), var(--link)) no-repeat right bottom / 0 8%;
+  transition: color 0.3s ease-in-out, background-size 0.3s ease-in-out, outline 0.3s;
+
+  &[aria-current], 
+  &:hover, 
+  &:active {
+    background-size: 100% 8%;
+    background-position-x: left;
+  }
+
+  &:focus {
+    outline: solid var(--space-xxs) var(--highlight);
+  }
+}
+
+/**
+ * Utility class to make links (<a>) more subtle.
+ */  
+a.plain {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Buttons and links that look like buttons */
+button,
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+a[role="button"] {
+
+  &,
+  &:link,
+  &:visited {
+    display: inline-flex;
+    padding: var(--space-xs) var(--space);
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: var(--button-base-height);
+    border-radius: var(--border-radius);
+    outline: none;
+    font-weight: 400;
+    font-size: var(--font-size);
+    line-height: 1em;
+    text-align: center;
+    cursor: pointer;
+    word-wrap: normal;
+    white-space: nowrap;
+    text-decoration: none;
+    transition: background-color var(--transition), border-color var(--transition), color var(--transition);
+  }
+
+  &:focus {
+    outline: solid var(--space-xxs) var(--highlight);
+  }
+
+  /* Tweak margins for various constellations of icons in buttons */
+  & svg.ds-icon,
+  & svg:has(use[href*="icon"]) {
+    &:last-child {
+      margin-left: 0.25rem;
+      margin-right: -0.33rem;
+    }
+    &:first-child {
+      margin-left: -0.33rem;
+      margin-right: 0.25rem;
+    }
+  }
+
+  /* Icon buttons are identified by having a `title` attribute */
+  &[title] {
+    width: calc(var(--button-base-height) + 0.125rem);
+    height: var(--button-base-height);
+    padding: 0;
+    overflow: hidden;
+
+    & svg.ds-icon,
+    & svg:has(use[href*="icon"]) {
+      &:only-child {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+/* Primary */
+button,
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+a[role="button"] {
+  
+  &,
+  &:link,
+  &:visited {
+    border: 1px solid var(--primary);
+    background-color: var(--primary);
+    color: var(--white);
+  }
+
+  &[aria-current],
+  &:hover,
+  &:active {
+    color: var(--white);
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+  }
+}
+
+
+/* Secondary */
+button.secondary,
+input[type="submit"].secondary,
+input[type="button"].secondary,
+input[type="reset"].secondary,
+a[role="button"].secondary {
+
+  &,
+  &:link,
+  &:visited {
+    border-color: var(--border-color);
+    background-color: var(--background-color);
+    color: var(--secondary);
+  }
+
+  &[aria-current],
+  &:hover,
+  &:active {
+    color: var(--white);
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+  }
+}
+
+
+/* Quiet */
+button.quiet,
+input[type="submit"].quiet,
+input[type="button"].quiet,
+input[type="reset"].quiet,
+a[role="button"].quiet {
+
+  &,
+  &:link,
+  &:visited {
+    background-color: transparent;
+    border-color: transparent;
+    color: var(--link);
+  }
+
+  &[aria-current],
+  &:hover,
+  &:active {
+    color: var(--white);
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+  }
+}
+
+/* Button [disabled] */
+/* Links without href are disabled by default */
+:where(button, [type="submit"], [type="button"], [type="reset"], [role="button"])[disabled],
+:where(fieldset[disabled]) :is(button, [type="submit"], [type="button"], [type="reset"], [role="button"]),
+a[role="button"]:not([href]) {
+  opacity: 0.5;
+  pointer-events: none;
+}

@@ -2,29 +2,31 @@
  * Code
  */
 
-// Reboot based on :
-// - normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
-// - sanitize.css v13.0.0 | CC0 1.0 Universal | github.com/csstools/sanitize.css
-// ––––––––––––––––––––
+/* 
+Reboot based on :
+ - normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
+ - sanitize.css v13.0.0 | CC0 1.0 Universal | github.com/csstools/sanitize.css
+ ––––––––––––––––––––
 
-// 1. Correct the inheritance and scaling of font size in all browsers
-// 2. Correct the odd `em` font sizing in all browsers
+ 1. Correct the inheritance and scaling of font size in all browsers
+ 2. Correct the odd `em` font sizing in all browsers
+*/
 pre,
 code,
 kbd,
 samp {
-  font-size: 0.875em; // 2
-  font-family: var(--font-family); // 1
+  font-size: 0.875em; /* 2 */
+  font-family: var(--font-family); /* 1 */
 }
 
-// Prevent overflow of the container in all browsers (opinionated)
+/* Prevent overflow of the container in all browsers (opinionated) */
 pre {
   -ms-overflow-style: scrollbar;
   overflow: auto;
 }
 
-// Pico
-// ––––––––––––––––––––
+/* Pico */
+/* –––––––––––––––––––– */
 
 pre,
 code,
@@ -55,34 +57,34 @@ pre {
   }
 }
 
-// Code Syntax
+/* Code Syntax */
 code {
-  // Tags
+  /* Tags */
   b {
     color: var(--code-tag-color);
     font-weight: var(--font-weight);
   }
 
-  // Properties
+  /* Properties */
   i {
     color: var(--code-property-color);
     font-style: normal;
   }
 
-  // Values
+  /* Values */
   u {
     color: var(--code-value-color);
     text-decoration: none;
   }
 
-  // Comments
+  /* Comments */
   em {
     color: var(--code-comment-color);
     font-style: normal;
   }
 }
 
-// kbd
+/* kbd */
 kbd {
   background-color: var(--code-kbd-background-color);
   color: var(--code-kbd-color);

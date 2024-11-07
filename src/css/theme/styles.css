@@ -1,9 +1,9 @@
-// Common Styles
+/* Common Styles */
 
 :root {
 
-  // Typography
-  // Use 'Roboto' font
+  /* Typography */
+  /* Use 'Roboto' font */
   --font-family: 'Roboto', sans-serif;
   --source-font-family: 'Source Code Pro', monospace;
   --line-height: 1.3;
@@ -11,7 +11,7 @@
   --font-size: 100%;
   --font-style: normal;
 
-  // Spacings
+  /* Spacings */
   --space-xxs:  3px;
   --space-xs:   0.25rem;
   --space-sm:   0.5rem;
@@ -27,7 +27,7 @@
   --w-max: 55rem;
   --w-min: 15rem;
 
-  // Margins, paddings
+  /* Margins, paddings */
   --margin: var(--space-md);
   --padding: var(--space-md) var(--space) var(--space-lg);
 
@@ -37,30 +37,30 @@
   --map-element-spacing: var(--space-md) var(--space) var(--space-lg);
   --modal-margin: 3.5vw 5vw;
 
-  // Buttons
+  /* Buttons */
   --button-base-height: 2.5rem;
 
-  // Forms 
+  /* Forms */
   --input-base-height: var(--button-base-height);
 
-  // Icons
+  /* Icons */
   --icon-size: calc(var(--space) * 2.5);
   --ds-icon-stroke: 1.2;
 
-  // Borders
+  /* Borders */
   --border-width: var(--space-xxs);
   --border: solid var(--border-width) var(--border-color);
   --border-radius: var(--space-md);
 
-  // Transitions
+  /* Transitions */
   --transition: 0.2s ease-in-out;
 }
 
-// Link
+/* Link */
 a {
   --text-decoration: none;
 
-  // Secondary & Contrast
+  /* Secondary & Contrast */
   &.secondary,
   &.contrast {
     --text-decoration: underline;

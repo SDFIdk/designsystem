@@ -1,5 +1,13 @@
 # Designsystem release notes (from v7 up)
 
+## v8.0.0
+
+Designsystem no longer uses SASS/scss for building style sheets (CSS). All styles are ported to vanilla CSS.
+Building from `index.scss` is not possible. You should import or build from `index.css` instead.
+On the bright side, this means you can simplify your build process.
+
+You can stil use `assets/designsystem.css` directly as before.
+
 ## v7.0.0
 
 New features include:

@@ -34,12 +34,10 @@
 
     &:first-child {
       border-radius: var(--space-lg) 0 0 var(--space-lg);
-      width: auto;
     }
 
     &:last-child {
       border-radius: 0 var(--space-lg) var(--space-lg) 0;
-      width: auto;
     }
 
     &[title]:first-child {

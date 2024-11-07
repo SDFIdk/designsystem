@@ -108,8 +108,9 @@ svg:has(use[href*="icon"]) {
 }
 
 /* Icons in links */
-
-a:has(use[href*="icon"]) {
+a:not([role="button"]):has(svg.ds-icon),
+a:not([role="button"]):has(use[href*="icon"]) {
+  --ds-icon-color: var(--link);
   display: inline-flex;
   flex-flow: row nowrap;
   align-items: center;
@@ -118,6 +119,20 @@ a:has(use[href*="icon"]) {
   width: auto;
 }
 
-a svg {
+/* Icons in buttons */
+:is(button, input[type="submit"], input[type="button"], input[type="reset"], a[role="button"]) {
+  --ds-icon-color: var(--white);
+}
+
+:is(button, input[type="submit"], input[type="button"], input[type="reset"], a[role="button"]).secondary {
+  --ds-icon-color: var(--secondary);
+}
+
+:is(button, input[type="submit"], input[type="button"], input[type="reset"], a[role="button"]).quiet {
   --ds-icon-color: var(--link);
+}
+
+:is(button, input[type="submit"], input[type="button"], input[type="reset"], a[role="button"]):hover,
+:is(button, input[type="submit"], input[type="button"], input[type="reset"], a[role="button"]):active {
+  --ds-icon-color: var(--white);
 }

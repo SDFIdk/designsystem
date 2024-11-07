@@ -51,14 +51,14 @@ function parser(string) {
 }
 
 function extractFilename(filestring) {
-  const filenameMatch = filestring.match(/\_\w+\.scss/g)
-  const filename = filenameMatch[0].substring(1, filenameMatch[0].length - 5)
+  const filenameMatch = filestring.match(/\w+\.css/g)
+  const filename = filenameMatch[0].substring(0, filenameMatch[0].length - 4)
   return filename
 }
 
 // Build CSS utility classes doc
 export async function buildCSSUtilDoc() {
-  const docs_dir = 'src/scss'
+  const docs_dir = 'src/css'
   let markup = ''
 
   markup += await readHTML('src/html/blocks/header.html')
@@ -73,10 +73,10 @@ export async function buildCSSUtilDoc() {
     const files = await readdir(docs_dir, {recursive: true})
     let parsed = []
     for (const file of files) {
-      if (file.match(/scss/g)) {
-        const scssSource = await readHTML(`${ docs_dir }/${ file }`)
+      if (file.match(/css/g)) {
+        const cssSource = await readHTML(`${ docs_dir }/${ file }`)
         //console.log('processing', file)
-        const commentsFound = parser(scssSource)
+        const commentsFound = parser(cssSource)
         if (commentsFound.length < 1) {
           continue
         }
