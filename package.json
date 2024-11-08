@@ -1,6 +1,6 @@
 {
   "name": "@dataforsyningen/designsystem",
-  "version": "8.0.1",
+  "version": "8.1.0",
   "description": "Common design system for Klimadatastyrelsen with CSS, icons, UI components, and logo images.",
   "type": "module",
   "author": {
