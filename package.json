@@ -15,7 +15,7 @@
   "scripts": {
     "build": "npm run build-css && npm run build-js && npm run build-docs",
     "serve": "node bin/server.js",
-    "build-css": "node_modules/.bin/esbuild --bundle --sourcemap index.css --outfile=assets/designsystem.css",
+    "build-css": "node_modules/.bin/esbuild --bundle --sourcemap --minify index.css --outfile=assets/designsystem.css",
     "build-js": "node_modules/.bin/esbuild ./index.js --bundle --outfile=assets/designsystem.js --format=esm --loader:.svg=text",
     "build-docs": "node bin/build-docs.js",
     "test": "echo \"Error: no test specified\" && exit 1"
