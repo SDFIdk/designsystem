@@ -47,6 +47,10 @@ async function buildHTMLsnippet(filename, svg) {
         <code-view title="SVG embed">
 ${ svg }
         </code-view>
+        <code-view title="Fra CDN">
+<img src="https://cdn.dataforsyningen.dk/assets/designsystem/v8/icons/${ shortname }.svg" alt="">
+        </code-view>
+
         <!--
         <h3>ds-icon web component</h3>
         <ds-icon class="${ shortname }"></ds-icon>
