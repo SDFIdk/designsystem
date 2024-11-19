@@ -61,9 +61,9 @@ Here is an example where we display the `notification` icon:
 <svg><use href="YOUR_PATH/icons.svg#notification" /></svg>
 ```
 
-Icons are also available via CDN. Here is an example with `<use>`
+Icons are also available via CDN. **Note that custom styling is not available this way.**
 ```html
-<svg><use href="https://cdn.dataforsyningen.dk/assets/designsystem/v8/icons.svg#notification" /></svg>
+<img src="https://cdn.dataforsyningen.dk/assets/designsystem/v8/icons/notification.svg" alt="">
 ```
 
 #### Javascript
