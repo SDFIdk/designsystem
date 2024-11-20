@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../assets/designsystem.css">
     <link rel="stylesheet" href="./docs.css">
 
-    <link rel="icon" href="../assets/logo-small.svg">
+    <link rel="icon" href="../../assets/logo-small.svg">
 
   </head>
   <body>
@@ -43,9 +43,25 @@
 
   <h2>Logo</h2>
 
-  <p><em>Bemærk! Klimadatastyrelsens logo må kun bruges af Klimadatastyrelsen.</em></p>
+  <p><a href="/docs/examples/logo.html">Demoside med logo findes her.</a> <em>Bemærk! Klimadatastyrelsens logo må kun bruges af Klimadatastyrelsen.</em></p>
+  
+  <p>Kom hurtigt i gang med logo fra CDN:</p>
 
-  <p><a href="/docs/examples/logo.html">Demoside med logo findes her.</a></p>
+  <style>
+    #ex-logo-03 > div {
+      padding: var(--space);
+    }
+  </style>
+  <div id="ex-logo-03" style="display: flex; flex-flow: column nowrap; gap: var(--space);">
+    <div data-theme="light">
+      <img src="https://cdn.dataforsyningen.dk/assets/designsystem/v8/logo-text-black.svg" alt="Klimadatastyrelsen">
+    </div>
+    <div data-theme="dark">
+      <img src="https://cdn.dataforsyningen.dk/assets/designsystem/v8/logo-text-white.svg" alt="Klimadatastyrelsen">
+    </div>
+  </div>
+
+  <code-view data-snip="ex-logo-03"></code-view>
 
   <h3>Web component</h3>
   
@@ -91,6 +107,16 @@
 
   <code-view data-snip="ex-logo-0"></code-view>
 
+  <p>... eller hente SVG-logofiler direkte fra CDN:</p>
+
+  <p id="ex-logo-02">
+    <img width="63" src="https://cdn.dataforsyningen.dk/assets/designsystem/v8/logo-large.svg" alt="">
+    <img width="45" src="https://cdn.dataforsyningen.dk/assets/designsystem/v8/logo-medium.svg" alt="">
+    <img width="25" src="https://cdn.dataforsyningen.dk/assets/designsystem/v8/logo-small.svg" alt="">
+  </p>
+
+  <code-view data-snip="ex-logo-02"></code-view>
+
   <h3>Logo i forskellige størrelser</h3>
 
   <p><code>&lt;ds-logo></code>-elementet skalerer selv i forhold til hvor meget plads, der er.</p>
@@ -134,6 +160,10 @@
 
   <p>Som favicon bruges <code>logo-small.svg</code> <img style="width: var(--space-md); height: auto;" src="../assets/logo-small.svg" alt=""></p>
   <p>For at bruge det skal du indsætte denne linie i HTML <code>&lt;head></code> sektionen. Sørg for at <code>PATH</code> svarer til logofilens placering på serveren.</p>
+  <p>Du kan også hente favicon direkte fra CDN, som vist her:</p>
+  <code-view>
+<link rel="icon" href="https://cdn.dataforsyningen.dk/assets/designsystem/v8/logo-small.svg">
+  </code-view>
   <pre>
   <code>&lt;link rel="icon" href="PATH/logo-small.svg"></code>
   </pre>
@@ -158,8 +188,6 @@
   </p>
 
   <code-view data-snip="ex-logo-4"></code-view>
-
-
 
 </article>
 </main><footer class="ds-footer">
