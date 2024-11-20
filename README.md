@@ -68,10 +68,11 @@ Icons are also available via CDN. **Note that custom styling is not available th
 
 #### Javascript
 
-You can find designsystem Javascript in [assets/designsystem.js](./assets/designsystem.js). Copy it to your project and include the script by adding a reference in the `body` section of your HTML pages.
+You can find designsystem Javascript in [assets/designsystem.js](./assets/designsystem.js) or get it from CDN. 
+Copy it to your project and include the script by adding a reference in the `body` section of your HTML pages.
 
 Here is an example where we import all of designsystem Javascript:
-```
+```html
 <body>
   ...
   <script type="module" src="YOUR_PATH/designsystem.js"></script>
@@ -79,7 +80,7 @@ Here is an example where we import all of designsystem Javascript:
 ```
 
 Here is an example where we import the `Tabs` component from designsystem Javascript:
-```
+```html
 <body>
   ...
   <script type="module">
@@ -88,9 +89,24 @@ Here is an example where we import the `Tabs` component from designsystem Javasc
 <body>
 ```
 
+Here are the same examples using Javascript hosted on our CDN:
+```html
+<body>
+  <!-- All other body content goes here -->
+
+  <!-- Import all modules ... -->
+  <script type="module" src="https://cdn.dataforsyningen.dk/assets/designsystem/v8/designsystem.js"></script>
+  
+  <!-- ... or import individual modules -->
+  <script type="module">
+    import { Tabs } from https://cdn.dataforsyningen.dk/assets/designsystem/v8/designsystem.js;
+  </script>
+<body>
+```
+
 ### With NPM
 
-```
+```bash
 npm i @dataforsyningen/designsystem --save
 ```
 
