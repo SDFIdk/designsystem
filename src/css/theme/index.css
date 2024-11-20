@@ -27,6 +27,20 @@
     
   [data-theme="light"],
   :root:not([data-theme="dark"]) {
+
+    /* Color shorthands */
+    --yellow: var(--y4);
+    --orange: var(--o4);
+    --red: var(--r6);
+    --green: var(--g7);
+    --blue: var(--c7); 
+    --black: var(--grey10);
+    --white: var(--grey1);
+    --highlight: var(--o4);
+    --warning: var(--r6);
+    --primary: var(--c7);
+    --primary-hover: var(--c6);
+    --primary-focus: var(--04);
     
     /* Document */
     color-scheme: light;
@@ -43,7 +57,6 @@
     --h4-color: var(--grey7);
     --h5-color: var(--grey7);
     --h6-color: var(--grey7);
-    --warning: var(--r6);
 
     /* Background colors */
     --bg0: var(--grey1);
@@ -168,6 +181,20 @@
   [data-theme="dark"],
   :root:not([data-theme="light"]) {
 
+    /* Color shorthands */
+    --yellow: var(--y4);
+    --orange: var(--o4);
+    --red: var(--r6);
+    --green: var(--g7);
+    --blue: var(--c7); 
+    --black: var(--grey10);
+    --white: var(--grey1);
+    --highlight: var(--o4);
+    --warning: var(--y4);
+    --primary: var(--c7);
+    --primary-hover: var(--c6);
+    --primary-focus: var(--04);
+
     /* Document */
     color-scheme: dark;
     --background-color: var(--c10);
@@ -183,7 +210,6 @@
     --h4-color: var(--c3);
     --h5-color: var(--c3);
     --h6-color: var(--c3);
-    --warning: var(--y4);
 
     /* Background colors */
     --bg0: var(--c10);
