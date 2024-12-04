@@ -1,4 +1,4 @@
-<svg class="ds-icon" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+<svg class="ds-icon" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
   <g transform="translate(-5.5 3.5)">
     <circle stroke="var(--ds-icon-color, black)" cx="37.7" cy="28.5" r="29"/>
     <g>

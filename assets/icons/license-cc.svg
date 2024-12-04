@@ -1,4 +1,4 @@
-<svg class="ds-icon" version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+<svg class="ds-icon" version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
   <g transform="translate(-5.5 3.5)">
     <circle stroke="var(--ds-icon-color, black)" cx="37.785" cy="28.501" r="28.836"/>
     <path fill="var(--ds-icon-color, black)" d="M37.441-3.5c8.951,0,16.572,3.125,22.857,9.372c3.008,3.009,5.295,6.448,6.857,10.314
