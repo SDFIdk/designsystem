@@ -132,17 +132,17 @@ a:not([role="button"]):has(use[href*="icon"]) {
   --ds-icon-color: var(--link);
 }
 
-:is(button, input[type="submit"], input[type="button"], input[type="reset"], 
-a[role="button"]).warning {
+:is(button, input[type="submit"], input[type="button"], input[type="reset"], a[role="button"]):hover,
+:is(button, input[type="submit"], input[type="button"], input[type="reset"], a[role="button"]):active {
+  --ds-icon-color: var(--white);
+}
+
+/* Styles for warning button icons */
+:is(button, input[type="submit"], input[type="button"], input[type="reset"], a[role="button"]).warning {
   --ds-icon-color: var(--background-color);
 
   &:hover,
   &:active {
    --ds-icon-color: var(--background-color);
  }
-}
-
-:is(button, input[type="submit"], input[type="button"], input[type="reset"], a[role="button"]):hover,
-:is(button, input[type="submit"], input[type="button"], input[type="reset"], a[role="button"]):active {
-  --ds-icon-color: var(--white);
 }
