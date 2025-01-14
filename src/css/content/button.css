@@ -196,6 +196,30 @@ a[role="button"].quiet {
   }
 }
 
+/* Warning */
+button.warning,
+input[type="submit"].warning,
+input[type="button"].warning,
+input[type="reset"].warning,
+a[role="button"].warning {
+  
+  &,
+  &:link,
+  &:visited {
+    border: 1px solid var(--warning);
+    background-color: var(--warning);
+    color: var(--color-inverse);
+  }
+
+  &[aria-current],
+  &:hover,
+  &:active {
+    color: var(--color-inverse);
+    background-color: var(--warning-hover);
+    border-color: var(--warning-hover);
+  }
+}
+
 /* Button [disabled] */
 /* Links without href are disabled by default */
 :where(button, [type="submit"], [type="button"], [type="reset"], [role="button"])[disabled],

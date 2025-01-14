@@ -132,7 +132,11 @@ a:not([role="button"]):has(use[href*="icon"]) {
   --ds-icon-color: var(--link);
 }
 
-:is(button, input[type="submit"], input[type="button"], input[type="reset"], a[role="button"]):hover,
-:is(button, input[type="submit"], input[type="button"], input[type="reset"], a[role="button"]):active {
+:is(button, input[type="submit"], input[type="button"], input[type="reset"], a[role="button"]).warning {
+  --ds-icon-color: var(--color-inverse);
+}
+
+:is(button, input[type="submit"], input[type="button"], input[type="reset"], a[role="button"]):not(.warning):hover,
+:is(button, input[type="submit"], input[type="button"], input[type="reset"], a[role="button"]):not(.warning):active {
   --ds-icon-color: var(--white);
 }

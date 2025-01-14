@@ -38,6 +38,7 @@
     --white: var(--grey1);
     --highlight: var(--o4);
     --warning: var(--r6);
+    --warning-hover: var(--r5);
     --primary: var(--c7);
     --primary-hover: var(--c6);
     --primary-focus: var(--04);
@@ -51,6 +52,7 @@
 
     /* Texts colors */
     --color: var(--black);
+    --color-inverse: var(--white);
     --h1-color: var(--black);
     --h2-color: var(--black);
     --h3-color: var(--grey7);
@@ -191,6 +193,7 @@
     --white: var(--grey1);
     --highlight: var(--o4);
     --warning: var(--y4);
+    --warning-hover: var(--y3);
     --primary: var(--c7);
     --primary-hover: var(--c6);
     --primary-focus: var(--04);
@@ -204,6 +207,7 @@
 
     /* Texts colors */
     --color: var(--white);
+    --color-inverse: var(--black);
     --h1-color: var(--white);
     --h2-color: var(--white);
     --h3-color: var(--c3);
