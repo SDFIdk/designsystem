@@ -208,13 +208,13 @@ a[role="button"].warning {
   &:visited {
     border: 1px solid var(--warning);
     background-color: var(--warning);
-    color: var(--color-inverse);
+    color: var(--background-color);
   }
 
   &[aria-current],
   &:hover,
   &:active {
-    color: var(--color-inverse);
+    color: var(--background-color);
     background-color: var(--warning-hover);
     border-color: var(--warning-hover);
   }

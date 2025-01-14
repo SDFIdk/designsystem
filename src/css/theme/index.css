@@ -52,7 +52,6 @@
 
     /* Texts colors */
     --color: var(--black);
-    --color-inverse: var(--white);
     --h1-color: var(--black);
     --h2-color: var(--black);
     --h3-color: var(--grey7);
@@ -207,7 +206,6 @@
 
     /* Texts colors */
     --color: var(--white);
-    --color-inverse: var(--black);
     --h1-color: var(--white);
     --h2-color: var(--white);
     --h3-color: var(--c3);
