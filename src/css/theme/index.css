@@ -38,6 +38,7 @@
     --white: var(--grey1);
     --highlight: var(--o4);
     --warning: var(--r6);
+    --warning-hover: var(--r5);
     --primary: var(--c7);
     --primary-hover: var(--c6);
     --primary-focus: var(--04);
@@ -191,6 +192,7 @@
     --white: var(--grey1);
     --highlight: var(--o4);
     --warning: var(--y4);
+    --warning-hover: var(--y3);
     --primary: var(--c7);
     --primary-hover: var(--c6);
     --primary-focus: var(--04);
