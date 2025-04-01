@@ -51,8 +51,8 @@ table caption {
 
 /* Footer */
 tfoot {
-  th,
-  td {
+  & th,
+  & td {
     border-top: var(--border-width) solid var(--border-color);
     border-bottom: 0;
   }
@@ -61,7 +61,7 @@ tfoot {
 /* Striped */
 table {
   &[role="grid"] {
-    tbody tr:nth-child(odd) {
+    & tbody tr:nth-child(odd) {
       background-color: var(--table-row-striped-background-color);
     }
   }

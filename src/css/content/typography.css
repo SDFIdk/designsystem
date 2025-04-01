@@ -212,7 +212,7 @@ ol {
 /* Margin-top for nested lists */
 /* 1. Remove the margin on nested lists in Chrome, Edge, IE, and Safari */
 :where(ol, ul) {
-  :is(ol, ul) {
+  &:is(ol, ul) {
     margin: 0; /* 1 */
     margin-top: var(--space-xxs);
   }
@@ -255,7 +255,7 @@ blockquote {
   font-size: 1.125rem;
   line-height: 1.33;
 
-  footer {
+  & footer {
     color: var(--blockquote-footer-color);
   }
 }

@@ -48,7 +48,7 @@ pre {
   display: block;
   overflow-x: auto;
 
-  > code {
+  & > code {
     display: block;
     padding: var(--space-md);
     background: none;
@@ -60,25 +60,25 @@ pre {
 /* Code Syntax */
 code {
   /* Tags */
-  b {
+  & b {
     color: var(--code-tag-color);
     font-weight: var(--font-weight);
   }
 
   /* Properties */
-  i {
+  & i {
     color: var(--code-property-color);
     font-style: normal;
   }
 
   /* Values */
-  u {
+  & u {
     color: var(--code-value-color);
     text-decoration: none;
   }
 
   /* Comments */
-  em {
+  & em {
     color: var(--code-comment-color);
     font-style: normal;
   }

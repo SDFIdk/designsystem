@@ -22,9 +22,9 @@ body {
   width: 100%;
   margin: 0; /* 1 */
 
-  > header,
-  > main,
-  > footer {
+  & > header,
+  & > main,
+  & > footer {
     width: 100%;
     margin-right: auto;
     margin-left: auto;

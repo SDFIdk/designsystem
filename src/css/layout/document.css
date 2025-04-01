@@ -31,11 +31,8 @@
 /* 3. Breaks words to prevent overflow in all browsers (opinionated) */
 /* 4. Use a 4-space tab width in all browsers (opinionated) */
 /* 5. Remove the grey highlight on links in iOS (opinionated) */
-/* 6. Prevent adjustments of font size after orientation changes in iOS */
 :root {
   -webkit-tap-highlight-color: transparent; /* 5 */
-  -webkit-text-size-adjust: 100%; /* 6 */
-  text-size-adjust: 100%; /* 6 */
   text-rendering: optimizeLegibility;
   background-color: var(--background-color);
   color: var(--color);

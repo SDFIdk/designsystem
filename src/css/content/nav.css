@@ -16,14 +16,14 @@ nav.ds-nav-vertical {
   margin-bottom: 0;
   white-space: nowrap;
 
-  input {
+  & input {
     width: inherit;
   }
 
-  a,
-  [role="link"],
-  button,
-  [role="button"] {
+  & a,
+  & [role="link"],
+  & button,
+  & [role="button"] {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
@@ -72,12 +72,12 @@ nav.ds-nav + hr {
 nav.ds-nav-tools,
 aside.ds-nav-tools {
   
-  .ds-button-group {
+  & .ds-button-group {
     border-radius: var(--space-lg);
     border: solid var(--space-xs) var(--card-border-color);
   }
 
-  hr {
+  & hr {
     display: block;
     border: none;
     background-color: var(--card-border-color);
@@ -88,10 +88,10 @@ aside.ds-nav-tools {
 
   &.vertical {
 
-    .ds-button-group {
+    & .ds-button-group {
       flex-flow: column nowrap;
 
-      hr {
+      & hr {
         width: var(--button-base-height);
         height: 1px;
       }
