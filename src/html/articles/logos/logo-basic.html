@@ -54,25 +54,42 @@
 
   <code-view data-snip="ex-logo-5"></code-view>
 
-  <h3>SVG-filer</h3>
+  <h3>SVG-filer (vektor)</h3>
 
-  <p>Du kan finde SVG-logofiler under ../assets</p>
+  <p>Du kan finde SVG-logofiler under ../assets eller fra CDN</p>
 
   <p id="ex-logo-0">
     <img width="63" src="../assets/logo-large.svg" alt="">
     <img width="45" src="../assets/logo-medium.svg" alt="">
     <img width="25" src="../assets/logo-small.svg" alt="">
-  </p>
-
-  <code-view data-snip="ex-logo-0"></code-view>
-
-  <p>... eller hente SVG-logofiler direkte fra CDN:</p>
-
-  <p id="ex-logo-02">
     <img width="63" src="https://cdn.dataforsyningen.dk/assets/designsystem/v8/logo-large.svg" alt="">
     <img width="45" src="https://cdn.dataforsyningen.dk/assets/designsystem/v8/logo-medium.svg" alt="">
     <img width="25" src="https://cdn.dataforsyningen.dk/assets/designsystem/v8/logo-small.svg" alt="">
   </p>
+
+  <code-view data-snip="ex-logo-0"></code-view>
+
+  <h3>PNG-filer (raster)</h3>
+
+  <p>Du kan finde SVG-logofiler under ../assets eller fra CDN.</p>
+
+  <style>
+    #ex-logo-02 p {
+      display: flex; flex-flow: column nowrap; gap: var(--space); max-width: 30rem; padding: var(--space);
+    }
+  </style>
+
+  <div id="ex-logo-02">
+    <p data-theme="light">
+      <img src="../assets/logo-text-black.png" alt="Klimadatastyrelsen">
+      <img src="https://cdn.dataforsyningen.dk/assets/designsystem/v8/logo-text-black.png" alt="Klimadatastyrelsen">
+      <img src="https://cdn.dataforsyningen.dk/assets/designsystem/v8/logo-text-transparent-black.png" alt="Klimadatastyrelsen">
+    </p>
+    <p data-theme="dark">
+      <img src="https://cdn.dataforsyningen.dk/assets/designsystem/v8/logo-text-white.png" alt="Klimadatastyrelsen">
+      <img src="https://cdn.dataforsyningen.dk/assets/designsystem/v8/logo-text-transparent-white.png" alt="Klimadatastyrelsen">
+    </p>
+  </div>
 
   <code-view data-snip="ex-logo-02"></code-view>
 
