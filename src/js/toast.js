@@ -1,17 +1,21 @@
+const iconClose = `
+    <svg class="ds-icon" width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g stroke="var(--ds-icon-color, black)" stroke-linejoin="round" stroke-linecap="round" stroke-width="var(--ds-icon-stroke, 1)">
+        <path d="M2 2L14.5 14.5M14.5 14.5L27 27M14.5 14.5L2 27M14.5 14.5L27 2"/>
+      </g>
+    </svg>
+  `
+
 export function showToast({message, duration = 5000}) {
   const newToast = document.createElement('div')
   const paragraph = document.createElement('p')
   const closeButton = document.createElement('button')
-  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
-  const use = document.createElementNS('http://www.w3.org/2000/svg', 'use')
   newToast.className = 'ds-toast-item'
   newToast.dataset.theme = 'dark'
   paragraph.innerText = message
   closeButton.className = 'quiet'
   closeButton.title = 'Luk'
-  use.setAttribute('href', '../assets/icons.svg#close')
-  svg.appendChild(use)
-  closeButton.appendChild(svg)
+  closeButton.innerHTML = iconClose
   newToast.appendChild(paragraph)
   newToast.appendChild(closeButton)
 
