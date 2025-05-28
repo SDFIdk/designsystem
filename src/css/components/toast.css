@@ -21,4 +21,16 @@
   border-radius: var(--space-sm);
   margin-top: var(--space-sm);
   box-shadow: 0 var(--space-xs) var(--space) var(--black);
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-sm);
+  justify-content: space-between;
+}
+
+.ds-toast-item > p {
+  margin: auto 0;
+}
+
+.ds-toast-item > button {
+  flex-grow: 0;
 }

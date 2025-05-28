@@ -1,0 +1,13 @@
+services:
+  vite:
+    build: .
+    ports:
+      - "3000:3000"  # Expose dev server port
+    volumes:
+      - .:/app  # Mount current directory into the container
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - HOST=0.0.0.0
+    command: npm run serve # Start dev server
+    working_dir: /app  # Ensure the working directory is set properly
